@@ -1,0 +1,4 @@
+const isEnglish=location.pathname.includes('/en/');
+const NAV_ITEMS=isEnglish?[['index.html','Home'],['body.html','Body'],['mind.html','Mind'],['time.html','Time'],['life.html','Life'],['circle.html','Circle'],['shop.html','Shop'],['ai.html','AI'],['you.html','You']]:[['index.html','Domov'],['body.html','Body'],['mind.html','Mind'],['time.html','Time'],['life.html','Life'],['circle.html','Circle'],['shop.html','Shop'],['ai.html','AI'],['you.html','You']];
+function renderNavigation(){const nav=document.getElementById('mainNav');if(!nav)return;const current=location.pathname.split('/').pop()||'index.html';nav.innerHTML=NAV_ITEMS.map(([href,label])=>`<a href="${href}" class="${href===current?'active':''}">${label}</a>`).join('');document.querySelector('.nav-toggle')?.addEventListener('click',()=>nav.classList.toggle('open'));}
+document.addEventListener('DOMContentLoaded',renderNavigation);

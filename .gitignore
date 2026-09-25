@@ -1,0 +1,5 @@
+BACKUP_BEFORE_PALO_SANTO_V4.6/
+*.bak
+*.backup
+*.backup_*
+*.backup-*

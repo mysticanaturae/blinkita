@@ -1,0 +1,679 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Premium Palo Santo — BLINKITA SHOP</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/portal.css"><link rel="stylesheet" href="../css/palo-santo.css"><style>
+
+/* ============================================================
+   BLINKITA PALO SANTO V4.6
+   ORANGE × NATURAL GREEN
+   ============================================================ */
+
+.palo-media-section,
+.palo-collection-section,
+.palo-video-section,
+.palo-instructions-section,
+.palo-zoom-section {
+    width: min(1200px, 92%);
+    margin: 110px auto;
+}
+
+.palo-section-heading {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.palo-section-heading .eyebrow,
+.palo-video-copy .eyebrow,
+.palo-zoom-copy .eyebrow {
+    color: #b85a18;
+    letter-spacing: .18em;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.palo-section-heading h2,
+.palo-video-copy h2,
+.palo-zoom-copy h2 {
+    color: #244c32;
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.05;
+    margin: 14px 0 20px;
+}
+
+.palo-section-heading p,
+.palo-video-copy p,
+.palo-zoom-copy p {
+    color: #536052;
+    line-height: 1.8;
+}
+
+.palo-wood-gallery {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+}
+
+.palo-image-card {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 26px;
+    background: #ead9b9;
+    box-shadow: 0 20px 60px rgba(40, 60, 35, .14);
+}
+
+.palo-image-card.palo-image-large {
+    grid-row: span 2;
+}
+
+.palo-image-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform .7s ease;
+}
+
+.palo-image-card:hover img {
+    transform: scale(1.035);
+}
+
+.palo-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.palo-product-card {
+    background: linear-gradient(145deg, #f4ead6, #e2ead8);
+    border: 1px solid rgba(53, 89, 56, .14);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(40, 60, 35, .12);
+}
+
+.palo-product-card img {
+    width: 100%;
+    height: 310px;
+    object-fit: contain;
+    background: #f7f0e2;
+    display: block;
+}
+
+.palo-product-card h3,
+.palo-product-card p {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.palo-product-card h3 {
+    color: #244c32;
+    margin-top: 24px;
+}
+
+.palo-product-card p {
+    color: #5b6258;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.palo-video-section {
+    display: grid;
+    grid-template-columns: .75fr 1.25fr;
+    align-items: center;
+    gap: 55px;
+    padding: 65px;
+    border-radius: 35px;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(226, 109, 32, .22), transparent 35%),
+        linear-gradient(135deg, #e7eadb, #f4dfc4);
+}
+
+.palo-video-frame {
+    border-radius: 25px;
+    overflow: hidden;
+    background: #17271c;
+    box-shadow: 0 25px 70px rgba(30, 50, 30, .2);
+}
+
+.palo-video-frame video {
+    width: 100%;
+    display: block;
+    max-height: 620px;
+}
+
+.palo-video-secondary {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(66, 108, 68, .22), transparent 35%),
+        linear-gradient(135deg, #edf0df, #f1d4b9);
+}
+
+.palo-instructions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.palo-instructions-grid img {
+    width: 100%;
+    display: block;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0 18px 55px rgba(40, 60, 35, .12);
+}
+
+.palo-zoom-section {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.palo-zoom-button {
+    position: relative;
+    padding: 0;
+    border: 0;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #1e3826;
+    box-shadow: 0 25px 70px rgba(35, 65, 40, .2);
+}
+
+.palo-zoom-button img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+}
+
+.palo-zoom-button:hover img {
+    transform: scale(1.04);
+}
+
+.palo-zoom-button span {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: rgba(255, 246, 225, .92);
+    color: #244c32;
+    font-size: .75rem;
+    letter-spacing: .12em;
+    font-weight: 700;
+}
+
+.palo-zoom-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(12, 25, 16, .92);
+}
+
+.palo-zoom-modal.active {
+    display: flex;
+}
+
+.palo-zoom-modal img {
+    max-width: min(1100px, 94vw);
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, .4);
+}
+
+.palo-zoom-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+@media (max-width: 800px) {
+
+    .palo-wood-gallery,
+    .palo-product-grid,
+    .palo-video-section,
+    .palo-instructions-grid,
+    .palo-zoom-section {
+        grid-template-columns: 1fr;
+    }
+
+    .palo-image-card.palo-image-large {
+        grid-row: auto;
+    }
+
+    .palo-video-section {
+        padding: 30px;
+    }
+
+    .palo-zoom-button img {
+        height: 380px;
+    }
+}
+
+</style>
+
+</head><body class="page-palo"><header class="site-header"><a class="brand" href="index.html">BLINKITA<span>living portal</span></a><button class="nav-toggle" aria-label="Menu">☰</button><nav id="mainNav"></nav><div class="language-switch"><a href="../sl/palo-santo.html">SL</a><span>·</span><a href="../en/palo-santo.html" class="active">EN</a></div></header><main>
+<section class="ps-hero"><div class="ps-hero-copy"><div class="eyebrow">BLINKITA SHOP · PREMIUM BOTANICAL RITUAL</div><h1>PALO SANTO</h1><p class="lead">You know the name. Now discover its story.</p><p class="lead">Sacred wood that was not made in a factory. Its story begins in nature — with rain, sun, time and the quiet rhythm of a tree that has completed its natural cycle. That very slowness is part of its value.</p><p>BLINKITA has been working with Palo Santo since 2010. Over all these years, it has become one of the recognizable products of BLINKITA SHOP — and today we are placing it in a different context. Not as just another product on a shelf, but as a premium botanical material, a sensory experience and an object with a story that begins long before the moment you light it.</p><a class="cta" href="#paket">EXPLORE THE PREMIUM SET</a></div><div class="ps-hero-mark"><span>BURsera</span><strong>graveolens</strong><small>holy wood · palo santo</small></div></section>
+<section class="ps-image-band" aria-label="Palo Santo wood gallery">
+<figure class="ps-image-card"><img src="../images/palosanto-wood.avif" alt="Selected Palo Santo wood"><figcaption>Natural wood · carefully selected pieces</figcaption></figure>
+<figure class="ps-image-card"><img src="../images/palosanto-wood1.avif" alt="Detail of Palo Santo wood"><figcaption>Rain · sun · time · natural cycle</figcaption></figure>
+<figure class="ps-image-card"><img src="../images/palosanto-wood2.avif" alt="Premium Palo Santo wood"><figcaption>Wood with a story</figcaption></figure>
+</section>
+<section class="manifest"><div><div class="eyebrow">01 · WHAT PREMIUM MEANS</div><h2>Premium begins where the story begins.</h2></div><div><p>At BLINKITA, we do not look only at a scented stick. We look at the wood. Its origin. Its maturation. Its dryness, structure, aroma and character. And above all — the journey it has taken from its natural cycle to your space.</p><p>Our premium selection is based on wood from <strong>naturally fallen branches</strong>. The tree is not cut down in order to create a product. The branch is allowed to complete its natural cycle. Drying time, maturation conditions and careful selection of individual pieces are also important to our premium selection.</p><p>With selected wood, it is also important how long it has been exposed to moisture and soil. Palo Santo is a natural material, and natural materials have their limits. That is why we look for pieces that are sufficiently dry, stable and suitable for further use — without trying to erase the traces of their origin.</p></div></section>
+<section class="compare"><div class="compare-card"><span>01</span><h3>When the origin is unclear</h3><p>With a generic product, you often do not know the full journey of the wood: how it was obtained, how long it matured, how it was dried and how it was stored.</p></div><div class="compare-card featured"><span>02</span><h3>BLINKITA Premium standard</h3><p>Selected naturally fallen wood, where origin, maturation, dryness, aroma and the character of each individual piece matter. Premium is not uniform appearance. Premium is attention to the material.</p></div><div class="compare-note"><strong>Botanical name:</strong> <em>Bursera graveolens</em>. The name “Palo Santo” is also used for other species, which is why it is important to know what you are actually buying when choosing a quality product.</div></section>
+<section class="story"><div class="eyebrow">THE BLINKITA STANDARD</div><h2>Rain. Sun. Time. The natural cycle.</h2><div class="story-grid"><div><b>NOT CUT DOWN FOR THE PRODUCT</b><p>Our premium story begins with a naturally fallen branch. Not with a tree cut down to create a product. That is an important difference at the very beginning.</p></div><div><b>NATURAL MATURATION AND DRYING</b><p>Wood needs time. Nothing about it happens on command. Maturation is part of its story and influences the dryness, character and aromatic expression of the material.</p></div><div><b>CAREFUL MATERIAL SELECTION</b><p>Premium is not a label for every piece of wood. It is a selection. Pieces are considered according to dryness, quality, aroma, structure and intended use. No two pieces are exactly alike — and that is part of the beauty of a natural material.</p></div><div><b>WOOD WITH A HISTORY</b><p>BLINKITA has been working with Palo Santo in Slovenia since 2010. That is why we do not present it as a new trend, but as part of a story that has been with us for more than a decade.</p></div></div></section>
+<section class="ps-mid-image"><img src="../images/palosanto-wood2.avif" alt="Detajl premium lesa Palo Santo"></section>
+<section class="rituals"><div class="eyebrow">02 · MORE THAN INCENSE</div><h2>When you stop seeing Palo Santo as simply incense, a different world opens.</h2><p class="section-intro">Palo Santo has a long history of traditional, folk and ceremonial uses. BLINKITA explores it through several senses: smoke, aroma, wood, water, fire, space and personal intention. Some uses come from traditional practices and are understood here as rituals, not as medical therapies. For consumption, use only material that is explicitly intended for food use.</p><div class="ritual-grid"><article><b>01 · SMOKE · SPACE</b><p>When you light Palo Santo, you are not simply lighting wood. You are creating a moment. Let its characteristic smoke unfold, then extinguish the flame and allow the space to hold the aroma for a few moments. In the BLINKITA language, this is a threshold: first you make space, then you decide what you want to bring into it.</p></article><article><b>02 · WATER · AROMA</b><p>Water is one of the most interesting ways to experience the aroma of wood differently. In some traditional and personal practices, Palo Santo is used to aromatize water. If the intention is consumption, the material must be explicitly suitable and labeled for food use. Essential oil is a concentrated essence and is not intended for drinking.</p></article><article><b>03 · TEA · TRADITION</b><p>Palo Santo also appears in traditional drink preparations. Such practices are an interesting part of the ethnobotanical history of the plant, but we do not present them as treatments. If you prepare a drink, use only a product that is explicitly intended for food use.</p></article><article><b>04 · HOME · STORAGE</b><p>Palo Santo also appears in various household and folk practices. One interesting use is associated with storing produce, where aromatic wood becomes part of an everyday household ritual. If you explore such a practice, use a clean, separate piece of wood intended for that purpose.</p></article><article><b>05 · CHARCOAL · ORAL CARE</b><p>Charred wood has its own distinctive texture and also appears in some traditional oral-care practices. BLINKITA understands this as a folk practice, not as a substitute for modern dental care. Because charcoal can be abrasive, gentleness and moderation are important when exploring such a use.</p></article><article><b>06 · ŽENSKI RITUALI</b><p>Ženski rituali imajo v različnih kulturah dolgo zgodovino. BLINKITA vaginalno parjenje razume kot tradicionalno prakso telesne pozornosti, topline in zavestnega časa zase — ne kot medicinsko zdravljenje. Če se zanj odločiš, naj bo pristop izjemno nežen, brez neposrednega izpostavljanja občutljivih tkiv vročini, dimu ali koncentriranim eteričnim oljem, in nikoli kot nadomestilo za zdravstveno obravnavo.</p></article><article><b>07 · INTENTION · EVERYDAY LIFE</b><p>The simplest use is often the most personal. You light the wood. You open a window. You breathe. For a few moments, you slow the pace of the day. Palo Santo can become a sign that something is ending — or that something new is just beginning.</p></article>
+
+
+
+<article><b>08 · SCENT · MEMORY</b><p>Scent remembers more than we think. A particular aroma can instantly bring back a place, a person, a period or a feeling. Palo Santo has a distinctive aromatic character, and over time it can become part of your personal memory — a scent that marks a moment, a transition or the beginning of a new chapter.</p></article><article><b>09 · WOOD · FIRE RITUAL</b><p>Fire changes the atmosphere in an instant. Palo Santo can accompany a moment when you are completing something, honoring something or simply wanting a different feeling in a space. Use it on a non-combustible surface, never leave it unattended, and make sure it is completely extinguished afterwards.</p></article></div></section>
+<section class="ritual-quote"><div class="eyebrow">BLINKITA RITUAL LANGUAGE</div><h2>Clear the space. Then fill it with intention.</h2><p>In BLINKITA, Palo Santo is not a magic wand that does something for you. It is a companion to the moment. First you make space. Then you choose your intention. Only then do you allow scent, smoke and silence to do their part.</p></section>
+<section class="oil"><div class="oil-copy"><div class="eyebrow">03 · 100% ESSENTIAL OIL</div><h2>The scent of the wood in a more concentrated form.</h2><p>Part of the premium story is also <strong>100% Palo Santo essential oil</strong>. The oil is a concentrated aromatic product and is not the same as the wood. Use it according to the instructions for the specific product; do not ingest it or apply it undiluted to the skin.</p><div class="oil-tags"><span>100% ESSENTIAL OIL</span><span>PURE AROMA</span><span>CONCENTRATED</span></div></div></section>
+<section class="premium-palo-offer" id="premium-offer">
+
+  <div class="premium-offer-inner">
+
+    <div class="premium-offer-kicker">04 · BLINKITA PREMIUM PALO SANTO</div>
+
+    <div class="premium-offer-badge">LIMITED BLINKITA OFFER</div>
+
+    <h2>THE SACRED WOOD SET</h2>
+
+    <p class="premium-offer-lead">
+      More Palo Santo. More essence. More space for ritual.
+    </p>
+
+    <div class="premium-price-box">
+
+      <div class="premium-old-price">
+        REGULAR VALUE <span>198 €</span>
+      </div>
+
+      <div class="premium-now-label">NOW ONLY</div>
+
+      <div class="premium-now-price">99 €</div>
+
+      <div class="premium-price-sub">
+        FREE SHIPPING · + CARIBBEAN GIFT
+      </div>
+
+    </div>
+
+    <div class="premium-hero-line">
+      2× MORE PALO SANTO. 2× MORE ESSENCE. 1× BLINKITA RITUAL.
+    </div>
+
+    <div class="premium-products">
+
+      <div class="premium-product">
+        <div class="premium-number">01</div>
+        <h3>100 g PREMIUM PALO SANTO</h3>
+        <p>
+          Two 50 g packages of selected Palo Santo wood,
+          sourced from naturally fallen wood.
+        </p>
+      </div>
+
+      <div class="premium-product">
+        <div class="premium-number">02</div>
+        <h3>2× 100 % PALO SANTO ETERIČNO OLJE</h3>
+        <p>
+          Two bottles of concentrated aromatic essence
+          for moments when you want a more pronounced Palo Santo signature.
+        </p>
+      </div>
+
+      <div class="premium-product">
+        <div class="premium-number">03</div>
+        <h3>BLINKITA RITUAL GUIDE</h3>
+        <p>
+          A guide to different ways of bringing wood, aroma and
+          intention into your personal ritual and everyday life.
+        </p>
+      </div>
+
+      <div class="premium-product premium-gift">
+        <div class="premium-number">04</div>
+        <h3>+ CARIBBEAN GIFT</h3>
+        <p>
+          A small surprise from the Caribbean, included
+          with your BLINKITA set.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="premium-bonus">
+
+      <div class="premium-bonus-icon">✦</div>
+
+      <div>
+        <strong>AND SOMETHING MORE</strong>
+        <p>
+          Free shipping is included in the price.
+          You pay €99 — and the set arrives without additional shipping costs.
+        </p>
+      </div>
+
+    </div>
+
+    <a
+      class="premium-main-button"
+      href="https://www.paypal.com/ncp/payment/55WC34DV6R7FL"
+      target="_blank"
+      rel="noopener"
+    >
+      YES, I WANT THE SACRED WOOD SET →
+    </a>
+
+    <p class="premium-secure-note">
+      Secure payment via PayPal or credit card.
+    </p>
+
+  </div>
+
+</section>
+<section id="paket" class="package"><div class="payment-card"><strong>BANK TRANSFER · INTERNATIONAL</strong><span><b>Beneficiary:</b> Blanka Thomas<br><b>Bank:</b> Belize Bank Limited<br><b>Account number:</b> 196421010160000<br><b>BIC / SWIFT:</b> BBLZBZBZ</span><em>Please send your payment confirmation after the transfer.</em></div></div><p class="payment-note">Choose your payment method to place your order. For a bank transfer, enter the customer name and selected set in the payment reference.</p></div><a class="cta" href="https://www.paypal.com/ncp/payment/55WC34DV6R7FL" target="_blank" rel="noopener">ORDER PREMIUM PALO SANTO</a></section>
+<section class="source-note"><div class="eyebrow">BOTANIČNA OPOMBA</div><p><strong>Bursera graveolens</strong> je sprejeta botanična vrsta iz družine Burseraceae. Njeno naravno območje sega od Mehike do severozahodne Venezuele in Peruja. Kew navaja tudi tradicionalne, družbene, materialne in prehranske rabe te vrste.</p><p>Ker se ime “Palo Santo” uporablja za več različnih vrst, je pri kakovostnem izdelku pomembno poznati natančno botanično ime.</p></section>
+
+<section class="origin-responsibility">
+<div class="eyebrow">ORIGIN · JOURNEY · RESPONSIBILITY</div>
+<h2>Origin · Journey · Responsibility</h2>
+
+<p>Our Palo Santo originates in <strong>Peru</strong>, where it forms part of the natural and cultural heritage of South America. The wood is shipped <strong>from Slovenia</strong>, where it is carefully prepared and sent to you as part of the BLINKITA ritual experience.</p>
+
+<p>For us, it matters that Palo Santo does not become another story of mass production and the exploitation of natural resources. Its value lies precisely in its connection to living ecosystems, traditional knowledge and the people who know and protect this sacred wood.</p>
+
+<p>With every purchase, <strong>you support a more sustainable way of sourcing Palo Santo and the local communities involved in preserving it</strong>, rather than a model in which large corporations could exploit the resource through large-scale logging driven purely by short-term profit.</p>
+
+<p>Our intention is simple: <strong>for Palo Santo to remain a living heritage, not become a mass-produced commodity.</strong></p>
+
+<p>That is why we give importance to responsible sourcing, traceability and methods of obtaining the wood that respect nature, local knowledge and the future of this sacred tree.</p>
+
+<div class="origin-flow">
+<span>PERU</span>
+<span>→</span>
+<span>SLOVENIA</span>
+<span>→</span>
+<span>YOUR RITUAL</span>
+</div>
+
+<div class="origin-values">
+<div><strong>🌿</strong><span>Responsible sourcing</span></div>
+<div><strong>🌎</strong><span>Respect for origin</span></div>
+<div><strong>🤝</strong><span>Support for local communities</span></div>
+</div>
+</section>
+
+<section class="palo-media-section">
+
+    <div class="palo-section-heading">
+        <span class="eyebrow">BLINKITA PALO SANTO KOLEKCIJA</span>
+        <h2>Les. Olje. Aroma. Ritual.</h2>
+        <p>
+            Spoznaj Palo Santo skozi njegovo bistvo — skozi les, eterično olje, ritual in zgodbo, ki se skriva za njim.
+        </p>
+    </div>
+
+    <div class="palo-wood-gallery">
+
+        <figure class="palo-image-card palo-image-large">
+            <img src="../images/palosanto-wood.avif"
+                 alt="Premium Palo Santo · sacred wood"
+                 loading="lazy">
+        </figure>
+
+        <figure class="palo-image-card">
+            <img src="../images/palosanto-wood1.avif"
+                 alt="Detajl premium Palo Santo lesa"
+                 loading="lazy">
+        </figure>
+
+        <figure class="palo-image-card">
+            <img src="../images/palosanto-wood2.avif"
+                 alt="Povečan pogled na Palo Santo les"
+                 loading="lazy">
+        </figure>
+
+    </div>
+
+</section>
+
+
+<section class="palo-collection-section">
+
+    <div class="palo-section-heading">
+        <span class="eyebrow">KOLEKCIJA</span>
+        <h2>Palo Santo lahko spoznaš na več načinov — skozi material, aromo, prostor in lastno izkušnjo.</h2>
+    </div>
+
+    <div class="palo-product-grid">
+
+        <article class="palo-product-card">
+            <img src="../images/palosanto-new.png"
+                 alt="Palo Santo"
+                 loading="lazy">
+            <h3>Premium Palo Santo · sacred wood</h3>
+            <p>
+                Naravno zorel sveti les, izbran zaradi svoje kakovosti,
+                značilne arome in edinstvenega značaja.
+            </p>
+        </article>
+
+        <article class="palo-product-card">
+            <img src="../images/blinkitart-palosantoolje.png"
+                 alt="Palo Santo eterično olje"
+                 loading="lazy">
+            <h3>100% Palo Santo essential oil</h3>
+            <p>
+                Koncentriran aromatični izraz Palo Santa.
+            </p>
+        </article>
+
+        <article class="palo-product-card">
+            <img src="../images/BLINKITART-PALOSANTOSPREJ-50ml.png"
+                 alt="Palo Santo sprej"
+                 loading="lazy">
+            <h3>Palo Santo sprej</h3>
+            <p>
+                Praktičen način, kako aromo Palo Santa vneseš
+                v svoj vsakdan.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="palo-video-section">
+
+    <div class="palo-video-copy">
+        <span class="eyebrow">PALO SANTO ORAKELJ</span>
+        <h2>Prisluhni lesu.</h2>
+        <p>
+            Za trenutek ne razmišljaj o izdelku. Prisluhni materialu. Opazuj teksturo, gibanje dima, zvok in prostor okoli sebe. Palo Santo lahko postane izkušnja, še preden postane ritual.
+        </p>
+    </div>
+
+    <div class="palo-video-frame">
+        <video controls playsinline preload="metadata">
+            <source src="../images/palosantovideoorakelj.mp4" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+    </div>
+
+</section>
+
+
+<section class="palo-video-section palo-video-secondary">
+
+    <div class="palo-video-copy">
+        <span class="eyebrow">ZGODBA PALO SANTA</span>
+        <h2>Več kot kadilo.</h2>
+        <p>
+            Njegova zgodba se ne začne, ko ga prižgeš. Začne se veliko prej — v drevesu, naravnem ciklu, času, sušenju, aromi in človeku, ki ga nato povabi v svoj prostor.
+        </p>
+    </div>
+
+    <div class="palo-video-frame">
+        <video controls playsinline preload="metadata">
+            <source src="../images/PaloSantoJustice.mp4" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+    </div>
+
+</section>
+
+
+<section class="palo-instructions-section">
+
+    <div class="palo-section-heading">
+        <span class="eyebrow">BLINKITA RITUALNO ZNANJE</span>
+        <h2>Ritual se nadaljuje tudi onkraj dima.</h2>
+    </div>
+
+    <div class="palo-instructions-grid">
+
+        <img src="../images/BLINKITART-PALOSANTO-SVETILES-NAVODILA3.png"
+             alt="BLINKITA navodila za sveti Palo Santo les"
+             loading="lazy">
+
+        <img src="../images/BLINKITART-PALOSANTO-ETERICNOOLJE-NAVODILA2.png"
+             alt="BLINKITA Palo Santo eterično olje instructions"
+             loading="lazy">
+
+    </div>
+
+</section>
+
+
+<section class="palo-zoom-section">
+
+    <div class="palo-zoom-copy">
+        <span class="eyebrow">SAM LES</span>
+        <h2>Poglej bližje.</h2>
+        <p>
+            Približaj se. Površina, razpoke, vlakna, barva in sled časa so del njegove zgodbe. Premium ni popolnost brez sledi. Premium je material, v katerem lahko še vedno vidiš njegovo naravo.
+        </p>
+    </div>
+
+    <button class="palo-zoom-button"
+            type="button"
+            onclick="openPaloZoom()"
+            aria-label="Open Palo Santo wood image">
+
+        <img src="../images/palosanto-wood2.avif"
+             alt="Povečan pogled na premium Palo Santo les">
+
+        <span>SPOZNAJ LES</span>
+
+    </button>
+
+</section>
+
+
+<div id="paloZoomModal"
+     class="palo-zoom-modal"
+     aria-hidden="true">
+
+    <button class="palo-zoom-close"
+            type="button"
+            onclick="closePaloZoom()"
+            aria-label="Close">
+        ×
+    </button>
+
+    <img src="../images/palosanto-wood2.avif"
+         alt="Premium Palo Santo · sacred wood enlarged">
+
+</div>
+
+<script>
+
+function openPaloZoom() {
+    const modal = document.getElementById("paloZoomModal");
+    if (!modal) return;
+
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+}
+
+function closePaloZoom() {
+    const modal = document.getElementById("paloZoomModal");
+    if (!modal) return;
+
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closePaloZoom();
+    }
+});
+
+document.addEventListener("click", function(event) {
+    const modal = document.getElementById("paloZoomModal");
+
+    if (modal && event.target === modal) {
+        closePaloZoom();
+    }
+});
+
+</script>
+
+<!-- BLINKITA PREMIUM RITUAL -->
+<section class="palo-section-heading">
+  <div class="eyebrow">BLINKITA PREMIUM RITUAL</div>
+  <h2>Les, ki odpira prostor.</h2>
+  <p>Palo Santo je material z močnim značajem. Njegova lepota ni samo v aromi, ampak v celotni izkušnji: v trenutku, ko izbereš kos, ga primeš, prižgeš, ugasneš in pustiš, da prostor za nekaj trenutkov spremeni svoj tempo.</p>
+  <p>BLINKITA ritual se začne preprosto. Ne potrebuješ veliko. Potrebuješ prostor, pozornost in jasno namero. Včasih je prav to dovolj, da se navaden trenutek spremeni v nekaj, česar si boš zapomnila.</p>
+</section>
+
+<section class="palo-section-heading">
+  <div class="eyebrow">THE BLINKITA WAY</div>
+  <h2>Najprej prostor. Potem namera.</h2>
+  <p>Ne gre za to, da bi les naredil nekaj namesto tebe. Gre za zavesten prehod. Zapreš vrata dnevu, odpreš prostor sebi in izbereš, s čim želiš nadaljevati.</p>
+  <p>Dim lahko odide v nekaj minutah. Vonj ostane dlje. Spomin še dlje. In včasih je prav ta majhen obred dovolj, da se nekaj v tebi premakne iz avtomatskega v zavestno.</p>
+</section>
+
+<section class="palo-section-heading">
+  <div class="eyebrow">THE MATERIAL</div>
+  <h2>Premium ni popolnost. Premium je izvor.</h2>
+  <p>Naravni les ni serijski izdelek. Vsak kos ima drugačno strukturo, drugačno sled časa, drugačen odtenek in drugačen aromatični značaj. To ni napaka. To je dokaz, da je material še vedno živ v svoji zgodbi.</p>
+  <p>Ko izbereš BLINKITA Premium standard Palo Santo, ne izbiraš samo vonja. Izbiraš način, kako želiš v svoj prostor vnesti košček narave — počasi, zavestno in z občutkom za material.</p>
+</section>
+</main><footer>BLINKITA · www.blinkita.si</footer><script src="../js/navigation.js"></script><script src="../js/main.js"></script>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
