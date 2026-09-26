@@ -679,24 +679,197 @@
     </h2>
 
     <p>
-      Poleg samopomoči so na voljo tudi individualne
-      terapevtske obravnave Jin Shin Jyutsu, prilagojene
-      posamezniku in trenutnemu stanju telesa.
+      BLINKITA BODY · PROGRAM 03 ni namenjen samo spoznavanju
+      Jin Shin Jyutsu in praksam, ki jih lahko izvajaš sama.
+    </p>
+
+    <p>
+      Če želiš svojo prakso raziskovati bolj poglobljeno, so
+      na voljo tudi <strong>individualne terapevtske obravnave
+      Jin Shin Jyutsu</strong>, prilagojene tebi, tvojemu telesu
+      in temu, kar v danem trenutku potrebuje tvojo pozornost.
+    </p>
+
+    <p>
+      Terapevtsko delo poteka individualno in vključuje izbrane
+      prijeme ter različne načine držanja in dotika, ob podpori
+      zavestnega dihanja in časa, namenjenega telesu.
     </p>
 
     <div class="therapy-meta">
 
-      <span>INDIVIDUALNO</span>
-      <span>3–20+ MIN POSAMEZNIH PRIJEMOV</span>
-      <span>ONLINE / V ŽIVO</span>
-      <span>BELIZE</span>
+      <div>
+        <strong>3–20+ MIN</strong>
+        <span>POSAMEZNI PRIJEMI</span>
+        <small>
+          Posamezne prijeme lahko raziskuješ nekaj minut ali jih
+          v okviru terapevtskega srečanja vključimo v daljšo,
+          celostno obravnavo.
+        </small>
+      </div>
+
+      <div>
+        <strong>ONLINE / V ŽIVO</strong>
+        <span>INDIVIDUALNO DELO</span>
+        <small>
+          Individualno delo je možno online ali v živo v Belizeju.
+        </small>
+      </div>
 
     </div>
+
+    <div class="therapy-cta">
+
+  <a href="#protocols" class="therapy-cta-link">
+    <strong>Če želiš spoznati osnovo →</strong>
+    <span>razišči protokole.</span>
+  </a>
+
+  <button type="button"
+          class="therapy-cta-link therapy-modal-open"
+          data-modal="therapyModal">
+    <strong>Če želiš iti globlje →</strong>
+    <span>rezerviraj individualno obravnavo.</span>
+  </button>
+
+</div>
 
   </div>
 
 </section>
 
+
+<!-- =========================================================
+     INDIVIDUAL THERAPY MODAL
+========================================================= -->
+
+<div class="therapy-modal"
+     id="therapyModal"
+     aria-hidden="true">
+
+  <div class="therapy-modal-backdrop"
+       data-modal-close></div>
+
+  <div class="therapy-modal-dialog"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="therapyModalTitle">
+
+    <button type="button"
+            class="therapy-modal-close"
+            data-modal-close
+            aria-label="Zapri">
+      ×
+    </button>
+
+    <div class="jsj-section-label">
+      BLINKITA BODY · INDIVIDUALNO DELO
+    </div>
+
+    <h2 id="therapyModalTitle">
+      Rezerviraj individualno
+      <em>obravnavo.</em>
+    </h2>
+
+    <p class="therapy-modal-intro">
+      Pošlji mi povpraševanje in skupaj bomo našli način,
+      ki najbolj ustreza tebi in temu, kar želiš raziskati.
+    </p>
+
+    <form class="therapy-form"
+          id="therapyForm"
+          action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"
+          method="POST">
+
+      <input type="hidden"
+             name="_subject"
+             value="BLINKITA BODY · Individualna Jin Shin Jyutsu obravnava">
+
+      <div class="therapy-form-field">
+        <label for="therapy-name">
+          Ime in priimek
+        </label>
+
+        <input type="text"
+               id="therapy-name"
+               name="name"
+               autocomplete="name"
+               required>
+      </div>
+
+      <div class="therapy-form-field">
+        <label for="therapy-email">
+          E-mail
+        </label>
+
+        <input type="email"
+               id="therapy-email"
+               name="email"
+               autocomplete="email"
+               required>
+      </div>
+
+      <div class="therapy-form-field">
+        <label for="therapy-phone">
+          WhatsApp / telefon
+        </label>
+
+        <input type="text"
+               id="therapy-phone"
+               name="phone"
+               autocomplete="tel">
+      </div>
+
+      <div class="therapy-form-field">
+        <label for="therapy-format">
+          Kako želiš srečanje?
+        </label>
+
+        <select id="therapy-format"
+                name="format"
+                required>
+
+          <option value="">
+            Izberi možnost
+          </option>
+
+          <option value="online">
+            Online
+          </option>
+
+          <option value="in-person-belize">
+            V živo · Belize
+          </option>
+
+        </select>
+      </div>
+
+      <div class="therapy-form-field">
+        <label for="therapy-message">
+          Kaj te trenutno pripelje?
+        </label>
+
+        <textarea id="therapy-message"
+                  name="message"
+                  rows="5"
+                  placeholder="Lahko napišeš nekaj besed o tem, kaj želiš raziskati ali s čim prihajaš."
+                  required></textarea>
+      </div>
+
+      <button type="submit"
+              class="jsj-button jsj-button-primary therapy-form-submit">
+        POŠLJI POVPRAŠEVANJE
+      </button>
+
+      <div class="therapy-form-status"
+           id="therapyFormStatus"
+           aria-live="polite"></div>
+
+    </form>
+
+  </div>
+
+</div>
 
 <!-- =========================================================
      SAFETY
@@ -793,3 +966,7 @@
 
 </body>
 </html>
+
+
+
+

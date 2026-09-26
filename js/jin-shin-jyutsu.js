@@ -133,3 +133,180 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+/* =========================================================
+   BLINKITA BODY · THERAPY MODAL
+========================================================= */
+
+(function () {
+
+  function initTherapyModal() {
+
+    const modal = document.getElementById("therapyModal");
+
+    if (!modal) return;
+
+    const openButtons = document.querySelectorAll(".therapy-modal-open");
+    const closeButtons = modal.querySelectorAll("[data-modal-close]");
+    const form = document.getElementById("therapyForm");
+    const status = document.getElementById("therapyFormStatus");
+
+    function openModal() {
+
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+
+      document.body.classList.add("therapy-modal-open");
+
+      const firstInput = modal.querySelector("input:not([type='hidden'])");
+
+      if (firstInput) {
+        setTimeout(function () {
+          firstInput.focus();
+        }, 50);
+      }
+    }
+
+    function closeModal() {
+
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+
+      document.body.classList.remove("therapy-modal-open");
+    }
+
+    openButtons.forEach(function (button) {
+
+      button.addEventListener("click", function () {
+        openModal();
+      });
+
+    });
+
+    closeButtons.forEach(function (button) {
+
+      button.addEventListener("click", function () {
+        closeModal();
+      });
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+      if (
+        event.key === "Escape" &&
+        modal.classList.contains("is-open")
+      ) {
+        closeModal();
+      }
+
+    });
+
+    if (form) {
+
+      form.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const endpoint = form.getAttribute("action");
+
+        if (
+          !endpoint ||
+          endpoint.includes("YOUR_FORMSPREE_FORM_ID")
+        ) {
+
+          status.className = "therapy-form-status error";
+
+          status.textContent =
+            "Obrazec še ni povezan s Formspree obrazcem.";
+
+          return;
+        }
+
+        const submitButton =
+          form.querySelector(".therapy-form-submit");
+
+        submitButton.disabled = true;
+        submitButton.textContent = "POŠILJAM …";
+
+        status.className = "therapy-form-status";
+        status.textContent = "";
+
+        try {
+
+          const response = await fetch(
+            endpoint,
+            {
+              method: "POST",
+              body: new FormData(form),
+              headers: {
+                "Accept": "application/json"
+              }
+            }
+          );
+
+          if (response.ok) {
+
+            form.reset();
+
+            status.className =
+              "therapy-form-status success";
+
+            status.innerHTML =
+              "<strong>Hvala.</strong><br>" +
+              "Tvoje povpraševanje je poslano. " +
+              "Odgovorim ti v najkrajšem možnem času.";
+
+            submitButton.textContent =
+              "POSLANO";
+
+          } else {
+
+            status.className =
+              "therapy-form-status error";
+
+            status.textContent =
+              "Pri pošiljanju je prišlo do napake. " +
+              "Poskusi ponovno.";
+
+            submitButton.disabled = false;
+
+            submitButton.textContent =
+              "POŠLJI POVPRAŠEVANJE";
+          }
+
+        } catch (error) {
+
+          status.className =
+            "therapy-form-status error";
+
+          status.textContent =
+            "Povezava ni uspela. Preveri internetno povezavo " +
+            "in poskusi ponovno.";
+
+          submitButton.disabled = false;
+
+          submitButton.textContent =
+            "POŠLJI POVPRAŠEVANJE";
+        }
+
+      });
+
+    }
+
+  }
+
+  if (document.readyState === "loading") {
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      initTherapyModal
+    );
+
+  } else {
+
+    initTherapyModal();
+
+  }
+
+})();
