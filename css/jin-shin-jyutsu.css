@@ -1,0 +1,1129 @@
+﻿/* ============================================================
+   BLINKITA BODY · JIN SHIN JYUTSU
+   PASTEL LIGHT EDITION
+============================================================ */
+
+.jsj-page {
+  --jsj-cream: #faf7f0;
+  --jsj-paper: #fffdf8;
+  --jsj-aqua: #dcefeb;
+  --jsj-aqua-strong: #b9ddd7;
+  --jsj-lavender: #e7e1f1;
+  --jsj-lavender-strong: #cfc2e3;
+  --jsj-sage: #e2eadf;
+  --jsj-sand: #eee2d0;
+  --jsj-peach: #f3ddd3;
+  --jsj-gold: #b89a61;
+  --jsj-olive: #4e574d;
+  --jsj-text: #343932;
+  --jsj-muted: #777c73;
+  --jsj-line: rgba(78,87,77,.14);
+}
+
+
+/* ============================================================
+   GLOBAL
+============================================================ */
+
+.jsj-page {
+  background: var(--jsj-cream);
+  color: var(--jsj-text);
+}
+
+.jsj-page-wrap {
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.jsj-hero {
+  min-height: 76vh;
+  padding: 115px 6vw 90px;
+
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 70px;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 82% 28%,
+      rgba(207,194,227,.55),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 68% 72%,
+      rgba(185,221,215,.65),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf8 0%,
+      #f7f3eb 52%,
+      #edf3ef 100%
+    );
+
+  color: var(--jsj-text);
+  position: relative;
+}
+
+
+/* soft organic glow */
+
+.jsj-hero:after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  bottom: -180px;
+
+  border-radius: 50%;
+
+  background: rgba(243,221,211,.45);
+
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+
+.jsj-hero-copy {
+  max-width: 850px;
+  position: relative;
+  z-index: 2;
+}
+
+
+.jsj-hero .eyebrow {
+  color: var(--jsj-gold);
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+
+.jsj-hero h1 {
+  font-size: clamp(4rem, 8.5vw, 8.5rem);
+  line-height: .87;
+  font-weight: 300;
+
+  margin: 25px 0 35px;
+
+  letter-spacing: -.045em;
+}
+
+
+.jsj-hero h1 em {
+  color: #8e78ad;
+  font-style: italic;
+}
+
+
+.jsj-lead {
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1.4;
+
+  max-width: 650px;
+
+  color: #555e55;
+}
+
+
+.jsj-intro {
+  max-width: 650px;
+
+  line-height: 1.85;
+
+  color: var(--jsj-muted);
+}
+
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.jsj-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+
+.jsj-button {
+  display: inline-block;
+
+  padding: 14px 22px;
+
+  border: 1px solid rgba(184,154,97,.7);
+
+  color: #8e7544;
+
+  background: rgba(255,255,255,.42);
+
+  text-decoration: none;
+
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.jsj-button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255,255,255,.85);
+
+  box-shadow:
+    0 12px 30px rgba(78,87,77,.08);
+}
+
+
+.jsj-button-primary {
+  background: #c7ddd5;
+  color: #35463f;
+  border-color: #a9cbc1;
+}
+
+
+.jsj-button-primary:hover {
+  background: #b9d7cf;
+}
+
+
+/* ============================================================
+   HERO SYMBOL
+============================================================ */
+
+.jsj-symbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+.jsj-symbol-ring {
+  width: min(34vw,390px);
+  height: min(34vw,390px);
+
+  min-width: 270px;
+  min-height: 270px;
+
+  border: 1px solid rgba(142,120,173,.35);
+
+  border-radius: 50%;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #8e78ad;
+
+  letter-spacing: .18em;
+  font-size: .65rem;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.8),
+      rgba(231,225,241,.42)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(142,120,173,.12);
+}
+
+
+.jsj-symbol-ring:before,
+.jsj-symbol-ring:after {
+  content: "";
+
+  position: absolute;
+
+  border: 1px solid rgba(185,221,215,.7);
+
+  border-radius: 50%;
+}
+
+
+.jsj-symbol-ring:before {
+  inset: 35px;
+}
+
+
+.jsj-symbol-ring:after {
+  inset: 70px;
+}
+
+
+.jsj-symbol-ring span {
+  position: absolute;
+}
+
+
+.jsj-symbol-ring span:nth-child(1) {
+  top: 18px;
+}
+
+
+.jsj-symbol-ring span:nth-child(2) {
+  right: 8px;
+  top: 48%;
+}
+
+
+.jsj-symbol-ring span:nth-child(3) {
+  bottom: 18px;
+}
+
+
+.jsj-symbol-ring span:nth-child(4) {
+  left: -15px;
+  top: 48%;
+}
+
+
+/* ============================================================
+   SHARED SECTIONS
+============================================================ */
+
+.jsj-about,
+.jsj-practitioner,
+.jsj-breath,
+.jsj-therapeutic,
+.jsj-safety,
+.jsj-cta {
+  padding: 110px 6vw;
+}
+
+
+.jsj-section-label {
+  font-size: .68rem;
+
+  letter-spacing: .17em;
+
+  text-transform: uppercase;
+
+  color: var(--jsj-gold);
+}
+
+
+/* ============================================================
+   ABOUT
+============================================================ */
+
+.jsj-about {
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf8,
+      #f5f1e9
+    );
+
+  color: var(--jsj-text);
+}
+
+
+.jsj-about-grid,
+.jsj-breath-grid {
+  max-width: 1200px;
+
+  margin: 50px auto 0;
+
+  display: grid;
+
+  grid-template-columns: .9fr 1.1fr;
+
+  gap: 90px;
+}
+
+
+.jsj-about h2,
+.jsj-breath h2,
+.jsj-therapeutic h2,
+.jsj-cta h2 {
+  font-size: clamp(2.8rem, 6vw, 6rem);
+
+  line-height: .95;
+
+  font-weight: 300;
+
+  margin: 20px 0;
+}
+
+
+.jsj-about h2 em,
+.jsj-breath h2 em,
+.jsj-therapeutic h2 em,
+.jsj-cta h2 em {
+  color: #8e78ad;
+  font-style: italic;
+}
+
+
+.jsj-copy {
+  line-height: 1.85;
+
+  max-width: 760px;
+}
+
+
+.jsj-copy p {
+  margin: 0 0 25px;
+}
+
+
+.jsj-emphasis {
+  color: #7d9d94;
+
+  font-size: 1.2rem;
+}
+
+
+/* ============================================================
+   PRACTITIONER
+============================================================ */
+
+.jsj-practitioner {
+  background:
+    linear-gradient(
+      135deg,
+      #e8f0e9,
+      #e3edf0
+    );
+
+  color: var(--jsj-text);
+}
+
+
+.jsj-practitioner-inner,
+.jsj-safety-inner {
+  max-width: 850px;
+  margin: auto;
+}
+
+
+.jsj-practitioner h2 {
+  font-size: clamp(2.7rem,5vw,5rem);
+
+  font-weight: 300;
+}
+
+
+.jsj-practitioner p,
+.jsj-safety p {
+  max-width: 760px;
+
+  line-height: 1.85;
+}
+
+
+/* ============================================================
+   WHAT DO YOU NEED NOW?
+============================================================ */
+
+.jsj-now {
+  padding: 120px 6vw;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(231,225,241,.8),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #f0eaf5,
+      #e5f1ee
+    );
+
+  color: var(--jsj-text);
+}
+
+
+.jsj-section-heading {
+  max-width: 1200px;
+
+  margin: 0 auto 60px;
+
+  display: grid;
+
+  grid-template-columns: 1.2fr .8fr;
+
+  gap: 70px;
+
+  align-items: end;
+}
+
+
+.jsj-section-heading h2 {
+  font-size: clamp(3rem,6vw,6rem);
+
+  line-height: .92;
+
+  font-weight: 300;
+
+  margin: 18px 0 0;
+}
+
+
+.jsj-section-heading h2 em {
+  color: #8e78ad;
+  font-style: italic;
+}
+
+
+.jsj-section-heading > p {
+  line-height: 1.8;
+
+  color: var(--jsj-muted);
+}
+
+
+/* ============================================================
+   NOW CARDS
+============================================================ */
+
+.jsj-now-grid {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  gap: 14px;
+}
+
+
+.jsj-now-card {
+  min-height: 210px;
+
+  text-align: left;
+
+  padding: 28px;
+
+  border: 1px solid rgba(78,87,77,.13);
+
+  background:
+    rgba(255,255,255,.62);
+
+  color: var(--jsj-text);
+
+  cursor: pointer;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease,
+    background .3s ease;
+}
+
+
+.jsj-now-card:nth-child(2n) {
+  background: rgba(255,255,255,.76);
+}
+
+
+.jsj-now-card:nth-child(3n) {
+  background: rgba(226,234,223,.62);
+}
+
+
+.jsj-now-card:hover,
+.jsj-now-card.active {
+  transform: translateY(-5px);
+
+  border-color: rgba(184,154,97,.55);
+
+  background: rgba(255,255,255,.9);
+
+  box-shadow:
+    0 18px 45px rgba(78,87,77,.10);
+}
+
+
+.jsj-now-card span {
+  display: block;
+
+  color: var(--jsj-gold);
+
+  font-size: .7rem;
+
+  letter-spacing: .12em;
+}
+
+
+.jsj-now-card strong {
+  display: block;
+
+  margin: 45px 0 10px;
+
+  font-size: 1.05rem;
+
+  letter-spacing: .06em;
+}
+
+
+.jsj-now-card small {
+  color: var(--jsj-muted);
+
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   FINGERS
+============================================================ */
+
+.jsj-fingers {
+  padding: 120px 6vw;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf8,
+      #f5eee5
+    );
+
+  color: var(--jsj-text);
+}
+
+
+.finger-grid {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(5,1fr);
+
+  gap: 14px;
+}
+
+
+.finger-card {
+  min-height: 210px;
+
+  padding: 28px;
+
+  text-align: left;
+
+  border: 1px solid rgba(78,87,77,.13);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.9),
+      rgba(231,241,237,.72)
+    );
+
+  color: var(--jsj-text);
+
+  cursor: pointer;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+
+.finger-card:nth-child(2),
+.finger-card:nth-child(5) {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.9),
+      rgba(235,229,244,.72)
+    );
+}
+
+
+.finger-card:nth-child(3) {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.9),
+      rgba(246,230,224,.72)
+    );
+}
+
+
+.finger-card:hover,
+.finger-card.active {
+  border-color: rgba(184,154,97,.55);
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 18px 40px rgba(78,87,77,.10);
+}
+
+
+.finger-number {
+  color: var(--jsj-gold);
+
+  display: block;
+}
+
+
+.finger-card strong {
+  display: block;
+
+  margin-top: 55px;
+
+  font-size: 1rem;
+}
+
+
+.finger-card small {
+  color: var(--jsj-muted);
+}
+
+
+.finger-info {
+  max-width: 1200px;
+
+  margin: 25px auto 0;
+
+  min-height: 150px;
+
+  padding: 35px;
+
+  border: 1px solid rgba(78,87,77,.12);
+
+  background:
+    rgba(255,255,255,.72);
+
+  box-shadow:
+    0 15px 45px rgba(78,87,77,.05);
+}
+
+
+.finger-info-placeholder {
+  display: flex;
+
+  gap: 25px;
+
+  align-items: center;
+
+  color: var(--jsj-muted);
+}
+
+
+.finger-info-placeholder span {
+  font-size: 2rem;
+
+  color: var(--jsj-gold);
+}
+
+
+/* ============================================================
+   BREATH
+============================================================ */
+
+.jsj-breath {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(207,194,227,.65),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #e8f1ee,
+      #e7e1f1
+    );
+
+  color: var(--jsj-text);
+}
+
+
+.time-scale {
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 12px;
+
+  margin-top: 35px;
+}
+
+
+.time-scale div {
+  border-top: 1px solid rgba(78,87,77,.18);
+
+  padding-top: 20px;
+}
+
+
+.time-scale strong {
+  display: block;
+
+  font-size: 2rem;
+
+  color: #7d9d94;
+
+  font-weight: 300;
+}
+
+
+.time-scale span,
+.time-scale small {
+  display: block;
+
+  font-size: .65rem;
+
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+
+  margin-top: 5px;
+}
+
+
+.time-scale small {
+  color: var(--jsj-muted);
+}
+
+
+/* ============================================================
+   LIBRARY
+============================================================ */
+
+.jsj-library {
+  padding: 120px 6vw;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf8,
+      #f8f3ec
+    );
+
+  color: var(--jsj-text);
+}
+
+
+.protocol-grid {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 18px;
+}
+
+
+.protocol-card {
+  padding: 32px;
+
+  min-height: 280px;
+
+  border: 1px solid rgba(78,87,77,.12);
+
+  background:
+    rgba(255,255,255,.72);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.protocol-card:nth-child(3n+1) {
+  background: rgba(231,241,237,.68);
+}
+
+
+.protocol-card:nth-child(3n+2) {
+  background: rgba(235,229,244,.58);
+}
+
+
+.protocol-card:nth-child(3n) {
+  background: rgba(246,230,224,.58);
+}
+
+
+.protocol-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 40px rgba(78,87,77,.08);
+}
+
+
+.protocol-card > span:first-child {
+  color: var(--jsj-gold);
+
+  font-size: .7rem;
+
+  letter-spacing: .12em;
+}
+
+
+.protocol-card h3 {
+  font-size: 1.65rem;
+
+  font-weight: 400;
+
+  margin: 35px 0 15px;
+}
+
+
+.protocol-card p {
+  line-height: 1.7;
+
+  color: var(--jsj-muted);
+}
+
+
+.protocol-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 25px;
+}
+
+
+.protocol-meta b {
+  font-size: .62rem;
+
+  letter-spacing: .1em;
+
+  color: #8d7138;
+
+  border: 1px solid rgba(184,154,97,.35);
+
+  padding: 6px 8px;
+
+  background: rgba(255,255,255,.38);
+}
+
+
+.protocol-status {
+  display: block;
+
+  margin-top: 22px;
+
+  color: #99998f;
+
+  font-size: .62rem;
+
+  letter-spacing: .13em;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   THERAPEUTIC
+============================================================ */
+
+.jsj-therapeutic {
+  background:
+    linear-gradient(
+      135deg,
+      #f4e9e2,
+      #eee5f3
+    );
+
+  color: var(--jsj-text);
+}
+
+
+.therapy-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 30px;
+}
+
+
+.therapy-meta span {
+  border: 1px solid rgba(184,154,97,.4);
+
+  padding: 8px 12px;
+
+  font-size: .65rem;
+
+  letter-spacing: .11em;
+
+  color: #8d7138;
+
+  background: rgba(255,255,255,.4);
+}
+
+
+/* ============================================================
+   SAFETY
+============================================================ */
+
+.jsj-safety {
+  background:
+    linear-gradient(
+      135deg,
+      #e8efea,
+      #eeeaf4
+    );
+
+  color: var(--jsj-text);
+}
+
+
+.jsj-safety h2 {
+  font-size: clamp(2.5rem,5vw,5rem);
+
+  font-weight: 300;
+}
+
+
+.jsj-safety h2 em {
+  color: #8e78ad;
+
+  font-style: italic;
+}
+
+
+.jsj-safety-final {
+  color: #7d9d94;
+
+  font-size: 1.2rem;
+}
+
+
+/* ============================================================
+   CTA
+============================================================ */
+
+.jsj-cta {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(231,225,241,.9),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(185,221,215,.8),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf8,
+      #edf2ee
+    );
+
+  color: var(--jsj-text);
+
+  text-align: center;
+}
+
+
+.jsj-cta > div {
+  max-width: 800px;
+
+  margin: auto;
+}
+
+
+.jsj-cta p {
+  max-width: 650px;
+
+  margin: 0 auto 35px;
+
+  line-height: 1.8;
+
+  color: var(--jsj-muted);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media(max-width:900px){
+
+  .jsj-hero,
+  .jsj-about-grid,
+  .jsj-breath-grid,
+  .jsj-section-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .jsj-symbol {
+    display: none;
+  }
+
+  .jsj-now-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .finger-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .protocol-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media(max-width:600px){
+
+  .jsj-hero,
+  .jsj-about,
+  .jsj-practitioner,
+  .jsj-now,
+  .jsj-fingers,
+  .jsj-breath,
+  .jsj-library,
+  .jsj-therapeutic,
+  .jsj-safety,
+  .jsj-cta {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .jsj-now-grid,
+  .finger-grid,
+  .protocol-grid,
+  .time-scale {
+    grid-template-columns: 1fr;
+  }
+
+  .jsj-hero h1 {
+    font-size: clamp(3.5rem,17vw,6rem);
+  }
+
+  .finger-card,
+  .jsj-now-card {
+    min-height: 170px;
+  }
+}

@@ -1,5 +1,1168 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BLINKITA BODY — BLINKITA</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/portal.css"><link rel="stylesheet" href="../css/body.css"></head><body class="page-body"><header class="site-header"><a class="brand" href="index.html">BLINKITA<span>living portal</span></a><button class="nav-toggle" aria-label="Menu">â°</button><nav id="mainNav"></nav><div class="language-switch"><a href="../sl/body.html">SL</a><span>·</span><a href="../en/body.html" class="active">EN</a></div></header><main class="portal-page"><section class="portal-hero"><div><div class="eyebrow">Body · Ritual · Touch · Movement</div><h1>BLINKITA BODY</h1><p>The body is the first space in which memory happens.</p></div><div class="page-tzolkin"><div class="tzolkin-card" data-tzolkin><span class="tz-label">TZOLK’IN · TRADITIONAL COUNT</span></div></div></section><section class="content-grid"><article class="content-card"><h2>01 · The body as a map</h2><p>This space is ready for future BLINKITA content. Each module can later have its own page, logic and materials.</p></article><article class="content-card"><h2>02 · Touch and presence</h2><p>This space is ready for future BLINKITA content. Each module can later have its own page, logic and materials.</p></article><article class="content-card"><h2>03 · Maya abdominal approaches</h2><p>This space is ready for future BLINKITA content. Each module can later have its own page, logic and materials.</p></article></section><section class="section"><div class="eyebrow">THE NEXT LAYER</div><h2>This is only the beginning.</h2><p>The structure is intentionally separated: shared navigation stays in one place, Tzolk’in has its own JavaScript file, and each portal has its own CSS. This allows BLINKITA to keep growing without everything being packed back into the index.</p></section></main><footer>BLINKITA · www.blinkita.si</footer><script src="../js/navigation.js"></script><script src="../js/main.js"></script><script src="../js/tzolkin.js"></script></body></html>
+<!doctype html>
+<html lang="sl">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>BLINKITA BODY — Telo kot prostor spomina</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/portal.css">
+<link rel="stylesheet" href="../css/body.css">
+
+<style>
+
+/* =========================================================
+   BLINKITA BODY · PREMIUM LAYER
+========================================================= */
+
+.body-premium {
+  --body-gold: #c8a96b;
+  --body-cream: #f5f0e7;
+  --body-dark: #171815;
+  --body-muted: #77756d;
+}
+
+/* HERO */
+
+.body-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.body-hero-copy {
+  max-width: 760px;
+}
+
+.body-hero h1 {
+  max-width: 850px;
+}
+
+.hero-lead {
+  font-size: 1.18rem;
+  line-height: 1.8;
+  max-width: 720px;
+}
+
+/* PHILOSOPHY */
+
+.body-philosophy {
+  padding: 110px 6vw;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(200,169,107,.12), transparent 35%),
+    linear-gradient(135deg, #f5f0e7, #ebe5d8);
+}
+
+.body-philosophy h2 {
+  max-width: 900px;
+  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  line-height: 1.05;
+  margin: 18px 0 55px;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px;
+  max-width: 1100px;
+}
+
+.philosophy-grid p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.small-note {
+  font-size: .82rem !important;
+  color: var(--body-muted);
+}
+
+/* PROGRAMS */
+
+.body-programs {
+  padding: 120px 6vw;
+  background: #151714;
+  color: #f5f0e7;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 75px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1;
+  margin: 15px 0 0;
+}
+
+.section-heading > p {
+  line-height: 1.8;
+  opacity: .72;
+}
+
+.body-program {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 45px;
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 55px;
+  border: 1px solid rgba(200,169,107,.28);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.055),
+    rgba(255,255,255,.015)
+  );
+  transition: transform .35s ease, border-color .35s ease;
+}
+
+.body-program:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200,169,107,.7);
+}
+
+.program-number {
+  font-size: 3.8rem;
+  font-weight: 300;
+  color: var(--body-gold);
+  line-height: 1;
+}
+
+.program-copy {
+  max-width: 850px;
+}
+
+.program-copy h3 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin: 10px 0 12px;
+  font-weight: 500;
+}
+
+.program-copy h4 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #d7c69f;
+  margin-bottom: 25px;
+}
+
+.program-copy p {
+  line-height: 1.8;
+  opacity: .8;
+  max-width: 780px;
+}
+
+.program-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 28px 0;
+}
+
+.program-meta span {
+  border: 1px solid rgba(200,169,107,.38);
+  padding: 7px 12px;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #d7c69f;
+}
+
+.body-cta {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 13px 22px;
+  border: 1px solid var(--body-gold);
+  color: var(--body-gold);
+  text-decoration: none;
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+
+.body-cta:hover {
+  background: var(--body-gold);
+  color: #171815;
+}
+
+/* LIBRARY */
+
+.body-library {
+  padding: 120px 6vw;
+  background: #eee8dc;
+  color: #20211d;
+}
+
+.library-heading {
+  max-width: 850px;
+  margin-bottom: 55px;
+}
+
+.library-heading h2 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1;
+  margin: 15px 0 20px;
+}
+
+.library-heading p {
+  max-width: 700px;
+  line-height: 1.8;
+  color: #66645d;
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.library-card {
+  min-height: 230px;
+  padding: 32px;
+  border: 1px solid rgba(32,33,29,.13);
+  background: rgba(255,255,255,.42);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.library-card small {
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #9b7d3e;
+}
+
+.library-card h3 {
+  font-size: 1.45rem;
+  margin: 20px 0 10px;
+}
+
+.library-card p {
+  line-height: 1.65;
+  color: #68665e;
+}
+
+.library-card .coming {
+  font-size: .68rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #9a978e;
+}
+
+/* RESERVATION */
+
+.body-reservation {
+  padding: 110px 6vw;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(200,169,107,.16), transparent 30%),
+    #171815;
+  color: #f5f0e7;
+  text-align: center;
+}
+
+.body-reservation-inner {
+  max-width: 800px;
+  margin: auto;
+}
+
+.body-reservation h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  margin: 18px 0;
+}
+
+.body-reservation p {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  line-height: 1.8;
+  opacity: .75;
+}
+
+.reservation-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.reservation-actions a {
+  display: inline-block;
+  padding: 14px 24px;
+  text-decoration: none;
+  border: 1px solid var(--body-gold);
+  color: var(--body-gold);
+  letter-spacing: .12em;
+  font-size: .72rem;
+  text-transform: uppercase;
+}
+
+.reservation-actions a.primary {
+  background: var(--body-gold);
+  color: #171815;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .philosophy-grid,
+  .section-heading,
+  .library-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .body-program {
+    grid-template-columns: 1fr;
+    padding: 35px 25px;
+    gap: 15px;
+  }
+
+  .program-number {
+    font-size: 2.8rem;
+  }
+
+  .body-philosophy,
+  .body-programs,
+  .body-library,
+  .body-reservation {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+}
+
+</style>
+
+</head>
 
 
+<body class="page-body">
+
+<header class="site-header">
+
+  <a class="brand" href="index.html">
+    BLINKITA
+    <span>living portal</span>
+  </a>
+
+  <button class="nav-toggle" aria-label="Meni">&#9776;</button>
+
+  <nav id="mainNav"></nav>
+
+  <div class="language-switch">
+    <a href="../sl/body.html" class="active">SL</a>
+    <span>·</span>
+    <a href="../en/body.html">EN</a>
+  </div>
+
+</header>
 
 
+<main class="portal-page body-premium">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="portal-hero body-hero">
+
+    <div class="body-hero-copy">
+
+    <div class="eyebrow">
+      BODY · RITUAL · TOUCH · MOVEMENT
+    </div>
+
+    <h1>
+      BLINKITA<br>
+      BODY
+    </h1>
+
+    <p class="hero-lead">
+      The body is the first space in which memory takes place.
+    </p>
+
+  </div>
+
+  <div class="page-tzolkin">
+    <div class="tzolkin-card" data-tzolkin>
+      <span class="tz-label">TZOLK’IN · TRADITIONAL COUNT</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BODY PHILOSOPHY
+========================================================= -->
+
+<section class="body-philosophy">
+
+  <div class="eyebrow">
+    THE BODY REMEMBERS
+  </div>
+
+  <h2>
+    Vsaka celica je del tvoje zgodbe.
+    <br>
+    <em>Vsaka sprememba se začne nekje.</em>
+  </h2>
+
+  <div class="philosophy-grid">
+
+    <div>
+
+      <p>
+        V metafizičnem jeziku BLINKITA telo razumemo kot
+        skupek informacij, izkušenj in spominov, skozi katere
+        se izraža naša trenutna identiteta.
+      </p>
+
+      <p>
+        Telo ni samo nekaj, kar nosimo s seboj.
+        Je prostor, skozi katerega doživljamo svet,
+        sebe, odnose, gibanje, užitek, meje in spremembe.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <p>
+        Ko se spremeni naš notranji odnos do sebe, se začne
+        spreminjati tudi način, kako svoje telo doživljamo,
+        uporabljamo in naseljujemo.
+      </p>
+
+      <p>
+        Zato BLINKITA BODY ne govori samo o telesu.
+        Govori o možnosti, da skozi telo ustvarimo nov odnos
+        do sebe — in s tem odpremo prostor za novo identiteto.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BLINKITA BODY · SIX PATHS · TOP
+========================================================= -->
+
+<section class="body-paths-top">
+
+  <div class="body-paths-top-inner">
+
+    <div class="section-heading">
+
+      <div>
+        <div class="eyebrow">
+          BLINKITA BODY · SIX PATHS
+        </div>
+
+        <h2>
+          Šest načinov,
+          <br>
+          <em>kako se vrneš v telo.</em>
+        </h2>
+      </div>
+
+      <p>
+        Šest različnih vstopnih točk v BLINKITA BODY.
+        Vsaka odpira drugačen odnos do telesa,
+        energije, zavesti in vsakodnevne prakse.
+      </p>
+
+    </div>
+
+    <div class="body-paths-top-grid">
+
+      <article class="body-path-card">
+        <div class="body-path-number">01</div>
+        <div>
+          <small>BLINKITA BODY</small>
+          <h3>Magic of Slimness</h3>
+          <p>
+            Odnos do telesa, zavest, notranji vzorci
+            in nova telesna identiteta.
+          </p>
+        </div>
+      </article>
+
+      <article class="body-path-card">
+        <div class="body-path-number">02</div>
+        <div>
+          <small>TOUCH · ABDOMEN · MEMORY</small>
+          <h3>Maya Abdominal Massage</h3>
+          <p>
+            Trebuh, dotik, središče telesa in ponovna
+            telesna prisotnost.
+          </p>
+        </div>
+      </article>
+
+      <article class="body-path-card">
+        <div class="body-path-number">03</div>
+        <div>
+          <small>ENERGY · TOUCH · BALANCE</small>
+          <h3>Jin Shin Jyutsu</h3>
+          <p>
+            Nežen dotik, energija in prostor za ponovno
+            vzpostavljanje ravnovesja.
+          </p>
+        </div>
+      </article>
+
+      <article class="body-path-card">
+        <div class="body-path-number">04</div>
+        <div>
+          <small>BLINKITA BODY · ONLINE SESSION</small>
+          <h3>Fountain of Youth</h3>
+          <p>
+            Raziskovanje vitalnosti, obnove in odnosa
+            do staranja.
+          </p>
+        </div>
+      </article>
+
+      <article class="body-path-card">
+        <div class="body-path-number">05</div>
+        <div>
+          <small>AQUA LEMU · REIKI</small>
+          <h3>Aqua Lemu Reiki</h3>
+          <p>
+            Umiritev, pretok in subtilna ponovna povezava
+            telesa in energije.
+          </p>
+        </div>
+      </article>
+
+      <article class="body-path-card">
+        <div class="body-path-number">06</div>
+        <div>
+          <small>BLINKITA BODY · 260 DAYS</small>
+          <h3>260 Days of Rejuvenation</h3>
+          <p>
+            Daljša pot skozi telo, vsakodnevne prakse,
+            zavest in osebni ritem.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     BODY INTRO
+========================================================= -->
+
+<section class="body-intro">
+
+  <div class="body-intro-inner">
+
+    <div class="eyebrow">
+      BLINKITA BODY · TELO · SPOMIN · TRANSFORMACIJA
+    </div>
+
+    <h2>
+      Tvoje telo ni ovira.
+      <br>
+      <em>Je prostor spomina.</em>
+    </h2>
+
+    <div class="body-intro-text">
+
+      <p>
+        Telo je prvi prostor, v katerem se življenje dogaja.
+        V njem se srečujejo občutek, izkušnja, navade, gibanje,
+        dotik in način, kako doživljamo sami sebe.
+      </p>
+
+      <p>
+        BLINKITA BODY raziskuje telo kot živ sistem informacij
+        in kot prostor, ki nas lahko podpre pri spremembi identitete —
+        ne tako, da bi se morali boriti proti sebi,
+        temveč tako, da se začnemo s svojim telesom ponovno povezovati.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     METAPHYSICAL CYCLE
+========================================================= -->
+
+<section class="section">
+
+  <div class="eyebrow">
+    BLINKITA · METAFIZIČNI POGLED
+  </div>
+
+  <h2>
+    Obnova telesa kot
+    <em>simbol preobrazbe.</em>
+  </h2>
+
+  <p>
+    V nekaterih metafizičnih tradicijah se uporablja podoba,
+    da človek skozi približno sedemletne cikle postopoma
+    prenavlja svoj telesni zapis. BLINKITA to uporablja kot
+    simbolni zemljevid spremembe: kar danes živiš,
+    ni nujno tisto, kar boš živela jutri.
+  </p>
+
+  <p>
+    In the BLINKITA language, this also includes the symbolic concept of
+    <strong>Homo lumionus</strong> in njegova krajša,
+    osemmesečna metafizična obnova. To ni znanstvena trditev
+    o dejanski hitrosti menjave človeških celic, temveč
+    zavestno uporabljen metafizični jezik za raziskovanje
+    identitete, obnove in notranje transformacije.
+  </p>
+
+</section>
+
+
+<!-- =========================================================
+     SIX BODY EXPERIENCES
+========================================================= -->
+
+<section class="body-programs">
+
+  <div class="section-heading">
+
+    <div>
+
+      <div class="eyebrow">
+        BLINKITA BODY · SIX PATHS
+      </div>
+
+      <h2>
+        Six ways,
+        <br>
+        <em>to return to the body.</em>
+      </h2>
+
+    </div>
+
+    <p>
+      Each approach opens a different door.
+      Choose the one that currently speaks
+      most clearly to your body and your way of life.
+    </p>
+
+  </div>
+
+
+  <!-- 01 -->
+
+  <article class="body-program body-program-01">
+
+    <div class="program-number">01</div>
+
+    <div class="program-copy">
+
+      <div class="eyebrow">
+        BLINKITA BODY · PROGRAM
+      </div>
+
+      <h3>Magic of Slimness</h3>
+
+      <h4>
+        Transformation of the body begins
+        where the relationship with yourself changes.
+      </h4>
+
+      <p>
+        Magic of Slimness is a holistic program for working
+        with consciousness, inner patterns and your relationship
+        with the body.
+      </p>
+
+      <p>
+        The program includes an application with five hypnosis
+        sessions, five different 21-day journeys and the book
+        <strong>Consciousness Training</strong>.
+      </p>
+
+      <div class="program-meta">
+        <span>5 hypnosis sessions</span>
+        <span>5 × 21 days</span>
+        <span>e-book</span>
+        <span>online</span>
+      </div>
+
+      <a class="body-cta" href="#body-library">
+        EXPLORE THE PROGRAM
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <!-- 02 -->
+
+  <article class="body-program body-program-02">
+
+    <div class="program-number">02</div>
+
+    <div class="program-copy">
+
+      <div class="eyebrow">
+        TOUCH · ABDOMEN · MEMORY
+      </div>
+
+      <h3>Maya Abdominal Massage</h3>
+
+      <h4>
+        Returning your attention to the center of the body.
+      </h4>
+
+      <p>
+        Maya Abdominal Massage explores the relationship
+        with the abdomen, touch and embodied presence.
+      </p>
+
+      <p>
+        You will learn the foundations of abdominal self-massage,
+        which can then be consciously incorporated into
+        your everyday practice.
+      </p>
+
+      <div class="program-meta">
+        <span>online</span>
+        <span>in person</span>
+        <span>Belize</span>
+        <span>self-massage</span>
+      </div>
+
+      <a class="body-cta" href="#reservation">
+        BOOK A SESSION
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <!-- 03 -->
+
+  <article class="body-program body-program-03">
+
+    <div class="program-number">03</div>
+
+    <div class="program-copy">
+
+      <div class="eyebrow">
+        ENERGY · TOUCH · BALANCE
+      </div>
+
+      <h3>Jin Shin Jyutsu</h3>
+
+      <h4>
+        When you pause, you can begin to listen again.
+      </h4>
+
+      <p>
+        Jin Shin Jyutsu is a gentle practice that uses
+        touch and awareness as a way of exploring
+        inner balance.
+      </p>
+
+      <p>
+        The session is an invitation to consciously create
+        time for yourself and explore the body through
+        simple, subtle touch.
+      </p>
+
+      <div class="program-meta">
+        <span>online</span>
+        <span>in person</span>
+        <span>Belize</span>
+        <span>individual</span>
+      </div>
+
+      <a class="body-cta" href="#reservation">
+        BOOK A SESSION
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <!-- 04 -->
+
+  <article class="body-program body-program-04">
+
+    <div class="program-number">04</div>
+
+    <div class="program-copy">
+
+      <div class="eyebrow">
+        BLINKITA BODY · ONLINE SESSION
+      </div>
+
+      <h3>Fountain of Youth</h3>
+
+      <h4>
+        A meeting with the energy of renewal.
+      </h4>
+
+      <p>
+        Fountain of Youth is an individual online session
+        exploring your relationship with ageing,
+        vitality, the body and inner energy.
+      </p>
+
+      <p>
+        Through a guided experience, we create space
+        for a different perspective on your body
+        and the process of personal renewal.
+      </p>
+
+      <div class="program-meta">
+        <span>online</span>
+        <span>individual</span>
+        <span>session</span>
+      </div>
+
+      <a class="body-cta" href="#reservation">
+        BOOK A SESSION
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <!-- 05 -->
+
+  <article class="body-program body-program-05">
+
+    <div class="program-number">05</div>
+
+    <div class="program-copy">
+
+      <div class="eyebrow">
+        AQUA LEMU · REIKI
+      </div>
+
+      <h3>Aqua Lemu Reiki</h3>
+
+      <h4>
+        A space for calming, flow and reconnection.
+      </h4>
+
+      <p>
+        Aqua Lemu Reiki is an individual energy practice
+        created for relaxation, inner presence and exploration
+        of the subtle relationship between body and energy.
+      </p>
+
+      <p>
+        The session is available online or in person in Belize.
+      </p>
+
+      <div class="program-meta">
+        <span>online</span>
+        <span>in person</span>
+        <span>Belize</span>
+        <span>individual</span>
+      </div>
+
+      <a class="body-cta" href="#reservation">
+        BOOK A SESSION
+      </a>
+
+    </div>
+
+  </article>
+
+
+  <!-- 06 -->
+
+  <article class="body-program body-program-06">
+
+    <div class="program-number">06</div>
+
+    <div class="program-copy">
+
+      <div class="eyebrow">
+        BLINKITA BODY · 260 DAYS
+      </div>
+
+      <h3>260 Days of Rejuvenation</h3>
+
+      <h4>
+        Your rhythm. Your body. Your 260 days.
+      </h4>
+
+      <p>
+        260 Days of Rejuvenation is an online program
+        that each participant follows at their own pace.
+      </p>
+
+      <p>
+        The program is designed as a longer journey through
+        the body, consciousness, everyday practices and your
+        relationship with your own energy. There is no need
+        to rush. What matters is beginning your journey
+        and allowing it to become your own.
+      </p>
+
+      <div class="program-meta">
+        <span>260 days</span>
+        <span>online</span>
+        <span>your own pace</span>
+        <span>program</span>
+      </div>
+
+      <a class="body-cta" href="#reservation">
+        ORDER THE PROGRAM
+      </a>
+
+    </div>
+
+  </article>
+
+</section>
+
+
+<!-- =========================================================
+     BODY LIBRARY
+========================================================= -->
+
+<section class="body-library" id="body-library">
+
+  <div class="library-heading">
+
+    <div class="eyebrow">
+      BLINKITA BODY · LIBRARY
+    </div>
+
+    <h2>
+      In to je šele
+      <em>začetek.</em>
+    </h2>
+
+    <p>
+      BLINKITA BODY bo postopoma postajal tudi prostor za
+      digitalne produkte: e-knjige, hipnoze, aktivacije,
+      vodene prakse, programe in druge materiale, ki jih
+      lahko raziskuješ v svojem ritmu.
+    </p>
+
+  </div>
+
+
+  <div class="library-grid">
+
+    <article class="library-card">
+
+      <div>
+
+        <small>E-BOOKS</small>
+
+        <h3>Books for the Body</h3>
+
+        <p>
+          Vodniki, rituali, telesne prakse in novi pogledi
+          na odnos do telesa.
+        </p>
+
+      </div>
+
+      <span class="coming">
+        Library coming soon
+      </span>
+
+    </article>
+
+
+    <article class="library-card">
+
+      <div>
+
+        <small>HYPNOSIS</small>
+
+        <h3>Hypnosis</h3>
+
+        <p>
+          Vodene izkušnje za delo z notranjimi vzorci,
+          identiteto in odnosom do telesa.
+        </p>
+
+      </div>
+
+      <span class="coming">
+        Coming soon in the SHOP
+      </span>
+
+    </article>
+
+
+    <article class="library-card">
+
+      <div>
+
+        <small>ACTIVATIONS</small>
+
+        <h3>Activations</h3>
+
+        <p>
+          Digitalne prakse, ki jih lahko vključiš
+          v svoj vsakodnevni ritual.
+        </p>
+
+      </div>
+
+      <span class="coming">
+        Coming soon in the SHOP
+      </span>
+
+    </article>
+
+
+    <article class="library-card">
+
+      <div>
+
+        <small>PROGRAMS</small>
+
+        <h3>Online Programs</h3>
+
+        <p>
+          Daljše poti za tiste, ki želijo spremembo
+          raziskovati skozi čas.
+        </p>
+
+      </div>
+
+      <span class="coming">
+        Coming soon in the SHOP
+      </span>
+
+    </article>
+
+
+    <article class="library-card">
+
+      <div>
+
+        <small>BODY · AUDIO</small>
+
+        <h3>Guided Practices</h3>
+
+        <p>
+          Audio vsebine za trenutke, ko želiš
+          upočasniti in se vrniti v telo.
+        </p>
+
+      </div>
+
+      <span class="coming">
+        Coming soon in the SHOP
+      </span>
+
+    </article>
+
+
+    <article class="library-card">
+
+      <div>
+
+        <small>BLINKITA BODY</small>
+
+        <h3>New Chapters</h3>
+
+        <p>
+          Prostor za prihodnje produkte in nove načine,
+          kako raziskovati telo kot prostor spomina.
+        </p>
+
+      </div>
+
+      <span class="coming">
+        BLINKITA is growing
+      </span>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESERVATION
+========================================================= -->
+
+<section class="body-reservation" id="reservation">
+
+  <div class="body-reservation-inner">
+
+    <div class="eyebrow">
+      BLINKITA BODY
+    </div>
+
+    <h2>
+      Začni tam,
+      <br>
+      <em>kjer si danes.</em>
+    </h2>
+
+    <p>
+      Nekatere poti so digitalne. Nekatere so osebne.
+      Nekatere se začnejo z enim samim srečanjem.
+      Izberi način, ki ti trenutno najbolj ustreza.
+    </p>
+
+    <div class="reservation-actions">
+
+      <a class="primary" href="mailto:info@blinkita.si">
+        CONTACT &amp; BOOKING
+      </a>
+
+      <a href="#body-library">
+        EXPLORE DIGITAL
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+  BLINKITA · www.blinkita.si
+</footer>
+
+
+<script src="../js/navigation.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/tzolkin.js"></script>
+
+</body>
+</html>
