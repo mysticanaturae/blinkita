@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    BLINKITA · MUNAY KI
    PREMIUM VISUAL SYSTEM
    ========================================================= */
@@ -777,3 +777,684 @@ body.munay-ki-reservation-open {
     padding: 32px 22px;
   }
 }
+
+/* ============================================================
+   BLINKITA MUNAY KI · LAIKA & ARCHETYPES
+   HIGH-TICKET EDITORIAL LAYER
+============================================================ */
+
+.munay-ki-page .section {
+  position: relative;
+}
+
+/* ------------------------------------------------------------
+   EDITORIAL SECTIONS
+------------------------------------------------------------ */
+
+.munay-ki-page .section + .section {
+  margin-top: 7rem;
+}
+
+.munay-ki-page .section h2 {
+  max-width: 900px;
+}
+
+.munay-ki-page .section h2 em {
+  font-style: italic;
+}
+
+/* ------------------------------------------------------------
+   LAIKA / GREAT SPIRIT
+------------------------------------------------------------ */
+
+.munay-ki-page .section:first-of-type,
+.munay-ki-page .section:nth-of-type(2) {
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.munay-ki-page .section:first-of-type::before,
+.munay-ki-page .section:nth-of-type(2)::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 1px;
+  margin-bottom: 2.5rem;
+  opacity: .45;
+  background: currentColor;
+}
+
+.munay-ki-page .section:nth-of-type(2) {
+  padding: 5rem 0;
+  border-top: 1px solid rgba(0,0,0,.10);
+  border-bottom: 1px solid rgba(0,0,0,.10);
+}
+
+/* ------------------------------------------------------------
+   ARCHETYPES
+------------------------------------------------------------ */
+
+.munay-ki-page .section:nth-of-type(3) {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.munay-ki-page .section:nth-of-type(3) h3 {
+  margin-top: 4rem;
+  margin-bottom: 1.1rem;
+  font-size: .78rem;
+  letter-spacing: .18em;
+  font-weight: 600;
+  opacity: .72;
+}
+
+.munay-ki-page .section:nth-of-type(3) h3:first-of-type {
+  margin-top: 3rem;
+}
+
+.munay-ki-page .section:nth-of-type(3) h3::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  margin-right: 14px;
+  vertical-align: middle;
+  background: currentColor;
+  opacity: .45;
+}
+
+/* ------------------------------------------------------------
+   ARCHETYPE TEXT RHYTHM
+------------------------------------------------------------ */
+
+.munay-ki-page .section:nth-of-type(3) p {
+  max-width: 760px;
+}
+
+.munay-ki-page .section:nth-of-type(3) h3 + p {
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+/* ------------------------------------------------------------
+   HUASCAR / QUETZALCOATL / PACHAKUTI
+------------------------------------------------------------ */
+
+.munay-ki-page .section:nth-of-type(4) {
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5rem clamp(2rem, 5vw, 5rem);
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.20);
+}
+
+.munay-ki-page .section:nth-of-type(4) strong {
+  letter-spacing: .02em;
+}
+
+/* ------------------------------------------------------------
+   FOUR DIRECTIONS
+------------------------------------------------------------ */
+
+.munay-ki-page .section:nth-of-type(5) {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.munay-ki-page .section:nth-of-type(5) h3 {
+  display: inline-block;
+  margin-top: 3.5rem;
+  margin-bottom: .9rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid rgba(0,0,0,.18);
+  font-size: .78rem;
+  letter-spacing: .22em;
+  font-weight: 600;
+}
+
+.munay-ki-page .section:nth-of-type(5) p {
+  max-width: 700px;
+}
+
+/* ------------------------------------------------------------
+   PACHAMAMA
+------------------------------------------------------------ */
+
+.munay-ki-page .section:nth-of-type(6) {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.munay-ki-page .section:nth-of-type(6) .eyebrow {
+  justify-content: center;
+}
+
+.munay-ki-page .section:nth-of-type(6) h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.munay-ki-page .section:nth-of-type(6) p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------------------------------------------------
+   HEART OF THE UNIVERSE · FINAL SECTION
+------------------------------------------------------------ */
+
+.munay-ki-page .section:nth-of-type(7) {
+  position: relative;
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 7rem clamp(2rem, 6vw, 6rem);
+  text-align: center;
+  overflow: hidden;
+}
+
+.munay-ki-page .section:nth-of-type(7)::before {
+  content: "✦";
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  opacity: .45;
+}
+
+.munay-ki-page .section:nth-of-type(7)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0,0,0,.10);
+  pointer-events: none;
+}
+
+.munay-ki-page .section:nth-of-type(7) .eyebrow {
+  justify-content: center;
+}
+
+.munay-ki-page .section:nth-of-type(7) h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.munay-ki-page .section:nth-of-type(7) p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.munay-ki-page .section:nth-of-type(7) p:last-child {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,.12);
+  font-size: 1.12rem;
+  line-height: 1.9;
+}
+
+/* ------------------------------------------------------------
+   MOBILE
+------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+
+  .munay-ki-page .section + .section {
+    margin-top: 4.5rem;
+  }
+
+  .munay-ki-page .section:nth-of-type(2),
+  .munay-ki-page .section:nth-of-type(4),
+  .munay-ki-page .section:nth-of-type(6),
+  .munay-ki-page .section:nth-of-type(7) {
+    padding: 4rem 1.4rem;
+  }
+
+  .munay-ki-page .section:nth-of-type(3) h3,
+  .munay-ki-page .section:nth-of-type(5) h3 {
+    margin-top: 2.8rem;
+  }
+
+  .munay-ki-page .section:nth-of-type(7) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+}
+
+
+
+/* =========================================================
+   BLINKITA MUNAY KI · PREMIUM NEW SECTIONS
+   ========================================================= */
+
+.munayki-page .munayki-laika,
+.munayki-page .munayki-spirit,
+.munayki-page .munayki-archetypes,
+.munayki-page .munayki-transformation,
+.munayki-page .munayki-directions,
+.munayki-page .munayki-pachamama,
+.munayki-page .munayki-invocation {
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(100px, 10vw, 165px);
+    padding-bottom: clamp(100px, 10vw, 165px);
+}
+
+.munayki-page .munayki-laika .eyebrow,
+.munayki-page .munayki-spirit .eyebrow,
+.munayki-page .munayki-archetypes .eyebrow,
+.munayki-page .munayki-transformation .eyebrow,
+.munayki-page .munayki-directions .eyebrow,
+.munayki-page .munayki-pachamama .eyebrow,
+.munayki-page .munayki-invocation .eyebrow {
+    color: #c6a15b;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.munayki-page .munayki-laika h2,
+.munayki-page .munayki-spirit h2,
+.munayki-page .munayki-archetypes h2,
+.munayki-page .munayki-transformation h2,
+.munayki-page .munayki-directions h2,
+.munayki-page .munayki-pachamama h2,
+.munayki-page .munayki-invocation h2 {
+    max-width: 980px;
+    margin-bottom: 35px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -.025em;
+}
+
+.munayki-page .munayki-laika p,
+.munayki-page .munayki-spirit p,
+.munayki-page .munayki-archetypes p,
+.munayki-page .munayki-transformation p,
+.munayki-page .munayki-directions p,
+.munayki-page .munayki-pachamama p,
+.munayki-page .munayki-invocation p {
+    max-width: 760px;
+    line-height: 1.88;
+}
+
+
+/* LAIKA */
+
+.munayki-page .munayki-laika {
+    background:
+        radial-gradient(
+            circle at 78% 22%,
+            rgba(198,161,91,.09),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.96),
+            rgba(246,242,232,.72)
+        );
+    border-top: 1px solid rgba(198,161,91,.18);
+}
+
+.munayki-page .munayki-laika::after {
+    content: "LAIKA";
+    position: absolute;
+    right: -20px;
+    bottom: -55px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(7rem, 18vw, 18rem);
+    line-height: .8;
+    color: rgba(198,161,91,.055);
+    pointer-events: none;
+}
+
+.munayki-page .munayki-laika h2 {
+    font-size: clamp(3rem, 6vw, 6.4rem);
+    line-height: .91;
+}
+
+
+/* GREAT SPIRIT */
+
+.munayki-page .munayki-spirit {
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(198,161,91,.15),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(20,28,55,.025),
+            rgba(20,28,55,.09)
+        );
+    border-top: 1px solid rgba(198,161,91,.12);
+    border-bottom: 1px solid rgba(198,161,91,.12);
+}
+
+.munayki-page .munayki-spirit > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.munayki-page .munayki-spirit h2 {
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    line-height: .84;
+    max-width: 1000px;
+}
+
+.munayki-page .munayki-spirit h2::after {
+    content: "✦";
+    display: block;
+    margin-top: 38px;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: #c6a15b;
+}
+
+
+/* ARCHETYPES */
+
+.munayki-page .munayki-archetypes {
+    background: #fff;
+    border-bottom: 1px solid rgba(198,161,91,.15);
+}
+
+.munayki-page .munayki-archetypes h2 {
+    font-size: clamp(3rem, 6vw, 6.2rem);
+    line-height: .9;
+    max-width: 900px;
+}
+
+.munayki-page .munayki-archetypes p {
+    position: relative;
+    padding: 25px 0 25px 32px;
+    border-left: 1px solid rgba(198,161,91,.45);
+    margin-bottom: 0;
+}
+
+.munayki-page .munayki-archetypes p + p {
+    margin-top: 20px;
+}
+
+.munayki-page .munayki-archetypes strong {
+    color: #a27d39;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.35em;
+}
+
+
+/* TRANSFORMATION */
+
+.munayki-page .munayki-transformation {
+    color: #fff;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(198,161,91,.16),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #111a37,
+            #202d52 55%,
+            #121b38
+        );
+}
+
+.munayki-page .munayki-transformation::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    right: -180px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(198,161,91,.16);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 45px rgba(198,161,91,.025),
+        0 0 0 90px rgba(198,161,91,.018);
+}
+
+.munayki-page .munayki-transformation h2 {
+    font-size: clamp(3.2rem, 6vw, 6.5rem);
+    line-height: .87;
+    color: #fff;
+}
+
+.munayki-page .munayki-transformation p {
+    color: rgba(255,255,255,.84);
+    position: relative;
+    z-index: 2;
+}
+
+.munayki-page .munayki-transformation .eyebrow {
+    color: #d8b873;
+}
+
+
+/* FOUR DIRECTIONS */
+
+.munayki-page .munayki-directions {
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(198,161,91,.085),
+            transparent 42%
+        ),
+        #faf8f2;
+}
+
+.munayki-page .munayki-directions > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.munayki-page .munayki-directions h2 {
+    font-size: clamp(3rem, 6vw, 6.3rem);
+    line-height: .88;
+}
+
+.munayki-page .munayki-directions p {
+    text-align: left;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.munayki-page .munayki-directions::before {
+    content: "✦";
+    position: absolute;
+    left: 50%;
+    top: 48px;
+    transform: translateX(-50%);
+    color: rgba(198,161,91,.5);
+    font-size: 1.2rem;
+}
+
+
+/* PACHAMAMA */
+
+.munayki-page .munayki-pachamama {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(44,75,57,.11),
+            rgba(198,161,91,.08)
+        );
+    border-top: 1px solid rgba(72,92,65,.14);
+    border-bottom: 1px solid rgba(198,161,91,.18);
+}
+
+.munayki-page .munayki-pachamama h2 {
+    font-size: clamp(3.4rem, 7vw, 7rem);
+    line-height: .86;
+}
+
+.munayki-page .munayki-pachamama h2::after {
+    content: "";
+    display: block;
+    width: 75px;
+    margin-top: 38px;
+    border-top: 1px solid rgba(162,125,57,.7);
+}
+
+.munayki-page .munayki-pachamama p {
+    font-size: 1.08rem;
+}
+
+.munayki-page .munayki-pachamama::after {
+    content: "PACHAMAMA";
+    position: absolute;
+    right: -30px;
+    bottom: -45px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(6rem, 15vw, 15rem);
+    line-height: .8;
+    color: rgba(44,75,57,.045);
+    pointer-events: none;
+}
+
+
+/* INVOCATION */
+
+.munayki-page .munayki-invocation {
+    min-height: 72vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(198,161,91,.19),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #111a37,
+            #0b1228
+        );
+}
+
+.munayki-page .munayki-invocation > * {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.munayki-page .munayki-invocation h2 {
+    max-width: 1050px;
+    font-size: clamp(3.5rem, 8vw, 8.5rem);
+    line-height: .82;
+    letter-spacing: -.035em;
+    color: #fff;
+}
+
+.munayki-page .munayki-invocation h2::after {
+    content: "✦";
+    display: block;
+    margin-top: 45px;
+    color: #d8b873;
+    font-size: 1rem;
+}
+
+.munayki-page .munayki-invocation p {
+    max-width: 690px;
+    margin-top: 25px;
+    color: rgba(255,255,255,.84);
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+.munayki-page .munayki-invocation strong {
+    color: #d8b873;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .munayki-page .munayki-laika,
+    .munayki-page .munayki-spirit,
+    .munayki-page .munayki-archetypes,
+    .munayki-page .munayki-transformation,
+    .munayki-page .munayki-directions,
+    .munayki-page .munayki-pachamama,
+    .munayki-page .munayki-invocation {
+        padding-left: 7vw;
+        padding-right: 7vw;
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
+    .munayki-page .munayki-spirit,
+    .munayki-page .munayki-invocation {
+        min-height: auto;
+    }
+
+    .munayki-page .munayki-archetypes p {
+        padding-left: 20px;
+    }
+
+    .munayki-page .munayki-transformation::before {
+        width: 260px;
+        height: 260px;
+        right: -150px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .munayki-page .munayki-laika h2,
+    .munayki-page .munayki-archetypes h2 {
+        font-size: 2.75rem;
+    }
+
+    .munayki-page .munayki-spirit h2 {
+        font-size: 3.5rem;
+    }
+
+    .munayki-page .munayki-transformation h2,
+    .munayki-page .munayki-directions h2,
+    .munayki-page .munayki-pachamama h2 {
+        font-size: 3rem;
+    }
+
+    .munayki-page .munayki-invocation h2 {
+        font-size: 3.45rem;
+    }
+
+    .munayki-page .munayki-laika p,
+    .munayki-page .munayki-spirit p,
+    .munayki-page .munayki-archetypes p,
+    .munayki-page .munayki-transformation p,
+    .munayki-page .munayki-directions p,
+    .munayki-page .munayki-pachamama p,
+    .munayki-page .munayki-invocation p {
+        font-size: .96rem;
+        line-height: 1.78;
+    }
+}
+
