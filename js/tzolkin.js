@@ -119,7 +119,7 @@
             kiche: "Q'anil",
             yucatec: "Lamat",
             international: "Lamat",
-            meaningSl: "Zvezda",
+            meaningSl: "Zajec",
             meaningEn: "Star",
             keywordsSl: ["zvezda", "seme", "zorenje", "cikel"],
             keywordsEn: ["star", "seed", "ripening", "cycle"]
@@ -861,6 +861,7 @@
     );
 
 })();
+
 
 
 
