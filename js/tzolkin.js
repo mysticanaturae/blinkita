@@ -120,7 +120,7 @@
             yucatec: "Lamat",
             international: "Lamat",
             meaningSl: "Zajec",
-            meaningEn: "Star",
+            meaningEn: "Rabbit",
             keywordsSl: ["zvezda", "seme", "zorenje", "cikel"],
             keywordsEn: ["star", "seed", "ripening", "cycle"]
         },
