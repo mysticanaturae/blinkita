@@ -1232,3 +1232,26 @@ footer {
     }
 }
 
+
+ /* BLINKITA — ROOT LANGUAGE ENTRY */
+body.language-entry {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+body.language-entry main {
+  width: min(92vw, 760px);
+  margin: 0 auto;
+}
+
+body.language-entry .language-choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
