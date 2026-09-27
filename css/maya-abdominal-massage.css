@@ -1,0 +1,1040 @@
+﻿/* ============================================================
+   BLINKITA BODY
+   MAYA ABDOMINAL MASSAGE
+   PREMIUM / PASTEL / HIGH-TICKET
+============================================================ */
+
+:root {
+  --maya-cream: #f7f1e8;
+  --maya-paper: #fffdf9;
+  --maya-sand: #e8dccb;
+  --maya-blush: #e8cec7;
+  --maya-blush-light: #f3e3dc;
+  --maya-green: #53655c;
+  --maya-deep: #273d37;
+  --maya-brown: #51443c;
+  --maya-gold: #b18a54;
+  --maya-gold-light: #d4bd94;
+  --maya-line: rgba(83,101,92,.18);
+}
+
+
+/* ============================================================
+   BASE
+============================================================ */
+
+.maya-page {
+  background: var(--maya-cream);
+  color: var(--maya-brown);
+}
+
+.maya-page main {
+  overflow: hidden;
+}
+
+.maya-page button,
+.maya-page input,
+.maya-page textarea,
+.maya-page select {
+  font-family: "DM Sans", sans-serif;
+}
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.maya-hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background:
+    radial-gradient(
+      circle at 82% 24%,
+      rgba(232,206,199,.72),
+      transparent 29%
+    ),
+    linear-gradient(
+      135deg,
+      #faf5ed 0%,
+      #e9ddcc 100%
+    );
+}
+
+.maya-hero::after {
+  content: "";
+  position: absolute;
+  right: -13vw;
+  top: 10%;
+  width: 46vw;
+  height: 46vw;
+  max-width: 650px;
+  max-height: 650px;
+  border-radius: 50%;
+  border: 1px solid rgba(177,138,84,.25);
+  box-shadow:
+    inset 0 0 0 28px rgba(255,255,255,.16),
+    inset 0 0 0 29px rgba(177,138,84,.10);
+  pointer-events: none;
+}
+
+.maya-hero-inner {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 125px 0 105px;
+  position: relative;
+  z-index: 2;
+}
+
+.maya-eyebrow,
+.maya-lineage-label,
+.maya-way-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.maya-eyebrow {
+  color: var(--maya-green);
+}
+
+.maya-hero h1 {
+  margin: 28px 0 28px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(74px, 10.5vw, 154px);
+  line-height: .76;
+  font-weight: 500;
+  letter-spacing: -.055em;
+  color: var(--maya-deep);
+}
+
+.maya-hero-line {
+  max-width: 650px;
+  margin: 35px 0 45px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(27px, 3.2vw, 45px);
+  line-height: 1.02;
+  color: var(--maya-green);
+}
+
+.maya-hero-actions,
+.maya-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.maya-button {
+  appearance: none;
+  border: 1px solid var(--maya-green);
+  padding: 16px 22px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.maya-button:hover {
+  transform: translateY(-1px);
+}
+
+.maya-button-primary {
+  background: var(--maya-green);
+  color: white;
+}
+
+.maya-button-primary:hover {
+  background: var(--maya-deep);
+  border-color: var(--maya-deep);
+}
+
+.maya-button-secondary {
+  background: rgba(255,255,255,.35);
+  color: var(--maya-green);
+}
+
+.maya-button-secondary:hover {
+  background: var(--maya-paper);
+}
+
+
+/* ============================================================
+   SECTIONS
+============================================================ */
+
+.maya-section {
+  padding: 125px 0;
+}
+
+.maya-narrow,
+.maya-section-heading,
+.maya-split,
+.maya-way-grid,
+.maya-safety-grid,
+.maya-learn-grid,
+.maya-lineage-inner,
+.maya-steam-inner,
+.maya-cta-inner {
+  width: min(1120px, calc(100% - 48px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.maya-section-number {
+  margin-bottom: 23px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: .22em;
+  color: var(--maya-gold);
+}
+
+.maya-section h2 {
+  margin: 0 0 40px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(54px, 7vw, 96px);
+  line-height: .84;
+  font-weight: 500;
+  letter-spacing: -.04em;
+  color: var(--maya-deep);
+}
+
+.maya-narrow {
+  max-width: 850px;
+  margin-left: max(24px, calc((100vw - 1120px)/2));
+}
+
+.maya-narrow p,
+.maya-split p,
+.maya-way-card p,
+.maya-safety-card p,
+.maya-lineage-copy p,
+.maya-steam-inner p,
+.maya-learn-grid p,
+.maya-cta p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.88;
+}
+
+.maya-lead {
+  font-size: 21px !important;
+  line-height: 1.58 !important;
+}
+
+.maya-emphasis {
+  margin-top: 38px;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 31px !important;
+  line-height: 1.08 !important;
+  color: var(--maya-deep);
+}
+
+.maya-intro {
+  background: var(--maya-paper);
+}
+
+
+/* ============================================================
+   THREE WAYS
+============================================================ */
+
+.maya-ways {
+  background: var(--maya-sand);
+}
+
+.maya-section-heading {
+  margin-bottom: 58px;
+}
+
+.maya-section-heading > p {
+  max-width: 720px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.maya-way-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.maya-way-card {
+  padding: 45px 38px 42px;
+  background: rgba(255,253,249,.68);
+  border: 1px solid var(--maya-line);
+  position: relative;
+}
+
+.maya-way-card-featured {
+  background: var(--maya-paper);
+  border-color: rgba(177,138,84,.42);
+  box-shadow: 0 28px 75px rgba(77,64,56,.10);
+}
+
+.maya-way-card-training {
+  background: rgba(83,101,92,.95);
+  color: #f8f1e8;
+}
+
+.maya-way-card-training h3,
+.maya-way-card-training p {
+  color: #f8f1e8;
+}
+
+.maya-way-number {
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: .18em;
+  color: var(--maya-gold);
+  margin-bottom: 25px;
+}
+
+.maya-way-label {
+  color: var(--maya-green);
+}
+
+.maya-way-card-training .maya-way-label {
+  color: var(--maya-gold-light);
+}
+
+.maya-way-card h3 {
+  margin: 20px 0 28px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 47px;
+  line-height: .86;
+  font-weight: 500;
+  color: var(--maya-deep);
+}
+
+.maya-way-card p {
+  font-size: 14px;
+}
+
+.maya-way-card strong {
+  color: var(--maya-deep);
+}
+
+.maya-way-card-training strong {
+  color: #fff;
+}
+
+.maya-highlight {
+  margin: 30px 0;
+  padding: 18px 0;
+  border-top: 1px solid rgba(177,138,84,.45);
+  border-bottom: 1px solid rgba(177,138,84,.45);
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  line-height: 1.8;
+  color: var(--maya-deep);
+}
+
+.maya-text-button {
+  margin-top: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--maya-green);
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .15em;
+  cursor: pointer;
+}
+
+.maya-way-card-training .maya-text-button {
+  color: #fff5e8;
+}
+
+
+/* ============================================================
+   SELF MASSAGE
+============================================================ */
+
+.maya-selfmassage {
+  background: var(--maya-paper);
+}
+
+.maya-split {
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: 90px;
+  align-items: start;
+}
+
+
+/* ============================================================
+   SAFETY
+============================================================ */
+
+.maya-safety {
+  background: #eee4d7;
+}
+
+.maya-safety-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.maya-safety-card {
+  padding: 48px;
+  background: rgba(255,253,249,.78);
+}
+
+.maya-safety-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  border-radius: 50%;
+  background: rgba(83,101,92,.12);
+  color: var(--maya-green);
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+}
+
+.maya-safety-icon-no {
+  background: rgba(177,138,84,.15);
+  color: #82643d;
+}
+
+.maya-safety-card h3,
+.maya-learn-grid h3 {
+  margin: 0 0 25px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .15em;
+  color: var(--maya-deep);
+}
+
+.maya-safety-strong {
+  margin-top: 30px;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 29px !important;
+  line-height: 1.03 !important;
+  color: var(--maya-deep);
+}
+
+.maya-disclaimer {
+  width: min(900px, calc(100% - 48px));
+  margin: 45px auto 0;
+  padding: 20px 23px;
+  border-left: 2px solid var(--maya-gold);
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  line-height: 1.75;
+  color: #665850;
+}
+
+
+/* ============================================================
+   LINEAGE
+============================================================ */
+
+.maya-lineage {
+  background:
+    linear-gradient(
+      rgba(39,61,55,.96),
+      rgba(39,61,55,.96)
+    ),
+    var(--maya-green);
+  color: #f7f1e8;
+}
+
+.maya-lineage-inner {
+  max-width: 900px;
+}
+
+.maya-lineage .maya-section-number {
+  color: var(--maya-gold-light);
+}
+
+.maya-lineage-label {
+  color: var(--maya-gold-light);
+}
+
+.maya-lineage h2 {
+  color: #fffaf2;
+  font-size: clamp(75px, 10vw, 145px);
+}
+
+.maya-lineage-copy {
+  max-width: 790px;
+}
+
+.maya-lineage-copy p {
+  color: rgba(247,241,232,.88);
+}
+
+.maya-lineage-copy strong {
+  color: #fffaf2;
+}
+
+.maya-lineage-statement {
+  margin: 35px 0;
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: clamp(50px, 7vw, 85px) !important;
+  line-height: .82 !important;
+  color: #fffaf2 !important;
+}
+
+.maya-lineage-final {
+  margin-top: 50px;
+  padding-top: 35px;
+  border-top: 1px solid rgba(212,189,148,.4);
+  font-family: "Cormorant Garamond", serif !important;
+  font-size: 31px !important;
+  line-height: 1.08 !important;
+  color: #fffaf2 !important;
+}
+
+
+/* ============================================================
+   PHILOSOPHY
+============================================================ */
+
+.maya-philosophy {
+  background: var(--maya-blush);
+}
+
+
+/* ============================================================
+   STEAM
+============================================================ */
+
+.maya-steam {
+  background: var(--maya-paper);
+}
+
+.maya-steam-inner {
+  max-width: 850px;
+}
+
+.maya-steam-inner h2 {
+  font-size: clamp(62px, 8vw, 108px);
+}
+
+.maya-steam-note {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(177,138,84,.42);
+  border-bottom: 1px solid rgba(177,138,84,.42);
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .15em;
+  color: var(--maya-green);
+}
+
+
+/* ============================================================
+   LEARN
+============================================================ */
+
+.maya-learn {
+  background: var(--maya-sand);
+}
+
+.maya-learn-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(83,101,92,.16);
+}
+
+.maya-learn-grid article {
+  min-height: 230px;
+  padding: 35px;
+  background: var(--maya-paper);
+}
+
+.maya-learn-grid span {
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  color: var(--maya-gold);
+}
+
+.maya-learn-grid h3 {
+  margin-top: 25px;
+}
+
+.maya-learn-grid p {
+  font-size: 13px;
+}
+
+
+/* ============================================================
+   CTA
+============================================================ */
+
+.maya-cta {
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(232,206,199,.60),
+      transparent 31%
+    ),
+    var(--maya-sand);
+}
+
+.maya-cta-inner {
+  max-width: 850px;
+  text-align: center;
+}
+
+.maya-cta h2 {
+  font-size: clamp(70px, 10vw, 135px);
+}
+
+.maya-cta p {
+  max-width: 650px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+}
+
+.maya-cta-actions {
+  justify-content: center;
+}
+
+
+/* ============================================================
+   MODAL
+============================================================ */
+
+.maya-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+
+.maya-modal.is-open {
+  display: block;
+}
+
+.maya-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(61,52,47,.30);
+  backdrop-filter: blur(8px);
+}
+
+.maya-modal-dialog {
+  position: relative;
+  z-index: 2;
+  width: min(600px, calc(100% - 30px));
+  max-height: calc(100vh - 30px);
+  overflow-y: auto;
+  margin: 15px auto;
+  padding: 48px;
+  background: #f8efe5;
+  border: 1px solid rgba(177,138,84,.36);
+  box-shadow: 0 35px 100px rgba(60,45,38,.22);
+  color: var(--maya-brown);
+}
+
+.maya-modal-close {
+  position: absolute;
+  top: 13px;
+  right: 17px;
+  border: 0;
+  background: transparent;
+  color: var(--maya-brown);
+  font-size: 32px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.maya-modal-eyebrow {
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  color: var(--maya-green);
+}
+
+.maya-modal-dialog h2 {
+  margin: 12px 0 16px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 55px;
+  line-height: .86;
+  font-weight: 500;
+  color: var(--maya-deep);
+}
+
+.maya-modal-intro {
+  margin-bottom: 28px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.maya-modal-dialog label {
+  display: block;
+  margin-top: 16px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.maya-modal-dialog input,
+.maya-modal-dialog select,
+.maya-modal-dialog textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+  padding: 13px 14px;
+  border: 1px solid rgba(83,101,92,.24);
+  background: rgba(255,253,249,.80);
+  color: var(--maya-brown);
+  font-size: 14px;
+  outline: none;
+}
+
+.maya-modal-dialog input:focus,
+.maya-modal-dialog select:focus,
+.maya-modal-dialog textarea:focus {
+  border-color: var(--maya-gold);
+}
+
+.maya-submit {
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  border: 1px solid var(--maya-green);
+  background: var(--maya-green);
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .15em;
+  cursor: pointer;
+}
+
+.maya-form-status {
+  min-height: 20px;
+  margin-top: 15px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .maya-way-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maya-safety-grid,
+  .maya-split {
+    grid-template-columns: 1fr;
+  }
+
+  .maya-learn-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .maya-hero-inner {
+    width: calc(100% - 30px);
+    padding-top: 90px;
+    padding-bottom: 80px;
+  }
+
+  .maya-hero h1 {
+    font-size: clamp(65px, 19vw, 105px);
+  }
+
+  .maya-hero-line {
+    font-size: 29px;
+  }
+
+  .maya-section {
+    padding: 85px 0;
+  }
+
+  .maya-narrow,
+  .maya-section-heading,
+  .maya-split,
+  .maya-way-grid,
+  .maya-safety-grid,
+  .maya-learn-grid,
+  .maya-lineage-inner,
+  .maya-steam-inner,
+  .maya-cta-inner {
+    width: calc(100% - 30px);
+  }
+
+  .maya-learn-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maya-way-card,
+  .maya-safety-card {
+    padding: 34px 27px;
+  }
+
+  .maya-modal-dialog {
+    padding: 40px 24px 28px;
+  }
+
+  .maya-modal-dialog h2 {
+    font-size: 46px;
+  }
+
+}
+
+/* ============================================================
+   BLINKITA MAYA — TABLET / NAV / THREE PATHS FIX
+============================================================ */
+
+/* Prepreči, da Maya stran povzroča horizontalni scroll
+   zaradi dekorativnih elementov */
+.maya-page {
+  overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------
+   TABLET
+   Tri poti ostanejo tri premium kartice,
+   vendar jih lahko uporabnik vodoravno pregleda.
+------------------------------------------------------------ */
+
+@media (min-width: 651px) and (max-width: 1100px) {
+
+  .maya-way-grid {
+    width: calc(100% - 32px);
+    max-width: none;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    gap: 18px;
+
+    padding:
+      4px
+      max(16px, calc((100vw - 100%) / 2))
+      22px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: thin;
+  }
+
+  .maya-way-card {
+    flex: 0 0 min(390px, 78vw);
+    min-width: 0;
+
+    scroll-snap-align: start;
+  }
+
+  .maya-way-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .maya-way-grid::-webkit-scrollbar-thumb {
+    background: rgba(83,101,92,.35);
+    border-radius: 20px;
+  }
+
+  .maya-way-grid::-webkit-scrollbar-track {
+    background: rgba(83,101,92,.08);
+  }
+
+}
+
+
+/* ------------------------------------------------------------
+   PHONE
+   Na telefonu kartice ostanejo vertikalne.
+------------------------------------------------------------ */
+
+@media (max-width: 650px) {
+
+  .maya-way-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: calc(100% - 30px);
+
+    overflow: visible;
+
+    padding: 0;
+
+    scroll-snap-type: none;
+  }
+
+  .maya-way-card {
+    width: auto;
+    min-width: 0;
+  }
+
+}
+
+
+/* ------------------------------------------------------------
+   ACCESSIBILITY
+------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .maya-way-grid {
+    scroll-behavior: auto;
+  }
+
+  .maya-button {
+    transition: none;
+  }
+
+}
+
+/* ============================================================
+   BLINKITA · TZOLK'IN HERO ALIGNMENT
+   Standardna globalna Tzolkin kartica ostane nespremenjena.
+============================================================ */
+
+.maya-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+  column-gap: clamp(40px, 7vw, 100px);
+  align-items: center;
+}
+
+.maya-hero 
+@media (max-width: 900px) {
+  .maya-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .maya-hero 
+}
+
+
+
+
+ 
+
+ 
+/* =========================================================
+   BLINKITA — MAYA HERO / TZOLK'IN LAYOUT
+   TZOLK'IN VISUAL DESIGN LIVES IN style.css
+   ========================================================= */
+
+.maya-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+  column-gap: clamp(40px, 7vw, 100px);
+  align-items: center;
+}
+
+.maya-hero .maya-hero-inner {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  z-index: 3;
+}
+.maya-hero::after {
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .maya-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .maya-hero .maya-hero-inner {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+ 
+/* =========================================================
+   BLINKITA — MAYA HERO / TZOLK'IN LAYOUT
+   TZOLK'IN VISUAL DESIGN LIVES IN style.css
+   ========================================================= */
+
+.maya-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+  column-gap: clamp(40px, 7vw, 100px);
+  align-items: center;
+}
+
+.maya-hero .maya-hero-inner {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  z-index: 3;
+}
+
+.maya-hero .page-tzolkin {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  max-width: 430px;
+  justify-self: center;
+  align-self: center;
+  margin: 0;
+  position: relative;
+  z-index: 50;
+}
+
+.maya-hero::after {
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .maya-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .maya-hero .maya-hero-inner {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .maya-hero .page-tzolkin {
+    grid-column: 1;
+    grid-row: auto;
+    width: min(430px, 100%);
+    max-width: 430px;
+    justify-self: center;
+    margin-top: 2rem;
+  }
+}

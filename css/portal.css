@@ -2,7 +2,7 @@
 
 
 /* ==========================================================
-   BLINKITA PREMIUM PALO SANTO — THE SACRED WOOD SET
+   BLINKITA PREMIUM PALO SANTO â€” THE SACRED WOOD SET
    ========================================================== */
 
 .premium-palo-offer {
@@ -244,3 +244,73 @@
   }
 }
 
+
+/* =========================================================
+   BLINKITA BODY · CLICKABLE PATH CARDS
+========================================================= */
+
+.body-path-card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    transform .25s ease,
+    background-color .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.body-path-card-link:hover {
+  transform: translateY(-4px);
+  background: rgba(236, 222, 214, .72);
+  border-color: rgba(183, 154, 107, .38);
+  box-shadow: 0 14px 35px rgba(90, 70, 55, .10);
+}
+
+.body-path-card-link:active {
+  transform: translateY(-1px);
+  background: rgba(222, 204, 192, .88);
+}
+
+
+/* BLINKITA BODY · CLICKABLE MAYA PATH */
+
+.body-program-clickable {
+  cursor: pointer;
+  transition:
+    transform .25s ease,
+    background-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.body-program-clickable:hover {
+  transform: translateY(-3px);
+  background-color: rgba(235, 220, 211, .55);
+  box-shadow: 0 12px 30px rgba(90, 70, 55, .10);
+}
+
+.body-program-clickable:active {
+  transform: translateY(-1px);
+  background-color: rgba(220, 201, 190, .72);
+}
+
+/* BLINKITA BODY · TOP PATH CARD LINK */
+
+.body-path-card-link {
+  cursor: pointer;
+  transition:
+    transform .25s ease,
+    background-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.body-path-card-link:hover {
+  transform: translateY(-3px);
+  background: rgba(235, 220, 211, .72);
+  box-shadow: 0 12px 28px rgba(90, 70, 55, .10);
+}
+
+.body-path-card-link:active {
+  transform: translateY(-1px);
+  background: rgba(220, 201, 190, .85);
+}
