@@ -1255,3 +1255,27 @@ body.language-entry .language-choices {
   flex-wrap: wrap;
 }
 
+
+/* =========================================================
+   BLINKITA — HEADER INNER ALIGNMENT FIX
+   ========================================================= */
+
+.site-header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-header-inner #mainNav {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header-inner .language-switch {
+  flex: 0 0 auto;
+}
+
