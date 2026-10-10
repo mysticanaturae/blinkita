@@ -471,10 +471,140 @@
       Sometimes you need a longer space.
     </p>
 
-    <a class="jsj-button jsj-button-primary"
-       href="mailto:info@blinkita.si">
+    <button class="jsj-button jsj-button-primary"
+            type="button"
+            class="therapy-modal-open">
       CONTACT & RESERVATION
-    </a>
+    </button>
+
+    <div class="therapy-modal"
+         id="therapyModal"
+         aria-hidden="true">
+
+      <div class="therapy-modal-overlay"
+           id="therapyModalOverlay"></div>
+
+      <div class="therapy-modal-content"
+           role="dialog"
+           aria-modal="true"
+           aria-labelledby="therapyModalTitle">
+
+        <button type="button"
+                class="therapy-modal-close" data-modal-close
+                id="therapyClose"
+                aria-label="Close">
+          ×
+        </button>
+
+        <div class="jsj-section-label">
+          BLINKITA BODY
+        </div>
+
+        <h2 id="therapyModalTitle">
+          Begin where
+          <br>
+          <em>you are today.</em>
+        </h2>
+
+        <p class="therapy-modal-intro">
+          Send your request and we will find the way
+          that best fits you and what you would like to explore.
+        </p>
+
+        <form class="therapy-form"
+              id="therapyForm"
+              action="https://formspree.io/f/mjykadqk"
+              method="POST">
+
+          <input type="hidden"
+                 name="_subject"
+                 value="BLINKITA BODY · Individual Jin Shin Jyutsu Session">
+
+          <div class="therapy-form-field">
+            <label for="therapy-name">
+              Name
+            </label>
+
+            <input type="text"
+                   id="therapy-name"
+                   name="name"
+                   autocomplete="name"
+                   required>
+          </div>
+
+          <div class="therapy-form-field">
+            <label for="therapy-email">
+              E-mail
+            </label>
+
+            <input type="email"
+                   id="therapy-email"
+                   name="email"
+                   autocomplete="email"
+                   required>
+          </div>
+
+          <div class="therapy-form-field">
+            <label for="therapy-phone">
+              WhatsApp / phone
+            </label>
+
+            <input type="text"
+                   id="therapy-phone"
+                   name="phone"
+                   autocomplete="tel">
+          </div>
+
+          <div class="therapy-form-field">
+            <label for="therapy-format">
+              How would you like to meet?
+            </label>
+
+            <select id="therapy-format"
+                    name="format"
+                    required>
+
+              <option value="">
+                Choose an option
+              </option>
+
+              <option value="online">
+                Online
+              </option>
+
+              <option value="in-person-belize">
+                In person · Belize
+              </option>
+
+            </select>
+          </div>
+
+          <div class="therapy-form-field">
+            <label for="therapy-message">
+              What brings you here right now?
+            </label>
+
+            <textarea id="therapy-message"
+                      name="message"
+                      rows="5"
+                      placeholder="You can write a few words about what you would like to explore or what you are coming with."
+                      required></textarea>
+          </div>
+
+          <button type="submit"
+                  class="jsj-button jsj-button-primary therapy-form-submit">
+            SEND REQUEST
+          </button>
+
+          <div class="therapy-form-status"
+               id="therapyFormStatus"
+               aria-live="polite"></div>
+
+        </form>
+
+      </div>
+
+    </div>
 
   </div>
 
@@ -493,4 +623,6 @@
 
 </body>
 </html>
+
+
 

@@ -1,5 +1,779 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BLINKITA YOU — BLINKITA</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/portal.css"><link rel="stylesheet" href="../css/you.css"></head><body class="page-you"><header class="site-header"><a class="brand" href="index.html">BLINKITA<span>living portal</span></a><button class="nav-toggle" aria-label="Menu">â°</button><nav id="mainNav"></nav><div class="language-switch"><a href="../sl/you.html">SL</a><span>·</span><a href="../en/you.html" class="active">EN</a></div></header><main class="portal-page"><section class="portal-hero"><div><div class="eyebrow">Profile · Path · Library</div><h1>BLINKITA YOU</h1><p>Your personal space within the Living Portal.</p></div><div class="page-tzolkin"><div class="tzolkin-card" data-tzolkin><span class="tz-label">TZOLK’IN · TRADITIONAL COUNT</span></div></div></section><section class="content-grid"><article class="content-card"><h2>01 · My profile</h2><p>This space is ready for future BLINKITA content. Each module can later have its own page, logic and materials.</p></article><article class="content-card"><h2>02 · My library</h2><p>This space is ready for future BLINKITA content. Each module can later have its own page, logic and materials.</p></article><article class="content-card"><h2>03 · My path</h2><p>This space is ready for future BLINKITA content. Each module can later have its own page, logic and materials.</p></article></section><section class="section"><div class="eyebrow">THE NEXT LAYER</div><h2>This is only the beginning.</h2><p>The structure is intentionally separated: shared navigation stays in one place, Tzolk’in has its own JavaScript file, and each portal has its own CSS. This allows BLINKITA to keep growing without everything being packed back into the index.</p></section></main><footer>BLINKITA · www.blinkita.si</footer><script src="../js/navigation.js"></script><script src="../js/main.js"></script><script src="../js/tzolkin.js"></script></body></html>
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>YOUNIQUE — Your Personal World | BLINKITA</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/portal.css">
+<link rel="stylesheet" href="../css/you.css">
+
+<style>
+
+.page-you {
+  --yq-indigo:#17143d;
+  --yq-indigo-deep:#0d0b29;
+  --yq-gold:#d7b56d;
+  --yq-gold-light:#f1d99a;
+  --yq-cream:#f7f1e5;
+  --yq-muted:rgba(247,241,229,.68);
+  --yq-line:rgba(215,181,109,.24);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(215,181,109,.10), transparent 34rem),
+    linear-gradient(180deg,var(--yq-indigo-deep),var(--yq-indigo));
+  color:var(--yq-cream);
+}
+
+.yq-wrap {
+  width:min(1240px,92%);
+  margin:0 auto;
+}
+
+.yq-hero {
+  min-height:690px;
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+  align-items:center;
+  gap:70px;
+  padding:90px 0 80px;
+}
+
+.yq-eyebrow {
+  font-size:.72rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--yq-gold);
+  margin-bottom:25px;
+}
+
+.yq-hero h1 {
+  margin:0;
+  font-size:clamp(4rem,9vw,8.5rem);
+  line-height:.82;
+  letter-spacing:-.055em;
+  font-weight:500;
+  color:#fffaf0;
+}
+
+.yq-hero h1 span {
+  display:block;
+  font-family:Georgia,serif;
+  font-size:.28em;
+  line-height:1.5;
+  letter-spacing:.08em;
+  color:var(--yq-gold-light);
+  margin-top:25px;
+  text-transform:uppercase;
+}
+
+.yq-lead {
+  max-width:680px;
+  margin:38px 0 0;
+  font-family:Georgia,serif;
+  font-size:clamp(1.3rem,2.1vw,1.8rem);
+  line-height:1.55;
+  color:rgba(255,250,240,.88);
+}
+
+.yq-sublead {
+  max-width:610px;
+  margin:22px 0 0;
+  font-size:1rem;
+  line-height:1.8;
+  color:var(--yq-muted);
+}
+
+.yq-orbit {
+  position:relative;
+  aspect-ratio:1;
+  max-width:470px;
+  margin-left:auto;
+  display:grid;
+  place-items:center;
+}
+
+.yq-orbit::before,
+.yq-orbit::after {
+  content:"";
+  position:absolute;
+  border:1px solid var(--yq-line);
+  border-radius:50%;
+}
+
+.yq-orbit::before { inset:5%; }
+.yq-orbit::after {
+  inset:17%;
+  border-color:rgba(215,181,109,.15);
+}
+
+.yq-orbit-core {
+  width:43%;
+  aspect-ratio:1;
+  border:1px solid rgba(215,181,109,.55);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px;
+  background:radial-gradient(circle,rgba(215,181,109,.15),rgba(13,11,41,.65));
+  box-shadow:0 0 80px rgba(215,181,109,.08);
+}
+
+.yq-orbit-core strong {
+  display:block;
+  font-size:1.7rem;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+
+.yq-orbit-core small {
+  display:block;
+  margin-top:8px;
+  color:var(--yq-gold);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-size:.58rem;
+}
+
+.yq-orbit-label {
+  position:absolute;
+  font-size:.63rem;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--yq-muted);
+}
+
+.yq-orbit-label.one {top:8%;left:16%}
+.yq-orbit-label.two {top:25%;right:2%}
+.yq-orbit-label.three {bottom:13%;right:15%}
+.yq-orbit-label.four {bottom:18%;left:5%}
+
+.yq-section {
+  padding:100px 0;
+}
+
+.yq-section-head {
+  max-width:800px;
+  margin-bottom:55px;
+}
+
+.yq-section-head .yq-eyebrow {
+  margin-bottom:18px;
+}
+
+.yq-section-head h2 {
+  margin:0;
+  font-family:Georgia,serif;
+  font-weight:400;
+  font-size:clamp(2.4rem,5vw,4.7rem);
+  line-height:1;
+  color:#fffaf0;
+}
+
+.yq-section-head p {
+  margin:25px 0 0;
+  max-width:720px;
+  color:var(--yq-muted);
+  line-height:1.8;
+  font-size:1.02rem;
+}
+
+.yq-levels {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  align-items:stretch;
+}
+
+.yq-card {
+  position:relative;
+  min-height:570px;
+  padding:34px 27px 30px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.035);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.yq-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(145deg,rgba(215,181,109,.06),transparent 45%);
+  pointer-events:none;
+}
+
+.yq-card.basic {
+  border-color:rgba(215,181,109,.24);
+}
+
+.yq-card.premium {
+  border-color:rgba(215,181,109,.68);
+  background:linear-gradient(180deg,rgba(215,181,109,.11),rgba(255,255,255,.035));
+  transform:translateY(-12px);
+  box-shadow:0 25px 80px rgba(0,0,0,.25);
+}
+
+.yq-card.vip {
+  border-color:rgba(241,217,154,.55);
+  background:linear-gradient(180deg,rgba(241,217,154,.12),rgba(255,255,255,.035));
+}
+
+.yq-badge {
+  position:absolute;
+  top:0;
+  right:0;
+  padding:8px 13px;
+  background:var(--yq-gold);
+  color:#17143d;
+  font-size:.58rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.yq-card-name {
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--yq-gold);
+  margin-bottom:20px;
+}
+
+.yq-card h3 {
+  margin:0;
+  font-size:2rem;
+  font-weight:400;
+  letter-spacing:-.02em;
+}
+
+.yq-card-intro {
+  min-height:92px;
+  margin:18px 0 25px;
+  color:var(--yq-muted);
+  line-height:1.65;
+  font-size:.92rem;
+}
+
+.yq-price {
+  padding:18px 0;
+  border-top:1px solid var(--yq-line);
+  border-bottom:1px solid var(--yq-line);
+  margin-bottom:25px;
+}
+
+.yq-price strong {
+  display:block;
+  font-size:1.4rem;
+  font-weight:500;
+  color:#fffaf0;
+}
+
+.yq-price span {
+  display:block;
+  margin-top:4px;
+  color:var(--yq-muted);
+  font-size:.65rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.yq-features {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:12px;
+}
+
+.yq-features li {
+  position:relative;
+  padding-left:20px;
+  color:rgba(255,250,240,.78);
+  font-size:.87rem;
+  line-height:1.45;
+}
+
+.yq-features li::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:.55em;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--yq-gold);
+}
+
+.yq-card-cta {
+  margin-top:auto;
+  padding-top:30px;
+}
+
+.yq-button {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  min-height:50px;
+  border:1px solid var(--yq-gold);
+  color:#fffaf0;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:.67rem;
+  transition:.25s ease;
+}
+
+.yq-button:hover {
+  background:var(--yq-gold);
+  color:var(--yq-indigo-deep);
+}
+
+.yq-card.premium .yq-button,
+.yq-card.vip .yq-button {
+  background:var(--yq-gold);
+  color:var(--yq-indigo-deep);
+}
+
+.yq-card.premium .yq-button:hover,
+.yq-card.vip .yq-button:hover {
+  background:var(--yq-gold-light);
+}
+
+.yq-experience {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.yq-experience-card {
+  padding:42px;
+  border-top:1px solid var(--yq-line);
+  background:rgba(255,255,255,.025);
+}
+
+.yq-experience-card .num {
+  color:var(--yq-gold);
+  font-size:.65rem;
+  letter-spacing:.18em;
+}
+
+.yq-experience-card h3 {
+  margin:18px 0 12px;
+  font-family:Georgia,serif;
+  font-size:2rem;
+  font-weight:400;
+}
+
+.yq-experience-card p {
+  margin:0;
+  color:var(--yq-muted);
+  line-height:1.8;
+}
+
+.yq-final {
+  text-align:center;
+  padding:120px 20px 130px;
+  border-top:1px solid var(--yq-line);
+}
+
+.yq-final h2 {
+  margin:0 auto;
+  max-width:850px;
+  font-family:Georgia,serif;
+  font-size:clamp(2.7rem,6vw,5.8rem);
+  line-height:.98;
+  font-weight:400;
+}
+
+.yq-final p {
+  max-width:650px;
+  margin:28px auto 35px;
+  color:var(--yq-muted);
+  line-height:1.8;
+}
+
+.yq-final .yq-button {
+  width:auto;
+  display:inline-flex;
+  padding:0 38px;
+}
+
+@media (max-width:1000px) {
+  .yq-hero {
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .yq-orbit {
+    margin:0 auto;
+  }
+
+  .yq-levels {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .yq-card.premium {
+    transform:none;
+  }
+}
+
+@media (max-width:620px) {
+  .yq-hero {
+    min-height:auto;
+    padding:65px 0 50px;
+  }
+
+  .yq-hero h1 {
+    font-size:clamp(3.8rem,19vw,6rem);
+  }
+
+  .yq-section {
+    padding:70px 0;
+  }
+
+  .yq-levels,
+  .yq-experience {
+    grid-template-columns:1fr;
+  }
+
+  .yq-card {
+    min-height:auto;
+  }
+
+  .yq-orbit {
+    max-width:340px;
+  }
+
+  .yq-experience-card {
+    padding:30px;
+  }
+}
+
+</style>
+</head>
+
+<body class="page-you">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    BLINKITA<span>living portal</span>
+  </a>
+
+  <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+
+  <nav id="mainNav"></nav>
+
+  <div class="language-switch">
+    <a href="../sl/you.html">SL</a>
+    <span>·</span>
+    <a href="../en/you.html" class="active">EN</a>
+  </div>
+</header>
+
+<main>
+
+<section class="yq-wrap yq-hero">
+
+  <div>
+    <div class="yq-eyebrow">
+      PERSONAL · DAILY · BLINKITA
+    </div>
+
+    <h1>
+      YOUNIQUE
+      <span>Your personal world inside BLINKITA</span>
+    </h1>
+
+    <p class="yq-lead">
+      You are not simply visiting a website.
+      You are entering a space that begins to revolve around you.
+    </p>
+
+    <p class="yq-sublead">
+      YOUNIQUE brings BLINKITA TIME, BODY, MIND, LIFE and your personal
+      library together in one space. You are not searching for random
+      content. You are opening what belongs to your journey.
+    </p>
+  </div>
+
+  <div class="yq-orbit">
+    <div class="yq-orbit-label one">TIME</div>
+    <div class="yq-orbit-label two">BODY</div>
+    <div class="yq-orbit-label three">MIND</div>
+    <div class="yq-orbit-label four">LIBRARY</div>
+
+    <div class="yq-orbit-core">
+      <div>
+        <strong>YOU</strong>
+        <small>inside BLINKITA</small>
+      </div>
+    </div>
+  </div>
+
+</section>
 
 
+<section class="yq-section">
+  <div class="yq-wrap">
 
+    <div class="yq-section-head">
+      <div class="yq-eyebrow">CHOOSE YOUR LEVEL</div>
+
+      <h2>
+        You do not need everything.<br>
+        Choose your way in.
+      </h2>
+
+      <p>
+        YOUNIQUE grows with you. Start for free, go deeper, open the
+        monthly Premium world, or choose VIP when you want part of the
+        journey to become personal.
+      </p>
+    </div>
+
+
+    <div class="yq-levels">
+
+      <article class="yq-card free">
+
+        <div class="yq-card-name">01 · ENTRY</div>
+
+        <h3>FREE</h3>
+
+        <p class="yq-card-intro">
+          Your first entry into YOUNIQUE and the BLINKITA world.
+          No commitment. No payment.
+        </p>
+
+        <div class="yq-price">
+          <strong>FREE</strong>
+          <span>free access</span>
+        </div>
+
+        <ul class="yq-features">
+          <li>your personal YOUNIQUE space</li>
+          <li>daily basic content flow</li>
+          <li>Traditional Tzolk’in</li>
+          <li>selected BLINKITA insights</li>
+          <li>entry into the BLINKITA world</li>
+        </ul>
+
+        <div class="yq-card-cta">
+          <a class="yq-button" href="#">
+            Start FREE
+          </a>
+        </div>
+
+      </article>
+
+
+      <article class="yq-card basic">
+
+        <div class="yq-card-name">02 · CORE</div>
+
+        <h3>BASIC</h3>
+
+        <p class="yq-card-intro">
+          More access. More practice. More BLINKITA content
+          you can actually use in everyday life.
+        </p>
+
+        <div class="yq-price">
+          <strong>MONTHLY ACCESS</strong>
+          <span>monthly membership</span>
+        </div>
+
+        <ul class="yq-features">
+          <li>everything in FREE</li>
+          <li>expanded daily content</li>
+          <li>more practices and activations</li>
+          <li>selected library materials</li>
+          <li>member-only content</li>
+        </ul>
+
+        <div class="yq-card-cta">
+          <a class="yq-button" href="#">
+            Choose BASIC
+          </a>
+        </div>
+
+      </article>
+
+
+      <article class="yq-card premium">
+
+        <div class="yq-badge">RECOMMENDED</div>
+
+        <div class="yq-card-name">03 · DEEPER</div>
+
+        <h3>PREMIUM</h3>
+
+        <p class="yq-card-intro">
+          Your monthly BLINKITA space. Every month something new
+          that was not here the month before.
+        </p>
+
+        <div class="yq-price">
+          <strong>MONTHLY ACCESS</strong>
+          <span>premium membership</span>
+        </div>
+
+        <ul class="yq-features">
+          <li>everything in BASIC</li>
+          <li><strong>new exclusive materials every month</strong></li>
+          <li>new programs, practices and activations</li>
+          <li>full Premium library access</li>
+          <li>special BLINKITA member content</li>
+          <li>deeper personal use of YOUNIQUE</li>
+        </ul>
+
+        <div class="yq-card-cta">
+          <a class="yq-button" href="#">
+            Choose PREMIUM
+          </a>
+        </div>
+
+      </article>
+
+
+      <article class="yq-card vip">
+
+        <div class="yq-badge">PRIVATE</div>
+
+        <div class="yq-card-name">04 · PERSONAL</div>
+
+        <h3>VIP</h3>
+
+        <p class="yq-card-intro">
+          Everything Premium offers, with an added layer of personal
+          attention, private access and direct contact.
+        </p>
+
+        <div class="yq-price">
+          <strong>PRIVATE ACCESS</strong>
+          <span>vip membership</span>
+        </div>
+
+        <ul class="yq-features">
+          <li>everything in PREMIUM</li>
+          <li>all new monthly materials</li>
+          <li>personal recommendations and guidance</li>
+          <li><strong>1 individual consultation / month</strong></li>
+          <li>VIP access and special content</li>
+          <li>a more personal connection with BLINKITA</li>
+        </ul>
+
+        <div class="yq-card-cta">
+          <a class="yq-button" href="#">
+            Choose VIP
+          </a>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="yq-section">
+  <div class="yq-wrap">
+
+    <div class="yq-section-head">
+      <div class="yq-eyebrow">INSIDE YOUNIQUE</div>
+
+      <h2>
+        Your space.<br>
+        Your rhythm. Your path.
+      </h2>
+
+      <p>
+        YOUNIQUE is not another collection of articles and it is not
+        another profile with a few details. It is designed as a personal
+        interface between you and the BLINKITA world.
+      </p>
+    </div>
+
+    <div class="yq-experience">
+
+      <article class="yq-experience-card">
+        <div class="num">01 · TODAY</div>
+        <h3>Today</h3>
+        <p>
+          Open YOUNIQUE and see what matters today:
+          your daily rhythm, Tzolk’in, content, practice or new message.
+        </p>
+      </article>
+
+      <article class="yq-experience-card">
+        <div class="num">02 · TIME</div>
+        <h3>Time</h3>
+        <p>
+          Your relationship with time gets its own space through
+          the Traditional Tzolk’in and BLINKITA TIME.
+        </p>
+      </article>
+
+      <article class="yq-experience-card">
+        <div class="num">03 · BODY · MIND</div>
+        <h3>Body &amp; Mind</h3>
+        <p>
+          Practices, knowledge and materials from BLINKITA BODY and
+          BLINKITA MIND come together where you can actually use them.
+        </p>
+      </article>
+
+      <article class="yq-experience-card">
+        <div class="num">04 · LIBRARY</div>
+        <h3>Library</h3>
+        <p>
+          Your content does not disappear into the internet stream.
+          Books, programs, practices and materials have their own space.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="yq-final">
+
+  <div class="yq-eyebrow">YOUNIQUE · BLINKITA</div>
+
+  <h2>
+    BLINKITA is the world.<br>
+    YOUNIQUE is your space inside it.
+  </h2>
+
+  <p>
+    Start where you are. Choose the level that fits you,
+    and let YOUNIQUE become the space you return to.
+  </p>
+
+  <a class="yq-button" href="#">
+    Enter YOUNIQUE
+  </a>
+
+</section>
+
+</main>
+
+<footer>
+  BLINKITA · www.blinkita.si
+</footer>
+
+<script src="../js/navigation.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/tzolkin.js"></script>
+
+</body>
+</html>
 

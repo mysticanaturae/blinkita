@@ -1,0 +1,455 @@
+﻿/* =========================================================
+   BLINKITA LIFE · LEGENDA O BABICI OCEAN
+   Premium Ocean Editorial
+   ========================================================= */
+
+.ocean-legend-page {
+  --ocean-deep: #071d2b;
+  --ocean-mid: #0d4050;
+  --ocean-teal: #287b82;
+  --ocean-soft: #8ebfc0;
+  --sand: #eee2c8;
+  --shell: #f7f1e5;
+  --gold-ocean: #c9a86a;
+
+  background:
+    radial-gradient(circle at 50% 0%,
+      rgba(41,123,130,.18),
+      transparent 34%),
+    linear-gradient(
+      180deg,
+      #f7f4ed 0%,
+      #f3efe5 48%,
+      #edf2ed 100%
+    );
+
+  color: #172329;
+}
+
+/* HERO ----------------------------------------------------- */
+
+.ocean-legend-hero {
+  min-height: 94vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 150px 7vw 110px;
+  text-align: center;
+
+  background:
+    radial-gradient(circle at 50% 42%,
+      rgba(142,191,192,.18),
+      transparent 32%),
+    linear-gradient(
+      180deg,
+      #f7f4ed 0%,
+      #eef2eb 72%,
+      #dce9e4 100%
+    );
+}
+
+.ocean-legend-hero::before {
+  content: "";
+  position: absolute;
+  width: 75vw;
+  height: 75vw;
+  max-width: 900px;
+  max-height: 900px;
+  border: 1px solid rgba(41,123,130,.14);
+  border-radius: 50%;
+  transform: translateY(18%);
+}
+
+.ocean-legend-hero::after {
+  content: "≈";
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(41,123,130,.25);
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.ocean-legend-hero-inner {
+  width: min(100%, 1050px);
+  position: relative;
+  z-index: 2;
+}
+
+.ocean-kicker {
+  margin-bottom: 28px;
+  color: #287b82;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+
+.ocean-legend-hero h1 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(4.2rem, 11vw, 9.5rem);
+  line-height: .78;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+
+.ocean-legend-hero h1 span {
+  display: block;
+  color: #287b82;
+}
+
+.ocean-hero-lead {
+  width: min(760px, 100%);
+  margin: 48px auto 0;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.ocean-hero-note {
+  margin-top: 48px;
+  color: rgba(23,35,41,.55);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+/* STORY ---------------------------------------------------- */
+
+.ocean-story {
+  width: min(850px, 88vw);
+  margin: 0 auto;
+  padding: 145px 0 130px;
+}
+
+.ocean-story-block {
+  margin-bottom: 120px;
+}
+
+.ocean-story-block:last-child {
+  margin-bottom: 0;
+}
+
+.ocean-story-kicker {
+  margin-bottom: 24px;
+  color: #b08e52;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.ocean-story h2 {
+  margin: 0 0 42px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: .88;
+  font-weight: 500;
+  letter-spacing: -.04em;
+}
+
+.ocean-story p {
+  max-width: 760px;
+  margin: 0 0 26px;
+
+  font-size: 1.06rem;
+  line-height: 1.9;
+}
+
+.ocean-story .opening {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.45rem);
+  line-height: 1.35;
+}
+
+.ocean-story .whisper {
+  margin-top: 55px;
+  padding-left: 30px;
+  border-left: 1px solid #c9a86a;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
+}
+
+/* WATER BAND ----------------------------------------------- */
+
+.ocean-water-band {
+  position: relative;
+  overflow: hidden;
+
+  padding: 145px 7vw;
+
+  background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(142,191,192,.22),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #071d2b,
+      #0d4050 55%,
+      #164e59
+    );
+
+  color: #f7f1e5;
+}
+
+.ocean-water-band::after {
+  content: "≈  ≈  ≈";
+  position: absolute;
+  right: 7vw;
+  bottom: 25px;
+
+  color: rgba(238,226,200,.13);
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  letter-spacing: .2em;
+}
+
+.ocean-water-inner {
+  width: min(980px, 88vw);
+  margin: 0 auto;
+}
+
+.ocean-water-kicker {
+  margin-bottom: 30px;
+  color: #d5bc84;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+.ocean-water-band h2 {
+  max-width: 900px;
+  margin: 0 0 48px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: .84;
+  font-weight: 500;
+  letter-spacing: -.045em;
+}
+
+.ocean-water-band p {
+  max-width: 720px;
+  margin: 0 0 25px;
+
+  color: rgba(247,241,229,.82);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+/* SHELL ---------------------------------------------------- */
+
+.ocean-shell {
+  width: min(900px, 88vw);
+  margin: 0 auto;
+  padding: 145px 0;
+}
+
+.ocean-shell-inner {
+  border-top: 1px solid rgba(23,35,41,.12);
+  border-bottom: 1px solid rgba(23,35,41,.12);
+  padding: 75px 0;
+}
+
+.ocean-shell h2 {
+  margin: 0 0 38px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: .9;
+  font-weight: 500;
+}
+
+.ocean-shell p {
+  max-width: 760px;
+  margin: 0 0 25px;
+
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.ocean-shell-quote {
+  margin-top: 65px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+/* OCEAN MESSAGE -------------------------------------------- */
+
+.ocean-message {
+  padding: 150px 7vw;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(201,168,106,.14),
+      transparent 38%
+    ),
+    #f1e9d8;
+
+  text-align: center;
+}
+
+.ocean-message-inner {
+  width: min(850px, 90vw);
+  margin: 0 auto;
+}
+
+.ocean-message h2 {
+  margin: 0 0 38px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3.4rem, 8vw, 7rem);
+  line-height: .84;
+  font-weight: 500;
+  letter-spacing: -.045em;
+}
+
+.ocean-message p {
+  max-width: 690px;
+  margin: 0 auto 25px;
+
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+/* PORTAL CTA ----------------------------------------------- */
+
+.ocean-portal {
+  padding: 170px 7vw;
+  background: #071d2b;
+  color: #f7f1e5;
+  text-align: center;
+}
+
+.ocean-portal-inner {
+  width: min(900px, 90vw);
+  margin: 0 auto;
+}
+
+.ocean-portal-kicker {
+  margin-bottom: 30px;
+  color: #d5bc84;
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+.ocean-portal h2 {
+  margin: 0 0 35px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3.7rem, 8vw, 7.5rem);
+  line-height: .83;
+  font-weight: 500;
+  letter-spacing: -.05em;
+}
+
+.ocean-portal p {
+  max-width: 680px;
+  margin: 0 auto 48px;
+
+  color: rgba(247,241,229,.8);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.ocean-button {
+  display: inline-block;
+
+  padding: 17px 30px;
+
+  border: 1px solid rgba(213,188,132,.7);
+
+  color: #f7f1e5;
+  text-decoration: none;
+
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+
+  transition:
+    background .25s ease,
+    color .25s ease,
+    border-color .25s ease;
+}
+
+.ocean-button:hover {
+  background: #d5bc84;
+  border-color: #d5bc84;
+  color: #071d2b;
+}
+
+/* RETURN --------------------------------------------------- */
+
+.ocean-return {
+  padding: 80px 7vw 110px;
+  text-align: center;
+}
+
+.ocean-return a {
+  color: #287b82;
+  text-decoration: none;
+
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.ocean-return a:hover {
+  color: #b08e52;
+}
+
+/* MOBILE --------------------------------------------------- */
+
+@media (max-width: 720px) {
+
+  .ocean-legend-hero {
+    min-height: 82vh;
+    padding: 125px 7vw 85px;
+  }
+
+  .ocean-legend-hero::before {
+    width: 120vw;
+    height: 120vw;
+  }
+
+  .ocean-story,
+  .ocean-shell {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .ocean-story-block {
+    margin-bottom: 85px;
+  }
+
+  .ocean-water-band,
+  .ocean-message,
+  .ocean-portal {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .ocean-shell-inner {
+    padding: 55px 0;
+  }
+}

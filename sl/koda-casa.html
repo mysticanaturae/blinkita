@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e5f1ed">
+<meta name="description" content="Koda Časa BLINKITA: tradicionalni majevski Tzolk'in, osebna rojstna koda, trecena in 260-dnevno potovanje z namero.">
+<title>Koda Časa™ | BLINKITA</title>
+<style>
+:root{
+  --sea:#176c70;--deep:#16464b;--aqua:#e3f1ed;--pale:#f4faf7;
+  --sand:#f7f3e9;--gold:#bd9860;--ink:#263b3b;--muted:#687b78;
+  --white:#fffefa;--line:#d9e5df;--shadow:0 12px 34px #204e4910;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#edf6f2 0,#f8f7f0 42%,#f2f7f4 100%);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #bd9860;outline-offset:3px}
+header{padding:42px 18px 30px;text-align:center;background:radial-gradient(ellipse at 50% 0,#fffefa 0,transparent 70%)}
+.brand{font:700 .76rem Arial,sans-serif;letter-spacing:.3em;color:var(--sea)}
+h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.1;font-weight:normal;color:var(--deep);margin:13px 0}
+.subtitle{max-width:730px;margin:0 auto;color:var(--muted);font-size:1.05rem}
+.topline{width:80px;height:2px;background:var(--gold);margin:23px auto}
+main{max-width:1120px;padding:0 18px 60px;margin:auto}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:clamp(19px,3.5vw,34px);margin:22px 0;box-shadow:var(--shadow)}
+.section-kicker{font:700 .7rem Arial,sans-serif;letter-spacing:.17em;color:var(--gold);text-transform:uppercase;margin-bottom:5px}
+h2{font-size:clamp(1.5rem,3vw,2.15rem);line-height:1.2;color:var(--deep);font-weight:normal;margin:5px 0 13px}
+h3{color:var(--deep);font-size:1.18rem;font-weight:normal;margin:0 0 8px}
+.intro{color:var(--muted);margin:0 0 22px;max-width:780px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:.92rem;color:var(--deep)}
+input,select,textarea{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;padding:12px 13px;color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{border:1px solid var(--sea);border-radius:999px;padding:11px 19px;background:var(--sea);color:white;font:700 .78rem Arial,sans-serif;letter-spacing:.04em}
+.btn:hover{background:var(--deep)}
+.btn.secondary{background:transparent;color:var(--sea)}
+.btn.secondary:hover{background:var(--aqua)}
+.btn.small{font-size:.72rem;padding:8px 13px}
+.notice{padding:12px 14px;background:var(--aqua);border-radius:10px;margin-top:14px;color:var(--deep)}
+.hidden{display:none!important}
+.day-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.energy-card{border:1px solid var(--line);border-radius:16px;padding:18px;background:linear-gradient(145deg,#fffefa,#f0f7f3);min-width:0}
+.energy-card.primary{background:linear-gradient(145deg,#e5f2ee,#fffefa)}
+.energy-card .label{font:700 .68rem Arial,sans-serif;letter-spacing:.12em;color:var(--sea);text-transform:uppercase}
+.energy-inner{display:flex;align-items:center;gap:14px;margin-top:12px}
+.glyph{width:72px;height:72px;object-fit:contain;flex-shrink:0}
+.glyph.small{width:52px;height:52px}
+.code-title{font-size:1.6rem;line-height:1.2;color:var(--deep);overflow-wrap:anywhere}
+.local-title{font-size:1.03rem;color:var(--sea);margin-top:4px}
+.date-label{font: .8rem Arial,sans-serif;color:var(--muted)}
+.bodycopy{color:#435b57;margin:8px 0}
+.meta{font: .78rem Arial,sans-serif;color:var(--muted)}
+.rule{height:1px;background:var(--line);margin:23px 0}
+.symbol-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.symbol-item{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:13px;padding:10px 13px;background:#fff}
+.symbol-item img{width:49px;height:49px;object-fit:contain}
+.symbol-item strong{display:block;color:var(--deep);font-size:1.05rem}
+.symbol-item span{display:block;font-size:.83rem;color:var(--muted)}
+.keyword-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.chip{background:var(--aqua);color:var(--deep);border-radius:999px;padding:5px 10px;font: .78rem Arial,sans-serif}
+.trecena-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.trecena-day{border:1px solid var(--line);border-radius:12px;padding:10px 7px;text-align:center;background:#fff;min-width:0}
+.trecena-day.today{border:2px solid var(--gold);background:#fbf6e9}
+.trecena-day img{width:43px;height:43px;object-fit:contain;display:block;margin:0 auto 4px}
+.trecena-day strong{display:block;color:var(--deep);font-size:.95rem}
+.trecena-day span{display:block;color:var(--muted);font-size:.72rem;overflow-wrap:anywhere}
+.cross-layout{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-areas:". conception ." "right center left" ". destiny .";gap:8px;align-items:stretch;max-width:760px;margin:0 auto} .cross-cell.conception{grid-area:conception} .cross-cell.destiny{grid-area:destiny} .cross-cell.right{grid-area:right} .cross-cell.left{grid-area:left} .cross-cell.center{grid-area:center}
+.cross-cell{border:1px solid var(--line);border-radius:12px;padding:10px 7px;text-align:center;background:#fff;min-width:0}
+.cross-cell.center{background:var(--aqua);border-color:#b5d4ca}
+.cross-cell.empty{visibility:hidden}
+.cross-cell img{width:38px;height:38px;object-fit:contain;margin:4px auto;display:block}
+.cross-cell .position{font:700 .67rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.cross-cell .cross-code{font-size:.98rem;color:var(--deep);overflow-wrap:anywhere}
+.cross-cell .cross-local{font-size:.85rem;color:var(--sea)}
+.cross-cell p{font-size:.83rem;margin:8px 0 0;color:var(--muted)}
+.path-note{font-size:.82rem;color:var(--muted);margin-top:12px}
+.progress-wrap{background:#e6efeb;border-radius:99px;height:8px;overflow:hidden;margin:12px 0}
+.progress-bar{height:100%;width:0;background:var(--sea);transition:width .2s}
+.reflection{background:var(--pale);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:17px;margin:16px 0}
+.question{font-size:1.15rem;color:var(--deep)}
+.journal-list{display:grid;gap:12px}
+.journal-entry{padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.journal-entry time{display:block;color:var(--muted);font: .76rem Arial,sans-serif;margin-bottom:5px}
+.profile-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--line)}
+footer{text-align:center;padding:24px 18px 42px;color:var(--muted);font-size:.86rem}
+footer strong{letter-spacing:.16em;color:var(--sea);font:700 .78rem Arial,sans-serif}
+@media(max-width:680px){
+ .grid,.day-strip{grid-template-columns:1fr}
+ .trecena-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .cross-layout{gap:6px}
+ .cross-cell{padding:11px 5px}
+ .cross-cell img{width:42px;height:42px}
+ .cross-cell p{font-size:.75rem}
+ .glyph{width:62px;height:62px}
+ .energy-inner{gap:10px}
+ .code-title{font-size:1.4rem}
+}
+@media print{
+ body{background:white}
+ header{padding:10px}
+ main{max-width:none;padding:0}
+ .panel{box-shadow:none;break-inside:avoid;margin:10px 0;padding:16px}
+ .no-print,button{display:none!important}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">BLINKITA · ŽIV ČAS</div>
+  <h1>Koda Časa™</h1>
+  <p class="subtitle">Spoznaj svojo rojstno kodo, spremljaj ritem tradicionalnega Tzolk'ina in vsakemu dnevu podari zavestno namero.</p>
+  <div class="topline"></div>
+  <div class="meta">TRADICIONALNI MAJEVSKI 260-DNEVNI CIKEL · BREZ DREAMSPELL SISTEMA</div>
+</header>
+
+<main>
+  <section class="panel" id="todayPanel">
+    <div class="section-kicker">Ritem sedanjega trenutka</div>
+    <h2>Energija dneva in trecena</h2>
+    <p class="intro">Vsak dan povezuje številčno mesto v trinajstdnevnem ciklu in eno od dvajsetih dnevnih znamenj. Trecena je 13-dnevno obdobje, ki se začne z dnevom številke 1.</p>
+    <div class="day-strip">
+      <article class="energy-card primary">
+        <div class="label">Tzolk'in · energija dneva</div>
+        <div class="energy-inner">
+          <img class="glyph" id="todayNumberImg" alt="Simbol številke dneva">
+          <img class="glyph" id="todaySignImg" alt="Simbol znamenja dneva">
+          <div>
+            <div class="code-title" id="todayCode">—</div>
+            <div class="local-title" id="todayLocal">—</div>
+            <div class="date-label" id="todayDateLabel"></div>
+          </div>
+        </div>
+        <p class="bodycopy" id="todayMeaning"></p>
+        <div class="keyword-list" id="todayKeywords"></div>
+      </article>
+      <article class="energy-card">
+        <div class="label">Trecena trenutnega dne</div>
+        <div class="energy-inner">
+          <img class="glyph" id="todayTrecenaNumberImg" alt="Simbol številke ena">
+          <img class="glyph" id="todayTrecenaSignImg" alt="Simbol začetnega znamenja trecene">
+          <div>
+            <div class="code-title" id="todayTrecenaCode">—</div>
+            <div class="local-title" id="todayTrecenaLocal">Začetek 13-dnevnega cikla</div>
+            <div class="date-label" id="todayTrecenaDate"></div>
+          </div>
+        </div>
+        <p class="bodycopy" id="todayTrecenaMeaning"></p>
+        <p class="meta" id="todayTrecenaProgress"></p>
+      </article>
+    </div>
+    <div class="rule"></div>
+    <div class="field no-print" style="max-width:300px">
+      <label for="todayDate">Razišči energijo drugega datuma</label>
+      <input type="date" id="todayDate">
+    </div>
+  </section>
+
+  <section class="panel" id="entry">
+    <div class="section-kicker">Tvoja osebna časovna matrika</div>
+    <h2>Moja osebna Koda Časa</h2>
+    <p class="intro">Vnesi ime in datum rojstva. Aplikacija izračuna tradicionalno kombinacijo številke in znamenja ter iz nje izpelje rojstno treceno in pet položajev majevske križne postavitve, kot si jih določila.</p>
+    <form id="birthForm">
+      <div class="grid">
+        <div class="field">
+          <label for="personName">Ime</label>
+          <input id="personName" name="personName" autocomplete="name" maxlength="100" placeholder="Kako ti je ime?" required>
+        </div>
+        <div class="field">
+          <label for="birthDate">Datum rojstva</label>
+          <input id="birthDate" name="birthDate" type="date" required>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" type="submit">IZRAČUNAJ MOJO KODO</button>
+        <button class="btn secondary" id="resetForm" type="button">Počisti vnos</button>
+      </div>
+      <div class="notice hidden" id="formError" role="alert"></div>
+    </form>
+  </section>
+
+  <section class="panel hidden" id="birthResult" aria-live="polite">
+    <div class="section-kicker">Tvoja rojstna energija</div>
+    <h2 id="birthPerson">Moja koda</h2>
+    <p class="date-label" id="birthDateLabel"></p>
+    <div class="energy-card primary">
+      <div class="energy-inner">
+        <img class="glyph" id="birthNumberImg" alt="Simbol rojstne številke">
+        <img class="glyph" id="birthSignImg" alt="Simbol rojstnega znamenja">
+        <div>
+          <div class="code-title" id="birthCode">—</div>
+          <div class="local-title" id="birthLocal">—</div>
+          <div class="meta">ŠTEVILKA · ZNAMENJE · OSEBNI RITEM</div>
+        </div>
+      </div>
+      <p class="bodycopy" id="birthDescription"></p>
+      <p class="bodycopy" id="birthNumberMeaning"></p>
+      <div class="keyword-list" id="birthKeywords"></div>
+    </div>
+    <div class="actions no-print">
+      <button class="btn" id="saveProfile" type="button">SHRANI PROFIL</button>
+      <button class="btn secondary" id="printProfile" type="button">NATISNI / SHRANI PDF</button>
+    </div>
+    <div class="notice hidden" id="saveNotice" role="status"></div>
+
+    <div class="rule"></div>
+    <div class="section-kicker">Tvoj 13-dnevni rojstni cikel</div>
+    <h2>Rojstna trecena</h2>
+    <p class="intro" id="birthTrecenaIntro"></p>
+    <div class="energy-card">
+      <div class="energy-inner">
+        <img class="glyph" id="birthTrecenaNumberImg" alt="Simbol začetne številke rojstne trecene">
+        <img class="glyph" id="birthTrecenaSignImg" alt="Simbol začetnega znamenja rojstne trecene">
+        <div>
+          <div class="code-title" id="birthTrecenaCode">—</div>
+          <div class="local-title" id="birthTrecenaLocal">—</div>
+          <div class="date-label" id="birthTrecenaDate"></div>
+        </div>
+      </div>
+      <p class="bodycopy" id="birthTrecenaMeaning"></p>
+    </div>
+    <div class="trecena-grid" id="birthTrecenaDays"></div>
+
+    <div class="rule"></div>
+    <div class="section-kicker">Pet položajev</div>
+    <h2>Majeva križna postavitev</h2>
+    <p class="intro">Osrednja rojstna koda in štirje položaji, izračunani po razdaljah, ki si jih določila. Vsak položaj uporablja isti koledarski motor in isto zaporedje dni.</p>
+    <div class="cross-layout" id="birthCross"></div>
+  </section>
+
+  <section class="panel hidden" id="journeyPanel">
+    <div class="section-kicker">Tvoja namera · 260 dni</div>
+    <h2>Izberi področje svojega potovanja</h2>
+    <p class="intro">Namera je tvoja osebna smer. Koledarska koda ostaja nespremenjena, dnevna vprašanja in praksa pa se navezujejo na izbrano področje.</p>
+    <div class="grid">
+      <div class="field">
+        <label for="intentionArea">Področje namere</label>
+        <select id="intentionArea">
+          <option value="Ljubezen in sveto partnerstvo">Ljubezen in sveto partnerstvo</option>
+          <option value="Denar, obilje in sprejemanje">Denar, obilje in sprejemanje</option>
+          <option value="Osebna rast in notranja svoboda">Osebna rast in notranja svoboda</option>
+          <option value="Telo, vitalnost in ravnovesje">Telo, vitalnost in ravnovesje</option>
+          <option value="Poslanstvo, ustvarjalnost in delo">Poslanstvo, ustvarjalnost in delo</option>
+          <option value="Družina, odnosi in skupnost">Družina, odnosi in skupnost</option>
+          <option value="Smisel, intuicija in duhovna povezanost">Smisel, intuicija in duhovna povezanost</option>
+          <option value="Moja lastna namera">Moja lastna namera</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="journeyStart">Začetek 260-dnevnega potovanja</label>
+        <input type="date" id="journeyStart">
+      </div>
+    </div>
+    <div class="field" style="margin-top:15px">
+      <label for="intentionText">Moja namera v lastnih besedah</label>
+      <textarea id="intentionText" maxlength="1500" placeholder="Kaj želiš v naslednjih 260 dneh negovati, ustvariti, spremeniti ali bolje razumeti?"></textarea>
+    </div>
+    <div class="actions no-print">
+      <button class="btn" id="saveIntention" type="button">SHRANI NAMERO</button>
+    </div>
+    <div class="notice hidden" id="intentionNotice" role="status"></div>
+    <div class="rule"></div>
+    <div class="section-kicker">Današnja praksa</div>
+    <h2 id="journeyDayTitle">Tvoj aktivni dan</h2>
+    <div class="progress-wrap"><div class="progress-bar" id="journeyProgress"></div></div>
+    <div class="meta" id="journeyProgressLabel"></div>
+    <div class="energy-card primary" style="margin-top:16px">
+      <div class="energy-inner">
+        <img class="glyph" id="personalDayNumberImg" alt="Simbol osebne dnevne številke">
+        <img class="glyph" id="personalDaySignImg" alt="Simbol osebnega dnevnega znamenja">
+        <div>
+          <div class="code-title" id="personalDayCode">—</div>
+          <div class="local-title" id="personalDayLocal">—</div>
+          <div class="date-label" id="personalDayDate"></div>
+        </div>
+      </div>
+      <p class="bodycopy" id="personalDayConnection"></p>
+    </div>
+    <div class="reflection">
+      <div class="section-kicker">Vprašanje dneva</div>
+      <div class="question" id="dailyQuestion"></div>
+      <p class="bodycopy" id="dailyReflection"></p>
+    </div>
+    <div class="energy-card">
+      <div class="section-kicker">Praksa in ritual</div>
+      <h3 id="practiceTitle">Majhen zavesten korak</h3>
+      <p class="bodycopy" id="dailyPractice"></p>
+    </div>
+    <div class="field" style="margin-top:18px">
+      <label for="journalText">Moj zapis dneva</label>
+      <textarea id="journalText" maxlength="8000" placeholder="Kaj danes opažam? Kaj sem naredil/a? Kaj želim odnesti v naslednji dan?"></textarea>
+    </div>
+    <div class="actions no-print">
+      <button class="btn" id="saveJournal" type="button">SHRANI DANAŠNJI ZAPIS</button>
+      <button class="btn secondary" id="showJournal" type="button">POGLEJ ZAPISKE</button>
+    </div>
+    <div class="notice hidden" id="journalNotice" role="status"></div>
+    <div class="journal-list hidden" id="journalEntries" style="margin-top:16px"></div>
+  </section>
+
+  <section class="panel" id="profilesPanel">
+    <div class="section-kicker">Tvoj osebni prostor</div>
+    <h2>Shranjeni profili</h2>
+    <p class="intro">Profili in dnevni zapisi se shranjujejo v lokalni shrambi tega brskalnika. Niso samodejno preneseni na splet ali v drug računalnik.</p>
+    <div id="profileList"></div>
+    <p class="bodycopy" id="emptyProfiles">Tukaj se bodo prikazali profili, ki jih shraniš.</p>
+  </section>
+</main>
+
+<footer>
+  <strong>BLINKITA</strong>
+  <p>Koda Časa™ · Opazuj svoj ritem. Izberi svojo namero. Ustvari naslednji korak.</p>
+  <p>Osebnostni opisi so izhodišča za refleksijo, ne diagnoze ali nespremenljive napovedi.</p>
+</footer>
+
+<script src="../js/tzolkin.js"></script>
+<script>
+(function(){
+"use strict";
+
+const $ = id => document.getElementById(id);
+const PROFILE_KEY = "blinkita.kodaCasa.profiles.v2";
+const JOURNEY_KEY = "blinkita.kodaCasa.journeys.v2";
+const JOURNAL_KEY = "blinkita.kodaCasa.journal.v2";
+
+let currentProfile = null;
+let currentCode = null;
+
+const SIGN_DETAILS = {
+  imix:{personality:"Začetna in ustvarjalna energija. Lahko spodbuja domišljijo, občutljivost za življenje in sposobnost zaznati možnosti, še preden dobijo jasno obliko. Izziv je razpršenost; pomaga ji miren začetek in skrb za lastne meje."},
+  ik:{personality:"Dih, veter in gibanje simbolizirajo komunikacijo, spremembo in živost. Ta kombinacija vabi k izražanju idej in poslušanju notranjega ritma. Izziv je nemir; podpora sta zavesten dih in jasna beseda."},
+  akbal:{personality:"Tema, noč in zora odpirajo prostor za domišljijo, notranje zaznave in prehode. Moč je v sposobnosti ostati z vprašanjem, dokler se ne pokaže več jasnosti. Izziv je umik v negotovost; pomaga stik z realnostjo."},
+  kan:{personality:"Seme predstavlja potencial, razvoj in povezave, ki še rastejo. Ta energija vabi k potrpežljivemu negovanju idej in opazovanju posledic svojih odločitev. Izziv je želja po hitrem rezultatu; podpora sta ritem in vztrajnost."},
+  chicchan:{personality:"Kača predstavlja življenjsko moč, instinkt in telesno zaznavanje. Ta kombinacija vabi k poslušanju telesa in prepoznavanju trenutkov, ko se energija prebuja ali izčrpava. Izziv je impulzivnost; pomaga zavestno usmerjanje moči."},
+  cimi:{personality:"Kame oziroma Cimi je povezano s smrtjo, predniki in prehodom. V refleksiji odpira temo zaključevanja, spomina in sproščanja starega. Izziv je oklepanje ali strah pred spremembo; podpora je spoštljiv zaključek in prostor za žalovanje."},
+  manik:{personality:"Jelen oziroma Manik simbolizira podporo, spretnost in odnos do zemlje. Ta energija vabi k praktičnemu delovanju, zanesljivosti in ustvarjanju stabilne osnove. Izziv je prevzemanje prevelike odgovornosti; pomembni so počitek in vzajemnost."},
+  lamat:{personality:"Lamat se povezuje z zorenjem, cikli in simboliko zvezde oziroma zajca v različnih poimenovanjih. Vabi k negovanju ustvarjalnosti in prepoznavanju pravih trenutkov za rast. Izziv je razpršena pozornost; pomaga dokončati eno stvar naenkrat."},
+  muluc:{personality:"Muluc oziroma Toj se povezuje z vodo, daritvijo in uravnoteženjem. V osebnem raziskovanju vabi k hvaležnosti, odgovornosti in zavestni izmenjavi. Izziv je dajanje brez meja; podpora je ravnovesje med prispevkom in sprejemanjem."},
+  oc:{personality:"Oc oziroma Tz'i' odpira teme zvestobe, skupnosti, pravičnosti in odgovornosti. Ta energija vabi k zanesljivim odnosom ter skladnosti med besedami in dejanji. Izziv je pretirano presojanje; pomaga poštenost, ki ohranja tudi sočutje."},
+  chuen:{personality:"Chuen oziroma B'atz' je povezan z nitjo, tkanjem, ustvarjalnostjo in tokom časa. Vabi k povezovanju različnih delov življenja v smiselno celoto, igrivosti in spretnosti. Izziv je zapletanje v preveč niti; pomaga ustvarjati z namenom."},
+  eb:{personality:"Eb oziroma E se povezuje s potjo, življenjsko izkušnjo in človeško skupnostjo. Vabi k učenju iz vsakdanjih korakov in spoštovanju lastne poti ter poti drugih. Izziv je izguba smeri; pomaga izbrati naslednji izvedljiv korak."},
+  ben:{personality:"Ben oziroma Aj se povezuje s steblom, rastjo, hišo in avtoriteto v različnih tradicijah. Vabi k pokončnosti, odgovornosti in ustvarjanju varnega prostora. Izziv je togost; pomaga voditi z zgledom in ostati odprt za učenje."},
+  ix:{personality:"Ix oziroma I'x se povezuje z jaguarjem, zemljo in skrivnostnimi silami narave. Vabi k pozornemu opazovanju, spoštovanju naravnega sveta in mirni notranji moči. Izziv je zapiranje vase; podpora je prizemljitev in zaupanje, zgrajeno z izkušnjo."},
+  men:{personality:"Men oziroma Tz'ikin se povezuje z orlom oziroma ptico, vidom in širšim pogledom. Vabi k strateškemu razmišljanju, domišljiji in sposobnosti povezati sedanje korake z dolgoročnim ciljem. Izziv je ostati samo v idejah; pomaga vizijo prevesti v konkretno dejanje."},
+  cib:{personality:"Cib oziroma Ajmaq se povezuje s predniki, spominom, modrostjo in odpuščanjem. Vabi k učenju iz preteklosti brez ponavljanja starih vzorcev. Izziv je krivda ali obsojanje; pomaga odgovornost, ki odpira prostor za spremembo."},
+  caban:{personality:"Caban oziroma No'j se povezuje z zemljo, znanjem, mislijo in gibanjem. Vabi k razločevanju, učenju in povezovanju zamisli z resničnim življenjem. Izziv je pretirano analiziranje; pomaga preizkusiti idejo v praksi."},
+  etznab:{personality:"Etznab oziroma Tijax se povezuje s kremenom, ostrino in ogledalom resnice. Vabi k jasnemu pogledu, razločevanju in pogumu za iskrenost. Izziv je ostrina, ki rani; pomaga povedati resnico odgovorno in pravočasno."},
+  cauac:{personality:"Cauac oziroma Kawoq se povezuje z nevihto, dežjem, skupnostjo in prenovo. Vabi k sproščanju nakopičene napetosti in obnovi odnosov. Izziv je dramatično stopnjevanje; pomaga najprej umiriti telo, nato ukrepati."},
+  ahau:{personality:"Ahau oziroma Ajpu' se povezuje s soncem, svetlobo, junakom in preizkušnjo. Vabi k pogumu, jasnosti in odgovornemu ravnanju. Izziv je potreba po zmagi ali priznanju; pomaga delovati iz integritete, ne iz dokazovanja."}
+};
+
+const NUMBER_DETAILS = {
+  1:"Začetna točka cikla: pobuda, namen in prvi korak.",
+  2:"Dvojnost in odnos: opazovanje nasprotij, izbira ter sodelovanje.",
+  3:"Gibanje in izražanje: ideja se začne premikati v dejanje.",
+  4:"Struktura in stabilnost: oblikovanje temeljev in jasnih meja.",
+  5:"Središče in moč: zbrati vire ter prevzeti odgovornost.",
+  6:"Ritem in ravnovesje: uskladiti delo, počitek in odnose.",
+  7:"Uglasitev in opazovanje: ustaviti se ter pogledati globlje.",
+  8:"Celovitost in pravičnost: uskladiti vrednote z dejanji.",
+  9:"Zorenje in namen: vztrajati pri tem, kar ima smisel.",
+  10:"Uresničevanje: zamisli preizkusiti v konkretni obliki.",
+  11:"Sprostitev in preobrazba: opustiti tisto, kar ovira nadaljevanje.",
+  12:"Razumevanje in povezovanje: združiti izkušnje v širšo sliko.",
+  13:"Zaključek in prehod: prepoznati, kaj je dozorelo, ter odpreti nov cikel."
+};
+
+const AREA_PROMPTS = {
+  "Ljubezen in sveto partnerstvo":{
+    q:"Kako lahko danes ustvarim več iskrenosti, bližine ali zdrave meje v svojih odnosih?",
+    p:"Izberi en konkreten odnos. Izrazi eno resnično misel, izkaži pozornost ali postavi mejo, ki spoštuje oba. Zapiši, kaj se je spremenilo."
+  },
+  "Denar, obilje in sprejemanje":{
+    q:"Kateri moj današnji korak podpira bolj zavesten odnos do denarja, vrednosti in sprejemanja?",
+    p:"Preglej eno finančno odločitev ali en način, kako daješ in sprejemaš. Izvedi majhen praktičen korak: preveri številke, pošlji ponudbo ali sprejmi pomoč."
+  },
+  "Osebna rast in notranja svoboda":{
+    q:"Katero prepričanje lahko danes preverim, namesto da mu samodejno verjamem?",
+    p:"Zapiši misel, ki te omejuje. Loči dejstvo od razlage in izberi en majhen poskus, ki ti omogoči več svobode."
+  },
+  "Telo, vitalnost in ravnovesje":{
+    q:"Kaj mi telo danes sporoča in katero potrebo lahko spoštujem?",
+    p:"Za nekaj minut se ustavi, sprosti ramena in umiri dih. Nato izberi eno izvedljivo podporo telesu: vodo, obrok, gibanje, počitek ali stik z naravo."
+  },
+  "Poslanstvo, ustvarjalnost in delo":{
+    q:"Katero delo danes najbolj zasluži mojo pozornost in kaj je njegov naslednji korak?",
+    p:"Izberi eno pomembno nalogo. Določi najmanjši konkreten korak in mu nameni 20 minut brez motenj. Na koncu zapiši, kaj si ustvaril/a."
+  },
+  "Družina, odnosi in skupnost":{
+    q:"Kakšen prispevek lahko danes naredim, ne da bi pri tem zanemaril/a sebe?",
+    p:"Naredi eno majhno dejanje skrbi ali sodelovanja. Opazuj, ali je izmenjava vzajemna, in po potrebi jasno izrazi svojo potrebo."
+  },
+  "Smisel, intuicija in duhovna povezanost":{
+    q:"Kaj v sebi že zaznavam, pa temu še nisem namenil/a dovolj pozornosti?",
+    p:"Preživi pet minut v tišini ali na prostem. Zapiši, kaj opažaš, nato pa občutek preveri z dejstvi in izberi prizemljen naslednji korak."
+  },
+  "Moja lastna namera":{
+    q:"Katero dejanje me danes najbolj približa nameri, ki sem jo izbral/a?",
+    p:"Preberi svojo namero. Izberi en majhen, merljiv korak, ki ga lahko narediš danes, in zapiši, kdaj ga boš izvedel/a."
+  }
+};
+
+function isoToday(){
+  const d=new Date();
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function shiftDate(iso,amount){
+  const d=new Date(iso+"T12:00:00Z");
+  d.setUTCDate(d.getUTCDate()+amount);
+  return d.getUTCFullYear()+"-"+String(d.getUTCMonth()+1).padStart(2,"0")+"-"+String(d.getUTCDate()).padStart(2,"0");
+}
+function dayDiff(a,b){
+  return Math.round((new Date(b+"T12:00:00Z")-new Date(a+"T12:00:00Z"))/86400000);
+}
+function formatDate(iso){
+  if(!iso)return "";
+  const p=iso.split("-");
+  return p.length===3?p[2]+". "+p[1]+". "+p[0]:"";
+}
+function escapeHtml(value){
+  return String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+}
+function readStore(key,fallback){
+  try{
+    const value=JSON.parse(localStorage.getItem(key)||"null");
+    return value===null?fallback:value;
+  }catch(e){return fallback;}
+}
+function writeStore(key,value){
+  try{localStorage.setItem(key,JSON.stringify(value));return true;}
+  catch(e){return false;}
+}
+function getCode(date){
+  if(!window.BLINKITA_TZOLKIN||typeof window.BLINKITA_TZOLKIN.tzolkinForDate!=="function"){
+    throw new Error("Koledarski motor se ni naložil. Preveri povezavo do ../js/tzolkin.js.");
+  }
+  const c=window.BLINKITA_TZOLKIN.tzolkinForDate(date);
+  if(!c||!c.number||!c.sign)throw new Error("Za izbrani datum ni bilo mogoče izračunati kode.");
+  return c;
+}
+function codeName(c){return String(c.number)+" "+(c.sign.international||c.international||c.sign.yucatec);}
+function localName(c){return String(c.number)+" "+(c.sign.meaningSl||"Pomen znamenja");}
+function signDesc(c){
+  return (SIGN_DETAILS[c.sign.asset]||{}).personality||"To znamenje je izhodišče za opazovanje lastnih izkušenj, odnosov in odločitev.";
+}
+function numberDesc(c){return NUMBER_DETAILS[c.number]||"Številčno mesto v trinajstdnevnem ciklu.";}
+function imagePath(path){return "../"+String(path||"").replace(/^\/+/,"");}
+function setImg(id,path,alt){
+  const img=$(id);img.alt=alt||"";img.src=imagePath(path);
+  img.onerror=function(){this.style.visibility="hidden";};
+  img.style.visibility="visible";
+}
+function setCodeImages(numberId,signId,c){
+  setImg(numberId,c.numberAsset||window.BLINKITA_TZOLKIN.getNumberAsset(c.number),"Številka "+c.number);
+  setImg(signId,c.signAsset||window.BLINKITA_TZOLKIN.getSignAsset(c.sign),"Znamenje "+(c.sign.international||c.international));
+}
+function renderKeywords(id,c){
+  const list=Array.isArray(c.keywordsSl)?c.keywordsSl:[];
+  $(id).innerHTML=list.map(w=>'<span class="chip">'+escapeHtml(w)+'</span>').join("");
+}
+function setNotice(id,message){
+  $(id).textContent=message;
+  $(id).classList.remove("hidden");
+}
+function hideNotice(id){$(id).classList.add("hidden");}
+
+function getTrecena(date){
+  const current=getCode(date);
+  const startDate=shiftDate(date,-(current.number-1));
+  const start=getCode(startDate);
+  const days=[];
+  for(let i=0;i<13;i++){
+    const d=shiftDate(startDate,i);
+    days.push({date:d,code:getCode(d)});
+  }
+  return {startDate,start,days,currentNumber:current.number};
+}
+function renderDayCard(date){
+  const c=getCode(date);
+  const t=getTrecena(date);
+  setCodeImages("todayNumberImg","todaySignImg",c);
+  $("todayCode").textContent=codeName(c);
+  $("todayLocal").textContent=localName(c);
+  $("todayDateLabel").textContent=formatDate(date);
+  $("todayMeaning").textContent=signDesc(c);
+  renderKeywords("todayKeywords",c);
+  setCodeImages("todayTrecenaNumberImg","todayTrecenaSignImg",t.start);
+  $("todayTrecenaCode").textContent=codeName(t.start);
+  $("todayTrecenaLocal").textContent=localName(t.start);
+  $("todayTrecenaDate").textContent="Začetek: "+formatDate(t.startDate);
+  $("todayTrecenaMeaning").textContent=signDesc(t.start);
+  $("todayTrecenaProgress").textContent="Dan "+t.currentNumber+" od 13 · "+formatDate(date);
+}
+function renderTrecena(targetId,trecena){
+  $(targetId).innerHTML=trecena.days.map((item,index)=>{
+    const c=item.code;
+    const isCurrent=item.date===trecena.days[trecena.currentNumber-1].date;
+    return '<article class="trecena-day '+(isCurrent?"today":"")+'">'+
+      '<img src="'+escapeHtml(imagePath(c.numberAsset))+'" alt="Številka '+c.number+'" onerror="this.style.visibility=\'hidden\'">'+
+      '<img src="'+escapeHtml(imagePath(c.signAsset))+'" alt="Znamenje '+escapeHtml(c.sign.international)+'" onerror="this.style.visibility=\'hidden\'">'+
+      '<strong>'+escapeHtml(codeName(c))+'</strong>'+
+      '<span>'+escapeHtml(localName(c))+'</span>'+
+      '<span>'+escapeHtml(formatDate(item.date))+'</span>'+
+      '</article>';
+  }).join("");
+}
+function renderCross(birthDate,birth){
+  const positions=[
+    {key:"conception",label:"Spočetje",date:shiftDate(birthDate,-9),note:"9 dni pred rojstvom"},
+    {key:"destiny",label:"Usoda",date:shiftDate(birthDate,9),note:"9 dni po rojstvu"},
+    {key:"right",label:"Desna roka",date:shiftDate(birthDate,-7),note:"7 dni pred rojstvom"},
+    {key:"center",label:"Središče · rojstvo",date:birthDate,note:"Rojstna koda"},
+    {key:"left",label:"Leva roka",date:shiftDate(birthDate,7),note:"7 dni po rojstvu"}
+  ];
+  const byKey=Object.fromEntries(positions.map(p=>[p.key,p]));
+  const order=["conception","right","center","left","destiny"];
+  $("birthCross").innerHTML=order.map(key=>{
+    const p=byKey[key],c=key==="center"?birth:getCode(p.date);
+    return '<article class="cross-cell '+key+'">'+
+      '<div class="position">'+escapeHtml(p.label)+'</div>'+
+      '<img src="'+escapeHtml(imagePath(c.numberAsset))+'" alt="Številka '+c.number+'" onerror="this.style.visibility=\'hidden\'">'+
+      '<img src="'+escapeHtml(imagePath(c.signAsset))+'" alt="Znamenje '+escapeHtml(c.sign.international)+'" onerror="this.style.visibility=\'hidden\'">'+
+      '<div class="cross-code">'+escapeHtml(codeName(c))+'</div>'+
+      '<div class="cross-local">'+escapeHtml(localName(c))+'</div>'+
+      '<p>'+escapeHtml(signDesc(c))+'</p>'+
+      '<p class="meta">'+escapeHtml(p.note)+' · '+escapeHtml(formatDate(p.date))+'</p>'+
+      '</article>';
+  }).join("");
+}
+function renderBirth(name,date){
+  const c=getCode(date),t=getTrecena(date);
+  currentProfile={name:name.trim(),birthDate:date};
+  currentCode=c;
+  $("birthPerson").textContent=name.trim();
+  $("birthDateLabel").textContent="Datum rojstva: "+formatDate(date);
+  setCodeImages("birthNumberImg","birthSignImg",c);
+  $("birthCode").textContent=codeName(c);
+  $("birthLocal").textContent=localName(c);
+  $("birthDescription").textContent=signDesc(c);
+  $("birthNumberMeaning").textContent="Število "+c.number+": "+numberDesc(c);
+  renderKeywords("birthKeywords",c);
+  setCodeImages("birthTrecenaNumberImg","birthTrecenaSignImg",t.start);
+  $("birthTrecenaCode").textContent=codeName(t.start);
+  $("birthTrecenaLocal").textContent=localName(t.start);
+  $("birthTrecenaDate").textContent="Začetek rojstne trecene: "+formatDate(t.startDate);
+  $("birthTrecenaMeaning").textContent="Rojstna trecena se začne z dnevom številke 1. Njen začetni simbol daje okvir trinajstdnevnemu obdobju, v katerem se je rodila tvoja koda. "+signDesc(t.start);
+  $("birthTrecenaIntro").textContent="Tvoja rojstna trecena se začne "+formatDate(t.startDate)+". Spodaj je vseh 13 dni cikla; označen je dan tvojega rojstva.";
+  renderTrecena("birthTrecenaDays",t);
+  renderCross(date,c);
+  $("birthResult").classList.remove("hidden");
+  $("journeyPanel").classList.remove("hidden");
+  $("journeyStart").value="2026-10-10";
+  $("journalText").value="";
+  loadJourney();
+  updateJourney();
+  $("birthResult").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function renderDaily(){
+  const date=$("todayDate").value||isoToday();
+  renderDayCard(date);
+  if(currentProfile)updateJourney();
+}
+function getJourney(){
+  if(!currentProfile)return null;
+  const all=readStore(JOURNEY_KEY,{});
+  return all[currentProfile.birthDate]||null;
+}
+function loadJourney(){
+  const j=getJourney();
+  if(j){
+    $("intentionArea").value=j.area||"Osebna rast in notranja svoboda";
+    $("intentionText").value=j.text||"";
+    $("journeyStart").value=j.start||isoToday();
+  }else{
+    $("intentionText").value="";
+    $("intentionArea").value="Osebna rast in notranja svoboda";
+    $("journeyStart").value="2026-10-10";
+  }
+}
+function saveJourney(){
+  if(!currentProfile){setNotice("intentionNotice","Najprej izračunaj svojo osebno Kodo Časa.");return;}
+  const all=readStore(JOURNEY_KEY,{});
+  all[currentProfile.birthDate]={
+    area:$("intentionArea").value,
+    text:$("intentionText").value.trim(),
+    start:$("journeyStart").value||isoToday(),
+    updatedAt:new Date().toISOString()
+  };
+  if(!writeStore(JOURNEY_KEY,all)){
+    setNotice("intentionNotice","Brskalnik ni dovolil shranjevanja. Preveri nastavitve zasebnosti.");
+    return;
+  }
+  setNotice("intentionNotice","Tvoja namera je shranjena v tem brskalniku.");
+  updateJourney();
+}
+function updateJourney(){
+  if(!currentProfile)return;
+  const date=$("todayDate").value||isoToday();
+  const c=getCode(date);
+  const j={area:$("intentionArea").value||"Osebna rast in notranja svoboda",text:$("intentionText").value.trim(),start:$("journeyStart").value||isoToday()};
+  const start=j.start||isoToday();
+  const elapsed=dayDiff(start,date);
+  const dayNumber=Math.max(1,Math.min(260,elapsed+1));
+  const prompts=AREA_PROMPTS[j.area]||AREA_PROMPTS["Moja lastna namera"];
+  $("journeyDayTitle").textContent=elapsed<0?"Potovanje se še ni začelo":elapsed>=260?"Potovanje je zaključeno":"Dan "+dayNumber+" od 260";
+  $("journeyProgress").style.width=(elapsed<0?0:Math.min(260,elapsed+1)/260*100)+"%";
+  $("journeyProgressLabel").textContent=elapsed<0?"Začetek: "+formatDate(start)+" · Potovanje se še ni začelo":"Začetek: "+formatDate(start)+" · "+dayNumber+". dan od 260";
+  setCodeImages("personalDayNumberImg","personalDaySignImg",c);
+  $("personalDayCode").textContent=codeName(c);
+  $("personalDayLocal").textContent=localName(c);
+  $("personalDayDate").textContent=formatDate(date);
+  const birth=currentCode||getCode(currentProfile.birthDate);
+  $("personalDayConnection").textContent="Tvoja rojstna koda je "+codeName(birth)+" ("+localName(birth)+"). Današnja koda je "+codeName(c)+" ("+localName(c)+"). Opazuj, kako se današnje teme "+(c.sign.meaningSl||"znamenja")+" srečujejo s tvojimi osebnimi poudarki "+(birth.sign.meaningSl||"rojstnega znamenja")+". Izbrano področje namere: "+j.area+".";
+  $("dailyQuestion").textContent=prompts.q;
+  $("dailyReflection").textContent="Današnje znamenje: "+signDesc(c)+" Številka "+c.number+" prinaša izhodišče za razmislek: "+numberDesc(c)+(j.text?" Tvoja zapisana namera: "+j.text:"");
+  $("practiceTitle").textContent="Praksa za področje: "+j.area;
+  $("dailyPractice").textContent=prompts.p;
+  loadJournalEntry(date);
+}
+function journalKey(){
+  return currentProfile?currentProfile.birthDate:"";
+}
+function loadJournalEntry(date){
+  if(!currentProfile)return;
+  const all=readStore(JOURNAL_KEY,{});
+  const profileEntries=all[journalKey()]||{};
+  $("journalText").value=profileEntries[date]||"";
+}
+function saveJournal(){
+  if(!currentProfile){setNotice("journalNotice","Najprej izračunaj svojo osebno Kodo Časa.");return;}
+  const date=$("todayDate").value||isoToday();
+  const all=readStore(JOURNAL_KEY,{});
+  const key=journalKey();
+  if(!all[key])all[key]={};
+  all[key][date]=$("journalText").value;
+  if(!writeStore(JOURNAL_KEY,all)){
+    setNotice("journalNotice","Zapis ni bil shranjen. Preveri nastavitve brskalnika.");
+    return;
+  }
+  setNotice("journalNotice","Zapis za "+formatDate(date)+" je shranjen.");
+}
+function showJournal(){
+  if(!currentProfile){setNotice("journalNotice","Najprej izračunaj svojo osebno Kodo Časa.");return;}
+  const all=readStore(JOURNAL_KEY,{});
+  const entries=all[journalKey()]||{};
+  const list=Object.keys(entries).filter(d=>String(entries[d]||"").trim()).sort((a,b)=>b.localeCompare(a));
+  const target=$("journalEntries");
+  target.classList.remove("hidden");
+  target.innerHTML=list.length?list.map(date=>'<article class="journal-entry"><time>'+escapeHtml(formatDate(date))+'</time><div>'+escapeHtml(entries[date]).replace(/\n/g,"<br>")+'</div></article>').join(""):'<p class="bodycopy">Za ta profil še ni shranjenih zapisov.</p>';
+}
+function saveProfile(){
+  if(!currentProfile)return;
+  const profiles=readStore(PROFILE_KEY,[]);
+  const next=profiles.filter(p=>p.birthDate!==currentProfile.birthDate);
+  next.push(currentProfile);
+  if(!writeStore(PROFILE_KEY,next)){
+    setNotice("saveNotice","Profila ni bilo mogoče shraniti. Preveri nastavitve brskalnika.");
+    return;
+  }
+  setNotice("saveNotice","Profil je shranjen v tem brskalniku.");
+  renderProfiles();
+}
+function renderProfiles(){
+  const profiles=readStore(PROFILE_KEY,[]);
+  $("emptyProfiles").classList.toggle("hidden",profiles.length>0);
+  $("profileList").innerHTML=profiles.map((p,index)=>'<div class="profile-row"><div><strong>'+escapeHtml(p.name)+'</strong><div class="meta">'+escapeHtml(formatDate(p.birthDate))+'</div></div><div class="actions" style="margin:0"><button class="btn secondary small" data-load="'+index+'">ODPRI</button><button class="btn secondary small" data-delete="'+index+'">IZBRIŠI</button></div></div>').join("");
+}
+function deleteProfile(index){
+  const profiles=readStore(PROFILE_KEY,[]);
+  const p=profiles[index];
+  if(!p)return;
+  if(!confirm("Izbrišem profil "+p.name+" iz tega brskalnika?"))return;
+  profiles.splice(index,1);
+  writeStore(PROFILE_KEY,profiles);
+  renderProfiles();
+}
+function loadProfile(index){
+  const p=readStore(PROFILE_KEY,[])[index];
+  if(!p)return;
+  $("personName").value=p.name;
+  $("birthDate").value=p.birthDate;
+  renderBirth(p.name,p.birthDate);
+}
+function validateDate(date){
+  return /^\d{4}-\d{2}-\d{2}$/.test(date)&&!Number.isNaN(new Date(date+"T12:00:00Z").getTime());
+}
+
+$("birthForm").addEventListener("submit",function(event){
+  event.preventDefault();
+  hideNotice("formError");
+  const name=$("personName").value.trim(),date=$("birthDate").value;
+  if(!name||!validateDate(date)){
+    setNotice("formError","Vnesi ime in veljaven datum rojstva.");
+    return;
+  }
+  try{renderBirth(name,date);}
+  catch(error){setNotice("formError",error.message||"Pri izračunu je prišlo do napake.");}
+});
+$("resetForm").addEventListener("click",function(){
+  $("birthForm").reset();
+  $("birthResult").classList.add("hidden");
+  $("journeyPanel").classList.add("hidden");
+  currentProfile=null;currentCode=null;
+  hideNotice("formError");
+});
+$("todayDate").value=isoToday();
+$("todayDate").addEventListener("change",function(){
+  try{renderDaily();}
+  catch(error){setNotice("formError",error.message||"Napaka pri izračunu dneva.");}
+});
+$("saveProfile").addEventListener("click",saveProfile);
+$("printProfile").addEventListener("click",function(){window.print();});
+$("saveIntention").addEventListener("click",saveJourney);
+$("intentionArea").addEventListener("change",function(){if(currentProfile)updateJourney();});
+$("journeyStart").addEventListener("change",function(){if(currentProfile){$("todayDate").value=$("journeyStart").value||isoToday();saveJourney();renderDaily();}});
+$("saveJournal").addEventListener("click",saveJournal);
+$("showJournal").addEventListener("click",showJournal);
+$("profileList").addEventListener("click",function(event){
+  const load=event.target.closest("[data-load]");
+  const del=event.target.closest("[data-delete]");
+  if(load)loadProfile(Number(load.dataset.load));
+  if(del)deleteProfile(Number(del.dataset.delete));
+});
+try{
+  renderDaily();
+  renderProfiles();
+}catch(error){
+  setNotice("formError",error.message||"Koledarskega motorja ni bilo mogoče zagnati.");
+}
+})();
+</script>
+</body>
+</html>

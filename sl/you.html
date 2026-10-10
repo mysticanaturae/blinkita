@@ -1,5 +1,823 @@
-<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BLINKITA YOU — BLINKITA</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/portal.css"><link rel="stylesheet" href="../css/you.css"></head><body class="page-you"><header class="site-header"><a class="brand" href="index.html">BLINKITA<span>living portal</span></a><button class="nav-toggle" aria-label="Meni">&#9776;</button><nav id="mainNav"></nav><div class="language-switch"><a href="../sl/you.html" class="active">SL</a><span>·</span><a href="../en/you.html">EN</a></div></header><main class="portal-page"><section class="portal-hero"><div><div class="eyebrow">Profile · Path · Library</div><h1>BLINKITA YOU</h1><p>Tvoj osebni prostor znotraj živega portala.</p></div><div class="page-tzolkin"><div class="tzolkin-card" data-tzolkin><span class="tz-label">TZOLK’IN · TRADITIONAL COUNT</span></div></div></section><section class="content-grid"><article class="content-card"><h2>01 · Moj profil</h2><p>Ta prostor je pripravljen za nadaljnjo vsebino BLINKITA. Vsak modul lahko pozneje dobi svojo stran, svojo logiko in svoje materiale.</p></article><article class="content-card"><h2>02 · Moja knjižnica</h2><p>Ta prostor je pripravljen za nadaljnjo vsebino BLINKITA. Vsak modul lahko pozneje dobi svojo stran, svojo logiko in svoje materiale.</p></article><article class="content-card"><h2>03 · Moja pot</h2><p>Ta prostor je pripravljen za nadaljnjo vsebino BLINKITA. Vsak modul lahko pozneje dobi svojo stran, svojo logiko in svoje materiale.</p></article></section><section class="section"><div class="eyebrow">THE NEXT LAYER</div><h2>To je šele začetek.</h2><p>Struktura je namenoma razdeljena: skupna navigacija ostaja na enem mestu, Tzolkin ima svojo JavaScript datoteko, vsak portal pa svoj CSS. Tako lahko BLINKITA raste naprej brez tega, da bi se vse ponovno stlačilo v index.</p></section></main><footer>BLINKITA · www.blinkita.si</footer><script src="../js/navigation.js"></script><script src="../js/main.js"></script><script src="../js/tzolkin.js"></script></body></html>
+﻿<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>YOUNIQUE — Tvoj osebni svet | BLINKITA</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/portal.css">
+<link rel="stylesheet" href="../css/you.css">
+
+<style>
+
+/* ==========================================================
+   YOUNIQUE — PREMIUM MEMBERSHIP
+   ========================================================== */
+
+.page-you {
+  --yq-indigo:#17143d;
+  --yq-indigo-deep:#0d0b29;
+  --yq-gold:#d7b56d;
+  --yq-gold-light:#f1d99a;
+  --yq-cream:#f7f1e5;
+  --yq-muted:rgba(247,241,229,.68);
+  --yq-line:rgba(215,181,109,.24);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(215,181,109,.10), transparent 34rem),
+    linear-gradient(180deg,var(--yq-indigo-deep),var(--yq-indigo));
+  color:var(--yq-cream);
+}
+
+.yq-wrap {
+  width:min(1240px,92%);
+  margin:0 auto;
+}
+
+.yq-hero {
+  min-height:690px;
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);
+  align-items:center;
+  gap:70px;
+  padding:90px 0 80px;
+}
+
+.yq-eyebrow {
+  font-size:.72rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--yq-gold);
+  margin-bottom:25px;
+}
+
+.yq-hero h1 {
+  margin:0;
+  font-size:clamp(4rem,9vw,8.5rem);
+  line-height:.82;
+  letter-spacing:-.055em;
+  font-weight:500;
+  color:#fffaf0;
+}
+
+.yq-hero h1 span {
+  display:block;
+  font-family:Georgia,serif;
+  font-size:.28em;
+  line-height:1.5;
+  letter-spacing:.08em;
+  color:var(--yq-gold-light);
+  margin-top:25px;
+  text-transform:uppercase;
+}
+
+.yq-lead {
+  max-width:680px;
+  margin:38px 0 0;
+  font-family:Georgia,serif;
+  font-size:clamp(1.3rem,2.1vw,1.8rem);
+  line-height:1.55;
+  color:rgba(255,250,240,.88);
+}
+
+.yq-sublead {
+  max-width:610px;
+  margin:22px 0 0;
+  font-size:1rem;
+  line-height:1.8;
+  color:var(--yq-muted);
+}
+
+.yq-orbit {
+  position:relative;
+  aspect-ratio:1;
+  max-width:470px;
+  margin-left:auto;
+  display:grid;
+  place-items:center;
+}
+
+.yq-orbit::before,
+.yq-orbit::after {
+  content:"";
+  position:absolute;
+  border:1px solid var(--yq-line);
+  border-radius:50%;
+}
+
+.yq-orbit::before {
+  inset:5%;
+}
+
+.yq-orbit::after {
+  inset:17%;
+  border-color:rgba(215,181,109,.15);
+}
+
+.yq-orbit-core {
+  width:43%;
+  aspect-ratio:1;
+  border:1px solid rgba(215,181,109,.55);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px;
+  background:radial-gradient(circle,rgba(215,181,109,.15),rgba(13,11,41,.65));
+  box-shadow:0 0 80px rgba(215,181,109,.08);
+}
+
+.yq-orbit-core strong {
+  display:block;
+  font-size:1.7rem;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+
+.yq-orbit-core small {
+  display:block;
+  margin-top:8px;
+  color:var(--yq-gold);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-size:.58rem;
+}
+
+.yq-orbit-label {
+  position:absolute;
+  font-size:.63rem;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:var(--yq-muted);
+}
+
+.yq-orbit-label.one {top:8%;left:16%}
+.yq-orbit-label.two {top:25%;right:2%}
+.yq-orbit-label.three {bottom:13%;right:15%}
+.yq-orbit-label.four {bottom:18%;left:5%}
+
+.yq-section {
+  padding:100px 0;
+}
+
+.yq-section-head {
+  max-width:800px;
+  margin-bottom:55px;
+}
+
+.yq-section-head .yq-eyebrow {
+  margin-bottom:18px;
+}
+
+.yq-section-head h2 {
+  margin:0;
+  font-family:Georgia,serif;
+  font-weight:400;
+  font-size:clamp(2.4rem,5vw,4.7rem);
+  line-height:1;
+  color:#fffaf0;
+}
+
+.yq-section-head p {
+  margin:25px 0 0;
+  max-width:720px;
+  color:var(--yq-muted);
+  line-height:1.8;
+  font-size:1.02rem;
+}
+
+/* ----------------------------------------------------------
+   LEVELS
+   ---------------------------------------------------------- */
+
+.yq-levels {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  align-items:stretch;
+}
+
+.yq-card {
+  position:relative;
+  min-height:570px;
+  padding:34px 27px 30px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.035);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.yq-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(145deg,rgba(215,181,109,.06),transparent 45%);
+  pointer-events:none;
+}
+
+.yq-card.basic {
+  border-color:rgba(215,181,109,.24);
+}
+
+.yq-card.premium {
+  border-color:rgba(215,181,109,.68);
+  background:
+    linear-gradient(180deg,rgba(215,181,109,.11),rgba(255,255,255,.035));
+  transform:translateY(-12px);
+  box-shadow:0 25px 80px rgba(0,0,0,.25);
+}
+
+.yq-card.vip {
+  border-color:rgba(241,217,154,.55);
+  background:
+    linear-gradient(180deg,rgba(241,217,154,.12),rgba(255,255,255,.035));
+}
+
+.yq-badge {
+  position:absolute;
+  top:0;
+  right:0;
+  padding:8px 13px;
+  background:var(--yq-gold);
+  color:#17143d;
+  font-size:.58rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.yq-card-name {
+  font-size:.68rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--yq-gold);
+  margin-bottom:20px;
+}
+
+.yq-card h3 {
+  margin:0;
+  font-size:2rem;
+  font-weight:400;
+  letter-spacing:-.02em;
+}
+
+.yq-card-intro {
+  min-height:92px;
+  margin:18px 0 25px;
+  color:var(--yq-muted);
+  line-height:1.65;
+  font-size:.92rem;
+}
+
+.yq-price {
+  padding:18px 0;
+  border-top:1px solid var(--yq-line);
+  border-bottom:1px solid var(--yq-line);
+  margin-bottom:25px;
+}
+
+.yq-price strong {
+  display:block;
+  font-size:1.4rem;
+  font-weight:500;
+  color:#fffaf0;
+}
+
+.yq-price span {
+  display:block;
+  margin-top:4px;
+  color:var(--yq-muted);
+  font-size:.65rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.yq-features {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:12px;
+}
+
+.yq-features li {
+  position:relative;
+  padding-left:20px;
+  color:rgba(255,250,240,.78);
+  font-size:.87rem;
+  line-height:1.45;
+}
+
+.yq-features li::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:.55em;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--yq-gold);
+}
+
+.yq-card-cta {
+  margin-top:auto;
+  padding-top:30px;
+}
+
+.yq-button {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  min-height:50px;
+  border:1px solid var(--yq-gold);
+  color:#fffaf0;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-size:.67rem;
+  transition:.25s ease;
+}
+
+.yq-button:hover {
+  background:var(--yq-gold);
+  color:var(--yq-indigo-deep);
+}
+
+.yq-card.premium .yq-button,
+.yq-card.vip .yq-button {
+  background:var(--yq-gold);
+  color:var(--yq-indigo-deep);
+}
+
+.yq-card.premium .yq-button:hover,
+.yq-card.vip .yq-button:hover {
+  background:var(--yq-gold-light);
+}
+
+/* ----------------------------------------------------------
+   VALUE / EXPERIENCE
+   ---------------------------------------------------------- */
+
+.yq-experience {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.yq-experience-card {
+  padding:42px;
+  border-top:1px solid var(--yq-line);
+  background:rgba(255,255,255,.025);
+}
+
+.yq-experience-card .num {
+  color:var(--yq-gold);
+  font-size:.65rem;
+  letter-spacing:.18em;
+}
+
+.yq-experience-card h3 {
+  margin:18px 0 12px;
+  font-family:Georgia,serif;
+  font-size:2rem;
+  font-weight:400;
+}
+
+.yq-experience-card p {
+  margin:0;
+  color:var(--yq-muted);
+  line-height:1.8;
+}
+
+/* ----------------------------------------------------------
+   FINAL CTA
+   ---------------------------------------------------------- */
+
+.yq-final {
+  text-align:center;
+  padding:120px 20px 130px;
+  border-top:1px solid var(--yq-line);
+}
+
+.yq-final h2 {
+  margin:0 auto;
+  max-width:850px;
+  font-family:Georgia,serif;
+  font-size:clamp(2.7rem,6vw,5.8rem);
+  line-height:.98;
+  font-weight:400;
+}
+
+.yq-final p {
+  max-width:650px;
+  margin:28px auto 35px;
+  color:var(--yq-muted);
+  line-height:1.8;
+}
+
+.yq-final .yq-button {
+  width:auto;
+  display:inline-flex;
+  padding:0 38px;
+}
+
+/* ----------------------------------------------------------
+   MOBILE
+   ---------------------------------------------------------- */
+
+@media (max-width:1000px) {
+  .yq-hero {
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+  .yq-orbit {
+    margin:0 auto;
+  }
+
+  .yq-levels {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .yq-card.premium {
+    transform:none;
+  }
+}
+
+@media (max-width:620px) {
+  .yq-hero {
+    min-height:auto;
+    padding:65px 0 50px;
+  }
+
+  .yq-hero h1 {
+    font-size:clamp(3.8rem,19vw,6rem);
+  }
+
+  .yq-section {
+    padding:70px 0;
+  }
+
+  .yq-levels,
+  .yq-experience {
+    grid-template-columns:1fr;
+  }
+
+  .yq-card {
+    min-height:auto;
+  }
+
+  .yq-orbit {
+    max-width:340px;
+  }
+
+  .yq-experience-card {
+    padding:30px;
+  }
+}
+
+</style>
+</head>
+
+<body class="page-you">
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    BLINKITA<span>living portal</span>
+  </a>
+
+  <button class="nav-toggle" aria-label="Meni">&#9776;</button>
+
+  <nav id="mainNav"></nav>
+
+  <div class="language-switch">
+    <a href="../sl/you.html" class="active">SL</a>
+    <span>·</span>
+    <a href="../en/you.html">EN</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
+  <section class="yq-wrap yq-hero">
+
+    <div>
+      <div class="yq-eyebrow">
+        PERSONAL · DAILY · BLINKITA
+      </div>
+
+      <h1>
+        YOUNIQUE
+        <span>Tvoj osebni svet znotraj BLINKITA</span>
+      </h1>
+
+      <p class="yq-lead">
+        Ne prihajaš samo na spletno stran.
+        Vstopaš v prostor, ki se začne vrteti okoli tebe.
+      </p>
+
+      <p class="yq-sublead">
+        YOUNIQUE poveže BLINKITA TIME, BODY, MIND, LIFE in tvojo osebno
+        knjižnico v en sam prostor. Tukaj ne iščeš naključne vsebine.
+        Tukaj odpiraš tisto, kar je namenjeno tvoji poti.
+      </p>
+    </div>
+
+    <div class="yq-orbit">
+      <div class="yq-orbit-label one">TIME</div>
+      <div class="yq-orbit-label two">BODY</div>
+      <div class="yq-orbit-label three">MIND</div>
+      <div class="yq-orbit-label four">LIBRARY</div>
+
+      <div class="yq-orbit-core">
+        <div>
+          <strong>YOU</strong>
+          <small>inside BLINKITA</small>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
 
+  <!-- =====================================================
+       CHOOSE YOUR LEVEL
+       ===================================================== -->
 
+  <section class="yq-section">
+    <div class="yq-wrap">
+
+      <div class="yq-section-head">
+        <div class="yq-eyebrow">CHOOSE YOUR LEVEL</div>
+
+        <h2>
+          Ne potrebuješ vsega.<br>
+          Izberi svoj način vstopa.
+        </h2>
+
+        <p>
+          YOUNIQUE raste skupaj s tabo. Začni brezplačno, vstopi globlje,
+          odpri mesečni Premium svet ali izberi VIP, če želiš, da del
+          poti poteka tudi osebno z BLINKITO.
+        </p>
+      </div>
+
+
+      <div class="yq-levels">
+
+        <!-- FREE -->
+        <article class="yq-card free">
+
+          <div class="yq-card-name">01 · ENTRY</div>
+
+          <h3>FREE</h3>
+
+          <p class="yq-card-intro">
+            Tvoj prvi vstop v YOUNIQUE in v svet BLINKITA.
+            Brez obveznosti. Brez plačila.
+          </p>
+
+          <div class="yq-price">
+            <strong>BREZPLAČNO</strong>
+            <span>free access</span>
+          </div>
+
+          <ul class="yq-features">
+            <li>osebni YOUNIQUE prostor</li>
+            <li>dnevni osnovni vsebinski tok</li>
+            <li>Tradicionalni Tzolk’in</li>
+            <li>izbrani BLINKITA vpogledi</li>
+            <li>vstop v BLINKITA svet</li>
+          </ul>
+
+          <div class="yq-card-cta">
+            <a class="yq-button" href="#">
+              Ustvari FREE
+            </a>
+          </div>
+
+        </article>
+
+
+        <!-- BASIC -->
+        <article class="yq-card basic">
+
+          <div class="yq-card-name">02 · CORE</div>
+
+          <h3>BASIC</h3>
+
+          <p class="yq-card-intro">
+            Več dostopa. Več prakse. Več BLINKITA vsebine,
+            ki jo lahko dejansko uporabiš v vsakdanjem življenju.
+          </p>
+
+          <div class="yq-price">
+            <strong>MONTHLY ACCESS</strong>
+            <span>mesečno članstvo</span>
+          </div>
+
+          <ul class="yq-features">
+            <li>vse iz FREE</li>
+            <li>razširjene dnevne vsebine</li>
+            <li>več praks in aktivacij</li>
+            <li>izbrani materiali iz knjižnice</li>
+            <li>dostop do članskih vsebin</li>
+          </ul>
+
+          <div class="yq-card-cta">
+            <a class="yq-button" href="#">
+              Izberi BASIC
+            </a>
+          </div>
+
+        </article>
+
+
+        <!-- PREMIUM -->
+        <article class="yq-card premium">
+
+          <div class="yq-badge">RECOMMENDED</div>
+
+          <div class="yq-card-name">03 · DEEPER</div>
+
+          <h3>PREMIUM</h3>
+
+          <p class="yq-card-intro">
+            Tvoj mesečni BLINKITA prostor. Vsak mesec nekaj novega,
+            kar ni bilo tukaj prejšnji mesec.
+          </p>
+
+          <div class="yq-price">
+            <strong>MONTHLY ACCESS</strong>
+            <span>premium članstvo</span>
+          </div>
+
+          <ul class="yq-features">
+            <li>vse iz BASIC</li>
+            <li><strong>nova ekskluzivna gradiva vsak mesec</strong></li>
+            <li>novi programi, prakse in aktivacije</li>
+            <li>polni dostop do Premium knjižnice</li>
+            <li>posebne BLINKITA vsebine za člane</li>
+            <li>globlja osebna uporaba YOUNIQUE</li>
+          </ul>
+
+          <div class="yq-card-cta">
+            <a class="yq-button" href="#">
+              Izberi PREMIUM
+            </a>
+          </div>
+
+        </article>
+
+
+        <!-- VIP -->
+        <article class="yq-card vip">
+
+          <div class="yq-badge">PRIVATE</div>
+
+          <div class="yq-card-name">04 · PERSONAL</div>
+
+          <h3>VIP</h3>
+
+          <p class="yq-card-intro">
+            Vse, kar prinaša Premium, z dodatkom osebnega prostora,
+            osebne pozornosti in neposrednega stika.
+          </p>
+
+          <div class="yq-price">
+            <strong>PRIVATE ACCESS</strong>
+            <span>vip članstvo</span>
+          </div>
+
+          <ul class="yq-features">
+            <li>vse iz PREMIUM</li>
+            <li>vsa nova mesečna gradiva</li>
+            <li>osebna priporočila in usmeritve</li>
+            <li><strong>1 individualna konzultacija / mesec</strong></li>
+            <li>VIP dostopi in posebne vsebine</li>
+            <li>osebnejši stik z BLINKITA</li>
+          </ul>
+
+          <div class="yq-card-cta">
+            <a class="yq-button" href="#">
+              Izberi VIP
+            </a>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       WHAT YOUNIQUE BECOMES
+       ===================================================== -->
+
+  <section class="yq-section">
+    <div class="yq-wrap">
+
+      <div class="yq-section-head">
+        <div class="yq-eyebrow">INSIDE YOUNIQUE</div>
+
+        <h2>
+          Tvoj prostor.<br>
+          Tvoj ritem. Tvoja pot.
+        </h2>
+
+        <p>
+          YOUNIQUE ni še ena zbirka člankov in ni še en profil z nekaj
+          podatki. Zgrajen je kot osebni vmesnik med tabo in svetom BLINKITA.
+        </p>
+      </div>
+
+      <div class="yq-experience">
+
+        <article class="yq-experience-card">
+          <div class="num">01 · TODAY</div>
+          <h3>Danes</h3>
+          <p>
+            Odpreš YOUNIQUE in vidiš, kaj je danes pomembno:
+            dnevni ritem, Tzolk’in, vsebino, prakso ali novo sporočilo.
+          </p>
+        </article>
+
+        <article class="yq-experience-card">
+          <div class="num">02 · TIME</div>
+          <h3>Čas</h3>
+          <p>
+            Tvoj odnos do časa dobi osebni prostor skozi tradicionalni
+            Tzolk’in in BLINKITA TIME.
+          </p>
+        </article>
+
+        <article class="yq-experience-card">
+          <div class="num">03 · BODY · MIND</div>
+          <h3>Telo &amp; um</h3>
+          <p>
+            Prakse, znanja in materiali iz BLINKITA BODY in BLINKITA MIND
+            se zberejo tam, kjer jih lahko dejansko uporabljaš.
+          </p>
+        </article>
+
+        <article class="yq-experience-card">
+          <div class="num">04 · LIBRARY</div>
+          <h3>Knjižnica</h3>
+          <p>
+            Tvoja vsebina ne izgine v toku interneta. Gradiva, programi,
+            knjige in prakse dobijo svoj osebni prostor.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       FINAL CTA
+       ===================================================== -->
+
+  <section class="yq-final">
+
+    <div class="yq-eyebrow">YOUNIQUE · BLINKITA</div>
+
+    <h2>
+      BLINKITA je svet.<br>
+      YOUNIQUE je tvoj prostor v njem.
+    </h2>
+
+    <p>
+      Začni tam, kjer si. Izberi raven, ki ti ustreza,
+      in naj YOUNIQUE postane prostor, kamor se vračaš.
+    </p>
+
+    <a class="yq-button" href="#">
+      Vstopi v YOUNIQUE
+    </a>
+
+  </section>
+
+</main>
+
+<footer>
+  BLINKITA · www.blinkita.si
+</footer>
+
+<script src="../js/navigation.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/tzolkin.js"></script>
+
+</body>
+</html>
 

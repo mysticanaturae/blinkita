@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLINKITA · Tzolk'in Kolektiv</title>
+<style>
+:root{--sea:#087e8b;--deep:#123d52;--aqua:#dff5f1;--mint:#b9e4d5;--sand:#fff8e9;--gold:#c79b42;--ink:#203c45;--muted:#607b80;--white:#fff;--line:#d7e8e4}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(150deg,#e8f8f5,#fdf8ed 65%,#e5f2f5);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+.wrap{max-width:1120px;margin:auto;padding:22px}
+.hero{padding:32px 26px;text-align:center;border-radius:25px;background:linear-gradient(135deg,#0d6374,#159b9b 55%,#75cbb0);color:white;box-shadow:0 12px 35px #124d5320}
+.eyebrow{letter-spacing:3px;text-transform:uppercase;font:600 11px Arial,sans-serif}
+h1{font-size:clamp(32px,5vw,52px);margin:12px 0}
+.hero p{max-width:720px;margin:0 auto;line-height:1.7}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:18px 0}
+.bar select{flex:1;min-width:180px}
+.card{background:#ffffffed;border:1px solid var(--line);border-radius:18px;padding:20px;margin:15px 0;box-shadow:0 5px 22px #174c5010}
+h2{font-size:23px;color:var(--deep);margin:0 0 12px}
+h3{color:var(--sea);margin:8px 0}
+p{line-height:1.65}
+.small{font:13px/1.6 Arial,sans-serif;color:var(--muted)}
+label{display:block;font:600 12px Arial,sans-serif;color:var(--muted);margin:0 0 6px}
+input,select,textarea{width:100%;padding:11px 12px;border:1px solid #c7ded9;border-radius:10px;background:#fff;color:var(--ink);font:15px Arial,sans-serif}
+textarea{min-height:105px;resize:vertical}
+button{border:0;border-radius:10px;padding:11px 15px;background:var(--sea);color:white;font-weight:700;cursor:pointer}
+button:hover{filter:brightness(.94)}
+button.secondary{background:#e5f3ef;color:var(--deep);border:1px solid var(--line)}
+button.danger{background:#fff0ed;color:#9b3e32;border:1px solid #f1c8c0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fields{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:10px;align-items:end}.member-result{margin-top:12px;text-align:center}.mini-code{display:flex;justify-content:center;gap:24px;align-items:flex-start;margin:12px auto 6px}.mini-item{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:64px}.mini-item img{width:38px;height:38px;object-fit:contain;display:block}.mini-label{font-size:13px;color:var(--deep);text-align:center}.today-energy{text-align:center;background:linear-gradient(145deg,#fffdf5,#e4f7f1)}.today-energy .mini-item img{width:44px;height:44px}
+.member{background:#f4fbf9;border:1px solid var(--line);padding:14px;border-radius:14px;margin:10px 0}
+.memberhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.memberhead strong{color:var(--deep)}
+.kincode{font-size:clamp(24px,4vw,36px);font-weight:bold;color:var(--sea);margin:8px 0}
+.big{background:linear-gradient(145deg,#fffdf5,#e4f7f1);border:1px solid #d8e9d8}
+.center{text-align:center}
+.pill{display:inline-block;padding:6px 10px;border-radius:30px;background:#e2f5ef;color:#166b68;font:700 12px Arial,sans-serif}
+.meter{height:12px;border-radius:20px;background:#e4ece8;overflow:hidden;margin:10px 0}
+.meterfill{height:100%;width:0;background:linear-gradient(90deg,#86d3b6,#18a1a0,#e3bb64);transition:width .25s}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{background:#f5fbf8;border-radius:13px;padding:14px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+footer{text-align:center;color:var(--muted);font:12px Arial,sans-serif;padding:25px}
+@media(max-width:680px){.wrap{padding:12px}.grid,.split{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.hero{padding:25px 17px}.card{padding:15px}}
+
+/* BLINKITA: vodoravni prikaz energije posameznega člana */
+.member-result {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid rgba(120,160,160,.25);
+  border-radius: 14px;
+  background: rgba(120,160,160,.07);
+}
+.member-energy {
+  display: grid;
+  grid-template-columns: 104px minmax(0,1fr);
+  align-items: center;
+  gap: 16px;
+}
+.member-energy-symbols {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.member-energy-symbol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+.member-energy-symbol img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+.member-energy-symbol span {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.25;
+}
+.member-energy-copy { min-width: 0; }
+.member-energy-code {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.member-energy-meaning {
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: .88;
+}
+@media (max-width: 480px) {
+  .member-energy {
+    grid-template-columns: 88px minmax(0,1fr);
+    gap: 10px;
+  }
+  .member-energy-symbols { gap: 5px; }
+  .member-energy-symbol img {
+    width: 34px;
+    height: 34px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+ <div class="eyebrow">BLINKITA · Živ Čas</div>
+ <h1>Tzolk'in Kolektiv</h1>
+ <p>Raziskuj skupno simbolno kodo družine, ekipe, podjetja ali skupnosti. Vsak član prispeva svojo osebno rojstno kodo, kolektiv pa skozi dnevno energijo dobi novo izhodišče za skupno refleksijo.</p>
+</header>
+
+<section class="card today-energy">
+ <span class="pill">DANAŠNJA TZOLK'IN ENERGIJA</span>
+ <div id="todayEnergyVisual"></div>
+ <p class="small" id="todayEnergyDate"></p>
+</section>
+<div class="bar">
+ <select id="profileSelect" aria-label="Izberi kolektiv"></select>
+ <button id="newProfile" class="secondary">+ Nov kolektiv</button>
+ <button id="saveProfile">Shrani kolektiv</button>
+</div>
+
+<section class="card">
+ <div class="grid">
+  <div><label for="collectiveName">Ime kolektiva</label><input id="collectiveName" placeholder="Npr. Družina, Ekipa, Podjetje"></div>
+  <div><label for="collectiveType">Vrsta kolektiva</label><select id="collectiveType"><option>Družina</option><option>Partnerstvo in skupnost</option><option>Podjetje</option><option>Organizacija</option><option>Društvo</option><option>Ustvarjalna ekipa</option><option>Drugo</option></select></div>
+ </div>
+ <p class="small">Člane lahko dodajaš ali odstranjuješ. Vsi člani sodelujejo pri izračunu stalne kode kolektiva.</p>
+</section>
+
+<section class="card">
+ <div class="memberhead"><h2>Člani kolektiva</h2><span class="pill" id="memberCount">0 članov</span></div>
+ <div id="members"></div>
+ <button id="addMember">+ Dodaj člana</button>
+ <button id="calculate" class="secondary">Posodobi izračun</button>
+ <p id="status" class="small" aria-live="polite"></p>
+</section>
+
+<section class="card big center">
+ <span class="pill">STALNA KODA KOLEKTIVA</span>
+ <div class="kincode" id="collectiveCode">Dodaj člane</div><div id="collectiveVisual"></div>
+ <h2 id="collectiveSign">Skupna simbolna koda</h2>
+ <p id="collectiveMeaning">Vnesi imena in rojstne datume članov, da prikažeš skupno kodo.</p>
+ <hr>
+ <div class="grid">
+  <div class="box"><h3>Potencial kolektiva</h3><p id="potential">Vsak član prinese svojo izkušnjo, perspektivo in način prispevanja.</p></div>
+  <div class="box"><h3>Skupna refleksija</h3><p id="collectiveQuestion">Kaj želimo skupaj ustvariti in kako bomo pri tem upoštevali vsakega člana?</p></div>
+ </div>
+</section>
+
+<section class="card">
+ <div class="grid">
+  <div><label for="dayDate">Datum dnevne energije</label><input id="dayDate" type="date"></div>
+  <div class="box"><span class="pill">DNEVNA KODA KOLEKTIVA</span><div class="kincode" id="dailyCode">—</div><div id="dailyVisual"></div><div id="dailySign">Izberi datum</div></div>
+ </div>
+ <h2 id="dayHeading">Energija dneva</h2>
+ <p id="dayMeaning">Dnevna koda se izračuna iz stalne kode kolektiva in energije izbranega dne.</p>
+ <div class="meter"><div class="meterfill" id="energyFill"></div></div>
+ <p class="small" id="energyLabel">Energijska lestvica: čaka na izračun.</p>
+ <div class="split">
+  <div class="box"><h3>Vprašanje dneva</h3><p id="dayQuestion">Kaj danes potrebuje naš kolektiv, da lahko deluje bolj zavestno?</p></div>
+  <div class="box"><h3>Ritual oziroma praksa</h3><p id="dayPractice">Vzemite si nekaj minut, da vsak član pove eno stvar, ki jo želi prispevati, in eno stvar, ki jo potrebuje od skupine.</p></div>
+ </div>
+</section>
+
+<section class="card">
+ <h2>Dnevna refleksija kolektiva</h2>
+ <p class="small">Zapiši opažanja, dogovore, skupne namere ali spoznanja. Zapis se shrani v izbranem kolektivu za izbrani datum.</p>
+ <textarea id="reflection" placeholder="Kaj smo danes opazili? Kaj želimo okrepiti?"></textarea>
+ <div class="actions"><button id="saveReflection">Shrani refleksijo</button><button id="exportTxt" class="secondary">Izvozi TXT</button><button id="exportJson" class="secondary">Izvozi JSON</button><button id="print" class="secondary">Natisni</button></div>
+ <p id="reflectionStatus" class="small" aria-live="polite"></p>
+</section>
+
+<section class="card">
+ <h2>Metoda izračuna</h2>
+ <p class="small">Stalna koda kolektiva je izračunana iz osebnih kod vseh vpisanih članov. Vsota tonov določi skupni ton, kombinacija znamenj pa skupno znamenje. Vrstni red članov ne spremeni rezultata. Dnevna koda nastane z združitvijo stalne kode kolektiva in kode izbranega dne.</p>
+ <p class="small">To je reflektivni model BLINKITA za raziskovanje skupinske dinamike, ne trditev, da gre za tradicionalno majevsko metodo izračunavanja kolektivne združljivosti.</p>
+</section>
+<footer>BLINKITA · Tzolk'in Kolektiv · Orodje za skupno refleksijo</footer>
+</div>
+
+<script>
+const SIGNS=[
+ {name:"Imix / Imox",sl:"Krokodil oziroma prvobitna voda",theme:"Voda, izvor, življenjska osnova in pogoji, iz katerih se lahko razvija skupnost. Za kolektiv je to priložnost za pregled temeljev, virov in tega, kar skupino dejansko hrani.",question:"Na katerih temeljih gradimo in kaj mora biti dovolj dobro oskrbljeno, da lahko naš kolektiv zdravo deluje?",practice:"Skupaj preglejmo tri temelje našega delovanja: ljudi, vire in skupni namen. Izberimo en temelj, ki potrebuje več pozornosti, in določimo konkreten naslednji korak."},
+ {name:"Ik' / Iq'",sl:"Veter oziroma dih",theme:"Veter, dih, glas in gibanje besede. V kolektivu se ta simbolika lahko uporabi za opazovanje komunikacije, pretoka informacij ter vpliva izrečenega in zamolčanega.",question:"Kako besede, informacije in način komunikacije vplivajo na odnose ter odločitve v našem kolektivu?",practice:"Vsak član naj pove, katera informacija mu manjka za dobro sodelovanje. Nato skupaj določimo, kako bomo informacije delili jasneje in pravočasneje."},
+ {name:"Ak'bal / Aq'ab'al",sl:"Zora, noč in prehod",theme:"Prehod med temo in svetlobo, skrito in razkritim, nejasnostjo in novim razumevanjem. Za kolektiv je to povabilo, da prepoznamo, česa še ne vidimo dovolj jasno.",question:"Kaj v našem kolektivu še ostaja neizrečeno, nerazumljeno ali premalo osvetljeno?",practice:"Izberimo eno odprto vprašanje, ki ga odlašamo razjasniti. Zberimo dejstva, prisluhnimo različnim pogledom in se dogovorimo, kako bomo prišli do več jasnosti."},
+ {name:"K'an / K'at",sl:"Seme oziroma mreža in povezovanje",theme:"Imena in poudarki se med tradicijami razlikujejo. V tem kolektivnem branju povezujemo podobo semena z vprašanjem razvoja, K'at pa opozarja na podobe mreže, vozlov in povezanosti v K'iche' izročilu. To je sodobna sinteza, ne dobesedni prevod.",question:"Katere povezave naš kolektiv podpirajo in kateri vozli zahtevajo razrešitev?",practice:"Narišimo preprost zemljevid sodelovanja: kdo s kom sodeluje, kje se naloge podvajajo in kje nastajajo vrzeli. Izberimo eno povezavo, ki jo bomo okrepili."},
+ {name:"Chikchan / Kan",sl:"Kača",theme:"Kača je pomemben simbol v širšem mezoameriškem svetu, vendar se natančne razlage dneva razlikujejo. Za naš kolektiv je izhodišče telesna zaznava, življenjska moč, previdnost in odgovorno ravnanje z vplivom.",question:"Katere signale iz odnosov in vsakdanjega delovanja opažamo, vendar jih še ne upoštevamo?",practice:"Ustavimo se in vsak zase poimenujmo en znak, da nekaj deluje dobro, ter en znak, da je potrebna sprememba. Nato izberimo odziv, ki ne zanemari ljudi ali posledic."},
+ {name:"Kimi / Kame",sl:"Smrt, predniki in preobrazba",theme:"Smrt in minljivost sta v majevskih tradicijah povezana s kompleksnimi pogledi na prednike, skupnost in prehode. V kolektivu to uporabimo kot refleksijo zaključevanja, spomina in odgovornega predajanja nalog.",question:"Čemu je v našem kolektivu potekel čas in kaj moramo ohraniti, predati ali dostojno zaključiti?",practice:"Izberimo eno nalogo, navado ali dogovor, ki se zaključuje. Poimenujmo, kaj smo se iz njega naučili, kaj želimo ohraniti in kdo bo prevzel naslednji korak."},
+ {name:"Manik' / Kej",sl:"Jelen",theme:"Jelen je v nekaterih majevskih izročilih povezan z gozdom, naravnim svetom in obrednim kontekstom. Za kolektiv je to izhodišče za razmislek o odgovornosti, ravnovesju med potrebami ter odnosu do prostora, ki nas podpira.",question:"Kako naše odločitve vplivajo na ljudi, prostor in naravne vire, od katerih smo odvisni?",practice:"Preglejmo eno vsakodnevno prakso našega kolektiva. Poiščimo način, kako bi bila bolj spoštljiva do ljudi, časa, prostora ali materialnih virov."},
+ {name:"Q'anil / Lamat",sl:"Seme in zorenje (Q'anil v K'iche' izročilu)",theme:"Q'anil je v K'iche' izročilu povezan s semenom, plodnostjo in zorenjem. Lamat je yucateško poimenovanje dneva v 20-dnevnem ciklu, vendar kulturnih razlag ne enačimo. V tem kolektivnem branju se osredotočamo na setev, nego in odgovornost za to, kar želimo razviti.",question:"Katere ideje v našem kolektivu potrebujejo čas, nego in ustrezne pogoje, da lahko dozorijo?",practice:"Izberimo eno idejo, ki jo želimo razviti. Zapišimo, kaj že imamo, kaj še potrebujemo in kdo bo poskrbel za naslednji korak."},
+ {name:"Muluk / Toj",sl:"Voda oziroma dar in vzajemnost",theme:"Imena in poudarki niso povsem enaki v vseh tradicijah. Toj je v K'iche' izročilu povezan tudi z darovanjem in obrednimi obveznostmi. Za kolektiv je to priložnost za pregled vzajemnosti, hvaležnosti in odgovornosti, brez izmišljanja tradicionalnega obreda.",question:"Kje v našem kolektivu obstaja ravnovesje med prejemanjem, prispevanjem in prevzemanjem odgovornosti?",practice:"Vsak član naj poimenuje en prispevek, ki ga je prejel, in eno odgovornost, ki jo lahko prevzame. Izberimo tudi eno konkretno dejanje zahvale ali poprave."},
+ {name:"Oc / Tz'i'",sl:"Pes",theme:"V K'iche' tradiciji se Tz'i' povezuje tudi z zakonom, pravičnostjo in odgovornostjo; pomenov ne smemo omejiti zgolj na zvestobo. Za kolektiv je to izhodišče za pregled pravil, zaupanja, poštenosti in skupnih meja.",question:"Ali so naši dogovori pravični, razumljivi in enako odgovorno uporabljeni za vse člane?",practice:"Preglejmo en pomemben dogovor. Preverimo, ali je jasen, izvedljiv in pravičen. Če ni, predlagajmo spremembo in določimo, kako bomo spremljali njeno izvajanje."},
+ {name:"Chuen / B'atz'",sl:"Opica oziroma nit, tkanje in ustvarjalni proces",theme:"To znamenje ima v različnih sodobnih in tradicionalnih razlagah različne poudarke. V K'iche' izročilu je B'atz' posebej povezan z nitjo, tkanjem, časom in ustvarjalnim življenjskim tokom. Zato Opice ne reduciramo na igro, spretnost ali ustvarjalnost: za kolektiv raziskujemo tudi vzorce, povezovanje, prenos znanja in odgovornost za to, kar skupaj spletamo.",question:"Kakšne vzorce naš kolektiv ponavlja, kaj skupaj spletamo in katere posledice bodo naše današnje odločitve ustvarile v prihodnosti?",practice:"Skupaj prepoznajmo en vzorec sodelovanja, ki nas podpira, in enega, ki nas zapleta. Dogovorimo se, kateri vozel bomo začeli razpletati in katero dobro prakso bomo zavestno prenašali naprej."},
+ {name:"Eb / E",sl:"Pot",theme:"Pot, hoja, smer in vsakdanja potovanja. Za kolektiv je to možnost za pregled poti, ki jo skupina dejansko hodi, ovir, ki jih srečuje, in odgovornosti za naslednji korak.",question:"Ali hodimo po skupni poti ali vsak sledimo svoji predstavi o tem, kam gremo?",practice:"Vsak član naj v enem stavku opiše, kam po njegovem mnenju kolektiv trenutno gre. Primerjajmo odgovore in oblikujmo en skupen, razumljiv opis smeri."},
+ {name:"Ben / Aj",sl:"Trst, pokončna rastlina oziroma koruzno steblo",theme:"Aj je v K'iche' tradiciji povezan tudi s koruznim steblom, domom in skupnostnimi odnosi. V kolektivni refleksiji se osredotočamo na nosilne strukture, skrb, meje in odgovornost do skupnega prostora.",question:"Kaj našemu kolektivu daje oporo in kako skrbimo za ljudi ter strukture, ki ga držijo skupaj?",practice:"Preglejmo, kdo nosi ključne odgovornosti in ali je breme razporejeno vzdržno. Dogovorimo se za eno izboljšavo pri podpori, razdelitvi nalog ali skrbi za skupni prostor."},
+ {name:"Ix / I'x",sl:"Jaguar oziroma moč zemlje",theme:"I'x je v K'iche' izročilu povezan z jaguarjem, zemljo in močnimi simbolnimi razsežnostmi, ki jih ni mogoče skrčiti na eno sodobno geslo. Za kolektiv je to razmislek o odnosu do prostora, vpliva, skritih napetosti in odgovorne rabe moči.",question:"Kako uporabljamo moč in vpliv v našem kolektivu ter ali pri tem spoštujemo meje drugih?",practice:"Prepoznajmo eno področje, kjer je moč ali odločanje preveč skoncentrirano. Dogovorimo se, kako bomo povečali preglednost, poslušanje in odgovorno sodelovanje."},
+ {name:"Men / Tz'ikin",sl:"Ptica oziroma Tz'ikin",theme:"Tz'ikin je v K'iche' tradiciji povezan s pticami in lahko tudi z obiljem ter odnosi izmenjave. V kolektivnem branju odpiramo pogled na širše povezave, vire, priložnosti in odgovornost za to, kar prejemamo.",question:"Katere priložnosti in povezave spregledamo, ker smo preveč osredotočeni na neposredne naloge?",practice:"Poglejmo na naš kolektiv z razdalje. Kdo bi lahko bil pomemben partner, kateri vir ostaja neizkoriščen in kaj lahko ponudimo tudi širši skupnosti?" },
+ {name:"Cib / Ajmaq",sl:"Spomin, odpuščanje in odgovornost",theme:"Ajmaq je v K'iche' izročilu povezan s predniki, napakami, odpuščanjem in učenjem iz preteklih dejanj. Za kolektiv to pomeni odgovorno soočenje s posledicami, ne brisanja zgodovine ali prisilnega odpuščanja.",question:"Katero preteklo dejanje ali nerazrešeno nesoglasje še vpliva na naše sodelovanje in kaj lahko odgovorno popravimo?",practice:"Če je primerno in varno, poimenujmo eno napako ali nerešen dogovor. Osredotočimo se na posledice, popravo in konkretno spremembo, ne na iskanje grešnega kozla."},
+ {name:"Caban / No'j",sl:"Zemlja oziroma razmišljanje in znanje",theme:"No'j je v K'iche' izročilu povezan z mišljenjem, znanjem in modrostjo. V kolektivni refleksiji povezujemo razumevanje, skupno presojo, učenje in posledice odločitev.",question:"Kako v našem kolektivu sprejemamo odločitve in ali dovolj dobro povezujemo izkušnje, podatke ter različne poglede?",practice:"Pri eni aktualni odločitvi ločimo dejstva, predpostavke in mnenja. Zberimo manjkajoče informacije ter jasno zapišimo, zakaj smo izbrali določeno smer."},
+ {name:"Etznab / Tijax",sl:"Kremen, obsidian oziroma rezilo",theme:"Tijax je v K'iche' izročilu povezan z obsidianom, rezom in zdravilno močjo, pri čemer so pomeni širši od metafore rezanja. Za kolektiv je to refleksija razlikovanja, jasnosti, resnice in potrebnih, premišljenih sprememb.",question:"Kaj moramo v našem kolektivu jasno razločiti, poimenovati ali spremeniti, da se nejasnosti ne bodo ponavljale?",practice:"Izberimo eno nejasnost in jo opišimo brez osebnih napadov. Ločimo vedenje od osebe ter določimo pošten in izvedljiv naslednji korak."},
+ {name:"Cauac / Kawoq",sl:"Nevihta oziroma skupnost",theme:"Kawoq je v K'iche' izročilu povezan tudi s skupnostjo, družino, skupinsko skrbjo in silami, ki vplivajo na več ljudi. Za kolektiv raziskujemo, kako se skupina odziva na pritisk in kako skrbi za člane brez zanemarjanja odgovornosti.",question:"Kako naš kolektiv ravna v času napetosti in ali znamo hkrati skrbeti za ljudi ter reševati dejanske težave?",practice:"Prepoznajmo eno trenutno napetost. Vsak naj predlaga en konstruktiven prispevek k rešitvi. Izberimo korak, ki je izvedljiv in ne prelaga vse odgovornosti na enega člana."},
+ {name:"Ahau / Ajpu",sl:"Sonce oziroma Ajpu",theme:"Ajpu je v K'iche' izročilu povezan z junakom, preizkušnjami in močjo, vendar je njegova pripovedna in kulturna vsebina širša od ene oznake. Za kolektiv je to razmislek o pogumu, zrelosti, preizkušnjah in odgovornosti za skupno smer.",question:"Kateremu izzivu se moramo kot kolektiv pogumno in zrelo posvetiti, namesto da ga še naprej odlagamo?",practice:"Izberimo en izziv, ki ga lahko naslovimo skupaj. Določimo cilj, odgovorne osebe in prvi izvedljiv korak. Ob koncu preverimo, kako bomo vedeli, da smo napredovali."}
+];
+const TONES=[
+["1","Začetna točka · kolektivna refleksija","Kaj je skupno izhodišče, iz katerega želimo danes delovati?","Skupaj oblikujmo eno jasno namero in preverimo, ali jo vsi razumemo."],
+["2","Različnost in napetost · kolektivna refleksija","Katere različne potrebe, pogledi ali napetosti moramo priznati?","Poimenujmo razlike brez potrebe, da jih takoj odpravimo. Nato izberimo eno, ki jo moramo bolje razumeti."],
+["3","Premik in sodelovanje · kolektivna refleksija","Kaj lahko premaknemo z usklajenim dejanjem?","Izberimo majhen skupni korak in določimo, kdo bo poskrbel za njegovo izvedbo."],
+["4","Struktura in dogovor · kolektivna refleksija","Katera struktura ali pravilo bi nam pomagalo delovati jasneje?","Zapišimo en dogovor tako, da bo razumljiv, izvedljiv in preverljiv."],
+["5","Viri in odgovornost · kolektivna refleksija","Katere vire, znanja in odgovornosti že imamo ter kako jih uporabljamo?","Naredimo kratek pregled virov in odgovornosti. Prepoznajmo eno neravnovesje, ki ga lahko izboljšamo."],
+["6","Ritem in vzdržnost · kolektivna refleksija","Ali je naš način dela vzdržen za ljudi, čas in sredstva?","Preglejmo tempo, obremenitve in razdelitev dela. Dogovorimo se za eno spremembo, ki bo dolgoročno koristna."],
+["7","Poslušanje in preverjanje · kolektivna refleksija","Kaj moramo še slišati ali preveriti, preden se odločimo?","Vsak naj pove, kateri pogled manjka. Pred pomembno odločitvijo preverimo informacije in prisluhnimo prizadetim."],
+["8","Doslednost in odgovornost · kolektivna refleksija","Ali naše ravnanje podpira dogovore, ki smo jih sprejeli?","Izberimo en dogovor in preverimo, kako ga uresničujemo. Kjer je potrebno, prevzemimo odgovornost za popravo."],
+["9","Izkušnje in zaključevanje · kolektivna refleksija","Kaj nam dosedanje izkušnje kažejo o našem skupnem delovanju?","Poglejmo, kaj deluje, kaj se ponavlja in kaj je treba zaključiti. Zapišimo eno lekcijo za prihodnje odločitve."],
+["10","Uresničevanje · kolektivna refleksija","Katera namera potrebuje konkreten rezultat ali vidno dejanje?","Izberimo en rezultat, ki ga lahko preverimo, in določimo naslednji korak ter odgovornost zanj."],
+["11","Sprememba in sproščanje · kolektivna refleksija","Kateri način dela, pričakovanje ali dogovor moramo prilagoditi?","Prepoznajmo eno nepotrebno oviro. Dogovorimo se, kaj bomo opustili, spremenili ali naredili drugače."],
+["12","Skupno razumevanje · kolektivna refleksija","Kako lahko iz različnih izkušenj oblikujemo širše razumevanje?","Vsak naj prispeva eno opažanje. Skupaj povzemimo, kaj zdaj razumemo bolje in kaj ostaja odprto."],
+["13","Povezovanje in nadaljevanje · kolektivna refleksija","Kaj želimo ohraniti in prenesti v naslednji del skupne poti?","Zapišimo, kaj smo se naučili, kaj želimo nadaljevati in kdo bo poskrbel, da dogovor ne bo ostal samo pri besedah."]
+];
+const $=id=>document.getElementById(id);
+const STORE='blinkita.tzolkinKolektiv.v1';
+const ANCHOR='2012-12-21';
+let profiles={};
+let activeProfileId='';
+let memberSequence=0;
+
+function mod(n,m){return ((n%m)+m)%m}
+function dateOrdinal(s){const [y,m,d]=s.split('-').map(Number);return Math.floor(Date.UTC(y,m-1,d)/86400000)}
+function tzolkin(date){
+ const delta=dateOrdinal(date)-dateOrdinal(ANCHOR);
+ return {tone:mod(3+delta,13)+1,sign:mod(19+delta,20),kin:mod(159+delta,260)+1,delta};
+}
+function combine(a,b){
+ return {tone:mod(a.tone+b.tone,13)||13,sign:mod(a.sign+b.sign+1,20)};
+}
+function collective(members){
+ const tone=mod(members.reduce((s,m)=>s+m.tone,0),13)||13;
+ const sign=mod(members.reduce((s,m)=>s+m.sign,0)+members.length-1,20);
+ return {tone,sign};
+}
+function code(c){return `${c.tone} ${SIGNS[c.sign].name}`}
+function signName(c){return SIGNS[c.sign].sl || SIGNS[c.sign].name}
+function toneInfo(c){return TONES[c.tone-1]||[]}
+function signInfo(c){return SIGNS[c.sign]||{}}
+const SIGN_FILES=["imix","ik","akbal","kan","chicchan","cimi","manik","lamat","muluc","oc","chuen","eb","ben","ix","men","cib","caban","etznab","cauac","ahau"];
+const SLOVENE_SIGN_NAMES = [
+ "Krokodil · Imix","Veter · Ik","Noč · Akbal","Seme · Kan",
+ "Kača · Chicchan","Smrt · Cimi","Jelen · Manik","Zajec · Lamat",
+ "Voda · Muluc","Pes · Oc","Opica · Chuen","Pot · Eb",
+ "Trs · Ben","Jaguar · Ix","Orel · Men","Sova · Cib",
+ "Zemlja · Caban","Kremen · Etnab","Nevihta · Cauac","Gospodar · Ahau"
+];
+function memberEnergyHTML(c){
+ const s=signInfo(c);
+ const t=toneInfo(c);
+ const signFile=SIGN_FILES[c.sign];
+ const signLabel=SLOVENE_SIGN_NAMES[c.sign]||signName(c);
+ const meaning=s.theme||"Za to znamenje v trenutni zbirki še ni opisa.";
+ const toneMeaning=t[1]||"Ton označuje eno od trinajstih številčnih pozicij koledarskega cikla.";
+ return `<div class="member-energy">
+  <div class="member-energy-symbols">
+   <div class="member-energy-symbol">
+    <img src="../assets/tzolkin/tone-${c.tone}.png" alt="Ton ${c.tone}">
+    <span>Ton ${c.tone}</span>
+   </div>
+   <div class="member-energy-symbol">
+    <img src="../assets/tzolkin/${signFile}.png" alt="${signLabel}">
+    <span>${signLabel}</span>
+   </div>
+  </div>
+  <div class="member-energy-copy">
+   <div class="member-energy-code">${c.tone} · ${signLabel}</div>
+   <div class="member-energy-meaning">${meaning}</div>
+   <div class="member-energy-meaning" style="margin-top:6px"><strong>Ton ${c.tone}:</strong> ${toneMeaning}</div>
+  </div>
+ </div>`;
+}
+function miniCodeHTML(c){
+ return memberEnergyHTML(c);
+}
+function renderTodayEnergy(){
+ const now=new Date();
+ const date=now.getFullYear()+"-"+String(now.getMonth()+1).padStart(2,"0")+"-"+String(now.getDate()).padStart(2,"0");
+ const c=tzolkin(date);
+ $("todayEnergyVisual").innerHTML=miniCodeHTML(c);
+ $("todayEnergyDate").textContent="Današnji datum: "+date;
+}
+function defaultProfile(name='Moj kolektiv'){
+ return {name,type:'Družina',members:[{name:'',birth:''},{name:'',birth:''}],reflections:{}};
+}
+function loadAll(){
+ try{profiles=JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){profiles={}}
+ if(!profiles||typeof profiles!=='object')profiles={};
+ const ids=Object.keys(profiles);
+ if(!ids.length){
+  activeProfileId='collective-'+Date.now();
+  profiles[activeProfileId]=defaultProfile();
+ }else activeProfileId=ids[0];
+}
+function persist(){localStorage.setItem(STORE,JSON.stringify(profiles))}
+function current(){return profiles[activeProfileId]}
+function refreshProfileSelect(){
+ const sel=$('profileSelect');sel.innerHTML='';
+ Object.keys(profiles).forEach(id=>{
+  const o=document.createElement('option');o.value=id;o.textContent=profiles[id].name||'Neimenovani kolektiv';sel.appendChild(o);
+ });
+ sel.value=activeProfileId;
+}
+function renderMembers(){
+ const host=$('members');host.innerHTML='';
+ const p=current();
+ p.members.forEach((m,i)=>{
+  const card=document.createElement('div');card.className='member';
+  const head=document.createElement('div');head.className='memberhead';
+  const title=document.createElement('strong');title.textContent=`Član ${i+1}`;
+  const remove=document.createElement('button');remove.className='danger';remove.textContent='Odstrani';
+  remove.disabled=p.members.length<=1;
+  remove.addEventListener('click',()=>{p.members.splice(i,1);renderMembers();calculateAll();});
+  head.append(title,remove);
+  const fields=document.createElement('div');fields.className='fields';
+  const nameWrap=document.createElement('div'),dateWrap=document.createElement('div');
+  const nl=document.createElement('label');nl.textContent='Ime člana';
+  const ni=document.createElement('input');ni.value=m.name||'';ni.placeholder='Ime ali oznaka';ni.setAttribute('aria-label',`Ime člana ${i+1}`);
+  ni.addEventListener('input',()=>{m.name=ni.value;});
+  nameWrap.append(nl,ni);
+  const dl=document.createElement('label');dl.textContent='Datum rojstva';
+  const di=document.createElement('input');di.type='date';di.value=m.birth||'';di.setAttribute('aria-label',`Datum rojstva člana ${i+1}`);
+  di.addEventListener('change',()=>{m.birth=di.value;result.innerHTML=m.birth?miniCodeHTML(tzolkin(m.birth)):'Vnesi datum rojstva';calculateAll();});
+  dateWrap.append(dl,di);
+  const result=document.createElement('div');result.className='member-result';
+  if(m.birth){const c=tzolkin(m.birth);result.innerHTML=miniCodeHTML(c);}
+  else result.textContent='Vnesi datum rojstva';
+  fields.append(nameWrap,dateWrap);card.append(head,fields,result);host.append(card);
+ });
+ $('memberCount').textContent=`${p.members.length} ${p.members.length===1?'član':p.members.length===2?'člana':'članov'}`;
+}
+function validMembers(){
+ return current().members.map((m,i)=>({...m,index:i,code:m.birth?tzolkin(m.birth):null})).filter(m=>m.birth&&m.name.trim());
+}
+function calculateAll(){
+ const p=current();
+ p.name=$('collectiveName').value||'Moj kolektiv';
+ p.type=$('collectiveType').value;
+ const members=validMembers();
+ if(members.length!==p.members.length){
+  collectiveVisual.innerHTML='';
+  dailyVisual.innerHTML='';
+  $('collectiveCode').textContent='Dopolni podatke';
+  $('collectiveSign').textContent='Potrebni so ime in datum rojstva vsakega člana';
+  $('collectiveMeaning').textContent='Vnesi ime in datum rojstva za vse člane, da izračun vključuje celoten kolektiv.';
+  $('dailyCode').textContent='—';
+  $('dailySign').textContent='Čaka na popolne podatke';
+  $('status').textContent=`Vnesenih je ${members.length} od ${p.members.length} popolnih članov.`;
+  $('energyFill').style.width='0%';
+  $('energyLabel').textContent='Energijska lestvica bo prikazana, ko bodo podatki popolni.';
+  return;
+ }
+ const base=collective(members.map(m=>m.code));
+ const si=signInfo(base),ti=toneInfo(base);
+ $('collectiveCode').textContent=code(base);
+ collectiveVisual.innerHTML=miniCodeHTML(base);
+ $('collectiveSign').textContent=`${signName(base)} · Ton ${base.tone}`;
+ $('collectiveMeaning').textContent=[si.theme,ti[1]].filter(Boolean).join(' · ')||'Skupna simbolna koda kolektiva.';
+ $('potential').textContent=si.practice||'Vsak član prispeva k skupni izkušnji.';
+ $('collectiveQuestion').textContent=si.question||'Kaj želi naš kolektiv ustvariti skupaj?';
+ $('status').textContent=`Izračun uspešen: ${members.length} članov je vključenih.`;
+ renderDaily(base);
+}
+function renderDaily(base){
+ const date=$('dayDate').value;
+ if(!date)return;
+ const d=tzolkin(date),day=combine(base,d),si=signInfo(day),ti=toneInfo(day);
+ $('dailyCode').textContent=code(day);
+ dailyVisual.innerHTML=miniCodeHTML(day);
+ $('dailySign').textContent=si.sl||si.theme||signName(day);
+ $('dayHeading').textContent=`Dnevna energija · ${date}`;
+ $('dayMeaning').textContent=[si.theme,ti[1]].filter(Boolean).join(' · ')||'Dan za skupno pozornost in zavestno sodelovanje.';
+ const strength=35+Math.round((day.tone/13)*65);
+ $('energyFill').style.width=`${strength}%`;
+ $('energyLabel').textContent=`Simbolna energijska lestvica: ${strength}/100 · Ton ${day.tone} · ${ti[0]||'dnevni ton'}`;
+ $('dayQuestion').textContent=si.question||ti[2]||'Kaj lahko danes naredimo bolj zavestno kot skupina?';
+ $('dayPractice').textContent=si.practice||ti[3]||'Vsak član pove eno namero in en konkreten korak za skupno dobro.';
+ const key=`${activeProfileId}|${date}`;
+ $('reflection').value=current().reflections[key]||'';
+}
+function syncProfile(){
+ const p=current();
+ $('collectiveName').value=p.name||'';
+ $('collectiveType').value=p.type||'Družina';
+ renderMembers();calculateAll();refreshProfileSelect();
+}
+function download(name,text,type){
+ const blob=new Blob([text],{type});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');
+ a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+}
+function exportData(){
+ const p=current();
+ const members=validMembers();
+ const base=members.length===p.members.length&&members.length?collective(members.map(m=>m.code)):null;
+ return {app:'BLINKITA Tzolk\'in Kolektiv',version:1,exportedAt:new Date().toISOString(),name:p.name,type:p.type,members:p.members.map(m=>({...m,personalCode:m.birth?code(tzolkin(m.birth)):null})),collectiveCode:base?{...base,label:code(base),sign:signName(base)}:null,reflections:p.reflections};
+}
+$('addMember').addEventListener('click',()=>{
+ current().members.push({name:'',birth:''});renderMembers();calculateAll();
+});
+$('calculate').addEventListener('click',calculateAll);
+$('collectiveName').addEventListener('input',()=>{current().name=$('collectiveName').value;refreshProfileSelect();});
+$('collectiveType').addEventListener('change',()=>{current().type=$('collectiveType').value;});
+$('dayDate').addEventListener('change',calculateAll);
+$('newProfile').addEventListener('click',()=>{
+ const id='collective-'+Date.now();
+ profiles[id]=defaultProfile('Nov kolektiv');
+ activeProfileId=id;syncProfile();persist();
+});
+$('saveProfile').addEventListener('click',()=>{
+ current().name=$('collectiveName').value.trim()||'Moj kolektiv';
+ current().type=$('collectiveType').value;
+ persist();refreshProfileSelect();
+ $('status').textContent='Kolektiv je shranjen v tem brskalniku.';
+});
+$('profileSelect').addEventListener('change',e=>{
+ if(profiles[e.target.value]){activeProfileId=e.target.value;syncProfile();}
+});
+$('saveReflection').addEventListener('click',()=>{
+ const date=$('dayDate').value;
+ current().reflections[`${activeProfileId}|${date}`]=$('reflection').value;
+ persist();$('reflectionStatus').textContent=`Refleksija za ${date} je shranjena.`;
+});
+$('exportTxt').addEventListener('click',()=>{
+ const d=exportData();
+ const lines=[d.name,`Vrsta: ${d.type}`,'','ČLANI',...d.members.map((m,i)=>`${i+1}. ${m.name||'Brez imena'} | ${m.birth||'Brez datuma'} | ${m.personalCode||'Brez kode'}`),'',`Stalna koda: ${d.collectiveCode?.label||'Ni izračunana'}`,'','REFLEKSIJE',...Object.entries(d.reflections||{}).map(([k,v])=>`${k}\n${v}`)];
+ download('blinkita-tzolkin-kolektiv.txt',lines.join('\n'),'text/plain;charset=utf-8');
+});
+$('exportJson').addEventListener('click',()=>download('blinkita-tzolkin-kolektiv.json',JSON.stringify(exportData(),null,2),'application/json;charset=utf-8'));
+$('print').addEventListener('click',()=>window.print());
+loadAll();
+$('dayDate').value=new Date().toISOString().slice(0,10);
+syncProfile();
+renderTodayEnergy();
+</script>
+</body>
+</html>

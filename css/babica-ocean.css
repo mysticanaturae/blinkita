@@ -1,0 +1,550 @@
+/* ============================================================
+   BLINKITA · BABICA OCEAN
+   Luxury Ocean Manuscript
+   Scoped ONLY to .babica-ocean-page
+   ============================================================ */
+
+.babica-ocean-page {
+  --ocean-ink: #102d32;
+  --ocean-deep: #173f45;
+  --ocean-blue: #255d63;
+  --ocean-sea: #39777a;
+  --ocean-ivory: #f7f2e8;
+  --ocean-paper: #fbf8f1;
+  --ocean-muted: #6c7775;
+  --ocean-gold: #a98a57;
+  --ocean-line: rgba(91, 107, 101, 0.24);
+
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(68, 121, 124, .12), transparent 28%),
+    radial-gradient(circle at 12% 48%, rgba(169, 138, 87, .055), transparent 26%),
+    var(--ocean-paper);
+  color: var(--ocean-ink);
+  isolation: isolate;
+}
+
+.babica-ocean-page *,
+.babica-ocean-page *::before,
+.babica-ocean-page *::after {
+  box-sizing: border-box;
+}
+
+.babica-ocean-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  z-index: -1;
+  background-image:
+    radial-gradient(rgba(20, 40, 40, .10) .45px, transparent .45px);
+  background-size: 7px 7px;
+  mix-blend-mode: multiply;
+}
+
+/* ------------------------------------------------------------
+   MASTER WIDTH
+   ------------------------------------------------------------ */
+
+.babica-ocean-page .ocean-manuscript {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------
+   HERO
+   ------------------------------------------------------------ */
+
+.babica-ocean-page .ocean-opening {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 150px 0 130px;
+  border-bottom: 1px solid var(--ocean-line);
+}
+
+.babica-ocean-page .ocean-opening-inner {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+}
+
+.babica-ocean-page .ocean-folio {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 46px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ocean-gold);
+}
+
+.babica-ocean-page .ocean-folio::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 1px;
+  background: var(--ocean-gold);
+}
+
+.babica-ocean-page .ocean-opening h1 {
+  max-width: 1000px;
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(64px, 10vw, 142px);
+  line-height: .82;
+  font-weight: 500;
+  letter-spacing: -.055em;
+  color: var(--ocean-deep);
+}
+
+.babica-ocean-page .ocean-opening h1 span {
+  display: block;
+  margin-top: 30px;
+  max-width: 720px;
+  font-size: clamp(27px, 3.5vw, 48px);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+  font-weight: 400;
+  color: var(--ocean-blue);
+}
+
+.babica-ocean-page .ocean-opening-lead {
+  max-width: 610px;
+  margin: 58px 0 0 12%;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(24px, 2.4vw, 34px);
+  line-height: 1.35;
+  color: var(--ocean-ink);
+}
+
+.babica-ocean-page .ocean-opening-meta {
+  margin-top: 68px;
+  margin-left: 12%;
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  line-height: 1.7;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ocean-muted);
+}
+
+/* ------------------------------------------------------------
+   MANUSCRIPT BODY
+   ------------------------------------------------------------ */
+
+.babica-ocean-page .ocean-chapter {
+  padding: 125px 0;
+  border-bottom: 1px solid var(--ocean-line);
+}
+
+.babica-ocean-page .ocean-chapter-inner {
+  width: min(960px, 100%);
+  margin: 0 auto;
+}
+
+.babica-ocean-page .ocean-chapter-number {
+  margin-bottom: 28px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  color: var(--ocean-gold);
+}
+
+.babica-ocean-page .ocean-chapter h2 {
+  max-width: 850px;
+  margin: 0 0 52px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(44px, 6vw, 78px);
+  line-height: .94;
+  font-weight: 500;
+  letter-spacing: -.035em;
+  color: var(--ocean-deep);
+}
+
+.babica-ocean-page .ocean-copy {
+  max-width: 710px;
+}
+
+.babica-ocean-page .ocean-copy p {
+  margin: 0 0 28px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(22px, 2.1vw, 29px);
+  line-height: 1.48;
+  font-weight: 400;
+  color: var(--ocean-ink);
+}
+
+.babica-ocean-page .ocean-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   DIRECT VOICE
+   ------------------------------------------------------------ */
+
+.babica-ocean-page .ocean-voice {
+  position: relative;
+  padding: 155px 0;
+  background: var(--ocean-deep);
+  color: var(--ocean-ivory);
+}
+
+.babica-ocean-page .ocean-voice::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -160px;
+  top: -180px;
+  border: 1px solid rgba(247,242,232,.13);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 65px rgba(247,242,232,.025),
+    0 0 0 130px rgba(247,242,232,.018);
+}
+
+.babica-ocean-page .ocean-voice-inner {
+  width: min(980px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.babica-ocean-page .ocean-voice-label {
+  margin-bottom: 44px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: #d2b77d;
+}
+
+.babica-ocean-page .ocean-voice blockquote {
+  max-width: 930px;
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(38px, 5.6vw, 74px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  color: var(--ocean-ivory);
+}
+
+.babica-ocean-page .ocean-voice p {
+  max-width: 680px;
+  margin: 58px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 25px;
+  line-height: 1.48;
+  color: rgba(247,242,232,.88);
+}
+
+/* ------------------------------------------------------------
+   LARGE PULL QUOTE
+   ------------------------------------------------------------ */
+
+.babica-ocean-page .ocean-pull {
+  padding: 145px 0;
+  text-align: center;
+}
+
+.babica-ocean-page .ocean-pull-line {
+  width: 70px;
+  height: 1px;
+  margin: 0 auto 48px;
+  background: var(--ocean-gold);
+}
+
+.babica-ocean-page .ocean-pull blockquote {
+  max-width: 1050px;
+  margin: 0 auto;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(42px, 7vw, 94px);
+  line-height: .94;
+  letter-spacing: -.045em;
+  font-weight: 500;
+  color: var(--ocean-deep);
+}
+
+.babica-ocean-page .ocean-pull small {
+  display: block;
+  margin-top: 42px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--ocean-muted);
+}
+
+/* ------------------------------------------------------------
+   TWO-COLUMN EDITORIAL
+   ------------------------------------------------------------ */
+
+.babica-ocean-page .ocean-editorial {
+  padding: 125px 0;
+  border-top: 1px solid var(--ocean-line);
+  border-bottom: 1px solid var(--ocean-line);
+}
+
+.babica-ocean-page .ocean-editorial-grid {
+  display: grid;
+  grid-template-columns: .7fr 1.3fr;
+  gap: 90px;
+  align-items: start;
+}
+
+.babica-ocean-page .ocean-editorial-label {
+  padding-top: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ocean-gold);
+}
+
+.babica-ocean-page .ocean-editorial-copy p {
+  margin: 0 0 30px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(23px, 2.25vw, 31px);
+  line-height: 1.47;
+  color: var(--ocean-ink);
+}
+
+.babica-ocean-page .ocean-editorial-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   SHELL / WATER INTERLUDE
+   ------------------------------------------------------------ */
+
+.babica-ocean-page .ocean-interlude {
+  min-height: 58vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px;
+  background:
+    radial-gradient(circle at center,
+      rgba(255,255,255,.10) 0,
+      rgba(255,255,255,.025) 16%,
+      transparent 42%),
+    var(--ocean-deep);
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.babica-ocean-page .ocean-rings {
+  position: absolute;
+  width: min(75vw, 780px);
+  height: min(75vw, 780px);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 70px rgba(255,255,255,.025),
+    0 0 0 140px rgba(255,255,255,.018),
+    0 0 0 210px rgba(255,255,255,.012);
+}
+
+.babica-ocean-page .ocean-interlude-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.babica-ocean-page .ocean-interlude-kicker {
+  margin-bottom: 38px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: #d2b77d;
+}
+
+.babica-ocean-page .ocean-interlude h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(46px, 7vw, 88px);
+  line-height: .95;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  color: #faf5e9;
+}
+
+/* ------------------------------------------------------------
+   FINAL GATE
+   ------------------------------------------------------------ */
+
+.babica-ocean-page .ocean-gate {
+  padding: 165px 0 155px;
+  text-align: center;
+}
+
+.babica-ocean-page .ocean-gate-kicker {
+  margin-bottom: 34px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .27em;
+  text-transform: uppercase;
+  color: var(--ocean-gold);
+}
+
+.babica-ocean-page .ocean-gate h2 {
+  max-width: 950px;
+  margin: 0 auto;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(50px, 8vw, 104px);
+  line-height: .9;
+  font-weight: 500;
+  letter-spacing: -.045em;
+  color: var(--ocean-deep);
+}
+
+.babica-ocean-page .ocean-gate-intro {
+  max-width: 610px;
+  margin: 45px auto 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 27px;
+  line-height: 1.4;
+  color: var(--ocean-ink);
+}
+
+.babica-ocean-page .ocean-gate-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 62px;
+  margin-top: 58px;
+  padding: 0 38px;
+  border: 1px solid var(--ocean-deep);
+  background: var(--ocean-deep);
+  color: var(--ocean-paper) !important;
+  text-decoration: none !important;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .19em;
+  text-transform: uppercase;
+  transition:
+    background .25s ease,
+    color .25s ease,
+    border-color .25s ease,
+    transform .25s ease;
+}
+
+.babica-ocean-page .ocean-gate-link:hover {
+  background: transparent;
+  color: var(--ocean-deep) !important;
+  transform: translateY(-2px);
+}
+
+.babica-ocean-page .ocean-signature {
+  margin-top: 100px;
+  padding-top: 34px;
+  border-top: 1px solid var(--ocean-line);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 24px;
+  font-style: italic;
+  color: var(--ocean-muted);
+}
+
+/* ------------------------------------------------------------
+   MOBILE
+   ------------------------------------------------------------ */
+
+@media (max-width: 800px) {
+
+  .babica-ocean-page .ocean-manuscript {
+    width: min(100% - 32px, 680px);
+  }
+
+  .babica-ocean-page .ocean-opening {
+    min-height: auto;
+    padding: 100px 0 90px;
+  }
+
+  .babica-ocean-page .ocean-opening h1 {
+    font-size: clamp(56px, 17vw, 94px);
+  }
+
+  .babica-ocean-page .ocean-opening h1 span {
+    font-size: 29px;
+  }
+
+  .babica-ocean-page .ocean-opening-lead {
+    margin-left: 0;
+    font-size: 25px;
+  }
+
+  .babica-ocean-page .ocean-opening-meta {
+    margin-left: 0;
+  }
+
+  .babica-ocean-page .ocean-chapter {
+    padding: 90px 0;
+  }
+
+  .babica-ocean-page .ocean-chapter h2 {
+    font-size: 50px;
+  }
+
+  .babica-ocean-page .ocean-copy p {
+    font-size: 23px;
+  }
+
+  .babica-ocean-page .ocean-voice {
+    padding: 105px 0;
+  }
+
+  .babica-ocean-page .ocean-voice-inner {
+    width: min(100% - 32px, 680px);
+  }
+
+  .babica-ocean-page .ocean-voice blockquote {
+    font-size: 43px;
+  }
+
+  .babica-ocean-page .ocean-editorial {
+    padding: 90px 0;
+  }
+
+  .babica-ocean-page .ocean-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .babica-ocean-page .ocean-pull {
+    padding: 100px 16px;
+  }
+
+  .babica-ocean-page .ocean-pull blockquote {
+    font-size: 49px;
+  }
+
+  .babica-ocean-page .ocean-gate {
+    padding: 110px 0;
+  }
+
+  .babica-ocean-page .ocean-gate h2 {
+    font-size: 57px;
+  }
+
+  .babica-ocean-page .ocean-gate-intro {
+    font-size: 24px;
+  }
+
+  .babica-ocean-page .ocean-gate-link {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
