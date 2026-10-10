@@ -42,8 +42,8 @@
             kiche: "Imox",
             yucatec: "Imix",
             international: "Imix",
-            meaningSl: "Voda",
-            meaningEn: "Water",
+            meaningSl: "Krokodil",
+            meaningEn: "Crocodile",
             keywordsSl: ["voda", "začetek", "življenje", "izvor"],
             keywordsEn: ["water", "beginning", "life", "source"]
         },
