@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f3e9">
+<meta name="description" content="BLINKITA Živi koledar časa: 260 dni, 260 obrazov časa in osebna pot raziskovanja.">
+<title>BLINKITA | Živi koledar časa</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--paper:#f7f4ec;--white:#fffdf8;--ink:#253b3a;--muted:#687b75;--sea:#d8eee7;--turq:#6ebdb4;--coral:#e99b83;--sand:#ead8b8;--sage:#b8cbb4;--indigo:#d8dff0;--gold:#b99456;--line:#dce4da;--shadow:0 16px 44px #294a3c12;--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 5% 0%,#e9f4e9 0,transparent 36%),radial-gradient(ellipse at 95% 14%,#f8e7dc 0,transparent 28%),var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #65a99f;outline-offset:3px}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid #d8e0d5}.brand{font-size:.82rem;letter-spacing:.25em;font-weight:700}.brand span{color:var(--gold)}.top-note{font-size:.76rem;color:var(--muted);letter-spacing:.08em}.hero{padding:56px 0 34px;display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:center}.eyebrow{font-size:.73rem;letter-spacing:.19em;text-transform:uppercase;color:#638e83;font-weight:700}.hero h1{font:500 clamp(3.3rem,7vw,6.7rem)/.88 var(--serif);letter-spacing:-.045em;margin:17px 0 20px}.hero h1 em{font-weight:400;color:#629c91}.hero p{max-width:620px;color:#586c66;font-size:1.05rem}.hero-art{min-height:280px;display:grid;place-items:center;position:relative}.orbit{width:min(270px,75vw);aspect-ratio:1;border:1px solid #a6c9bd;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle,#fffdf8 0 24%,#e0f0e7 25% 43%,#f5ead8 44% 65%,#e9f3e9 66%);box-shadow:var(--shadow)}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #b9cdbd;border-radius:50%;inset:17px;transform:rotate(28deg) scaleX(.6)}.orbit:after{transform:rotate(-28deg) scaleX(.6)}.butterfly{font-size:4.4rem;color:#5f998c;z-index:1;line-height:1}.orbit-label{position:absolute;bottom:24px;font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:#64877a}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{border:1px solid var(--ink);border-radius:999px;padding:12px 19px;background:var(--ink);color:white;font-weight:600;font-size:.85rem;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px);background:#3e655c}.btn.secondary{background:transparent;color:var(--ink);border-color:#b8c9bd}.btn.secondary:hover{background:#edf4eb}.today-strip{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px;margin:12px 0 40px}.today-box{background:#fffdf8c9;border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:0 7px 25px #294a3c08}.today-box small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.13em;font-size:.65rem;font-weight:700}.today-box strong{display:block;font:500 1.8rem var(--serif);margin-top:4px}.today-box .sub{font-size:.78rem;color:var(--muted);margin-top:2px}.progress{height:5px;background:#e7ebe2;border-radius:9px;margin-top:12px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#83c9bb,#c9a56b);width:0%;transition:width .3s}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:42px 0 18px}.section-head h2{font:500 clamp(2rem,4vw,3rem)/1 var(--serif);margin:7px 0}.section-head p{max-width:520px;color:var(--muted);font-size:.9rem;margin:0}.dimension-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.dimension{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fffdf8b8;min-height:210px;display:flex;flex-direction:column;transition:transform .2s,border .2s;cursor:pointer}.dimension:hover,.dimension.active{transform:translateY(-3px);border-color:#8ebdb0;box-shadow:var(--shadow)}.dimension .glyph{font-size:1.5rem;color:#6a9f91}.dimension h3{font:600 1.45rem var(--serif);margin:10px 0 6px}.dimension p{font-size:.82rem;color:var(--muted);margin:0 0 12px}.dimension small{font-size:.72rem;color:#62887e;margin-top:auto}.calendar-panel{background:#fffdf8d9;border:1px solid var(--line);border-radius:24px;padding:clamp(18px,3vw,30px);box-shadow:var(--shadow)}.calendar-top{display:flex;justify-content:space-between;gap:16px;align-items:start;flex-wrap:wrap}.calendar-top h3{font:500 2rem var(--serif);margin:0}.calendar-top p{color:var(--muted);margin:4px 0 0;font-size:.85rem}.cycle-tabs{display:grid;grid-template-columns:repeat(13,minmax(35px,1fr));gap:6px;margin:22px 0}.cycle-tab{border:1px solid var(--line);border-radius:10px;background:#f8f8f1;color:var(--muted);padding:9px 2px;font-size:.75rem}.cycle-tab.active{background:var(--ink);color:white;border-color:var(--ink)}.cycle-feature{border-radius:16px;padding:19px 22px;margin-bottom:17px;background:linear-gradient(110deg,var(--cycle-color,#e1efe5),#fffdf8 80%);display:flex;justify-content:space-between;gap:20px;align-items:center}.cycle-feature .cycle-symbol{font-size:2.2rem}.cycle-feature h4{font:500 1.75rem var(--serif);margin:0}.cycle-feature p{margin:3px 0 0;color:#5e746c;font-size:.85rem;max-width:720px}.cycle-progress{white-space:nowrap;font-size:.75rem;color:#5f786f}.days-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px}.day-cell{border:1px solid #e0e7de;background:#fbfaf4;border-radius:12px;min-height:68px;padding:8px 5px;text-align:center;color:var(--ink);position:relative;transition:.18s}.day-cell:hover{border-color:#83b7a9;transform:translateY(-2px)}.day-cell.selected{border:2px solid #579c8d;background:#e9f5ee}.day-cell.today:after{content:"";position:absolute;top:6px;right:7px;width:5px;height:5px;border-radius:50%;background:var(--coral)}.day-cell.done:before{content:"✓";position:absolute;top:3px;left:6px;font-size:.6rem;color:#4d9180}.day-cell .n{font-size:.72rem;color:var(--muted);display:block}.day-cell .sign{font:600 1rem var(--serif);display:block;line-height:1.25}.day-cell .date{font-size:.61rem;color:#809087;display:block;margin-top:3px}.day-cell.filtered-out{opacity:.25}.detail{margin-top:26px;scroll-margin-top:20px}.detail-card{background:linear-gradient(140deg,#f0f7ed,#fffdf8 54%,#f9ece2);border:1px solid #d9e4d9;border-radius:24px;padding:clamp(20px,4vw,38px);position:relative;overflow:hidden}.detail-card:after{content:"";position:absolute;width:250px;height:250px;border:1px solid #c8dcd0;border-radius:50%;right:-95px;top:-120px;box-shadow:0 0 0 22px #dcebe544,0 0 0 45px #dcebe522;pointer-events:none}.detail-head{display:flex;justify-content:space-between;gap:20px;position:relative;z-index:1}.detail-head h2{font:500 clamp(2.5rem,5vw,4.2rem)/.95 var(--serif);margin:10px 0}.detail-head p{color:var(--muted);margin:0}.day-number{border:1px solid #c6d9cc;border-radius:50%;width:76px;height:76px;flex:0 0 76px;display:grid;place-content:center;text-align:center;background:#fffdf8b5}.day-number strong{font:500 1.8rem var(--serif);line-height:1}.day-number span{font-size:.58rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:17px 0 23px;position:relative;z-index:1}.tag{font-size:.7rem;border:1px solid #cbded1;border-radius:999px;padding:5px 10px;color:#58796f;background:#ffffff8c}.detail-intro{font:500 1.45rem/1.35 var(--serif);max-width:820px;margin:0 0 23px;position:relative;z-index:1}.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;position:relative;z-index:1}.content-block{background:#fffdf8cf;border:1px solid #e0e7dc;border-radius:15px;padding:17px 19px}.content-block.wide{grid-column:1/-1}.content-block small{font-size:.65rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:#6b9183}.content-block h3{font:600 1.25rem var(--serif);margin:6px 0}.content-block p{margin:0;color:#526760;font-size:.88rem}.question{font:500 1.25rem/1.4 var(--serif)!important;color:var(--ink)!important}.practice{display:flex;gap:12px}.practice .step{font:500 1.8rem var(--serif);color:#78a99b}.journal{margin-top:13px}.journal label{display:block;font-size:.75rem;color:var(--muted);font-weight:700;margin-bottom:7px}.journal textarea{width:100%;min-height:105px;resize:vertical;border:1px solid #d7e1d7;border-radius:12px;background:#fffefa;padding:12px;color:var(--ink)}.detail-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;position:relative;z-index:1}.detail-actions .btn{font-size:.78rem;padding:10px 15px}.detail-actions .btn:disabled{opacity:.35;cursor:not-allowed;transform:none}.save-state{font-size:.75rem;color:#638a7e;align-self:center}.foot{padding:45px 0 35px;text-align:center;color:var(--muted);font-size:.78rem}.foot strong{color:var(--ink);letter-spacing:.17em}.method{max-width:820px;margin:10px auto 0;line-height:1.7}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;border-radius:999px;padding:10px 17px;font-size:.8rem;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}.toast.show{opacity:1}.hide{display:none!important}
+@media(max-width:850px){.hero{grid-template-columns:1fr .6fr;gap:10px}.dimension-grid{grid-template-columns:repeat(2,1fr)}.cycle-tabs{grid-template-columns:repeat(7,minmax(35px,1fr))}.days-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.today-strip{grid-template-columns:1fr 1fr}.today-box:first-child{grid-column:1/-1}}
+@media(max-width:560px){.wrap{width:min(100% - 24px,1180px)}.topbar{padding:17px 0}.top-note{max-width:130px;text-align:right}.hero{grid-template-columns:1fr;padding:36px 0 22px}.hero-art{min-height:185px;grid-row:1}.orbit{width:175px}.butterfly{font-size:3rem}.orbit-label{bottom:14px;font-size:.52rem}.hero h1{font-size:3.5rem}.hero p{font-size:.94rem}.today-strip{gap:8px}.today-box{padding:15px}.today-box strong{font-size:1.5rem}.section-head{display:block}.section-head p{margin-top:8px}.dimension-grid{gap:8px}.dimension{padding:15px;min-height:205px}.dimension h3{font-size:1.25rem}.calendar-panel{padding:13px;border-radius:18px}.cycle-tabs{gap:4px}.cycle-tab{padding:8px 1px;font-size:.68rem}.cycle-feature{padding:15px;align-items:start}.cycle-feature h4{font-size:1.45rem}.cycle-feature .cycle-symbol{font-size:1.7rem}.cycle-progress{white-space:normal;text-align:right;max-width:85px}.days-grid{gap:5px}.day-cell{min-height:62px;border-radius:9px;padding:7px 2px}.day-cell .sign{font-size:.88rem}.day-cell .date{font-size:.56rem}.detail-head h2{font-size:2.5rem}.day-number{width:62px;height:62px;flex-basis:62px}.detail-grid{grid-template-columns:1fr}.content-block.wide{grid-column:auto}.detail-card{padding:18px}.detail-intro{font-size:1.25rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+/* BLINKITA - tradicionalni glifi Tzolk'ina */
+.glyph-pair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  margin: 4px 0;
+}
+.glyph-pair img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.glyph-pair img.tone-glyph {
+  width: 20px;
+  height: 20px;
+}
+.detail-glyphs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0 6px;
+  position: relative;
+  z-index: 1;
+}
+.detail-glyphs img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+@media (max-width: 560px) {
+  .glyph-pair img {
+    width: 19px;
+    height: 19px;
+  }
+  .glyph-pair img.tone-glyph {
+    width: 16px;
+    height: 16px;
+  }
+  .detail-glyphs img {
+    width: 46px;
+    height: 46px;
+  }
+}
+.app-nav{display:flex;align-items:center;justify-content:flex-end;gap:16px;font-size:.78rem;letter-spacing:.08em}
+.app-nav a{color:var(--ink);text-decoration:none;transition:color .2s ease}
+.app-nav a:hover{color:#568d80}
+.app-nav .back-link{font-weight:600;letter-spacing:.03em}
+.nav-divider{height:18px;width:1px;background:var(--line)}
+.app-nav .lang-link{padding:5px 2px;color:var(--muted)}
+.app-nav .lang-link.active{color:var(--ink);font-weight:700;border-bottom:2px solid var(--gold)}
+@media(max-width:560px){.topbar{gap:12px;align-items:center;padding:18px 0}.brand{font-size:.72rem}.app-nav{gap:10px;font-size:.72rem;flex-wrap:wrap}.nav-divider{height:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+  <div class="brand">BLINKITA <span>✳</span></div>
+  <nav class="app-nav" aria-label="Language and section navigation">
+    <a class="back-link" href="time.html">← Čas</a>
+    <span class="nav-divider" aria-hidden="true"></span>
+    <a class="lang-link active" href="zivi-koledar-casa.html" lang="sl" aria-current="page">SL</a>
+    <a class="lang-link " href="../en/living-calendar-of-time.html" lang="en" >EN</a>
+  </nav>
+</header>
+<main>
+<section class="hero">
+ <div><div class="eyebrow">260 dni · 260 obrazov časa</div><h1>Živi koledar<br><em>časa.</em></h1><p>Vsak dan odpre drugačen pogled. Raziskuj svoje vzorce, izberi novo dejanje in opazuj, kaj se začne spreminjati, ko postaneš pozorna na čas, ki ga živiš.</p><div class="hero-actions"><button class="btn" id="openToday">Odpri današnji dan ↗</button><button class="btn secondary" id="jumpCalendar">Razišči 13 ciklov</button></div></div>
+ <div class="hero-art" aria-hidden="true"><div class="orbit"><div class="butterfly">✧</div><div class="orbit-label">od spomina do metamorfoze</div></div></div>
+</section>
+<section class="today-strip" aria-label="Današnji napredek">
+ <div class="today-box"><small>Danes · lokalni datum</small><strong id="todayDate">—</strong><div class="sub" id="todayName">—</div></div>
+ <div class="today-box"><small>Pot skozi cikel</small><strong><span id="progressNum">1</span> / 260</strong><div class="progress"><span id="progressBar"></span></div><div class="sub" id="progressText">Začetek nove poti</div></div>
+ <div class="today-box"><small>Lunin ritem · približno</small><strong id="moonPhase">—</strong><div class="sub" id="moonInfo">Izračun po povprečnem luninem ciklu</div></div>
+</section>
+<section id="dimensions">
+ <div class="section-head"><div><div class="eyebrow">Štirje vidiki preobrazbe</div><h2>Pot, ki jo lahko živiš.</h2></div><p>Izberi razsežnost, ki jo želiš danes raziskovati. Koledar bo poudaril dneve s sorodnim razvojnim fokusom.</p></div>
+ <div class="dimension-grid" id="dimensionGrid">
+  <article class="dimension" data-dimension="Prepoznavanje" tabindex="0" role="button"><div class="glyph">◉</div><h3>Prepoznavanje</h3><p>Opazi vzorce, odzive, telesne signale in zgodbe, ki usmerjajo tvoje odločitve.</p><small>Vprašanje: Kaj se v resnici dogaja?</small></article>
+  <article class="dimension" data-dimension="Aktivacija" tabindex="0" role="button"><div class="glyph">✧</div><h3>Aktivacija</h3><p>Prebudi pozornost, energijo in ustvarjalnost, ki ju lahko usmeriš v življenje.</p><small>Vprašanje: Kaj želi dobiti prostor?</small></article>
+  <article class="dimension" data-dimension="Ustvarjanje" tabindex="0" role="button"><div class="glyph">⌁</div><h3>Ustvarjanje</h3><p>Prevedi uvid v izbiro, pogovor, mejo ali dejanje, ki ga je mogoče videti.</p><small>Vprašanje: Kaj bom naredila drugače?</small></article>
+  <article class="dimension" data-dimension="Integracija" tabindex="0" role="button"><div class="glyph">❋</div><h3>Integracija</h3><p>Utrdi spremembe, priznaj napredek in ustvari prostor za naslednji korak.</p><small>Vprašanje: Kaj bo ostalo z menoj?</small></article>
+ </div>
+</section>
+<section id="calendar">
+ <div class="section-head"><div><div class="eyebrow">Tvoja pot skozi 260 dni</div><h2>Odpri kateri koli dan.</h2></div><p>13 poglavij po 20 dni je uredniška struktura BLINKITA za raziskovanje poti. Tradicionalno zaporedje znamenj in tonov teče neprekinjeno skozi celoten cikel.</p></div>
+ <div class="calendar-panel">
+  <div class="calendar-top"><div><h3 id="calendarTitle">Cikel 1 · Prvi pogled</h3><p id="calendarSubtitle">Od opažanja do prvega jasnega uvida.</p></div><button class="btn secondary" id="clearFilter">Vsi dnevi</button></div>
+  <div class="cycle-tabs" id="cycleTabs" aria-label="Izberi cikel"></div>
+  <div class="cycle-feature" id="cycleFeature"><div style="display:flex;gap:15px;align-items:center"><div class="cycle-symbol" id="cycleSymbol">◉</div><div><h4 id="cycleName">Prvi pogled</h4><p id="cycleDesc"></p></div></div><div class="cycle-progress" id="cycleProgress">20 dni</div></div>
+  <div class="days-grid" id="daysGrid" aria-label="Dnevi izbranega cikla"></div>
+ </div>
+</section>
+<section class="detail" id="detail">
+ <div class="section-head"><div><div class="eyebrow">Odprti obraz časa</div><h2>Dan, ki ga raziskuješ.</h2></div><p>Vsebino uporabi kot ogledalo in povabilo k opazovanju. To je sodobna interpretacija BLINKITA, ločena od tradicionalne koledarske matematike.</p></div>
+ <article class="detail-card">
+  <div class="detail-head"><div><div class="eyebrow" id="detailDate">—</div><h2 id="detailTitle">1 Imox</h2><p id="detailCycle">Cikel 1 · Prvi pogled</p></div><div class="day-number"><strong id="detailIndex">1</strong><span>od 260</span></div></div>
+  <div class="tags"><span class="tag" id="detailTone">Ton 1</span><span class="tag" id="detailSign">Imox</span><span class="tag" id="detailDimension">Prepoznavanje</span><span class="tag" id="detailMoon">—</span></div>
+  <p class="detail-intro" id="detailMessage"></p>
+  <div class="detail-grid">
+   <div class="content-block"><small>Tradicionalni sloj</small><h3 id="signTitle">Imox · Krokodil</h3><p id="signMeaning"></p></div>
+   <div class="content-block"><small>Ton in gibanje</small><h3 id="toneTitle">Ton 1 · Začetek</h3><p id="toneMeaning"></p></div>
+   <div class="content-block"><small>Ključ dneva</small><h3 id="detailKey">Opazuj, preden razložiš.</h3><p id="keyMeaning"></p></div>
+   <div class="content-block"><small>Vprašanje zase</small><h3>Ustavi se za trenutek.</h3><p class="question" id="detailQuestion"></p></div>
+   <div class="content-block wide"><small>Dnevna praksa</small><div class="practice"><div class="step">01</div><div><h3 id="practiceTitle">Tri minute pozornosti</h3><p id="detailPractice"></p></div></div></div>
+   <div class="content-block"><small>Telo in čuti</small><h3 id="bodyTitle">Dih in zaznava</h3><p id="detailBody"></p></div>
+   <div class="content-block"><small>Povezava s ciklom</small><h3 id="cycleFocus">Prvi pogled</h3><p id="cycleFocusText"></p></div>
+  </div>
+  <div class="journal"><label for="journal">Tvoj dnevni zapis · shranjen samo v tem brskalniku</label><textarea id="journal" placeholder="Kaj sem danes opazila? Kaj želim odnesti s seboj?"></textarea></div>
+  <div class="detail-actions"><button class="btn secondary" id="prevDay">← Prejšnji dan</button><button class="btn" id="markDone">Označi prakso kot opravljeno ✓</button><button class="btn secondary" id="favorite">♡ Shrani med priljubljene</button><button class="btn secondary" id="nextDay">Naslednji dan →</button><button class="btn secondary" id="goToday">Danes</button><span class="save-state" id="saveState" aria-live="polite"></span></div>
+ </article>
+</section>
+</main>
+<footer class="foot"><strong>BLINKITA</strong><div style="margin-top:15px">Več raziskovanja na <a href="https://www.blinkita.si" style="color:#568d80">blinkita.si</a></div></footer>
+</div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+const START = Date.UTC(2026,9,10);
+const DAY_MS = 86400000;
+const SIGNS = [
+ {name:"Imox",variants:"Imox · Imix",local:"Krokodil / vodni začetek",symbol:"≈",archetype:"Prvinska voda, domišljija in globina",meaning:"Imox je v različnih majevskih jezikovnih tradicijah povezan z vodo, prvinskostjo in življenjem, ki še ni dobilo dokončne oblike. Tukaj ga raziskujemo kot prostor, kjer lahko poslušaš tisto, kar se šele oblikuje."},
+ {name:"Iq’",variants:"Iq’ · Ik’",local:"Veter / dih",symbol:"〰",archetype:"Dih, veter, glas in gibanje",meaning:"Iq’ je povezan z vetrom in dihom. V interpretaciji BLINKITA odpira vprašanje, kaj premika tvoje misli, kako govoriš in kje potrebuješ več prostora za dih."},
+ {name:"Aq’ab’al",variants:"Aq’ab’al · Ak’bal",local:"Zora / mrak",symbol:"☼",archetype:"Prehod, svitanje in možnost",meaning:"Aq’ab’al nosi podobo prehoda med temo in svetlobo. Uporabi ga za raziskovanje trenutkov, ko staro še ni odšlo, novo pa še nima jasne oblike."},
+ {name:"K’at",variants:"K’at · Kan (regionalna poimenovanja se razlikujejo)",local:"Mreža / vozlišče",symbol:"⌘",archetype:"Povezave, vozli in osvobajanje",meaning:"K’at se pogosto povezuje z mrežo, vozli in zapletom. V tem portalu predstavlja vzorce, ki nas povezujejo, pa tudi tiste, ki jih je mogoče razplesti."},
+ {name:"Kan",variants:"Kan · K’an",local:"Seme / rast",symbol:"❋",archetype:"Potencial, seme in življenjska moč",meaning:"Kan se v številnih sodobnih razlagah povezuje s semenom, rastjo in življenjsko močjo. Raziskuj, kaj v tebi potrebuje hranila, čas in konkretne pogoje."},
+ {name:"Kame",variants:"Kame · Kimi",local:"Preobrazba / predniki",symbol:"☾",archetype:"Zaključek, spomin in prehod",meaning:"Kame je povezan s smrtjo, predniki in prehodi. V tej praksi ga obravnavamo kot povabilo k spoštljivemu zaključevanju in sprejemanju minljivosti, ne kot napoved dogodkov."},
+ {name:"Kej",variants:"Kej · Manik’",local:"Jelen / gozd",symbol:"♧",archetype:"Utelešenje, narava in pokončnost",meaning:"Kej je pogosto povezan z jelenom, naravo in ravnovesjem. Njegova podoba te vrača k telesu, mejam in načinu, kako stopaš v prostor."},
+ {name:"Q’anil",variants:"Q’anil · Lamat",local:"Seme / zrelost",symbol:"✺",archetype:"Plodnost, rast in dozorevanje",meaning:"Q’anil se povezuje s semeni, rastjo in plodnostjo. V sodobni refleksiji pomaga prepoznati, kaj že raste in česa ni treba siliti."},
+ {name:"Toj",variants:"Toj · Muluk",local:"Dar / ravnovesje",symbol:"◌",archetype:"Vzajemnost, darovanje in poravnava",meaning:"Toj je povezan z darom, plačilom oziroma vzajemnostjo in obrednim ravnovesjem. Raziskuj, kaj daješ, kaj sprejemaš in kaj želiš uravnotežiti."},
+ {name:"Tz’i’",variants:"Tz’i’ · Oc",local:"Pes / zakon",symbol:"⌂",archetype:"Zvestoba, pravičnost in odgovornost",meaning:"Tz’i’ se pogosto povezuje s psom, zvestobo, pravom in pravičnostjo. Odpira prostor za pošten odnos do dogovorov, meja in odgovornosti."},
+ {name:"B’atz’",variants:"B’atz’ · Chuen",local:"Nit / tkanje",symbol:"∞",archetype:"Ustvarjalnost, čas in povezovanje",meaning:"B’atz’ je povezan z nitjo, tkanjem in ustvarjalnostjo. V tem portalu je nit podoba življenja, ki ga soustvarjaš skozi ponavljajoče se izbire."},
+ {name:"E",variants:"E · Eb’",local:"Pot / stopinja",symbol:"⌁",archetype:"Pot, skupnost in smer",meaning:"E je povezan s potjo in življenjsko smerjo. Vabi te, da preveriš, ali tvoj vsakdan podpira smer, ki jo izrekaš kot svojo."},
+ {name:"Aj",variants:"Aj · Ben",local:"Trst / steber",symbol:"♜",archetype:"Pokončnost, dom in odgovornost",meaning:"Aj se povezuje s trstom, hišo oziroma stebrom in odgovornostjo. Njegova tema je notranja pokončnost, ki se pokaže v dejanjih in skrbi za skupnost."},
+ {name:"Ix",variants:"Ix · Ix",local:"Jaguar / zemeljska moč",symbol:"♢",archetype:"Instinkt, zemlja in skrivnost",meaning:"Ix je povezan z jaguarjem, zemljo in močjo naravnega sveta. Uporabi ga kot simbol pozorne prisotnosti, instinkta in spoštovanja do tega, česar še ne razumeš."},
+ {name:"Tz’ikin",variants:"Tz’ikin · Men",local:"Ptica / pogled",symbol:"⌃",archetype:"Vizija, perspektiva in obilje",meaning:"Tz’ikin je povezan s pticami, pogledom in v nekaterih tradicijah obiljem. Povabi te, da se odmakneš od neposredne težave in preveriš širšo sliko."},
+ {name:"Ajmaq",variants:"Ajmaq · Cib",local:"Odpuščanje / predniki",symbol:"◍",archetype:"Učenje, odpuščanje in človeškost",meaning:"Ajmaq je povezan z napakami, odpuščanjem in predniškim spominom. Ne zahteva, da opravičiš škodo; ponuja prostor za učenje, odgovornost in sproščanje nepotrebne krivde."},
+ {name:"No’j",variants:"No’j · Caban",local:"Zemlja / modrost",symbol:"⊙",archetype:"Misel, modrost in zavestna izbira",meaning:"No’j se povezuje z modrostjo, mišljenjem in znanjem. Pomaga ti razlikovati med prvo mislijo, preverjenim dejstvom in modrostjo, ki se pokaže v praksi."},
+ {name:"Tijax",variants:"Tijax · Etz’nab",local:"Kremen / rez",symbol:"◇",archetype:"Razločevanje, jasnost in rez",meaning:"Tijax je povezan s kamnom, obsidianom oziroma rezilom in zdravljenjem v nekaterih tradicijah. Tukaj simbolizira jasno razlikovanje med tem, kar podpira življenje, in tem, kar ga ovira."},
+ {name:"Kawoq",variants:"Kawoq · Cauac",local:"Nevihta / skupnost",symbol:"❋",archetype:"Skupnost, negovanje in sprememba",meaning:"Kawoq se povezuje z nevihto, skupnostjo in družinskim oziroma skupinskim življenjem. Raziskuj, kako se sprememba dogaja med ljudmi, ne le znotraj posameznika."},
+ {name:"Ajpu",variants:"Ajpu · Ahau",local:"Sonce / junak",symbol:"☀",archetype:"Prisotnost, pogum in celovitost",meaning:"Ajpu se pogosto povezuje s soncem, junakom in premagovanjem preizkušenj. Njegov poudarek je zrela prisotnost: videti resničnost in izbrati dejanje, ki je skladno s tvojimi vrednotami."}
+];
+const SIGN_ASSETS = ["imix", "ik", "akbal", "kan", "chicchan", "cimi", "manik", "lamat", "muluc", "oc", "chuen", "eb", "ben", "ix", "men", "cib", "caban", "etznab", "cauac", "ahau"];
+SIGNS.forEach((sign,index)=>{sign.asset=SIGN_ASSETS[index]});
+const TONES = [
+ ["Začetek","Daj namero v eno jasno poved. Začni majhno in preverljivo."],
+ ["Dvojnost","Poglej obe strani napetosti, ne da bi ju prehitro razglasil za sovražnici."],
+ ["Gibanje","Izberi eno dejanje, ki premakne zamisel iz glave v izkušnjo."],
+ ["Oblika","Določi okvir, mejo ali strukturo, ki bo tvoji nameri dala oporo."],
+ ["Središče","Poišči vir, podporo ali spretnost, ki jo že imaš na voljo."],
+ ["Ritem","Uredi tempo. Kaj potrebuje ponavljanje, počitek ali več prostora?"],
+ ["Uglasitev","Preveri, ali so tvoje besede, telo in dejanja v isti smeri."],
+ ["Ravnovesje","Uravnoteži trud in sprejemanje, samostojnost in sodelovanje."],
+ ["Odgovornost","Prevzemi svoj del vpliva in jasno poimenuj, kaj ni v tvoji pristojnosti."],
+ ["Utelešenje","Pokaži namero v dejanju, ki ga je mogoče opaziti v vsakdanjem življenju."],
+ ["Sodelovanje","Poišči koristno povezavo ali prosi za podporo, kjer je to smiselno."],
+ ["Razjasnitev","Odstrani odvečno. Kaj ostane, ko se umakne hrup?"],
+ ["Integracija","Zaokroži izkušnjo in izberi, kaj boš prenesel v naslednji krog."]
+];
+const CYCLES = [
+ ["Prvi pogled","Opazovanje brez naglice","Začni s tem, kar je res prisotno. V prvih dvajsetih dneh zberi opažanja, preden jih spremeniš v zgodbo.","◉","#e2efe4","Vidi, preden sklepaš."],
+ ["Sledi vzorca","Prepoznavanje ponavljanj","Opazuj ponavljajoče se odzive, sprožilce in izbire. Vzorec ni obsodba; je informacija, s katero lahko delaš.","⌁","#e5eee9","Kar opaziš, lahko začneš izbirati."],
+ ["Notranja voda","Občutki in potrebe","Daj občutkom prostor, ne da bi jim prepustila vse odločitve. Poimenuj potrebo, ki se skriva pod odzivom.","≈","#dcefeb","Občutek je podatek, ne ukaz."],
+ ["Jasna meja","Prostor in odgovornost","Razločuj med tem, kar je tvoje, in tem, kar pripada drugim. Meja lahko varuje odnos in energijo.","◇","#f1e5d8","Jasnost naredi prostor."],
+ ["Semena izbire","Potencial in namera","Prepoznaj eno možnost, ki jo želiš negovati. Majhni pogoji pogosto pomenijo več kot velika obljuba.","❋","#eaf0d9","Neguj tisto, kar želiš okrepiti."],
+ ["Prehod","Zaključki in spuščanje","Označi, kaj se zaključuje, kaj ostaja in čemu je treba dati čas. Zaključek je lahko tih in vseeno resničen.","☾","#e8e8f1","Zaključek sprosti pozornost."],
+ ["Utelešena moč","Telo in prisotnost","Vrni se k telesu, ritmu in konkretnemu prostoru. Moč ni samo odločnost; je tudi zmožnost poslušati svoje meje.","♧","#e0eee3","Prisotnost se začne tukaj."],
+ ["Dozorevanje","Potrpežljivost in rast","Poglej, kaj se razvija že zdaj. Ne izkopavaj semena vsak dan, da bi preverila, ali raste.","✺","#f4ead1","Rast potrebuje čas in pogoje."],
+ ["Vzajemnost","Dajanje in sprejemanje","Preveri ravnotežje med prispevkom, podporo in počitkom. Vzajemnost ni natančna izmenjava, je pa pozoren odnos.","◌","#e2eeee","Sprejemanje je tudi del kroga."],
+ ["Dogovor s seboj","Vrednote in dejanja","Prevedi vrednoto v dogovor, ki ga lahko izpolniš. Zaupanje vase se gradi skozi ponovljena dejanja.","⌂","#f1e1d9","Obljuba postane resnična skozi prakso."],
+ ["Nit ustvarjanja","Povezovanje in ustvarjalnost","Poveži zamisli, ljudi in izkušnje. Opazuj, kaj nastane, ko ne poskušaš vsega nadzorovati sama.","∞","#e9e4f2","Ustvarjanje je tudi povezovanje."],
+ ["Pot v svet","Smer in delovanje","Izberi naslednji korak na svoji poti. Ni ti treba poznati celotne poti, da narediš pošten korak.","⌁","#e1eee9","Smer se potrjuje med hojo."],
+ ["Integracija","Utrjevanje in nov začetek","Zberi spoznanja, prepoznaj spremembe in izberi, kaj bo postalo del vsakdana. Integracija je praksa, ne zaključni izpit.","✧","#f0e8d5","Vzemi s seboj tisto, kar res živiš."]
+];
+const DIMENSIONS = ["Prepoznavanje","Aktivacija","Ustvarjanje","Integracija"];
+const KEYS = [
+ "Opazuj, preden razložiš.","Dovoli si spremeniti perspektivo.","Izberi najmanjši smiseln korak.","Daj svoji nameri obliko.",
+ "Poišči podporo, ki je že blizu.","Upoštevaj ritem, ne samo cilja.","Uskladi notranjo resnico z dejanjem.","Ustvari prostor za obe plati.",
+ "Prevzemi svoj del odgovornosti.","Naj se odločitev pokaže v praksi.","Poveži se brez izgube sebe.","Odstrani tisto, kar zakriva bistvo.","Ponesi spoznanje v vsakdan."
+];
+const QUESTIONS = [
+ "Kaj opažam, ko si ne poskušam takoj razložiti svoje izkušnje?",
+ "Kateri del te situacije običajno spregledam?",
+ "Katero majhno dejanje bi danes spremenilo moj običajni odziv?",
+ "Kakšna meja ali struktura bi mi olajšala naslednji korak?",
+ "Katero podporo že imam, pa je ne uporabljam?",
+ "Kakšen ritem bi bil vzdržen tudi čez teden dni?",
+ "Kje se moje besede in dejanja trenutno razhajajo?",
+ "Kaj lahko sprejmem, ne da bi se temu odpovedala?",
+ "Kateri del odgovornosti je res moj?",
+ "Kako bi bila moja namera videti v konkretnem dejanju?",
+ "Koga ali kaj lahko vključim, da bo korak bolj smiseln?",
+ "Kaj je v tej zgodbi bistveno in kaj je samo hrup?",
+ "Kaj želim ohraniti, ko bo ta dan za menoj?"
+];
+const PRACTICES = [
+ ["Tri minute opazovanja","Nastavi tri minute. Opazuj misli, občutke in okolico. Ničesar ti ni treba popraviti. Na koncu zapiši eno stvar, ki je prej nisi opazila."],
+ ["Poimenuj vzorec","Zapiši: sprožilec, moj običajni odziv, kratkoročna korist in dolgoročna cena. Nato dodaj eno možno drugačno izbiro."],
+ ["En majhen premik","Izberi nalogo, ki jo odlašaš, in ji nameni deset minut. Končaj, ko se čas izteče, ter opazuj, kaj se je premaknilo."],
+ ["Ustvari oporo","Pripravi eno praktično oporo: opomnik, urejen prostor, jasen dogovor ali čas v koledarju. Naj okolje podpira tvojo namero."],
+ ["Zberi vire","Zapiši tri vire, ki so ti na voljo: oseba, spretnost, čas, prostor ali pretekla izkušnja. Izberi enega in ga danes uporabi."],
+ ["Preveri svoj ritem","Pred naslednjo nalogo se vprašaj, ali potrebuješ gibanje, vodo, hrano, počitek ali osredotočenost. Izberi eno osnovno potrebo in se nanjo odzovi."],
+ ["Ujemi neskladje","Izberi eno vrednoto. Zapiši, kako se je danes pokazala v tvojem ravnanju, in en majhen način, da jo jutri bolj utelešiš."],
+ ["Dve resnici","Zapiši dve stvari, ki sta lahko hkrati resnični. Poišči dejanje, ki spoštuje obe, namesto da eno izbriše."],
+ ["Moje in ne moje","Na papir nariši dva stolpca: moj vpliv in zunaj mojega vpliva. Izberi en korak iz prvega stolpca."],
+ ["Vidno dejanje","V naslednjih 24 urah naredi eno dejanje, ki pokaže tvojo namero: pošlji sporočilo, postavi mejo, dokončaj začeto ali prosi za pomoč."],
+ ["Povezovalni korak","Vzpostavi iskren stik: postavi dobro vprašanje, izrazi hvaležnost ali jasno prosi za podporo. Ne ugibaj, kaj drugi potrebujejo."],
+ ["Odstrani odvečno","Za deset minut odstrani eno motnjo iz svojega prostora ali urnika. Opazuj, ali se je spremenila tvoja pozornost."],
+ ["Zaključi krog","Zapiši: kaj sem spoznala, kaj sem naredila, kaj bom ohranila. Izberi eno stvar, ki jo boš ponovila v naslednjih dneh."]
+];
+const BODY = [
+ ["Dih in prsni koš","Opazuj naravni dih, ne da bi ga silila. Zaznaj, kje je telo sproščeno in kje drži napetost."],
+ ["Stopala in opora","Za trenutek začuti stik stopal s tlemi. Poimenuj tri stvari, ki ti v tem trenutku dajejo oporo."],
+ ["Čeljust in obraz","Sprosti čeljust, če ti ustreza, in zmehčaj pogled. Opazuj, kako se spremeni tvoja pozornost."],
+ ["Roke in dotik","Opazuj, kaj tvoje roke počnejo med razmišljanjem. Z nežnim, zavestnim gibom zaključi eno drobno opravilo."],
+ ["Zvok in tišina","Poslušaj tri zvoke v okolici. Nato za nekaj trenutkov opazuj tišino med njimi."],
+ ["Tempo in počitek","Opazuj energijo brez ocenjevanja. Če potrebuješ odmor, ga vzemi; če ti koristi gibanje, se nežno premakni."],
+ ["Drža in glas","Preveri, ali je tvoja drža udobna. Izgovori eno pomembno misel na glas in poslušaj, kako zveni."]
+];
+const $ = id => document.getElementById(id);
+let selectedIndex = 0, selectedCycle = 0, activeDimension = "", data = [], journalTimer = null;
+const dateFmt = new Intl.DateTimeFormat('sl-SI',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+const shortFmt = new Intl.DateTimeFormat('sl-SI',{day:'numeric',month:'numeric',timeZone:'UTC'});
+function utcDate(date){return Date.UTC(date.getUTCFullYear(),date.getUTCMonth(),date.getUTCDate())}
+function localTodayUTC(){const d=new Date();return Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())}
+function isoFromUTC(ms){return new Date(ms).toISOString().slice(0,10)}
+function fmtDate(ms){return dateFmt.format(new Date(ms))}
+function moonFor(ms){const age=((ms-Date.UTC(2000,0,6,18,14))/DAY_MS%29.530588853+29.530588853)%29.530588853;const illum=(1-Math.cos(2*Math.PI*age/29.530588853))/2;let phase;if(age<1.85||age>27.68)phase="🌑 Mlaj";else if(age<5.54)phase="🌒 Rastoči srp";else if(age<9.23)phase="🌓 Prvi krajec";else if(age<12.92)phase="🌔 Rastoča Luna";else if(age<16.61)phase="🌕 Ščip";else if(age<20.30)phase="🌖 Padajoča Luna";else if(age<23.99)phase="🌗 Zadnji krajec";else phase="🌘 Padajoči srp";return {phase,illum:Math.round(illum*100),age:age.toFixed(1)}}
+function signFor(index){return SIGNS[((index%20)+20)%20]}
+function toneFor(index){return TONES[((index%13)+13)%13]}
+function buildDay(index){const sign=signFor(index), tone=toneFor(index), cycleIndex=Math.floor(index/20), cycle=CYCLES[cycleIndex], toneNo=index%13+1, signNo=index%20, dim=DIMENSIONS[(index+Math.floor(index/7))%4], key=KEYS[(index+toneNo+signNo)%13], question=QUESTIONS[(index*3+toneNo+signNo)%13], practice=PRACTICES[(index+toneNo*2+signNo)%13], body=BODY[(index+signNo+toneNo)%BODY.length];const date=START+index*DAY_MS;const message=sign.archetype+" se danes sreča s temo »"+tone[0].toLowerCase()+"«. "+tone[1]+" "+cycle[1]+": "+cycle[2].split(".")[0].toLowerCase()+".";
+return {index,date,sign,tone,toneNo,cycleIndex,cycle,dimension:dim,key,question,practice,body,message,moon:moonFor(date)}}
+function getIndexForDate(ms){return Math.floor((ms-START)/DAY_MS)}
+function storageGet(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v)}catch(e){return fallback}}
+function storageSet(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch(e){return false}}
+function getNotes(){return storageGet('blinkita-notes-v1',{})}
+function getDone(){return storageGet('blinkita-done-v1',[])}
+function getFavs(){return storageGet('blinkita-favs-v1',[])}
+function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2300)}
+function renderHeader(){const idx=getIndexForDate(localTodayUTC()), d=buildDay(idx);$('todayDate').textContent=fmtDate(localTodayUTC());$('todayName').textContent=`${d.toneNo} ${d.sign.name} · ${d.sign.local}`;$('progressNum').textContent=((idx%260)+260)%260+1;$('progressBar').style.width=(((idx%260)+260)%260+1)/260*100+'%';$('progressText').textContent=idx<0?'Pred začetkom referenčnega cikla':`Referenčni cikel · ${Math.floor(idx/260)+1}. obhod`;const m=moonFor(localTodayUTC());$('moonPhase').textContent=m.phase;$('moonInfo').textContent=`Približno ${m.illum}% osvetljenosti · starost ${m.age} dni`}
+function renderTabs(){const root=$('cycleTabs');root.innerHTML='';CYCLES.forEach((c,i)=>{const b=document.createElement('button');b.className='cycle-tab'+(i===selectedCycle?' active':'');b.textContent=String(i+1).padStart(2,'0');b.title=`Cikel ${i+1}: ${c[0]}`;b.setAttribute('aria-label',`Cikel ${i+1}: ${c[0]}`);b.onclick=()=>{selectedCycle=i;renderCalendar()};root.appendChild(b)})}
+function renderCalendar(){renderTabs();const c=CYCLES[selectedCycle];$('calendarTitle').textContent=`Cikel ${selectedCycle+1} · ${c[0]}`;$('calendarSubtitle').textContent=c[2];$('cycleSymbol').textContent=c[3];$('cycleName').textContent=c[0];$('cycleDesc').textContent=c[2];$('cycleProgress').textContent=`Dnevi ${selectedCycle*20+1}–${selectedCycle*20+20}`;$('cycleFeature').style.setProperty('--cycle-color',c[4]);const root=$('daysGrid');root.innerHTML='';const done=getDone();for(let j=0;j<20;j++){const idx=selectedCycle*20+j,d=buildDay(idx),b=document.createElement('button');b.className='day-cell'+(idx===selectedIndex?' selected':'')+(idx===getIndexForDate(localTodayUTC())?' today':'')+(done.includes(idx)?' done':'')+(activeDimension&&d.dimension!==activeDimension?' filtered-out':'');b.innerHTML=`<span class="n">${idx+1}</span><span class="glyph-pair"><img class="tone-glyph" src="../../../assets/tzolkin/tone-${d.toneNo}.png" alt="Ton ${d.toneNo}"><img class="sign-glyph" src="../../../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}"></span><span class="date">${shortFmt.format(new Date(d.date))}</span>`;b.title=`${fmtDate(d.date)} · ${d.toneNo} ${d.sign.name}`;b.setAttribute('aria-label',`Dan ${idx+1}, ${fmtDate(d.date)}, ${d.toneNo} ${d.sign.name}`);b.onclick=()=>selectDay(idx,true);root.appendChild(b)}document.querySelectorAll('.dimension').forEach(el=>el.classList.toggle('active',el.dataset.dimension===activeDimension))}
+function renderDetail(){const d=buildDay(selectedIndex);$('detailDate').textContent=fmtDate(d.date);$('detailTitle').textContent=`${d.toneNo} ${d.sign.name}`;const title=$('detailTitle');let glyphs=$('detailGlyphs');if(!glyphs){glyphs=document.createElement("div");glyphs.id="detailGlyphs";glyphs.className="detail-glyphs";title.insertAdjacentElement("beforebegin",glyphs)}glyphs.innerHTML=`<img src="../../../assets/tzolkin/tone-${d.toneNo}.png" alt="Ton ${d.toneNo}"><img src="../../../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}">`;$('detailCycle').textContent=`Cikel ${d.cycleIndex+1} · ${d.cycle[0]}`;$('detailIndex').textContent=d.index+1;$('detailTone').textContent=`Ton ${d.toneNo} · ${d.tone[0]}`;$('detailSign').textContent=d.sign.variants;$('detailDimension').textContent=d.dimension;$('detailMoon').textContent=d.moon.phase;$('detailMessage').textContent=d.message;$('signTitle').textContent=`${d.sign.name} · ${d.sign.local}`;$('signMeaning').textContent=`${d.sign.archetype}. ${d.sign.meaning}`;$('toneTitle').textContent=`Ton ${d.toneNo} · ${d.tone[0]}`;$('toneMeaning').textContent=d.tone[1];$('detailKey').textContent=d.key;$('keyMeaning').textContent=`${d.sign.name} te danes vabi, da ključ preizkusiš v resnični situaciji. Opazuj rezultat, ne išči popolnosti.`;$('detailQuestion').textContent=d.question;$('practiceTitle').textContent=d.practice[0];$('detailPractice').textContent=d.practice[1];$('bodyTitle').textContent=d.body[0];$('detailBody').textContent=d.body[1];$('cycleFocus').textContent=d.cycle[0];$('cycleFocusText').textContent=`${d.cycle[1]}. ${d.cycle[2]} Zaključni poudarek: ${d.cycle[5]}`;$('prevDay').disabled=selectedIndex<=0;$('nextDay').disabled=selectedIndex>=259;$('markDone').textContent=getDone().includes(selectedIndex)?'Praksa opravljena ✓':'Označi prakso kot opravljeno ✓';$('favorite').textContent=getFavs().includes(selectedIndex)?'♥ Shranjeno med priljubljene':'♡ Shrani med priljubljene';$('journal').value=getNotes()[selectedIndex]||'';$('saveState').textContent='';}
+function selectDay(index,scroll){selectedIndex=Math.max(0,Math.min(259,index));selectedCycle=Math.floor(selectedIndex/20);storageSet('blinkita-last-day-v1',selectedIndex);renderCalendar();renderDetail();if(scroll)$('detail').scrollIntoView({behavior:'smooth',block:'start'})}
+function chooseToday(){let idx=getIndexForDate(localTodayUTC());idx=((idx%260)+260)%260;selectDay(idx,true)}
+$('openToday').onclick=chooseToday;$('goToday').onclick=chooseToday;$('jumpCalendar').onclick=()=>$('calendar').scrollIntoView({behavior:'smooth'});$('clearFilter').onclick=()=>{activeDimension='';renderCalendar()};
+$('prevDay').onclick=()=>selectDay(selectedIndex-1,true);$('nextDay').onclick=()=>selectDay(selectedIndex+1,true);
+$('markDone').onclick=()=>{let a=getDone();if(a.includes(selectedIndex))a=a.filter(n=>n!==selectedIndex);else a.push(selectedIndex);storageSet('blinkita-done-v1',a);renderCalendar();renderDetail();toast(a.includes(selectedIndex)?'Praksa je označena kot opravljena.':'Oznaka prakse je odstranjena.')};
+$('favorite').onclick=()=>{let a=getFavs();if(a.includes(selectedIndex))a=a.filter(n=>n!==selectedIndex);else a.push(selectedIndex);storageSet('blinkita-favs-v1',a);renderDetail();toast(a.includes(selectedIndex)?'Dan je shranjen med priljubljene.':'Dan je odstranjen iz priljubljenih.')};
+$('journal').addEventListener('input',()=>{clearTimeout(journalTimer);$('saveState').textContent='Shranjevanje …';journalTimer=setTimeout(()=>{const notes=getNotes();notes[selectedIndex]=$('journal').value;if(storageSet('blinkita-notes-v1',notes))$('saveState').textContent='Shranjeno v tem brskalniku';else $('saveState').textContent='Lokalno shranjevanje ni na voljo';},350)});
+document.querySelectorAll('.dimension').forEach(el=>{const activate=()=>{const val=el.dataset.dimension;activeDimension=activeDimension===val?'':val;renderCalendar();if(activeDimension){const match=data.find(d=>d.dimension===activeDimension);if(match)selectDay(match.index,false);toast(`Poudarjeni dnevi: ${activeDimension.toLowerCase()}.`)}else toast('Prikazani so vsi dnevi.')};el.addEventListener('click',activate);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate()}})});
+data=Array.from({length:260},(_,i)=>buildDay(i));
+function init(){const today=getIndexForDate(localTodayUTC());const saved=storageGet('blinkita-last-day-v1',null);selectedIndex=(Number.isInteger(saved)&&saved>=0&&saved<260)?saved:Math.max(0,Math.min(259,((today%260)+260)%260));selectedCycle=Math.floor(selectedIndex/20);renderHeader();renderCalendar();renderDetail()}
+init();
+</script>
+</body>
+</html>
