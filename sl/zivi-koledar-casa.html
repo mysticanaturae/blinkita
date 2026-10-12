@@ -66,6 +66,148 @@
 .app-nav .lang-link{padding:5px 2px;color:var(--muted)}
 .app-nav .lang-link.active{color:var(--ink);font-weight:700;border-bottom:2px solid var(--gold)}
 @media(max-width:560px){.topbar{gap:12px;align-items:center;padding:18px 0}.brand{font-size:.72rem}.app-nav{gap:10px;font-size:.72rem;flex-wrap:wrap}.nav-divider{height:15px}}
+/* ČAS SPREGOVORI */
+.time-speaks {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 22px;
+  padding: clamp(25px, 4vw, 42px);
+  border: 1px solid #b99456;
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at 100% 0%, #dcebe544, transparent 48%),
+    linear-gradient(135deg, #fffdf8, #f4eee0 58%, #edf4eb);
+  box-shadow: 0 14px 38px #294a3c12;
+}
+.time-speaks:before {
+  content: "✧";
+  position: absolute;
+  right: 24px;
+  top: 9px;
+  color: #b99456;
+  font: 3rem Georgia, serif;
+  opacity: .75;
+  z-index: -1;
+}
+.time-speaks .time-eyebrow {
+  margin: 0 0 9px;
+  color: #947342;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.time-speaks h3 {
+  margin: 0 0 14px;
+  color: #253b3a;
+  font: 500 clamp(2rem, 4vw, 3rem)/1.05 var(--serif);
+}
+.time-speaks .time-message {
+  max-width: 760px;
+  margin: 0;
+  color: #354d45;
+  font: 500 clamp(1.15rem, 2vw, 1.45rem)/1.65 var(--serif);
+}
+.time-speaks .time-signature {
+  margin: 20px 0 0;
+  color: #947342;
+  font-size: .7rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.time-message {
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.time-signature {
+    font-style: normal;
+}
+
+/* BLINKITA_TIME_SPIRAL_STYLE */
+.time-speaks {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.time-speaks::after {
+    content: "🌀";
+    position: absolute;
+    z-index: 0;
+    right: 0.4rem;
+    bottom: 0.1rem;
+    font-size: clamp(5rem, 16vw, 9rem);
+    line-height: 1;
+    opacity: 0.07;
+    pointer-events: none;
+    transform: rotate(-12deg);
+}
+
+.time-speaks > * {
+    position: relative;
+    z-index: 1;
+}
+
+.time-speaks .time-eyebrow {
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.time-speaks .time-message {
+    font-style: italic !important;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+.time-speaks .time-signature {
+    font-style: normal !important;
+    margin-top: 1.2rem;
+    letter-spacing: 0.04em;
+}
+/* END BLINKITA_TIME_SPIRAL_STYLE */
+
+
+
+/* BLINKITA_TIME_READABILITY */
+.time-speaks .time-message {
+    font-style: italic !important;
+    font-weight: 600 !important;
+    line-height: 1.85;
+}
+
+.time-speaks .time-energy {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    max-width: 48%;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-align: right;
+    opacity: 0.85;
+}
+
+.time-speaks .time-eyebrow {
+    padding-right: 7rem;
+}
+
+@media (max-width: 480px) {
+    .time-speaks .time-energy {
+        top: 0.65rem;
+        right: 0.65rem;
+        font-size: 0.65rem;
+        max-width: 42%;
+    }
+
+    .time-speaks .time-eyebrow {
+        padding-right: 5rem;
+    }
+}
+/* END BLINKITA_TIME_READABILITY */
 </style>
 </head>
 <body>
@@ -108,7 +250,7 @@
  </div>
 </section>
 <section class="detail" id="detail">
- <div class="section-head"><div><div class="eyebrow">Odprti obraz časa</div><h2>Dan, ki ga raziskuješ.</h2></div><p>Vsebino uporabi kot ogledalo in povabilo k opazovanju. To je sodobna interpretacija BLINKITA, ločena od tradicionalne koledarske matematike.</p></div>
+ <div class="section-head"><div><div class="eyebrow">Odprti obraz časa</div><h2>Dan, ki ga raziskuješ.</h2></div><p>Vsak dan ti ponuja nov pogled nase, na svoje izbire in na korake, ki jih lahko narediš.</p></div>
  <article class="detail-card">
   <div class="detail-head"><div><div class="eyebrow" id="detailDate">—</div><h2 id="detailTitle">1 Imox</h2><p id="detailCycle">Cikel 1 · Prvi pogled</p></div><div class="day-number"><strong id="detailIndex">1</strong><span>od 260</span></div></div>
   <div class="tags"><span class="tag" id="detailTone">Ton 1</span><span class="tag" id="detailSign">Imox</span><span class="tag" id="detailDimension">Prepoznavanje</span><span class="tag" id="detailMoon">—</span></div>
@@ -123,6 +265,13 @@
    <div class="content-block"><small>Povezava s ciklom</small><h3 id="cycleFocus">Prvi pogled</h3><p id="cycleFocusText"></p></div>
   </div>
   <div class="journal"><label for="journal">Tvoj dnevni zapis · shranjen samo v tem brskalniku</label><textarea id="journal" placeholder="Kaj sem danes opazila? Kaj želim odnesti s seboj?"></textarea></div>
+    <section class="time-speaks" aria-labelledby="timeSpeaksTitle" aria-live="polite">
+    <p class="time-eyebrow">Sporočilo tvojega Časa</p>
+<span class="time-energy" id="timeSpeaksEnergy"></span>
+    <h3 id="timeSpeaksTitle">Čas spregovori</h3>
+    <p class="time-message" id="timeSpeaksMessage"></p>
+    <p class="time-signature">Tvoj Čas</p>
+  </section>
   <div class="detail-actions"><button class="btn secondary" id="prevDay">← Prejšnji dan</button><button class="btn" id="markDone">Označi prakso kot opravljeno ✓</button><button class="btn secondary" id="favorite">♡ Shrani med priljubljene</button><button class="btn secondary" id="nextDay">Naslednji dan →</button><button class="btn secondary" id="goToday">Danes</button><span class="save-state" id="saveState" aria-live="polite"></span></div>
  </article>
 </section>
@@ -137,21 +286,21 @@ const SIGNS = [
  {name:"Imox",variants:"Imox · Imix",local:"Krokodil / vodni začetek",symbol:"≈",archetype:"Prvinska voda, domišljija in globina",meaning:"Imox je v različnih majevskih jezikovnih tradicijah povezan z vodo, prvinskostjo in življenjem, ki še ni dobilo dokončne oblike. Tukaj ga raziskujemo kot prostor, kjer lahko poslušaš tisto, kar se šele oblikuje."},
  {name:"Iq’",variants:"Iq’ · Ik’",local:"Veter / dih",symbol:"〰",archetype:"Dih, veter, glas in gibanje",meaning:"Iq’ je povezan z vetrom in dihom. V interpretaciji BLINKITA odpira vprašanje, kaj premika tvoje misli, kako govoriš in kje potrebuješ več prostora za dih."},
  {name:"Aq’ab’al",variants:"Aq’ab’al · Ak’bal",local:"Zora / mrak",symbol:"☼",archetype:"Prehod, svitanje in možnost",meaning:"Aq’ab’al nosi podobo prehoda med temo in svetlobo. Uporabi ga za raziskovanje trenutkov, ko staro še ni odšlo, novo pa še nima jasne oblike."},
- {name:"K’at",variants:"K’at · Kan (regionalna poimenovanja se razlikujejo)",local:"Mreža / vozlišče",symbol:"⌘",archetype:"Povezave, vozli in osvobajanje",meaning:"K’at se pogosto povezuje z mrežo, vozli in zapletom. V tem portalu predstavlja vzorce, ki nas povezujejo, pa tudi tiste, ki jih je mogoče razplesti."},
+ {name:"K’at",variants:"K’at · Kan (regionalna poimenovanja se razlikujejo)",local:"Kuščar / mreža",symbol:"⌘",archetype:"Povezave, vozli in osvobajanje",meaning:"K’at se pogosto povezuje z mrežo, vozli in zapletom. V tem portalu predstavlja vzorce, ki nas povezujejo, pa tudi tiste, ki jih je mogoče razplesti."},
  {name:"Kan",variants:"Kan · K’an",local:"Seme / rast",symbol:"❋",archetype:"Potencial, seme in življenjska moč",meaning:"Kan se v številnih sodobnih razlagah povezuje s semenom, rastjo in življenjsko močjo. Raziskuj, kaj v tebi potrebuje hranila, čas in konkretne pogoje."},
- {name:"Kame",variants:"Kame · Kimi",local:"Preobrazba / predniki",symbol:"☾",archetype:"Zaključek, spomin in prehod",meaning:"Kame je povezan s smrtjo, predniki in prehodi. V tej praksi ga obravnavamo kot povabilo k spoštljivemu zaključevanju in sprejemanju minljivosti, ne kot napoved dogodkov."},
+ {name:"Kame",variants:"Kame · Kimi",local:"Smrt / predniki",symbol:"☾",archetype:"Zaključek, spomin in prehod",meaning:"Kame je povezan s smrtjo, predniki in prehodi. V tej praksi ga obravnavamo kot povabilo k spoštljivemu zaključevanju in sprejemanju minljivosti, ne kot napoved dogodkov."},
  {name:"Kej",variants:"Kej · Manik’",local:"Jelen / gozd",symbol:"♧",archetype:"Utelešenje, narava in pokončnost",meaning:"Kej je pogosto povezan z jelenom, naravo in ravnovesjem. Njegova podoba te vrača k telesu, mejam in načinu, kako stopaš v prostor."},
- {name:"Q’anil",variants:"Q’anil · Lamat",local:"Seme / zrelost",symbol:"✺",archetype:"Plodnost, rast in dozorevanje",meaning:"Q’anil se povezuje s semeni, rastjo in plodnostjo. V sodobni refleksiji pomaga prepoznati, kaj že raste in česa ni treba siliti."},
- {name:"Toj",variants:"Toj · Muluk",local:"Dar / ravnovesje",symbol:"◌",archetype:"Vzajemnost, darovanje in poravnava",meaning:"Toj je povezan z darom, plačilom oziroma vzajemnostjo in obrednim ravnovesjem. Raziskuj, kaj daješ, kaj sprejemaš in kaj želiš uravnotežiti."},
+ {name:"Q’anil",variants:"Q’anil · Lamat",local:"Zajec / zrelost",symbol:"✺",archetype:"Plodnost, rast in dozorevanje",meaning:"Q’anil se povezuje s semeni, rastjo in plodnostjo. V sodobni refleksiji pomaga prepoznati, kaj že raste in česa ni treba siliti."},
+ {name:"Toj",variants:"Toj · Muluk",local:"Voda / ravnovesje",symbol:"◌",archetype:"Vzajemnost, darovanje in poravnava",meaning:"Toj je povezan z darom, plačilom oziroma vzajemnostjo in obrednim ravnovesjem. Raziskuj, kaj daješ, kaj sprejemaš in kaj želiš uravnotežiti."},
  {name:"Tz’i’",variants:"Tz’i’ · Oc",local:"Pes / zakon",symbol:"⌂",archetype:"Zvestoba, pravičnost in odgovornost",meaning:"Tz’i’ se pogosto povezuje s psom, zvestobo, pravom in pravičnostjo. Odpira prostor za pošten odnos do dogovorov, meja in odgovornosti."},
- {name:"B’atz’",variants:"B’atz’ · Chuen",local:"Nit / tkanje",symbol:"∞",archetype:"Ustvarjalnost, čas in povezovanje",meaning:"B’atz’ je povezan z nitjo, tkanjem in ustvarjalnostjo. V tem portalu je nit podoba življenja, ki ga soustvarjaš skozi ponavljajoče se izbire."},
- {name:"E",variants:"E · Eb’",local:"Pot / stopinja",symbol:"⌁",archetype:"Pot, skupnost in smer",meaning:"E je povezan s potjo in življenjsko smerjo. Vabi te, da preveriš, ali tvoj vsakdan podpira smer, ki jo izrekaš kot svojo."},
- {name:"Aj",variants:"Aj · Ben",local:"Trst / steber",symbol:"♜",archetype:"Pokončnost, dom in odgovornost",meaning:"Aj se povezuje s trstom, hišo oziroma stebrom in odgovornostjo. Njegova tema je notranja pokončnost, ki se pokaže v dejanjih in skrbi za skupnost."},
+ {name:"B’atz’",variants:"B’atz’ · Chuen",local:"Opica / tkanje",symbol:"∞",archetype:"Ustvarjalnost, čas in povezovanje",meaning:"B’atz’ je povezan z nitjo, tkanjem in ustvarjalnostjo. V tem portalu je nit podoba življenja, ki ga soustvarjaš skozi ponavljajoče se izbire."},
+ {name:"E",variants:"E · Eb’",local:"Cesta / stopinja",symbol:"⌁",archetype:"Pot, skupnost in smer",meaning:"E je povezan s potjo in življenjsko smerjo. Vabi te, da preveriš, ali tvoj vsakdan podpira smer, ki jo izrekaš kot svojo."},
+ {name:"Aj",variants:"Aj · Ben",local:"Trs / steber",symbol:"♜",archetype:"Pokončnost, dom in odgovornost",meaning:"Aj se povezuje s trstom, hišo oziroma stebrom in odgovornostjo. Njegova tema je notranja pokončnost, ki se pokaže v dejanjih in skrbi za skupnost."},
  {name:"Ix",variants:"Ix · Ix",local:"Jaguar / zemeljska moč",symbol:"♢",archetype:"Instinkt, zemlja in skrivnost",meaning:"Ix je povezan z jaguarjem, zemljo in močjo naravnega sveta. Uporabi ga kot simbol pozorne prisotnosti, instinkta in spoštovanja do tega, česar še ne razumeš."},
  {name:"Tz’ikin",variants:"Tz’ikin · Men",local:"Ptica / pogled",symbol:"⌃",archetype:"Vizija, perspektiva in obilje",meaning:"Tz’ikin je povezan s pticami, pogledom in v nekaterih tradicijah obiljem. Povabi te, da se odmakneš od neposredne težave in preveriš širšo sliko."},
- {name:"Ajmaq",variants:"Ajmaq · Cib",local:"Odpuščanje / predniki",symbol:"◍",archetype:"Učenje, odpuščanje in človeškost",meaning:"Ajmaq je povezan z napakami, odpuščanjem in predniškim spominom. Ne zahteva, da opravičiš škodo; ponuja prostor za učenje, odgovornost in sproščanje nepotrebne krivde."},
+ {name:"Ajmaq",variants:"Ajmaq · Cib",local:"Sova / predniki",symbol:"◍",archetype:"Učenje, odpuščanje in človeškost",meaning:"Ajmaq je povezan z napakami, odpuščanjem in predniškim spominom. Ne zahteva, da opravičiš škodo; ponuja prostor za učenje, odgovornost in sproščanje nepotrebne krivde."},
  {name:"No’j",variants:"No’j · Caban",local:"Zemlja / modrost",symbol:"⊙",archetype:"Misel, modrost in zavestna izbira",meaning:"No’j se povezuje z modrostjo, mišljenjem in znanjem. Pomaga ti razlikovati med prvo mislijo, preverjenim dejstvom in modrostjo, ki se pokaže v praksi."},
- {name:"Tijax",variants:"Tijax · Etz’nab",local:"Kremen / rez",symbol:"◇",archetype:"Razločevanje, jasnost in rez",meaning:"Tijax je povezan s kamnom, obsidianom oziroma rezilom in zdravljenjem v nekaterih tradicijah. Tukaj simbolizira jasno razlikovanje med tem, kar podpira življenje, in tem, kar ga ovira."},
+ {name:"Tijax",variants:"Tijax · Etz’nab",local:"Ogledalo / rez",symbol:"◇",archetype:"Razločevanje, jasnost in rez",meaning:"Tijax je povezan s kamnom, obsidianom oziroma rezilom in zdravljenjem v nekaterih tradicijah. Tukaj simbolizira jasno razlikovanje med tem, kar podpira življenje, in tem, kar ga ovira."},
  {name:"Kawoq",variants:"Kawoq · Cauac",local:"Nevihta / skupnost",symbol:"❋",archetype:"Skupnost, negovanje in sprememba",meaning:"Kawoq se povezuje z nevihto, skupnostjo in družinskim oziroma skupinskim življenjem. Raziskuj, kako se sprememba dogaja med ljudmi, ne le znotraj posameznika."},
  {name:"Ajpu",variants:"Ajpu · Ahau",local:"Sonce / junak",symbol:"☀",archetype:"Prisotnost, pogum in celovitost",meaning:"Ajpu se pogosto povezuje s soncem, junakom in premagovanjem preizkušenj. Njegov poudarek je zrela prisotnost: videti resničnost in izbrati dejanje, ki je skladno s tvojimi vrednotami."}
 ];
@@ -241,6 +390,7 @@ function localTodayUTC(){const d=new Date();return Date.UTC(d.getFullYear(),d.ge
 function isoFromUTC(ms){return new Date(ms).toISOString().slice(0,10)}
 function fmtDate(ms){return dateFmt.format(new Date(ms))}
 function moonFor(ms){const age=((ms-Date.UTC(2000,0,6,18,14))/DAY_MS%29.530588853+29.530588853)%29.530588853;const illum=(1-Math.cos(2*Math.PI*age/29.530588853))/2;let phase;if(age<1.85||age>27.68)phase="🌑 Mlaj";else if(age<5.54)phase="🌒 Rastoči srp";else if(age<9.23)phase="🌓 Prvi krajec";else if(age<12.92)phase="🌔 Rastoča Luna";else if(age<16.61)phase="🌕 Ščip";else if(age<20.30)phase="🌖 Padajoča Luna";else if(age<23.99)phase="🌗 Zadnji krajec";else phase="🌘 Padajoči srp";return {phase,illum:Math.round(illum*100),age:age.toFixed(1)}}
+const TIME_SPEAKS = ["Jaz sem Čas. Danes te spominjam, da se ni treba vsemu, kar se rojeva v tebi, takoj odločiti za obliko. Nekatere zamisli potrebujejo tišino, ne razlage. Nekateri občutki potrebujejo tvojo pozornost, preden lahko razumeš, kaj ti sporočajo.\n\nDovoli si danes nekaj časa brez odgovora. Prisluhni temu, kar se v tebi šele začenja.\n","Danes te vabim, da opaziš, koliko energije porabiš za to, da bi te drugi razumeli. Ni ti treba vsake svoje misli braniti in vsakega občutka razložiti do konca.\n\nVčasih se prava sprememba začne z enim iskrenim stavkom. Včasih z vdihom, preden odgovoriš. Izberi besede, za katerimi lahko mirno stojiš.\n","Jaz sem Čas. Poznaš tisti trenutek, ko starega ne moreš več živeti enako, novega pa še ne znaš poimenovati?\n\nNe hiti čez ta prehod. Ni ti treba ostati ista oseba samo zato, ker drugi poznajo tvojo staro zgodbo. Danes naredi nekaj majhnega, kar pripada življenju, ki ga želiš ustvariti.\n\nTudi zora se ne pojavi v enem samem trenutku.\n","Danes te sprašujem: kaj vse še držiš v svojih rokah, čeprav veš, da ni več tvoje, da to nosiš?\n\nObveznosti, pričakovanja, stare obljube in nedokončane zgodbe se lahko prepletejo tako tesno, da pozabiš, kje se konča tvoja odgovornost. Ne razpletaj vsega naenkrat. Začni pri enem vozlu.\n\nKaj lahko danes odložiš, ne da bi s tem izdala sebe?\n","Ne podcenjuj tega, kar danes neguješ, samo zato, ker še ni videti veliko.\n\nJaz sem Čas. Spominjam te, da rast ni vedno glasna. Včasih je to odločitev, da vztrajaš pri svojem delu. Včasih meja, ki jo prvič postaviš. Včasih trenutek, ko ne zapustiš same sebe zaradi tuje potrditve.\n\nKatero seme želiš zaliti s svojim dejanjem?\n","Česa se še vedno oklepaš?\n\nVčasih se držiš preteklosti, ker je znana. Tudi bolečina je lahko domača, čeprav te že dolgo ne vodi nikamor več.\n\nJaz sem Čas. Danes te spominjam, da spoštovati svojo preteklost ne pomeni, da moraš v njej ostati. Lahko ohraniš ljubezen, modrost in spomine, ne da bi še naprej ponavljala zgodbo, ki te omejuje.\n\nKaj si pripravljena odnesti s seboj in česa ti ni treba več nositi?\n","Vrni se v svoje središče.\n\nKolikokrat se prilagodiš ritmu drugih, dokler ne pozabiš, kakšen je tvoj lastni?\n\nDanes te vabim, da se vrneš k svojemu telesu, svojemu ritmu in svojim vrednotam. Ni ti treba tekmovati z nikomer. Ni ti treba dokazovati, da zmoreš vse.\n\nPrava moč ni v tem, da nikoli ne počivaš. Je v tem, da znaš prepoznati, kdaj je čas za korak naprej in kdaj za postanek.\n","Ali znaš prepoznati svojo rast?\n\nMorda si tako osredotočena na to, kar še ni narejeno, da sploh ne vidiš, koliko si že spremenila.\n\nJaz sem Čas. Spominjam te, da ni vse, kar raste, takoj vidno. Poglej, kako danes razmišljaš, kaj si pripravljena sprejeti in česa ne dovoljuješ več. Tudi to so sadovi tvojega dela.\n\nNamesto da se vprašaš, koliko ti še manjka, se danes vprašaj: kaj v meni je dozorelo?\n","Dajanje ni isto kot izčrpavanje.\n\nKomu daješ svojo energijo, svojo pozornost in svoj čas? In kaj ostane zate, ko so vsi drugi zadovoljni?\n\nDanes te spominjam, da tvoje srce ne potrebuje dokazovanja skozi nenehno razdajanje. Lahko si velikodušna in imaš meje. Lahko ljubiš in rečeš ne. Lahko pomagaš, ne da bi prevzela odgovornost za življenje nekoga drugega.\n\nPreden danes nekaj obljubiš, preveri, ali lahko to podariš z odprtim srcem, ne z občutkom dolžnosti.\n","Komu si zvesta, ko nihče ne gleda?\n\nZvestoba je čudovita, dokler zaradi nje ne začneš izdajati same sebe.\n\nJaz sem Čas. Danes te vabim, da pogledaš svoje obljube, odnose in dogovore. Ali temeljijo na spoštovanju, iskrenosti in vzajemnosti? Ali jih ohranjaš samo zato, ker se bojiš, kaj se bo zgodilo, če jih spremeniš?\n\nTvoja beseda ima težo. Naj ima težo tudi tvoj odnos do sebe.\n","Tvoje življenje nastaja tudi iz niti, ki jih ne vidiš.\n\nVsaka izbira nekaj poveže. Vsak pogovor lahko odpre novo smer. Vsak dan, ko narediš nekaj drugače, spremeni vzorec, ki se je morda spletal leta.\n\nDanes te spominjam, da ti ni treba razdreti celotne tkanine svojega življenja, da bi ustvarila nekaj novega. Včasih je dovolj, da spremeniš eno nit.\n\nKatero ponavljajočo se navado bi lahko danes zamenjala z izbiro, ki te bolj podpira?\n","Tvoja pot ne potrebuje tujega dovoljenja.\n\nKolikokrat že veš, kaj si želiš, pa še vedno čakaš, da bo nekdo potrdil, da je tvoja odločitev pravilna?\n\nJaz sem Čas. Danes te spominjam, da lahko poslušaš nasvete drugih, ne da bi jim prepustila krmilo svojega življenja. Ni treba, da vsi razumejo tvojo pot. Pomembno je, da razumeš, zakaj si izbrala prav to smer.\n\nNaredi danes en korak, ki si ga odlašala samo zato, ker si čakala na odobravanje.\n","Kaj v tvojem življenju zares stoji?\n\nKo se okoli tebe vse spreminja, je pomembno vedeti, kaj ostaja tvoje oporišče.\n\nDanes te vabim, da pogledaš svoje temelje. Katere vrednote živiš tudi takrat, ko je težko? Katerih meja se držiš tudi takrat, ko bi bilo lažje popustiti? In ali si ti sama človek, na katerega se lahko zaneseš?\n\nNe potrebuješ popolnega načrta. Potrebuješ nekaj trdnega, iz česar lahko narediš naslednji korak.\n","Spomni se moči, ki je ne potrebuješ razkazovati.\n\nJaz sem Čas. Danes te spominjam, da ti ni treba biti najglasnejša v prostoru, da bi bila močna.\n\nTvoja moč je lahko v tem, da jasno začutiš, kaj je prav zate. Da prepoznaš, kdaj nekdo prestopa tvoje meje. Da zaupaš svoji presoji, ne da bi morala vsako odločitev zagovarjati pred svetom.\n\nUstavi se in prisluhni sebi, preden znova vprašaš vse druge, kaj bi morala narediti.\n","Kaj bi videla, če bi se dvignila nad svojo skrb?\n\nKo si sredi težave, se lahko zdi, da je ta težava celotno tvoje življenje. Toda tvoj trenutni pogled ni edini pogled, ki ga imaš na voljo.\n\nDanes te vabim, da stopiš korak nazaj. Kaj bi svetovala osebi, ki jo imaš rada, če bi bila v tvojem položaju? Katero možnost bi opazila, če se ne bi osredotočala samo na to, česa te je strah?\n\nNe zahtevam, da imaš vse odgovore. Povabim te, da si dovoliš videti širše.\n","Ni ti treba za vedno ostati oseba, ki je nekoč naredila napako.\n\nMorda se še vedno kaznuješ zaradi odločitve, ki bi jo danes sprejela drugače. Morda nosiš tudi krivdo, ki ti sploh ne pripada.\n\nJaz sem Čas. Danes te spominjam, da lahko priznaš svojo odgovornost, popraviš, kar je mogoče, in se iz izkušnje nekaj naučiš. Za to ti ni treba vse življenje znova dokazovati, da ti je žal.\n\nKaj bi se spremenilo, če bi namesto samoobtoževanja izbrala zrelost?\n","Včasih ne potrebuješ novega odgovora. Potrebuješ iskrenega.\n\nKoliko svojih odločitev zapletaš, ker iščeš še eno razlago, še en znak ali še eno potrditev?\n\nDanes te vabim, da ločiš med tem, česar resnično ne veš, in tem, česar si ne želiš priznati. To ni vedno prijetno, vendar ti lahko prihrani veliko časa.\n\nZapiši si, kaj že veš o svojem položaju. Brez olepševanja. Brez izgovorov. Iz tega znanja izberi naslednji korak.\n","Nekatere stvari potrebujejo jasen rez.\n\nVsega ni mogoče rešiti z dodatno potrpežljivostjo. Včasih potrebuješ odločitev. Včasih pogovor, ki ga že dolgo odlagaš. Včasih moraš nehati vlagati v nekaj, kar ti vedno znova jemlje več, kot ti daje.\n\nJaz sem Čas. Danes te spominjam, da jasnost ni krutost. Lahko poveš resnico brez poniževanja. Lahko postaviš mejo brez maščevanja. Lahko odideš iz nečesa, ne da bi morala sovražiti vse, kar je bilo.\n\nKje bi ti jasna odločitev vrnila mir?\n","Ni ti treba biti steber za vse.\n\nČe si vedno tista, ki razume, pomirja, organizira in rešuje, se lahko drugi navadijo, da tudi tvoje potrebe počakajo.\n\nDanes te spominjam, da povezanost ni enosmerna ulica. Tudi ti potrebuješ ljudi, ob katerih ti ni treba biti močna, ki te poslušajo in ki prevzamejo svoj del odgovornosti.\n\nDovoli si danes prositi za pomoč ali jasno povedati, kaj potrebuješ. Tvoja vrednost ni odvisna od tega, koliko zmoreš narediti za druge.\n","Junakinja svojega življenja ne čaka večno na pravi trenutek.\n\nNe govorim ti, da moraš biti pogumna vsak dan. Govorim ti, da pogum ni odsotnost strahu. Je pripravljenost, da narediš nekaj pomembnega, čeprav ne moreš vnaprej zagotoviti izida.\n\nJaz sem Čas. Danes te spominjam na vse trenutke, ko si že našla moč, za katero nisi vedela, da jo imaš. Ne zmanjšuj svoje zgodovine na stvari, ki ti niso uspele. Poglej tudi, kaj si preživela, ustvarila in se naučila.\n\nKateri korak bi naredila danes, če bi si zaupala za samo en odstotek bolj?\n"];
 function signFor(index){return SIGNS[((index%20)+20)%20]}
 function toneFor(index){return TONES[((index%13)+13)%13]}
 function buildDay(index){const sign=signFor(index), tone=toneFor(index), cycleIndex=Math.floor(index/20), cycle=CYCLES[cycleIndex], toneNo=index%13+1, signNo=index%20, dim=DIMENSIONS[(index+Math.floor(index/7))%4], key=KEYS[(index+toneNo+signNo)%13], question=QUESTIONS[(index*3+toneNo+signNo)%13], practice=PRACTICES[(index+toneNo*2+signNo)%13], body=BODY[(index+signNo+toneNo)%BODY.length];const date=START+index*DAY_MS;const message=sign.archetype+" se danes sreča s temo »"+tone[0].toLowerCase()+"«. "+tone[1]+" "+cycle[1]+": "+cycle[2].split(".")[0].toLowerCase()+".";
@@ -254,8 +404,9 @@ function getFavs(){return storageGet('blinkita-favs-v1',[])}
 function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2300)}
 function renderHeader(){const idx=getIndexForDate(localTodayUTC()), d=buildDay(idx);$('todayDate').textContent=fmtDate(localTodayUTC());$('todayName').textContent=`${d.toneNo} ${d.sign.name} · ${d.sign.local}`;$('progressNum').textContent=((idx%260)+260)%260+1;$('progressBar').style.width=(((idx%260)+260)%260+1)/260*100+'%';$('progressText').textContent=idx<0?'Pred začetkom referenčnega cikla':`Referenčni cikel · ${Math.floor(idx/260)+1}. obhod`;const m=moonFor(localTodayUTC());$('moonPhase').textContent=m.phase;$('moonInfo').textContent=`Približno ${m.illum}% osvetljenosti · starost ${m.age} dni`}
 function renderTabs(){const root=$('cycleTabs');root.innerHTML='';CYCLES.forEach((c,i)=>{const b=document.createElement('button');b.className='cycle-tab'+(i===selectedCycle?' active':'');b.textContent=String(i+1).padStart(2,'0');b.title=`Cikel ${i+1}: ${c[0]}`;b.setAttribute('aria-label',`Cikel ${i+1}: ${c[0]}`);b.onclick=()=>{selectedCycle=i;renderCalendar()};root.appendChild(b)})}
-function renderCalendar(){renderTabs();const c=CYCLES[selectedCycle];$('calendarTitle').textContent=`Cikel ${selectedCycle+1} · ${c[0]}`;$('calendarSubtitle').textContent=c[2];$('cycleSymbol').textContent=c[3];$('cycleName').textContent=c[0];$('cycleDesc').textContent=c[2];$('cycleProgress').textContent=`Dnevi ${selectedCycle*20+1}–${selectedCycle*20+20}`;$('cycleFeature').style.setProperty('--cycle-color',c[4]);const root=$('daysGrid');root.innerHTML='';const done=getDone();for(let j=0;j<20;j++){const idx=selectedCycle*20+j,d=buildDay(idx),b=document.createElement('button');b.className='day-cell'+(idx===selectedIndex?' selected':'')+(idx===getIndexForDate(localTodayUTC())?' today':'')+(done.includes(idx)?' done':'')+(activeDimension&&d.dimension!==activeDimension?' filtered-out':'');b.innerHTML=`<span class="n">${idx+1}</span><span class="glyph-pair"><img class="tone-glyph" src="../../../assets/tzolkin/tone-${d.toneNo}.png" alt="Ton ${d.toneNo}"><img class="sign-glyph" src="../../../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}"></span><span class="date">${shortFmt.format(new Date(d.date))}</span>`;b.title=`${fmtDate(d.date)} · ${d.toneNo} ${d.sign.name}`;b.setAttribute('aria-label',`Dan ${idx+1}, ${fmtDate(d.date)}, ${d.toneNo} ${d.sign.name}`);b.onclick=()=>selectDay(idx,true);root.appendChild(b)}document.querySelectorAll('.dimension').forEach(el=>el.classList.toggle('active',el.dataset.dimension===activeDimension))}
-function renderDetail(){const d=buildDay(selectedIndex);$('detailDate').textContent=fmtDate(d.date);$('detailTitle').textContent=`${d.toneNo} ${d.sign.name}`;const title=$('detailTitle');let glyphs=$('detailGlyphs');if(!glyphs){glyphs=document.createElement("div");glyphs.id="detailGlyphs";glyphs.className="detail-glyphs";title.insertAdjacentElement("beforebegin",glyphs)}glyphs.innerHTML=`<img src="../../../assets/tzolkin/tone-${d.toneNo}.png" alt="Ton ${d.toneNo}"><img src="../../../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}">`;$('detailCycle').textContent=`Cikel ${d.cycleIndex+1} · ${d.cycle[0]}`;$('detailIndex').textContent=d.index+1;$('detailTone').textContent=`Ton ${d.toneNo} · ${d.tone[0]}`;$('detailSign').textContent=d.sign.variants;$('detailDimension').textContent=d.dimension;$('detailMoon').textContent=d.moon.phase;$('detailMessage').textContent=d.message;$('signTitle').textContent=`${d.sign.name} · ${d.sign.local}`;$('signMeaning').textContent=`${d.sign.archetype}. ${d.sign.meaning}`;$('toneTitle').textContent=`Ton ${d.toneNo} · ${d.tone[0]}`;$('toneMeaning').textContent=d.tone[1];$('detailKey').textContent=d.key;$('keyMeaning').textContent=`${d.sign.name} te danes vabi, da ključ preizkusiš v resnični situaciji. Opazuj rezultat, ne išči popolnosti.`;$('detailQuestion').textContent=d.question;$('practiceTitle').textContent=d.practice[0];$('detailPractice').textContent=d.practice[1];$('bodyTitle').textContent=d.body[0];$('detailBody').textContent=d.body[1];$('cycleFocus').textContent=d.cycle[0];$('cycleFocusText').textContent=`${d.cycle[1]}. ${d.cycle[2]} Zaključni poudarek: ${d.cycle[5]}`;$('prevDay').disabled=selectedIndex<=0;$('nextDay').disabled=selectedIndex>=259;$('markDone').textContent=getDone().includes(selectedIndex)?'Praksa opravljena ✓':'Označi prakso kot opravljeno ✓';$('favorite').textContent=getFavs().includes(selectedIndex)?'♥ Shranjeno med priljubljene':'♡ Shrani med priljubljene';$('journal').value=getNotes()[selectedIndex]||'';$('saveState').textContent='';}
+function renderCalendar(){renderTabs();const c=CYCLES[selectedCycle];$('calendarTitle').textContent=`Cikel ${selectedCycle+1} · ${c[0]}`;$('calendarSubtitle').textContent=c[2];$('cycleSymbol').textContent=c[3];$('cycleName').textContent=c[0];$('cycleDesc').textContent=c[2];$('cycleProgress').textContent=`Dnevi ${selectedCycle*20+1}–${selectedCycle*20+20}`;$('cycleFeature').style.setProperty('--cycle-color',c[4]);const root=$('daysGrid');root.innerHTML='';const done=getDone();for(let j=0;j<20;j++){const idx=selectedCycle*20+j,d=buildDay(idx),b=document.createElement('button');b.className='day-cell'+(idx===selectedIndex?' selected':'')+(idx===getIndexForDate(localTodayUTC())?' today':'')+(done.includes(idx)?' done':'')+(activeDimension&&d.dimension!==activeDimension?' filtered-out':'');b.innerHTML=`<span class="n">${idx+1}</span><span class="glyph-pair"><img class="tone-glyph" src="../assets/tzolkin/tone-${d.toneNo}.png" alt="Ton ${d.toneNo}"><img class="sign-glyph" src="../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}"></span><span class="date">${shortFmt.format(new Date(d.date))}</span>`;b.title=`${fmtDate(d.date)} · ${d.toneNo} ${d.sign.name}`;b.setAttribute('aria-label',`Dan ${idx+1}, ${fmtDate(d.date)}, ${d.toneNo} ${d.sign.name}`);b.onclick=()=>selectDay(idx,true);root.appendChild(b)}document.querySelectorAll('.dimension').forEach(el=>el.classList.toggle('active',el.dataset.dimension===activeDimension))}
+function renderDetail(){const d=buildDay(selectedIndex);$('detailDate').textContent=fmtDate(d.date);$('detailTitle').textContent=`${d.toneNo} ${d.sign.name}`;const title=$('detailTitle');let glyphs=$('detailGlyphs');if(!glyphs){glyphs=document.createElement("div");glyphs.id="detailGlyphs";glyphs.className="detail-glyphs";title.insertAdjacentElement("beforebegin",glyphs)}glyphs.innerHTML=`<img src="../assets/tzolkin/tone-${d.toneNo}.png" alt="Ton ${d.toneNo}"><img src="../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}">`;$('detailCycle').textContent=`Cikel ${d.cycleIndex+1} · ${d.cycle[0]}`;$('detailIndex').textContent=d.index+1;$('detailTone').textContent=`Ton ${d.toneNo} · ${d.tone[0]}`;$('detailSign').textContent=d.sign.variants;$('detailDimension').textContent=d.dimension;$('detailMoon').textContent=d.moon.phase;$('detailMessage').textContent=d.message;
+$('timeSpeaksMessage').textContent=TIME_SPEAKS[selectedIndex % TIME_SPEAKS.length];$('timeSpeaksEnergy').textContent=fmtDate(d.date)+' · '+d.toneNo+' '+d.sign.local.split(' / ')[0];$('signTitle').textContent=`${d.sign.name} · ${d.sign.local}`;$('signMeaning').textContent=`${d.sign.archetype}. ${d.sign.meaning}`;$('toneTitle').textContent=`Ton ${d.toneNo} · ${d.tone[0]}`;$('toneMeaning').textContent=d.tone[1];$('detailKey').textContent=d.key;$('keyMeaning').textContent=`${d.sign.name} te danes vabi, da ključ preizkusiš v resnični situaciji. Opazuj rezultat, ne išči popolnosti.`;$('detailQuestion').textContent=d.question;$('practiceTitle').textContent=d.practice[0];$('detailPractice').textContent=d.practice[1];$('bodyTitle').textContent=d.body[0];$('detailBody').textContent=d.body[1];$('cycleFocus').textContent=d.cycle[0];$('cycleFocusText').textContent=`${d.cycle[1]}. ${d.cycle[2]} Zaključni poudarek: ${d.cycle[5]}`;$('prevDay').disabled=selectedIndex<=0;$('nextDay').disabled=selectedIndex>=259;$('markDone').textContent=getDone().includes(selectedIndex)?'Praksa opravljena ✓':'Označi prakso kot opravljeno ✓';$('favorite').textContent=getFavs().includes(selectedIndex)?'♥ Shranjeno med priljubljene':'♡ Shrani med priljubljene';$('journal').value=getNotes()[selectedIndex]||'';$('saveState').textContent='';}
 function selectDay(index,scroll){selectedIndex=Math.max(0,Math.min(259,index));selectedCycle=Math.floor(selectedIndex/20);storageSet('blinkita-last-day-v1',selectedIndex);renderCalendar();renderDetail();if(scroll)$('detail').scrollIntoView({behavior:'smooth',block:'start'})}
 function chooseToday(){let idx=getIndexForDate(localTodayUTC());idx=((idx%260)+260)%260;selectDay(idx,true)}
 $('openToday').onclick=chooseToday;$('goToday').onclick=chooseToday;$('jumpCalendar').onclick=()=>$('calendar').scrollIntoView({behavior:'smooth'});$('clearFilter').onclick=()=>{activeDimension='';renderCalendar()};
