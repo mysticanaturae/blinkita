@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    BLINKITA SI V4
    HIGH-TICKET LIVING WORLD
    ========================================================= */
@@ -1279,3 +1279,22 @@ body.language-entry .language-choices {
   flex: 0 0 auto;
 }
 
+
+
+/* Mobile navigation: show menu when hamburger is clicked */
+@media (max-width: 780px) {
+  #mainNav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    gap: 14px;
+    background: #fffdf8;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 12px 24px rgba(0,0,0,.12);
+    z-index: 1000;
+  }
+}
