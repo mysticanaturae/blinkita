@@ -81,49 +81,49 @@
 </header>
 <main>
 <section class="hero">
- <div><div class="eyebrow">260 dni · 260 obrazov časa</div><h1>Živi koledar<br><em>časa.</em></h1><p>Vsak dan odpre drugačen pogled. Raziskuj svoje vzorce, izberi novo dejanje in opazuj, kaj se začne spreminjati, ko postaneš pozorna na čas, ki ga živiš.</p><div class="hero-actions"><button class="btn" id="openToday">Open Today's Day ↗</button><button class="btn secondary" id="jumpCalendar">Explore 13 Cycles</button></div></div>
- <div class="hero-art" aria-hidden="true"><div class="orbit"><div class="butterfly">✧</div><div class="orbit-label">od spomina do metamorfoze</div></div></div>
+ <div><div class="eyebrow">260 days · 260 Faces of Time</div><h1>Living Calendar<br><em>time.</em></h1><p>Each day opens a different perspective. Explore your patterns, choose a new action, and notice what begins to change when you pay attention to the time you are living.</p><div class="hero-actions"><button class="btn" id="openToday">Open Today's Day ↗</button><button class="btn secondary" id="jumpCalendar">Explore 13 Cycles</button></div></div>
+ <div class="hero-art" aria-hidden="true"><div class="orbit"><div class="butterfly">✧</div><div class="orbit-label">from memory to metamorphosis</div></div></div>
 </section>
 <section class="today-strip" aria-label="Today's Progress">
  <div class="today-box"><small>Today · local date</small><strong id="todayDate">—</strong><div class="sub" id="todayName">—</div></div>
  <div class="today-box"><small>Journey through the Cycle</small><strong><span id="progressNum">1</span> / 260</strong><div class="progress"><span id="progressBar"></span></div><div class="sub" id="progressText">The Beginning of a New Journey</div></div>
- <div class="today-box"><small>Lunar Rhythm · Approximate</small><strong id="moonPhase">—</strong><div class="sub" id="moonInfo">Izračun po povprečnem luninem ciklu</div></div>
+ <div class="today-box"><small>Lunar Rhythm · Approximate</small><strong id="moonPhase">—</strong><div class="sub" id="moonInfo">Estimated using the average lunar cycle</div></div>
 </section>
 <section id="dimensions">
- <div class="section-head"><div><div class="eyebrow">Four Dimensions of Transformation</div><h2>A Path You Can Live.</h2></div><p>Izberi razsežnost, ki jo želiš danes raziskovati. Koledar bo poudaril dneve s sorodnim razvojnim fokusom.</p></div>
+ <div class="section-head"><div><div class="eyebrow">Four Dimensions of Transformation</div><h2>A Path You Can Live.</h2></div><p>Choose the dimension you want to explore today. The calendar will highlight days with a related developmental focus.</p></div>
  <div class="dimension-grid" id="dimensionGrid">
-  <article class="dimension" data-dimension="Awareness" tabindex="0" role="button"><div class="glyph">◉</div><h3>Awareness</h3><p>Opazi vzorce, odzive, telesne signale in zgodbe, ki usmerjajo tvoje odločitve.</p><small>Vprašanje: Kaj se v resnici dogaja?</small></article>
-  <article class="dimension" data-dimension="Activation" tabindex="0" role="button"><div class="glyph">✧</div><h3>Activation</h3><p>Prebudi pozornost, energijo in ustvarjalnost, ki ju lahko usmeriš v življenje.</p><small>Vprašanje: Kaj želi dobiti prostor?</small></article>
-  <article class="dimension" data-dimension="Creation" tabindex="0" role="button"><div class="glyph">⌁</div><h3>Creation</h3><p>Prevedi uvid v izbiro, pogovor, mejo ali dejanje, ki ga je mogoče videti.</p><small>Vprašanje: Kaj bom naredila drugače?</small></article>
-  <article class="dimension" data-dimension="Integration" tabindex="0" role="button"><div class="glyph">❋</div><h3>Integration</h3><p>Utrdi spremembe, priznaj napredek in ustvari prostor za naslednji korak.</p><small>Vprašanje: Kaj bo ostalo z menoj?</small></article>
+  <article class="dimension" data-dimension="Awareness" tabindex="0" role="button"><div class="glyph">◉</div><h3>Awareness</h3><p>Notice the patterns, reactions, bodily signals, and stories that shape your decisions.</p><small>Question: What is really happening?</small></article>
+  <article class="dimension" data-dimension="Activation" tabindex="0" role="button"><div class="glyph">✧</div><h3>Activation</h3><p>Awaken the attention, energy, and creativity you can bring into your life.</p><small>Question: What needs room to emerge?</small></article>
+  <article class="dimension" data-dimension="Creation" tabindex="0" role="button"><div class="glyph">⌁</div><h3>Creation</h3><p>Turn insight into a choice, conversation, boundary, or action that can be seen.</p><small>Question: What will I do differently?</small></article>
+  <article class="dimension" data-dimension="Integration" tabindex="0" role="button"><div class="glyph">❋</div><h3>Integration</h3><p>Strengthen the changes, acknowledge your progress, and make room for the next step.</p><small>Question: What will stay with me?</small></article>
  </div>
 </section>
 <section id="calendar">
- <div class="section-head"><div><div class="eyebrow">Your Journey through 260 Days</div><h2>Open Any Day.</h2></div><p>13 poglavij po 20 dni je uredniška struktura BLINKITA za raziskovanje poti. Tradicionalno zaporedje znamenj in tonov teče neprekinjeno skozi celoten cikel.</p></div>
+ <div class="section-head"><div><div class="eyebrow">Your Journey through 260 Days</div><h2>Open Any Day.</h2></div><p>The 13 chapters of 20 days each are BLINKITA’s editorial structure for exploring the journey. The traditional sequence of signs and tones continues uninterrupted throughout the cycle.</p></div>
  <div class="calendar-panel">
-  <div class="calendar-top"><div><h3 id="calendarTitle">Cikel 1 · Prvi pogled</h3><p id="calendarSubtitle">Od opažanja do prvega jasnega uvida.</p></div><button class="btn secondary" id="clearFilter">Vsi dnevi</button></div>
-  <div class="cycle-tabs" id="cycleTabs" aria-label="Izberi cikel"></div>
-  <div class="cycle-feature" id="cycleFeature"><div style="display:flex;gap:15px;align-items:center"><div class="cycle-symbol" id="cycleSymbol">◉</div><div><h4 id="cycleName">Prvi pogled</h4><p id="cycleDesc"></p></div></div><div class="cycle-progress" id="cycleProgress">20 dni</div></div>
+  <div class="calendar-top"><div><h3 id="calendarTitle">Cycle 1 · First Look</h3><p id="calendarSubtitle">From observation to the first clear insight.</p></div><button class="btn secondary" id="clearFilter">All Days</button></div>
+  <div class="cycle-tabs" id="cycleTabs" aria-label="Choose a cycle"></div>
+  <div class="cycle-feature" id="cycleFeature"><div style="display:flex;gap:15px;align-items:center"><div class="cycle-symbol" id="cycleSymbol">◉</div><div><h4 id="cycleName">First Look</h4><p id="cycleDesc"></p></div></div><div class="cycle-progress" id="cycleProgress">20 days</div></div>
   <div class="days-grid" id="daysGrid" aria-label="Days in the Selected Cycle"></div>
  </div>
 </section>
 <section class="detail" id="detail">
- <div class="section-head"><div><div class="eyebrow">The Face of Time Revealed</div><h2>The Day You Are Exploring.</h2></div><p>Vsebino uporabi kot ogledalo in povabilo k opazovanju. To je sodobna interpretacija BLINKITA, ločena od tradicionalne koledarske matematike.</p></div>
+ <div class="section-head"><div><div class="eyebrow">The Face of Time Revealed</div><h2>The Day You Are Exploring.</h2></div><p>Use this content as a mirror and an invitation to observe. This is a contemporary BLINKITA interpretation, separate from traditional calendar mathematics.</p></div>
  <article class="detail-card">
-  <div class="detail-head"><div><div class="eyebrow" id="detailDate">—</div><h2 id="detailTitle">1 Imox</h2><p id="detailCycle">Cikel 1 · Prvi pogled</p></div><div class="day-number"><strong id="detailIndex">1</strong><span>od 260</span></div></div>
-  <div class="tags"><span class="tag" id="detailTone">Ton 1</span><span class="tag" id="detailSign">Imox</span><span class="tag" id="detailDimension">Awareness</span><span class="tag" id="detailMoon">—</span></div>
+  <div class="detail-head"><div><div class="eyebrow" id="detailDate">—</div><h2 id="detailTitle">1 Imox</h2><p id="detailCycle">Cycle 1 · First Look</p></div><div class="day-number"><strong id="detailIndex">1</strong><span>of 260</span></div></div>
+  <div class="tags"><span class="tag" id="detailTone">Tone 1</span><span class="tag" id="detailSign">Imox</span><span class="tag" id="detailDimension">Awareness</span><span class="tag" id="detailMoon">—</span></div>
   <p class="detail-intro" id="detailMessage"></p>
   <div class="detail-grid">
    <div class="content-block"><small>Traditional Layer</small><h3 id="signTitle">Imox · Crocodile</h3><p id="signMeaning"></p></div>
-   <div class="content-block"><small>Tone and Movement</small><h3 id="toneTitle">Ton 1 · Začetek</h3><p id="toneMeaning"></p></div>
-   <div class="content-block"><small>Key of the Day</small><h3 id="detailKey">Opazuj, preden razložiš.</h3><p id="keyMeaning"></p></div>
+   <div class="content-block"><small>Tone and Movement</small><h3 id="toneTitle">Tone 1 · Beginning</h3><p id="toneMeaning"></p></div>
+   <div class="content-block"><small>Key of the Day</small><h3 id="detailKey">Observe before you explain.</h3><p id="keyMeaning"></p></div>
    <div class="content-block"><small>A Question for Yourself</small><h3>Pause for a Moment.</h3><p class="question" id="detailQuestion"></p></div>
    <div class="content-block wide"><small>Daily Practice</small><div class="practice"><div class="step">01</div><div><h3 id="practiceTitle">Tri minute pozornosti</h3><p id="detailPractice"></p></div></div></div>
    <div class="content-block"><small>Body and Senses</small><h3 id="bodyTitle">Dih in zaznava</h3><p id="detailBody"></p></div>
-   <div class="content-block"><small>Connection to the Cycle</small><h3 id="cycleFocus">Prvi pogled</h3><p id="cycleFocusText"></p></div>
+   <div class="content-block"><small>Connection to the Cycle</small><h3 id="cycleFocus">First Look</h3><p id="cycleFocusText"></p></div>
   </div>
-  <div class="journal"><label for="journal">Tvoj dnevni zapis · shranjen samo v tem brskalniku</label><textarea id="journal" placeholder="Kaj sem danes opazila? Kaj želim odnesti s seboj?"></textarea></div>
-  <div class="detail-actions"><button class="btn secondary" id="prevDay">← Previous Day</button><button class="btn" id="markDone">Mark Practice as Complete ✓</button><button class="btn secondary" id="favorite">♡ Add to Favorites</button><button class="btn secondary" id="nextDay">Next Day →</button><button class="btn secondary" id="goToday">Danes</button><span class="save-state" id="saveState" aria-live="polite"></span></div>
+  <div class="journal"><label for="journal">Your daily journal · saved only in this browser</label><textarea id="journal" placeholder="What did I notice today? What do I want to carry forward?"></textarea></div>
+  <div class="detail-actions"><button class="btn secondary" id="prevDay">← Previous Day</button><button class="btn" id="markDone">Mark Practice as Complete ✓</button><button class="btn secondary" id="favorite">♡ Add to Favorites</button><button class="btn secondary" id="nextDay">Next Day →</button><button class="btn secondary" id="goToday">Today</button><span class="save-state" id="saveState" aria-live="polite"></span></div>
  </article>
 </section>
 </main>
@@ -134,103 +134,103 @@
 const START = Date.UTC(2026,9,10);
 const DAY_MS = 86400000;
 const SIGNS = [
- {name:"Imox",variants:"Imox · Imix",local:"Crocodile / vodni začetek",symbol:"≈",archetype:"Prvinska voda, domišljija in globina",meaning:"Imox je v različnih majevskih jezikovnih tradicijah povezan z vodo, prvinskostjo in življenjem, ki še ni dobilo dokončne oblike. Tukaj ga raziskujemo kot prostor, kjer lahko poslušaš tisto, kar se šele oblikuje."},
- {name:"Iq’",variants:"Iq’ · Ik’",local:"Wind / dih",symbol:"〰",archetype:"Dih, veter, glas in gibanje",meaning:"Iq’ je povezan z vetrom in dihom. V interpretaciji BLINKITA odpira vprašanje, kaj premika tvoje misli, kako govoriš in kje potrebuješ več prostora za dih."},
- {name:"Aq’ab’al",variants:"Aq’ab’al · Ak’bal",local:"Dawn / mrak",symbol:"☼",archetype:"Prehod, svitanje in možnost",meaning:"Aq’ab’al nosi podobo prehoda med temo in svetlobo. Uporabi ga za raziskovanje trenutkov, ko staro še ni odšlo, novo pa še nima jasne oblike."},
- {name:"K’at",variants:"K’at · Kan (regionalna poimenovanja se razlikujejo)",local:"Mreža / vozlišče",symbol:"⌘",archetype:"Povezave, vozli in osvobajanje",meaning:"K’at se pogosto povezuje z mrežo, vozli in zapletom. V tem portalu predstavlja vzorce, ki nas povezujejo, pa tudi tiste, ki jih je mogoče razplesti."},
- {name:"Kan",variants:"Kan · K’an",local:"Seme / rast",symbol:"❋",archetype:"Potencial, seme in življenjska moč",meaning:"Kan se v številnih sodobnih razlagah povezuje s semenom, rastjo in življenjsko močjo. Raziskuj, kaj v tebi potrebuje hranila, čas in konkretne pogoje."},
- {name:"Kame",variants:"Kame · Kimi",local:"Preobrazba / predniki",symbol:"☾",archetype:"Zaključek, spomin in prehod",meaning:"Kame je povezan s smrtjo, predniki in prehodi. V tej praksi ga obravnavamo kot povabilo k spoštljivemu zaključevanju in sprejemanju minljivosti, ne kot napoved dogodkov."},
- {name:"Kej",variants:"Kej · Manik’",local:"Deer / gozd",symbol:"♧",archetype:"Utelešenje, narava in pokončnost",meaning:"Kej je pogosto povezan z jelenom, naravo in ravnovesjem. Njegova podoba te vrača k telesu, mejam in načinu, kako stopaš v prostor."},
- {name:"Q’anil",variants:"Q’anil · Lamat",local:"Seme / zrelost",symbol:"✺",archetype:"Plodnost, rast in dozorevanje",meaning:"Q’anil se povezuje s semeni, rastjo in plodnostjo. V sodobni refleksiji pomaga prepoznati, kaj že raste in česa ni treba siliti."},
- {name:"Toj",variants:"Toj · Muluk",local:"Dar / ravnovesje",symbol:"◌",archetype:"Vzajemnost, darovanje in poravnava",meaning:"Toj je povezan z darom, plačilom oziroma vzajemnostjo in obrednim ravnovesjem. Raziskuj, kaj daješ, kaj sprejemaš in kaj želiš uravnotežiti."},
- {name:"Tz’i’",variants:"Tz’i’ · Oc",local:"Dog / zakon",symbol:"⌂",archetype:"Zvestoba, pravičnost in odgovornost",meaning:"Tz’i’ se pogosto povezuje s psom, zvestobo, pravom in pravičnostjo. Odpira prostor za pošten odnos do dogovorov, meja in odgovornosti."},
- {name:"B’atz’",variants:"B’atz’ · Chuen",local:"Nit / tkanje",symbol:"∞",archetype:"Ustvarjalnost, čas in povezovanje",meaning:"B’atz’ je povezan z nitjo, tkanjem in ustvarjalnostjo. V tem portalu je nit podoba življenja, ki ga soustvarjaš skozi ponavljajoče se izbire."},
- {name:"E",variants:"E · Eb’",local:"Pot / stopinja",symbol:"⌁",archetype:"Pot, skupnost in smer",meaning:"E je povezan s potjo in življenjsko smerjo. Vabi te, da preveriš, ali tvoj vsakdan podpira smer, ki jo izrekaš kot svojo."},
- {name:"Aj",variants:"Aj · Ben",local:"Reedt / steber",symbol:"♜",archetype:"Pokončnost, dom in odgovornost",meaning:"Aj se povezuje s trstom, hišo oziroma stebrom in odgovornostjo. Njegova tema je notranja pokončnost, ki se pokaže v dejanjih in skrbi za skupnost."},
- {name:"Ix",variants:"Ix · Ix",local:"Jaguar / zemeljska moč",symbol:"♢",archetype:"Instinkt, zemlja in skrivnost",meaning:"Ix je povezan z jaguarjem, zemljo in močjo naravnega sveta. Uporabi ga kot simbol pozorne prisotnosti, instinkta in spoštovanja do tega, česar še ne razumeš."},
- {name:"Tz’ikin",variants:"Tz’ikin · Men",local:"Ptica / pogled",symbol:"⌃",archetype:"Vizija, perspektiva in obilje",meaning:"Tz’ikin je povezan s pticami, pogledom in v nekaterih tradicijah obiljem. Povabi te, da se odmakneš od neposredne težave in preveriš širšo sliko."},
- {name:"Ajmaq",variants:"Ajmaq · Cib",local:"Odpuščanje / predniki",symbol:"◍",archetype:"Učenje, odpuščanje in človeškost",meaning:"Ajmaq je povezan z napakami, odpuščanjem in predniškim spominom. Ne zahteva, da opravičiš škodo; ponuja prostor za učenje, odgovornost in sproščanje nepotrebne krivde."},
- {name:"No’j",variants:"No’j · Caban",local:"Earth / modrost",symbol:"⊙",archetype:"Misel, modrost in zavestna izbira",meaning:"No’j se povezuje z modrostjo, mišljenjem in znanjem. Pomaga ti razlikovati med prvo mislijo, preverjenim dejstvom in modrostjo, ki se pokaže v praksi."},
- {name:"Tijax",variants:"Tijax · Etz’nab",local:"Kremen / rez",symbol:"◇",archetype:"Razločevanje, jasnost in rez",meaning:"Tijax je povezan s kamnom, obsidianom oziroma rezilom in zdravljenjem v nekaterih tradicijah. Tukaj simbolizira jasno razlikovanje med tem, kar podpira življenje, in tem, kar ga ovira."},
- {name:"Kawoq",variants:"Kawoq · Cauac",local:"Storm / skupnost",symbol:"❋",archetype:"Skupnost, negovanje in sprememba",meaning:"Kawoq se povezuje z nevihto, skupnostjo in družinskim oziroma skupinskim življenjem. Raziskuj, kako se sprememba dogaja med ljudmi, ne le znotraj posameznika."},
- {name:"Ajpu",variants:"Ajpu · Ahau",local:"Sun / junak",symbol:"☀",archetype:"Prisotnost, pogum in celovitost",meaning:"Ajpu se pogosto povezuje s soncem, junakom in premagovanjem preizkušenj. Njegov poudarek je zrela prisotnost: videti resničnost in izbrati dejanje, ki je skladno s tvojimi vrednotami."}
+ {name:"Imox",variants:"Imox · Imix",local:"Crocodile / vodays začetek",symbol:"≈",archetype:"Primordial waters, imagination, and depth",meaning:"Across different Maya language traditions, Imox is associated with water, primordial origins, and life that has not yet taken a definite form. Here, we explore it as a space for listening to what is still taking shape."},
+ {name:"Iq’",variants:"Iq’ · Ik’",local:"Wind / breath",symbol:"〰",archetype:"Breath, wind, voice, and movement",meaning:"Iq’ is associated with wind and breath. In the BLINKITA interpretation, it invites you to explore what moves your thoughts, how you speak, and where you need more room to breathe."},
+ {name:"Aq’ab’al",variants:"Aq’ab’al · Ak’bal",local:"Dawn / twilight",symbol:"☼",archetype:"Transition, dawn, and possibility",meaning:"Aq’ab’al evokes the passage between darkness and light. Explore moments when the old has not yet departed and the new has not yet taken clear shape."},
+ {name:"K’at",variants:"K’at · Kan (regional names vary)",local:"Network / knot",symbol:"⌘",archetype:"Connections, knots, and untying",meaning:"K’at is often associated with nets, knots, and entanglements. In this portal, it represents the patterns that connect us, as well as those that can be untangled."},
+ {name:"Kan",variants:"Kan · K’an",local:"Seed / growth",symbol:"❋",archetype:"Potential, seed, and life force",meaning:"In many contemporary interpretations, Kan is associated with seeds, growth, and life force. Explore what within you needs nourishment, time, and the right conditions."},
+ {name:"Kame",variants:"Kame · Kimi",local:"Preobrazba / predayski",symbol:"☾",archetype:"Completion, memory, and transition",meaning:"Kame je povezan s smrtjo, predayski in prehodi. V tej praksi ga obravnavamo kot povabilo k spoštljivemu zaključevanju in sprejemanju minljivosti, ne kot napoved dogodkov."},
+ {name:"Kej",variants:"Kej · Manik’",local:"Deer / forest",symbol:"♧",archetype:"Embodiment, nature, and integrity",meaning:"Kej is often associated with the deer, nature, and balance. Its imagery brings you back to your body, your boundaries, and the way you enter a space."},
+ {name:"Q’anil",variants:"Q’anil · Lamat",local:"Seed / ripening",symbol:"✺",archetype:"Fertility, growth, and maturation",meaning:"Q’anil is associated with seeds, growth, and fertility. In contemporary reflection, it helps you recognize what is already growing and what does not need to be forced."},
+ {name:"Toj",variants:"Toj · Muluk",local:"Offering / balance",symbol:"◌",archetype:"Reciprocity, giving, and restoring balance",meaning:"Toj je povezan z darom, plačilom oziroma vzajemnostjo in obredaysm ravnovesjem. Raziskuj, kaj daješ, kaj sprejemaš in kaj želiš uravnotežiti."},
+ {name:"Tz’i’",variants:"Tz’i’ · Oc",local:"Dog / law",symbol:"⌂",archetype:"Loyalty, justice, and responsibility",meaning:"Tz’i’ is often associated with the dog, loyalty, law, and justice. It invites an honest relationship with agreements, boundaries, and responsibility."},
+ {name:"B’atz’",variants:"B’atz’ · Chuen",local:"Thread / weaving",symbol:"∞",archetype:"Creativity, time, and connection",meaning:"B’atz’ is associated with thread, weaving, and creativity. In this portal, the thread represents the life you co-create through repeated choices."},
+ {name:"E",variants:"E · Eb’",local:"Path / footprint",symbol:"⌁",archetype:"Path, community, and direction",meaning:"E is associated with the path and life direction. It invites you to consider whether your daily life supports the direction you claim as your own."},
+ {name:"Aj",variants:"Aj · Ben",local:"Reed / pillar",symbol:"♜",archetype:"Integrity, home, and responsibility",meaning:"Aj is associated with the reed, the home or pillar, and responsibility. Its theme is inner integrity expressed through action and care for the community."},
+ {name:"Ix",variants:"Ix · Ix",local:"Jaguar / earthly power",symbol:"♢",archetype:"Instinct, earth, and mystery",meaning:"Ix is associated with the jaguar, the earth, and the power of the natural world. Use it as a symbol of attentive presence, instinct, and respect for what you do not yet understand."},
+ {name:"Tz’ikin",variants:"Tz’ikin · Men",local:"Bird / vision",symbol:"⌃",archetype:"Vision, perspective, and abundance",meaning:"Tz’ikin is associated with birds, vision, and, in some traditions, abundance. It invites you to step back from an immediate problem and look at the bigger picture."},
+ {name:"Ajmaq",variants:"Ajmaq · Cib",local:"Odpuščanje / predayski",symbol:"◍",archetype:"Learning, forgiveness, and humanity",meaning:"Ajmaq je povezan z napakami, odpuščanjem in predaysškim spominom. Ne zahteva, da opravičiš škodo; ponuja prostor za učenje, odgovornost in sproščanje nepotrebne krivde."},
+ {name:"No’j",variants:"No’j · Caban",local:"Earth / wisdom",symbol:"⊙",archetype:"Thought, wisdom, and conscious choice",meaning:"No’j is associated with wisdom, thought, and knowledge. It helps you distinguish between an initial thought, a verified fact, and wisdom demonstrated through practice."},
+ {name:"Tijax",variants:"Tijax · Etz’nab",local:"Flint / cut",symbol:"◇",archetype:"Discernment, clarity, and cutting through",meaning:"Tijax is associated with stone, obsidian or a blade, and healing in some traditions. Here, it symbolizes clearly distinguishing what supports life from what obstructs it."},
+ {name:"Kawoq",variants:"Kawoq · Cauac",local:"Storm / community",symbol:"❋",archetype:"Community, nurturing, and change",meaning:"Kawoq is associated with storms, community, and family or group life. Explore how change happens between people, not only within individuals."},
+ {name:"Ajpu",variants:"Ajpu · Ahau",local:"Sun / hero",symbol:"☀",archetype:"Presence, courage, and wholeness",meaning:"Ajpu is often associated with the sun, the hero, and overcoming trials. Its emphasis is mature presence: seeing reality and choosing actions aligned with your values."}
 ];
 const SIGN_ASSETS = ["imix", "ik", "akbal", "kan", "chicchan", "cimi", "manik", "lamat", "muluc", "oc", "chuen", "eb", "ben", "ix", "men", "cib", "caban", "etznab", "cauac", "ahau"];
 SIGNS.forEach((sign,index)=>{sign.asset=SIGN_ASSETS[index]});
 const TONES = [
- ["Začetek","Daj namero v eno jasno poved. Začni majhno in preverljivo."],
- ["Dvojnost","Poglej obe strani napetosti, ne da bi ju prehitro razglasil za sovražnici."],
- ["Gibanje","Izberi eno dejanje, ki premakne zamisel iz glave v izkušnjo."],
- ["Oblika","Določi okvir, mejo ali strukturo, ki bo tvoji nameri dala oporo."],
- ["Središče","Poišči vir, podporo ali spretnost, ki jo že imaš na voljo."],
- ["Ritem","Uredi tempo. Kaj potrebuje ponavljanje, počitek ali več prostora?"],
- ["Uglasitev","Preveri, ali so tvoje besede, telo in dejanja v isti smeri."],
- ["Ravnovesje","Uravnoteži trud in sprejemanje, samostojnost in sodelovanje."],
- ["Odgovornost","Prevzemi svoj del vpliva in jasno poimenuj, kaj ni v tvoji pristojnosti."],
- ["Utelešenje","Pokaži namero v dejanju, ki ga je mogoče opaziti v vsakdanjem življenju."],
- ["Sodelovanje","Poišči koristno povezavo ali prosi za podporo, kjer je to smiselno."],
- ["Razjasnitev","Odstrani odvečno. Kaj ostane, ko se umakne hrup?"],
- ["Integration","Zaokroži izkušnjo in izberi, kaj boš prenesel v naslednji krog."]
+ ["Beginning","State your intention in one clear sentence. Start small and make it measurable."],
+ ["Duality","Look at both sides of a tension without too quickly treating them as enemies."],
+ ["Movement","Choose one action that moves an idea from your mind into experience."],
+ ["Form","Define a framework, boundary, or structure that will support your intention."],
+ ["Center","Find a resource, support, or skill that is already available to you."],
+ ["Rhythm","Adjust your pace. What needs repetition, rest, or more room?"],
+ ["Alignment","Check whether your words, body, and actions are moving in the same direction."],
+ ["Balance","Balance effort with receiving, and independence with collaboration."],
+ ["Responsibility","Own your part in the situation and clearly name what is outside your control."],
+ ["Embodiment","Express your intention through an action that can be seen in everyday life."],
+ ["Collaboration","Find a helpful connection or ask for support where it makes sense."],
+ ["Clarification","Remove what is unnecessary. What remains when the noise falls away?"],
+ ["Integration","Bring the experience together and choose what you will carry into the next cycle."]
 ];
 const CYCLES = [
- ["Prvi pogled","Opazovanje brez naglice","Začni s tem, kar je res prisotno. V prvih dvajsetih dneh zberi opažanja, preden jih spremeniš v zgodbo.","◉","#e2efe4","Vidi, preden sklepaš."],
- ["Sledi vzorca","Awareness ponavljanj","Opazuj ponavljajoče se odzive, sprožilce in izbire. Vzorec ni obsodba; je informacija, s katero lahko delaš.","⌁","#e5eee9","Kar opaziš, lahko začneš izbirati."],
- ["Notranja voda","Občutki in potrebe","Daj občutkom prostor, ne da bi jim prepustila vse odločitve. Poimenuj potrebo, ki se skriva pod odzivom.","≈","#dcefeb","Občutek je podatek, ne ukaz."],
- ["Jasna meja","Prostor in odgovornost","Razločuj med tem, kar je tvoje, in tem, kar pripada drugim. Meja lahko varuje odnos in energijo.","◇","#f1e5d8","Jasnost naredi prostor."],
- ["Semena izbire","Potencial in namera","Prepoznaj eno možnost, ki jo želiš negovati. Majhni pogoji pogosto pomenijo več kot velika obljuba.","❋","#eaf0d9","Neguj tisto, kar želiš okrepiti."],
- ["Prehod","Zaključki in spuščanje","Označi, kaj se zaključuje, kaj ostaja in čemu je treba dati čas. Zaključek je lahko tih in vseeno resničen.","☾","#e8e8f1","Zaključek sprosti pozornost."],
- ["Utelešena moč","Telo in prisotnost","Vrni se k telesu, ritmu in konkretnemu prostoru. Moč ni samo odločnost; je tudi zmožnost poslušati svoje meje.","♧","#e0eee3","Prisotnost se začne tukaj."],
- ["Dozorevanje","Potrpežljivost in rast","Poglej, kaj se razvija že zdaj. Ne izkopavaj semena vsak dan, da bi preverila, ali raste.","✺","#f4ead1","Rast potrebuje čas in pogoje."],
- ["Vzajemnost","Dajanje in sprejemanje","Preveri ravnotežje med prispevkom, podporo in počitkom. Vzajemnost ni natančna izmenjava, je pa pozoren odnos.","◌","#e2eeee","Sprejemanje je tudi del kroga."],
- ["Dogovor s seboj","Vrednote in dejanja","Prevedi vrednoto v dogovor, ki ga lahko izpolniš. Zaupanje vase se gradi skozi ponovljena dejanja.","⌂","#f1e1d9","Obljuba postane resnična skozi prakso."],
- ["Nit ustvarjanja","Povezovanje in ustvarjalnost","Poveži zamisli, ljudi in izkušnje. Opazuj, kaj nastane, ko ne poskušaš vsega nadzorovati sama.","∞","#e9e4f2","Creation je tudi povezovanje."],
- ["Pot v svet","Smer in delovanje","Izberi naslednji korak na svoji poti. Ni ti treba poznati celotne poti, da narediš pošten korak.","⌁","#e1eee9","Smer se potrjuje med hojo."],
- ["Integration","Utrjevanje in nov začetek","Zberi spoznanja, prepoznaj spremembe in izberi, kaj bo postalo del vsakdana. Integration je praksa, ne zaključni izpit.","✧","#f0e8d5","Vzemi s seboj tisto, kar res živiš."]
+ ["First Look","Unhurried observation","Begin with what is truly present. During the first twenty days, gather observations before turning them into a story.","◉","#e2efe4","See before you conclude."],
+ ["Following the Pattern","Awareness of repetition","Observe recurring reactions, triggers, and choices. A pattern is not a verdict; it is information you can work with.","⌁","#e5eee9","What you notice, you can begin to choose."],
+ ["Inner Waters","Feelings and needs","Make room for feelings without letting them make every decision. Name the need beneath the reaction.","≈","#dcefeb","A feeling is information, not an order."],
+ ["A Clear Boundary","Space and responsibility","Distinguish what is yours from what belongs to others. A boundary can protect both a relationship and your energy.","◇","#f1e5d8","Clarity creates space."],
+ ["Seeds of Choice","Potential and intention","Recognize one possibility you want to nurture. Small, practical conditions often matter more than a grand promise.","❋","#eaf0d9","Nurture what you want to strengthen."],
+ ["Transition","Completion and letting go","Acknowledge what is ending, what remains, and what needs time. A completion can be quiet and still be real.","☾","#e8e8f1","Completion frees your attention."],
+ ["Embodied Strength","Body and presence","Return to your body, your rhythm, and the space around you. Strength is not only determination; it is also the ability to listen to your limits.","♧","#e0eee3","Presence begins here."],
+ ["Ripening","Patience and growth","Notice what is already developing. Do not dig up a seed every day to check whether it is growing.","✺","#f4ead1","Growth needs time and the right conditions."],
+ ["Reciprocity","Giving and receiving","Preveri ravnotežje med prispevkom, podporo in počitkom. Reciprocity ni natančna izmenjava, je pa pozoren odnos.","◌","#e2eeee","Receiving is also part of the cycle."],
+ ["An Agreement with Yourself","Values and actions","Turn a value into a commitment you can keep. Self-trust grows through repeated actions.","⌂","#f1e1d9","A promise becomes real through practice."],
+ ["The Thread of Creation","Connection and creativity","Connect ideas, people, and experiences. Notice what emerges when you stop trying to control everything yourself.","∞","#e9e4f2","Creation is also connection."],
+ ["The Path into the World","Direction and action","Choose the next step on your path. You do not need to know the whole journey to take an honest step.","⌁","#e1eee9","Direction becomes clear as you walk."],
+ ["Integration","Consolidation and a New Beginning","Gather your insights, recognize the changes, and choose what will become part of daily life. Integration is a practice, not a final exam.","✧","#f0e8d5","Carry forward what you truly live."]
 ];
 const DIMENSIONS = ["Awareness","Activation","Creation","Integration"];
 const KEYS = [
- "Opazuj, preden razložiš.","Dovoli si spremeniti perspektivo.","Izberi najmanjši smiseln korak.","Daj svoji nameri obliko.",
- "Poišči podporo, ki je že blizu.","Upoštevaj ritem, ne samo cilja.","Uskladi notranjo resnico z dejanjem.","Ustvari prostor za obe plati.",
- "Prevzemi svoj del odgovornosti.","Naj se odločitev pokaže v praksi.","Poveži se brez izgube sebe.","Odstrani tisto, kar zakriva bistvo.","Ponesi spoznanje v vsakdan."
+ "Observe before you explain.","Allow yourself to change perspective.","Choose the smallest meaningful step.","Give your intention form.",
+ "Find the support that is already close.","Honor the rhythm, not just the goal.","Align your inner truth with your actions.","Make room for both sides.",
+ "Take responsibility for your part.","Let the decision show up in practice.","Connect without losing yourself.","Remove what obscures the essence.","Bring your insight into everyday life."
 ];
 const QUESTIONS = [
- "Kaj opažam, ko si ne poskušam takoj razložiti svoje izkušnje?",
- "Kateri del te situacije običajno spregledam?",
- "Katero majhno dejanje bi danes spremenilo moj običajni odziv?",
- "Kakšna meja ali struktura bi mi olajšala naslednji korak?",
- "Katero podporo že imam, pa je ne uporabljam?",
- "Kakšen ritem bi bil vzdržen tudi čez teden dni?",
- "Kje se moje besede in dejanja trenutno razhajajo?",
- "Kaj lahko sprejmem, ne da bi se temu odpovedala?",
- "Kateri del odgovornosti je res moj?",
- "Kako bi bila moja namera videti v konkretnem dejanju?",
- "Koga ali kaj lahko vključim, da bo korak bolj smiseln?",
- "Kaj je v tej zgodbi bistveno in kaj je samo hrup?",
- "Kaj želim ohraniti, ko bo ta dan za menoj?"
+ "What do I notice when I do not try to explain my experience right away?",
+ "What part of this situation do I usually overlook?",
+ "What small action could change my usual response today?",
+ "What boundary or structure would make my next step easier?",
+ "What support do I already have but am not using?",
+ "Kakšen ritem bi bil vzdržen tudi čez teden days?",
+ "Where are my words and actions currently out of alignment?",
+ "What can I accept without giving it up?",
+ "Which part of the responsibility is truly mine?",
+ "What would my intention look like as a concrete action?",
+ "Who or what could I involve to make this step more meaningful?",
+ "What is essential in this story, and what is just noise?",
+ "What do I want to keep when this day is behind me?"
 ];
 const PRACTICES = [
- ["Tri minute opazovanja","Nastavi tri minute. Opazuj misli, občutke in okolico. Ničesar ti ni treba popraviti. Na koncu zapiši eno stvar, ki je prej nisi opazila."],
- ["Poimenuj vzorec","Zapiši: sprožilec, moj običajni odziv, kratkoročna korist in dolgoročna cena. Nato dodaj eno možno drugačno izbiro."],
- ["En majhen premik","Izberi nalogo, ki jo odlašaš, in ji nameni deset minut. Končaj, ko se čas izteče, ter opazuj, kaj se je premaknilo."],
- ["Ustvari oporo","Pripravi eno praktično oporo: opomnik, urejen prostor, jasen dogovor ali čas v koledarju. Naj okolje podpira tvojo namero."],
- ["Zberi vire","Zapiši tri vire, ki so ti na voljo: oseba, spretnost, čas, prostor ali pretekla izkušnja. Izberi enega in ga danes uporabi."],
- ["Preveri svoj ritem","Pred naslednjo nalogo se vprašaj, ali potrebuješ gibanje, vodo, hrano, počitek ali osredotočenost. Izberi eno osnovno potrebo in se nanjo odzovi."],
- ["Ujemi neskladje","Izberi eno vrednoto. Zapiši, kako se je danes pokazala v tvojem ravnanju, in en majhen način, da jo jutri bolj utelešiš."],
- ["Dve resnici","Zapiši dve stvari, ki sta lahko hkrati resnični. Poišči dejanje, ki spoštuje obe, namesto da eno izbriše."],
- ["Moje in ne moje","Na papir nariši dva stolpca: moj vpliv in zunaj mojega vpliva. Izberi en korak iz prvega stolpca."],
- ["Vidno dejanje","V naslednjih 24 urah naredi eno dejanje, ki pokaže tvojo namero: pošlji sporočilo, postavi mejo, dokončaj začeto ali prosi za pomoč."],
- ["Povezovalni korak","Vzpostavi iskren stik: postavi dobro vprašanje, izrazi hvaležnost ali jasno prosi za podporo. Ne ugibaj, kaj drugi potrebujejo."],
- ["Odstrani odvečno","Za deset minut odstrani eno motnjo iz svojega prostora ali urnika. Opazuj, ali se je spremenila tvoja pozornost."],
- ["Zaključi krog","Zapiši: kaj sem spoznala, kaj sem naredila, kaj bom ohranila. Izberi eno stvar, ki jo boš ponovila v naslednjih dneh."]
+ ["Three Minutes of Observation","Set a timer for three minutes. Observe your thoughts, feelings, and surroundings. You do not need to fix anything. At the end, write down one thing you had not noticed before."],
+ ["Name the Pattern","Write down the trigger, your usual response, its short-term benefit, and its long-term cost. Then add one possible alternative choice."],
+ ["One Small Shift","Choose a task you have been putting off and give it ten minutes. Stop when the time is up and notice what has shifted."],
+ ["Create Support","Create one practical support: a reminder, an organized space, a clear agreement, or time in your calendar. Let your environment support your intention."],
+ ["Gather Your Resources","List three resources available to you: a person, a skill, time, space, or a past experience. Choose one and use it today."],
+ ["Check Your Rhythm","Before your next task, ask whether you need movement, water, food, rest, or focus. Choose one basic need and respond to it."],
+ ["Notice the Misalignment","Choose one value. Write down how it showed up in your actions today and one small way to embody it more fully tomorrow."],
+ ["Two Truths","Write down two things that can both be true. Find an action that honors both instead of erasing one."],
+ ["What Is Mine and What Is Not","Draw two columns on paper: within my influence and outside my influence. Choose one step from the first column."],
+ ["A Visible Action","Within the next 24 hours, take one action that expresses your intention: send a message, set a boundary, finish something you started, or ask for help."],
+ ["A Step Toward Connection","Make an honest connection: ask a thoughtful question, express gratitude, or clearly ask for support. Do not guess what others need."],
+ ["Remove the Unnecessary","For ten minutes, remove one distraction from your space or schedule. Notice whether your attention changes."],
+ ["Close the Cycle","Write down what you learned, what you did, and what you will keep. Choose one thing to repeat over the coming days."]
 ];
 const BODY = [
- ["Dih in prsni koš","Opazuj naravni dih, ne da bi ga silila. Zaznaj, kje je telo sproščeno in kje drži napetost."],
- ["Stopala in opora","Za trenutek začuti stik stopal s tlemi. Poimenuj tri stvari, ki ti v tem trenutku dajejo oporo."],
- ["Čeljust in obraz","Sprosti čeljust, če ti ustreza, in zmehčaj pogled. Opazuj, kako se spremeni tvoja pozornost."],
- ["Roke in dotik","Opazuj, kaj tvoje roke počnejo med razmišljanjem. Z nežnim, zavestnim gibom zaključi eno drobno opravilo."],
- ["Zvok in tišina","Poslušaj tri zvoke v okolici. Nato za nekaj trenutkov opazuj tišino med njimi."],
- ["Tempo in počitek","Opazuj energijo brez ocenjevanja. Če potrebuješ odmor, ga vzemi; če ti koristi gibanje, se nežno premakni."],
- ["Drža in glas","Preveri, ali je tvoja drža udobna. Izgovori eno pomembno misel na glas in poslušaj, kako zveni."]
+ ["Breath and Chest","Notice your natural breath without forcing it. Sense where your body is relaxed and where it holds tension."],
+ ["Feet and Grounding","Feel your feet touching the ground for a moment. Name three things that are supporting you right now."],
+ ["Jaw and Face","Relax your jaw if it feels comfortable and soften your gaze. Notice how your attention changes."],
+ ["Hands and Touch","Notice what your hands do while you are thinking. Complete one small task with a gentle, deliberate movement."],
+ ["Sound and Silence","Listen for three sounds around you. Then notice the silence between them for a few moments."],
+ ["Pace and Rest","Notice your energy without judging it. If you need a break, take one; if movement would help, move gently."],
+ ["Posture and Voice","Check whether your posture feels comfortable. Say one important thought aloud and listen to how it sounds."]
 ];
 const $ = id => document.getElementById(id);
 let selectedIndex = 0, selectedCycle = 0, activeDimension = "", data = [], journalTimer = null;
@@ -243,7 +243,7 @@ function fmtDate(ms){return dateFmt.format(new Date(ms))}
 function moonFor(ms){const age=((ms-Date.UTC(2000,0,6,18,14))/DAY_MS%29.530588853+29.530588853)%29.530588853;const illum=(1-Math.cos(2*Math.PI*age/29.530588853))/2;let phase;if(age<1.85||age>27.68)phase="🌑 New Moon";else if(age<5.54)phase="🌒 Waxing Crescent";else if(age<9.23)phase="🌓 First Quarter";else if(age<12.92)phase="🌔 Waxing Gibbous";else if(age<16.61)phase="🌕 Full Moon";else if(age<20.30)phase="🌖 Waning Gibbous";else if(age<23.99)phase="🌗 Last Quarter";else phase="🌘 Waning Crescent";return {phase,illum:Math.round(illum*100),age:age.toFixed(1)}}
 function signFor(index){return SIGNS[((index%20)+20)%20]}
 function toneFor(index){return TONES[((index%13)+13)%13]}
-function buildDay(index){const sign=signFor(index), tone=toneFor(index), cycleIndex=Math.floor(index/20), cycle=CYCLES[cycleIndex], toneNo=index%13+1, signNo=index%20, dim=DIMENSIONS[(index+Math.floor(index/7))%4], key=KEYS[(index+toneNo+signNo)%13], question=QUESTIONS[(index*3+toneNo+signNo)%13], practice=PRACTICES[(index+toneNo*2+signNo)%13], body=BODY[(index+signNo+toneNo)%BODY.length];const date=START+index*DAY_MS;const message=sign.archetype+" se danes sreča s temo »"+tone[0].toLowerCase()+"«. "+tone[1]+" "+cycle[1]+": "+cycle[2].split(".")[0].toLowerCase()+".";
+function buildDay(index){const sign=signFor(index), tone=toneFor(index), cycleIndex=Math.floor(index/20), cycle=CYCLES[cycleIndex], toneNo=index%13+1, signNo=index%20, dim=DIMENSIONS[(index+Math.floor(index/7))%4], key=KEYS[(index+toneNo+signNo)%13], question=QUESTIONS[(index*3+toneNo+signNo)%13], practice=PRACTICES[(index+toneNo*2+signNo)%13], body=BODY[(index+signNo+toneNo)%BODY.length];const date=START+index*DAY_MS;const message=sign.archetype+" meets the theme of »"+tone[0].toLowerCase()+"«. "+tone[1]+" "+cycle[1]+": "+cycle[2].split(".")[0].toLowerCase()+".";
 return {index,date,sign,tone,toneNo,cycleIndex,cycle,dimension:dim,key,question,practice,body,message,moon:moonFor(date)}}
 function getIndexForDate(ms){return Math.floor((ms-START)/DAY_MS)}
 function storageGet(key,fallback){try{const v=localStorage.getItem(key);return v===null?fallback:JSON.parse(v)}catch(e){return fallback}}
@@ -252,18 +252,18 @@ function getNotes(){return storageGet('blinkita-notes-v1',{})}
 function getDone(){return storageGet('blinkita-done-v1',[])}
 function getFavs(){return storageGet('blinkita-favs-v1',[])}
 function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),2300)}
-function renderHeader(){const idx=getIndexForDate(localTodayUTC()), d=buildDay(idx);$('todayDate').textContent=fmtDate(localTodayUTC());$('todayName').textContent=`${d.toneNo} ${d.sign.name} · ${d.sign.local}`;$('progressNum').textContent=((idx%260)+260)%260+1;$('progressBar').style.width=(((idx%260)+260)%260+1)/260*100+'%';$('progressText').textContent=idx<0?'Pred začetkom referenčnega cikla':`Referenčni cikel · ${Math.floor(idx/260)+1}. obhod`;const m=moonFor(localTodayUTC());$('moonPhase').textContent=m.phase;$('moonInfo').textContent=`Približno ${m.illum}% osvetljenosti · starost ${m.age} dni`}
-function renderTabs(){const root=$('cycleTabs');root.innerHTML='';CYCLES.forEach((c,i)=>{const b=document.createElement('button');b.className='cycle-tab'+(i===selectedCycle?' active':'');b.textContent=String(i+1).padStart(2,'0');b.title=`Cikel ${i+1}: ${c[0]}`;b.setAttribute('aria-label',`Cikel ${i+1}: ${c[0]}`);b.onclick=()=>{selectedCycle=i;renderCalendar()};root.appendChild(b)})}
-function renderCalendar(){renderTabs();const c=CYCLES[selectedCycle];$('calendarTitle').textContent=`Cikel ${selectedCycle+1} · ${c[0]}`;$('calendarSubtitle').textContent=c[2];$('cycleSymbol').textContent=c[3];$('cycleName').textContent=c[0];$('cycleDesc').textContent=c[2];$('cycleProgress').textContent=`Dnevi ${selectedCycle*20+1}–${selectedCycle*20+20}`;$('cycleFeature').style.setProperty('--cycle-color',c[4]);const root=$('daysGrid');root.innerHTML='';const done=getDone();for(let j=0;j<20;j++){const idx=selectedCycle*20+j,d=buildDay(idx),b=document.createElement('button');b.className='day-cell'+(idx===selectedIndex?' selected':'')+(idx===getIndexForDate(localTodayUTC())?' today':'')+(done.includes(idx)?' done':'')+(activeDimension&&d.dimension!==activeDimension?' filtered-out':'');b.innerHTML=`<span class="n">${idx+1}</span><span class="glyph-pair"><img class="tone-glyph" src="../assets/tzolkin/tone-${d.toneNo}.png" alt="Ton ${d.toneNo}"><img class="sign-glyph" src="../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}"></span><span class="date">${shortFmt.format(new Date(d.date))}</span>`;b.title=`${fmtDate(d.date)} · ${d.toneNo} ${d.sign.name}`;b.setAttribute('aria-label',`Dan ${idx+1}, ${fmtDate(d.date)}, ${d.toneNo} ${d.sign.name}`);b.onclick=()=>selectDay(idx,true);root.appendChild(b)}document.querySelectorAll('.dimension').forEach(el=>el.classList.toggle('active',el.dataset.dimension===activeDimension))}
-function renderDetail(){const d=buildDay(selectedIndex);$('detailDate').textContent=fmtDate(d.date);$('detailTitle').textContent=`${d.toneNo} ${d.sign.name}`;const title=$('detailTitle');let glyphs=$('detailGlyphs');if(!glyphs){glyphs=document.createElement("div");glyphs.id="detailGlyphs";glyphs.className="detail-glyphs";title.insertAdjacentElement("beforebegin",glyphs)}glyphs.innerHTML=`<img src="../assets/tzolkin/tone-${d.toneNo}.png" alt="Ton ${d.toneNo}"><img src="../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}">`;$('detailCycle').textContent=`Cikel ${d.cycleIndex+1} · ${d.cycle[0]}`;$('detailIndex').textContent=d.index+1;$('detailTone').textContent=`Ton ${d.toneNo} · ${d.tone[0]}`;$('detailSign').textContent=d.sign.variants;$('detailDimension').textContent=d.dimension;$('detailMoon').textContent=d.moon.phase;$('detailMessage').textContent=d.message;$('signTitle').textContent=`${d.sign.name} · ${d.sign.local}`;$('signMeaning').textContent=`${d.sign.archetype}. ${d.sign.meaning}`;$('toneTitle').textContent=`Ton ${d.toneNo} · ${d.tone[0]}`;$('toneMeaning').textContent=d.tone[1];$('detailKey').textContent=d.key;$('keyMeaning').textContent=`${d.sign.name} te danes vabi, da ključ preizkusiš v resnični situaciji. Opazuj rezultat, ne išči popolnosti.`;$('detailQuestion').textContent=d.question;$('practiceTitle').textContent=d.practice[0];$('detailPractice').textContent=d.practice[1];$('bodyTitle').textContent=d.body[0];$('detailBody').textContent=d.body[1];$('cycleFocus').textContent=d.cycle[0];$('cycleFocusText').textContent=`${d.cycle[1]}. ${d.cycle[2]} Zaključni poudarek: ${d.cycle[5]}`;$('prevDay').disabled=selectedIndex<=0;$('nextDay').disabled=selectedIndex>=259;$('markDone').textContent=getDone().includes(selectedIndex)?'Practice Completed ✓':'Mark Practice as Complete ✓';$('favorite').textContent=getFavs().includes(selectedIndex)?'♥ Saved to Favorites':'♡ Add to Favorites';$('journal').value=getNotes()[selectedIndex]||'';$('saveState').textContent='';}
+function renderHeader(){const idx=getIndexForDate(localTodayUTC()), d=buildDay(idx);$('todayDate').textContent=fmtDate(localTodayUTC());$('todayName').textContent=`${d.toneNo} ${d.sign.name} · ${d.sign.local}`;$('progressNum').textContent=((idx%260)+260)%260+1;$('progressBar').style.width=(((idx%260)+260)%260+1)/260*100+'%';$('progressText').textContent=idx<0?'Before the reference cycle begins':`Reference cycle · ${Math.floor(idx/260)+1}. cycle`;const m=moonFor(localTodayUTC());$('moonPhase').textContent=m.phase;$('moonInfo').textContent=`Approximately ${m.illum}% illuminated · age ${m.age} days`}
+function renderTabs(){const root=$('cycleTabs');root.innerHTML='';CYCLES.forEach((c,i)=>{const b=document.createElement('button');b.className='cycle-tab'+(i===selectedCycle?' active':'');b.textContent=String(i+1).padStart(2,'0');b.title=`Cycle ${i+1}: ${c[0]}`;b.setAttribute('aria-label',`Cycle ${i+1}: ${c[0]}`);b.onclick=()=>{selectedCycle=i;renderCalendar()};root.appendChild(b)})}
+function renderCalendar(){renderTabs();const c=CYCLES[selectedCycle];$('calendarTitle').textContent=`Cycle ${selectedCycle+1} · ${c[0]}`;$('calendarSubtitle').textContent=c[2];$('cycleSymbol').textContent=c[3];$('cycleName').textContent=c[0];$('cycleDesc').textContent=c[2];$('cycleProgress').textContent=`Days ${selectedCycle*20+1}–${selectedCycle*20+20}`;$('cycleFeature').style.setProperty('--cycle-color',c[4]);const root=$('daysGrid');root.innerHTML='';const done=getDone();for(let j=0;j<20;j++){const idx=selectedCycle*20+j,d=buildDay(idx),b=document.createElement('button');b.className='day-cell'+(idx===selectedIndex?' selected':'')+(idx===getIndexForDate(localTodayUTC())?' today':'')+(done.includes(idx)?' done':'')+(activeDimension&&d.dimension!==activeDimension?' filtered-out':'');b.innerHTML=`<span class="n">${idx+1}</span><span class="glyph-pair"><img class="tone-glyph" src="../assets/tzolkin/tone-${d.toneNo}.png" alt="Tone ${d.toneNo}"><img class="sign-glyph" src="../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}"></span><span class="date">${shortFmt.format(new Date(d.date))}</span>`;b.title=`${fmtDate(d.date)} · ${d.toneNo} ${d.sign.name}`;b.setAttribute('aria-label',`Day ${idx+1}, ${fmtDate(d.date)}, ${d.toneNo} ${d.sign.name}`);b.onclick=()=>selectDay(idx,true);root.appendChild(b)}document.querySelectorAll('.dimension').forEach(el=>el.classList.toggle('active',el.dataset.dimension===activeDimension))}
+function renderDetail(){const d=buildDay(selectedIndex);$('detailDate').textContent=fmtDate(d.date);$('detailTitle').textContent=`${d.toneNo} ${d.sign.name}`;const title=$('detailTitle');let glyphs=$('detailGlyphs');if(!glyphs){glyphs=document.createElement("div");glyphs.id="detailGlyphs";glyphs.className="detail-glyphs";title.insertAdjacentElement("beforebegin",glyphs)}glyphs.innerHTML=`<img src="../assets/tzolkin/tone-${d.toneNo}.png" alt="Tone ${d.toneNo}"><img src="../assets/tzolkin/${d.sign.asset}.png" alt="${d.sign.name}">`;$('detailCycle').textContent=`Cycle ${d.cycleIndex+1} · ${d.cycle[0]}`;$('detailIndex').textContent=d.index+1;$('detailTone').textContent=`Tone ${d.toneNo} · ${d.tone[0]}`;$('detailSign').textContent=d.sign.variants;$('detailDimension').textContent=d.dimension;$('detailMoon').textContent=d.moon.phase;$('detailMessage').textContent=d.message;$('signTitle').textContent=`${d.sign.name} · ${d.sign.local}`;$('signMeaning').textContent=`${d.sign.archetype}. ${d.sign.meaning}`;$('toneTitle').textContent=`Tone ${d.toneNo} · ${d.tone[0]}`;$('toneMeaning').textContent=d.tone[1];$('detailKey').textContent=d.key;$('keyMeaning').textContent=`${d.sign.name} invites you to test this key in a real-life situation. Observe the result rather than seeking perfection.`;$('detailQuestion').textContent=d.question;$('practiceTitle').textContent=d.practice[0];$('detailPractice').textContent=d.practice[1];$('bodyTitle').textContent=d.body[0];$('detailBody').textContent=d.body[1];$('cycleFocus').textContent=d.cycle[0];$('cycleFocusText').textContent=`${d.cycle[1]}. ${d.cycle[2]} Closing focus: ${d.cycle[5]}`;$('prevDay').disabled=selectedIndex<=0;$('nextDay').disabled=selectedIndex>=259;$('markDone').textContent=getDone().includes(selectedIndex)?'Practice Completed ✓':'Mark Practice as Complete ✓';$('favorite').textContent=getFavs().includes(selectedIndex)?'♥ Saved to Favorites':'♡ Add to Favorites';$('journal').value=getNotes()[selectedIndex]||'';$('saveState').textContent='';}
 function selectDay(index,scroll){selectedIndex=Math.max(0,Math.min(259,index));selectedCycle=Math.floor(selectedIndex/20);storageSet('blinkita-last-day-v1',selectedIndex);renderCalendar();renderDetail();if(scroll)$('detail').scrollIntoView({behavior:'smooth',block:'start'})}
 function chooseToday(){let idx=getIndexForDate(localTodayUTC());idx=((idx%260)+260)%260;selectDay(idx,true)}
 $('openToday').onclick=chooseToday;$('goToday').onclick=chooseToday;$('jumpCalendar').onclick=()=>$('calendar').scrollIntoView({behavior:'smooth'});$('clearFilter').onclick=()=>{activeDimension='';renderCalendar()};
 $('prevDay').onclick=()=>selectDay(selectedIndex-1,true);$('nextDay').onclick=()=>selectDay(selectedIndex+1,true);
-$('markDone').onclick=()=>{let a=getDone();if(a.includes(selectedIndex))a=a.filter(n=>n!==selectedIndex);else a.push(selectedIndex);storageSet('blinkita-done-v1',a);renderCalendar();renderDetail();toast(a.includes(selectedIndex)?'Praksa je označena kot opravljena.':'Oznaka prakse je odstranjena.')};
-$('favorite').onclick=()=>{let a=getFavs();if(a.includes(selectedIndex))a=a.filter(n=>n!==selectedIndex);else a.push(selectedIndex);storageSet('blinkita-favs-v1',a);renderDetail();toast(a.includes(selectedIndex)?'Dan je shranjen med priljubljene.':'Dan je odstranjen iz priljubljenih.')};
+$('markDone').onclick=()=>{let a=getDone();if(a.includes(selectedIndex))a=a.filter(n=>n!==selectedIndex);else a.push(selectedIndex);storageSet('blinkita-done-v1',a);renderCalendar();renderDetail();toast(a.includes(selectedIndex)?'Practice marked as complete.':'Practice mark removed.')};
+$('favorite').onclick=()=>{let a=getFavs();if(a.includes(selectedIndex))a=a.filter(n=>n!==selectedIndex);else a.push(selectedIndex);storageSet('blinkita-favs-v1',a);renderDetail();toast(a.includes(selectedIndex)?'Day added to favorites.':'Day removed from favorites.')};
 $('journal').addEventListener('input',()=>{clearTimeout(journalTimer);$('saveState').textContent='Saving…';journalTimer=setTimeout(()=>{const notes=getNotes();notes[selectedIndex]=$('journal').value;if(storageSet('blinkita-notes-v1',notes))$('saveState').textContent='Saved in This Browser';else $('saveState').textContent='Local Storage Is Unavailable';},350)});
-document.querySelectorAll('.dimension').forEach(el=>{const activate=()=>{const val=el.dataset.dimension;activeDimension=activeDimension===val?'':val;renderCalendar();if(activeDimension){const match=data.find(d=>d.dimension===activeDimension);if(match)selectDay(match.index,false);toast(`Poudarjeni dnevi: ${activeDimension.toLowerCase()}.`)}else toast('Prikazani so vsi dnevi.')};el.addEventListener('click',activate);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate()}})});
+document.querySelectorAll('.dimension').forEach(el=>{const activate=()=>{const val=el.dataset.dimension;activeDimension=activeDimension===val?'':val;renderCalendar();if(activeDimension){const match=data.find(d=>d.dimension===activeDimension);if(match)selectDay(match.index,false);toast(`Highlighted days: ${activeDimension.toLowerCase()}.`)}else toast('All days are displayed.')};el.addEventListener('click',activate);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate()}})});
 data=Array.from({length:260},(_,i)=>buildDay(i));
 function init(){const today=getIndexForDate(localTodayUTC());const saved=storageGet('blinkita-last-day-v1',null);selectedIndex=(Number.isInteger(saved)&&saved>=0&&saved<260)?saved:Math.max(0,Math.min(259,((today%260)+260)%260));selectedCycle=Math.floor(selectedIndex/20);renderHeader();renderCalendar();renderDetail()}
 init();
