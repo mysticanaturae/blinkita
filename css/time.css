@@ -45,3 +45,124 @@ body.page-time{--cream:#f2eadb;--gold:#a17d3e}
 .time-section{padding:clamp(54px,8vw,100px) max(24px,calc((100% - 1040px)/2));}.time-section--light{background:#fffdf8}.time-section--sea{background:linear-gradient(130deg,#e9f5f1,#edf4fa)}.time-section--sand{background:#fbf3e6}.time-section h2,.time-final h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.3rem,5vw,4.2rem);font-weight:500;line-height:1.05;max-width:850px;margin:12px 0 24px}.time-copy{max-width:800px}.time-copy p{font-size:1.02rem;color:#3f5d62;margin:0 0 18px}.time-subtitle{font-size:1.05rem;color:var(--time-gold);margin:-10px 0 28px}.time-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:38px 0}.time-steps>div{padding:20px 0;border-top:1px solid #b9cfc7}.time-steps span{font-size:.72rem;letter-spacing:.15em;color:var(--time-gold)}.time-steps h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.65rem;font-weight:500;margin:12px 0 8px}.time-steps p{font-size:.92rem;color:#557078;margin:0}.time-text-link{display:inline-flex;gap:14px;align-items:center;margin-top:14px;color:var(--time-leaf)!important;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-decoration:none!important;border-bottom:1px solid #a8c0b4;padding-bottom:8px}.time-text-link:hover{color:#9b7131!important}.time-final{padding:clamp(66px,9vw,110px) 24px;text-align:center;background:linear-gradient(135deg,#f8e8d7,#e4f3ef 55%,#e2edfb)}.time-final h2{margin:14px auto 18px}.time-final>p:not(.time-kicker){max-width:720px;margin:0 auto 28px;color:#49676d;line-height:1.8}
 @media(max-width:760px){.time-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.time-section{padding-left:22px;padding-right:22px}.time-cta{font-size:.68rem;line-height:1.6;max-width:100%}}
 @media(max-width:420px){.time-steps{grid-template-columns:1fr 1fr}.time-steps>div{padding:15px 0}.time-steps p{font-size:.86rem}}
+
+/* BLINKITA TIME — kartice časovnih portalov */
+.time-portals-section {
+    padding: clamp(54px, 7vw, 88px) 24px;
+    background:
+        radial-gradient(ellipse at 8% 0%, rgba(191,231,219,.42), transparent 42%),
+        linear-gradient(180deg, #f8fcf8, #fffdf8);
+    color: #21494b;
+}
+.time-portals-inner {
+    max-width: 1120px;
+    margin-inline: auto;
+}
+.time-portals-eyebrow {
+    color: #a17b37;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+.time-portals-section h2 {
+    margin: 12px 0 16px;
+    color: #174b50;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.5rem, 5.5vw, 4.3rem);
+    font-weight: 500;
+    line-height: 1.05;
+}
+.time-portals-intro {
+    max-width: 690px;
+    color: #597575;
+    line-height: 1.8;
+}
+.time-portals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+.time-portal-card {
+    display: flex;
+    min-width: 0;
+    min-height: 265px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    border: 1px solid rgba(58,126,119,.22);
+    border-radius: 20px;
+    background: rgba(255,255,250,.9);
+    box-shadow: 0 14px 36px rgba(35,91,83,.07);
+    color: #21494b;
+    text-decoration: none;
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.time-portal-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(184,149,80,.65);
+    box-shadow: 0 20px 42px rgba(35,91,83,.12);
+}
+.time-portal-number {
+    color: #a17b37;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .11em;
+}
+.time-portal-symbol {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    margin: 18px 0 13px;
+    border: 1px solid rgba(58,126,119,.2);
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fff, #dff2ea);
+    color: #26766c;
+    font-size: 1.55rem;
+}
+.time-portal-card h3 {
+    margin: 0 0 9px;
+    color: #174b50;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 1.15;
+}
+.time-portal-card p {
+    margin: 0 0 20px;
+    color: #597575;
+    font-size: .92rem;
+    line-height: 1.7;
+}
+.time-portal-cta {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 13px;
+    border-top: 1px solid rgba(58,126,119,.16);
+    color: #246b62;
+    font-size: .82rem;
+    font-weight: 700;
+}
+.time-portal-card-multiverse {
+    background:
+        radial-gradient(ellipse at 100% 0%, rgba(219,239,246,.8), transparent 60%),
+        rgba(255,255,250,.92);
+}
+.time-portal-card:focus-visible {
+    outline: 3px solid #b89550;
+    outline-offset: 4px;
+}
+@media(max-width: 900px) {
+    .time-portals-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media(max-width: 560px) {
+    .time-portals-grid { grid-template-columns: 1fr; }
+    .time-portal-card { min-height: 0; }
+}
+@media(prefers-reduced-motion: reduce) {
+    .time-portal-card { transition: none; }
+}
