@@ -57,6 +57,10 @@
             try {
                 const email = registerForm.email.value.trim();
                 const password = registerForm.password.value;
+                const confirmPassword = registerForm.confirm_password.value;
+                if (password !== confirmPassword) {
+                    throw new Error("Gesli se ne ujemata.");
+                }
                 const fullName = registerForm.full_name.value.trim();
 
                 if (password.length < 10) {
@@ -70,8 +74,7 @@
                     password: password,
                     options: {
                         data: { full_name: fullName },
-                        emailRedirectTo: window.location.origin +
-                            "/sl/you-login.html" + selectedPlanQuery()
+                        emailRedirectTo: "https://www.blinkita.si/sl/you-login.html" + selectedPlanQuery()
                     }
                 });
 

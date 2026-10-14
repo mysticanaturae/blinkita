@@ -117,6 +117,9 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 <label for="password">Geslo
 <input id="password" name="password" type="password" autocomplete="new-password" minlength="10" required>
 </label>
+<label for="confirm_password">Ponovi geslo
+<input id="confirm_password" name="confirm_password" type="password" autocomplete="new-password" minlength="10" required>
+</label>
 <button type="submit">Ustvari brezplačen račun</button>
 </form>
 <p class="small">Z registracijo se strinjaš, da se podatki uporabijo za ustvarjanje in upravljanje tvojega računa. Pred javnim zagonom dodaj povezavi do pravil zasebnosti in pogojev uporabe.</p>
@@ -125,5 +128,32 @@ footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px
 </section>
 </main>
 <footer>BLINKITA YOUNIQUE · Živi portal tvoje poti</footer>
+
+<script id="BLINKITA_PASSWORD_TOGGLE">
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('input[type="password"]').forEach(function (input) {
+    if (input.dataset.toggleReady) return;
+    input.dataset.toggleReady = "true";
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "Pokaži";
+    button.setAttribute("aria-label", "Pokaži geslo");
+    button.style.margin = "6px 0 12px";
+    button.style.padding = "7px 12px";
+    button.style.borderRadius = "999px";
+    button.style.cursor = "pointer";
+
+    button.addEventListener("click", function () {
+      const visible = input.type === "password";
+      input.type = visible ? "text" : "password";
+      button.textContent = visible ? "Skrij" : "Pokaži";
+      button.setAttribute("aria-label", visible ? "Skrij geslo" : "Pokaži geslo");
+    });
+
+    input.insertAdjacentElement("afterend", button);
+  });
+});
+</script>
 </body>
 </html>

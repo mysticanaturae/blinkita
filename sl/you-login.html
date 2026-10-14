@@ -131,13 +131,40 @@ document.getElementById("reset-password").addEventListener("click", async functi
   }
   try {
     const { error } = await window.YOUNIQUE.client().auth.resetPasswordForEmail(email, {
-      redirectTo: window.location.origin + "/sl/you-login.html"
+      redirectTo: "https://www.blinkita.si/sl/you-login.html"
     });
     if (error) throw error;
     window.YOUNIQUE.message("Če je račun s tem naslovom registriran, bodo navodila poslana po e-pošti.", "success");
   } catch (error) {
     window.YOUNIQUE.message(error.message, "error");
   }
+});
+</script>
+
+<script id="BLINKITA_PASSWORD_TOGGLE">
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('input[type="password"]').forEach(function (input) {
+    if (input.dataset.toggleReady) return;
+    input.dataset.toggleReady = "true";
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "Pokaži";
+    button.setAttribute("aria-label", "Pokaži geslo");
+    button.style.margin = "6px 0 12px";
+    button.style.padding = "7px 12px";
+    button.style.borderRadius = "999px";
+    button.style.cursor = "pointer";
+
+    button.addEventListener("click", function () {
+      const visible = input.type === "password";
+      input.type = visible ? "text" : "password";
+      button.textContent = visible ? "Skrij" : "Pokaži";
+      button.setAttribute("aria-label", visible ? "Skrij geslo" : "Pokaži geslo");
+    });
+
+    input.insertAdjacentElement("afterend", button);
+  });
 });
 </script>
 </body>
