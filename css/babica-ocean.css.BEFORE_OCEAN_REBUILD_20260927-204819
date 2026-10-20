@@ -1,0 +1,320 @@
+﻿/* =========================================================
+   BLINKITA — LEGEND OF GRANDMOTHER OCEAN
+   Premium editorial / Caribbean ocean system
+   ========================================================= */
+
+:root {
+  --ocean-deep: #073b4c;
+  --ocean-blue: #126782;
+  --ocean-teal: #4c9ca0;
+  --ocean-mist: #e8f5f3;
+  --ocean-sand: #f5ead6;
+  --ocean-shell: #fffaf2;
+  --ocean-gold: #b99858;
+  --ocean-gold-soft: rgba(185,152,88,.22);
+  --ocean-ink: #173c46;
+  --ocean-muted: #58747a;
+}
+
+body.ocean-legend-page {
+  background:
+    radial-gradient(circle at 10% 8%, rgba(255,255,255,.9), transparent 28%),
+    radial-gradient(circle at 90% 20%, rgba(119,198,202,.18), transparent 30%),
+    linear-gradient(
+      135deg,
+      #eef9f7 0%,
+      #e3f3f1 35%,
+      #f8f2e7 72%,
+      #fffaf1 100%
+    );
+
+  color: var(--ocean-ink);
+}
+
+/* ---------------------------------------------------------
+   MAIN
+   --------------------------------------------------------- */
+
+.ocean-main {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 150px 0 120px;
+}
+
+/* ---------------------------------------------------------
+   INTRO
+   --------------------------------------------------------- */
+
+.ocean-intro-block {
+  width: min(900px, 100%);
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.ocean-intro-block h1 {
+  margin: 0 0 22px;
+  color: var(--ocean-deep);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3.2rem, 7vw, 6.6rem);
+  line-height: .9;
+  letter-spacing: -.035em;
+  font-weight: 500;
+}
+
+.ocean-intro-block .eyebrow,
+.ocean-intro-block .kicker {
+  color: var(--ocean-gold);
+  font-size: .68rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.ocean-intro-block p {
+  max-width: 760px;
+  margin: 18px auto;
+  color: var(--ocean-muted);
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+/* ---------------------------------------------------------
+   PREMIUM CONTENT CARDS
+   --------------------------------------------------------- */
+
+.ocean-section {
+  position: relative;
+  margin: 0 auto 34px;
+}
+
+.ocean-section-inner {
+  position: relative;
+
+  width: min(900px, 100%);
+  margin: 0 auto;
+
+  padding: clamp(34px, 5vw, 66px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.93),
+      rgba(248,250,245,.78)
+    );
+
+  border: 1px solid rgba(185,152,88,.25);
+  border-radius: 30px;
+
+  box-shadow:
+    0 25px 70px rgba(7,59,76,.09),
+    inset 0 1px 0 rgba(255,255,255,.9);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  overflow: hidden;
+}
+
+.ocean-section-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--ocean-gold),
+      var(--ocean-teal),
+      transparent
+    );
+
+  opacity: .7;
+}
+
+.ocean-section-inner::after {
+  content: "∞";
+  position: absolute;
+  right: 34px;
+  bottom: 20px;
+
+  color: rgba(185,152,88,.10);
+  font-family: Georgia, serif;
+  font-size: 6rem;
+  line-height: 1;
+}
+
+/* ---------------------------------------------------------
+   NUMBER / EDITORIAL LABEL
+   --------------------------------------------------------- */
+
+.ocean-kicker {
+  margin-bottom: 20px;
+
+  color: var(--ocean-gold);
+
+  font-size: .68rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   HEADINGS
+   --------------------------------------------------------- */
+
+.ocean-section-inner h2,
+.ocean-section-inner h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 28px;
+
+  color: var(--ocean-deep);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+  font-weight: 500;
+}
+
+.ocean-section-inner h3 {
+  font-size: clamp(1.65rem, 3vw, 2.45rem);
+}
+
+/* ---------------------------------------------------------
+   TEXT
+   --------------------------------------------------------- */
+
+.ocean-section-inner p {
+  position: relative;
+  z-index: 1;
+
+  max-width: 730px;
+
+  margin: 0 0 22px;
+
+  color: #3f5d63;
+
+  font-size: 1.03rem;
+  line-height: 1.95;
+  letter-spacing: .005em;
+}
+
+.ocean-section-inner p:last-child {
+  margin-bottom: 0;
+}
+
+.ocean-section-inner strong {
+  color: var(--ocean-deep);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   QUOTE / SPECIAL LINES
+   --------------------------------------------------------- */
+
+.ocean-section-inner blockquote {
+  margin: 34px 0;
+  padding: 25px 30px;
+
+  background: rgba(229,245,242,.72);
+
+  border-left: 2px solid var(--ocean-gold);
+  border-radius: 0 18px 18px 0;
+
+  color: var(--ocean-deep);
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.45;
+}
+
+/* ---------------------------------------------------------
+   FINAL CTA / OCEAN CONNECTION
+   --------------------------------------------------------- */
+
+.ocean-section:last-of-type .ocean-section-inner {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(119,198,202,.20), transparent 28%),
+    linear-gradient(145deg, #073b4c, #0b5266);
+
+  border-color: rgba(255,255,255,.18);
+}
+
+.ocean-section:last-of-type .ocean-section-inner .ocean-kicker {
+  color: #d7bd7b;
+}
+
+.ocean-section:last-of-type .ocean-section-inner h2,
+.ocean-section:last-of-type .ocean-section-inner h3,
+.ocean-section:last-of-type .ocean-section-inner p {
+  color: #f7fbf8;
+}
+
+.ocean-section:last-of-type .ocean-section-inner p {
+  color: rgba(247,251,248,.82);
+}
+
+/* ---------------------------------------------------------
+   LINKS
+   --------------------------------------------------------- */
+
+.ocean-section-inner a {
+  color: var(--ocean-blue);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(18,103,130,.28);
+  transition: all .25s ease;
+}
+
+.ocean-section-inner a:hover {
+  color: var(--ocean-deep);
+  border-bottom-color: var(--ocean-gold);
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .ocean-main {
+    width: min(100% - 22px, 900px);
+    padding-top: 125px;
+  }
+
+  .ocean-intro-block {
+    margin-bottom: 50px;
+  }
+
+  .ocean-section {
+    margin-bottom: 20px;
+  }
+
+  .ocean-section-inner {
+    padding: 30px 24px 34px;
+    border-radius: 23px;
+  }
+
+  .ocean-section-inner h2,
+  .ocean-section-inner h3 {
+    font-size: 2.15rem;
+  }
+
+  .ocean-section-inner p {
+    font-size: .98rem;
+    line-height: 1.82;
+  }
+
+  .ocean-section-inner::after {
+    font-size: 4rem;
+    right: 18px;
+    bottom: 12px;
+  }
+}

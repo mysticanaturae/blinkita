@@ -1,0 +1,79 @@
+﻿/* YOUNIQUE PREMIUM — svetel karibski portal */
+body.page-you {
+    --yq-indigo: #174b50;
+    --yq-indigo-deep: #f5fbf8;
+    --yq-gold: #b89550;
+    --yq-gold-light: #e2c98b;
+    --yq-cream: #fffdf7;
+    --yq-muted: #597575;
+    --yq-line: rgba(58, 126, 119, .22);
+
+    background:
+        radial-gradient(ellipse at 12% 8%, rgba(191, 231, 219, .55), transparent 34%),
+        radial-gradient(ellipse at 88% 24%, rgba(219, 239, 246, .72), transparent 32%),
+        linear-gradient(180deg, #f8fcf8 0%, #fffdf7 52%, #edf7f4 100%);
+    color: #21494b;
+}
+
+body.page-you,
+body.page-you * {
+    box-sizing: border-box;
+}
+
+body.page-you .yq-hero,
+body.page-you .yq-section {
+    color: #21494b;
+}
+
+body.page-you .yq-hero h1,
+body.page-you .yq-section-head h2 {
+    color: #174b50;
+}
+
+body.page-you .yq-hero h1 span {
+    color: #b89550;
+}
+
+body.page-you .yq-section-head p,
+body.page-you .yq-hero p {
+    color: #597575;
+}
+
+body.page-you .yq-section-head .yq-eyebrow,
+body.page-you .yq-eyebrow {
+    color: #a17b37;
+    letter-spacing: .18em;
+}
+
+body.page-you .yq-section {
+    border-color: rgba(58, 126, 119, .16);
+}
+
+body.page-you .yq-card,
+body.page-you .yq-level,
+body.page-you .yq-feature,
+body.page-you .yq-orbit,
+body.page-you .yq-panel {
+    background: rgba(255, 255, 250, .84);
+    border-color: rgba(58, 126, 119, .2);
+    box-shadow: 0 18px 48px rgba(35, 91, 83, .08);
+}
+
+body.page-you a {
+    transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+}
+
+body.page-you a:focus-visible {
+    outline: 3px solid #b89550;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.page-you *,
+    body.page-you *::before,
+    body.page-you *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}

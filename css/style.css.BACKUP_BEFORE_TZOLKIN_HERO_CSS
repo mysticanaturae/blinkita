@@ -1,0 +1,248 @@
+:root{--ink:#17352f;--gold:#b79a6b;--cream:#f7f2e8;--mist:#e7eee8;--white:#fffdf8;--line:rgba(23,53,47,.14)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}a{color:inherit;text-decoration:none}.site-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;background:rgba(247,242,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:.14em;font-family:Arial,sans-serif}.brand span{display:block;font-size:9px;letter-spacing:.22em;font-weight:400;margin-top:4px;color:#75684f}.site-header nav{display:flex;gap:22px;font:600 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}.site-header nav a{padding:8px 0;border-bottom:1px solid transparent}.site-header nav a:hover,.site-header nav a.active{border-color:var(--gold)}.nav-toggle{display:none;background:none;border:0;font-size:23px}.hero{min-height:78vh;padding:12vh 8vw 10vh;display:flex;flex-direction:column;justify-content:center;max-width:1100px}.eyebrow{font:700 10px Arial,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#85734f;margin-bottom:24px}.hero h1{font-size:clamp(48px,8vw,104px);line-height:.94;font-weight:400;margin:0 0 30px;letter-spacing:-.045em}.hero h1 em{color:#8a7042;font-style:normal}.hero p{max-width:640px;font-size:20px;line-height:1.6;margin:0 0 32px}.cta{align-self:flex-start;padding:15px 22px;border:1px solid var(--gold);font:700 11px Arial,sans-serif;letter-spacing:.14em}.portal-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.portal{min-height:310px;padding:32px;display:flex;flex-direction:column;justify-content:flex-end;border-right:1px solid var(--line);transition:.3s}.portal:last-child{border-right:0}.portal:hover{transform:translateY(-5px);background:var(--white)}.portal span{font:11px Arial,sans-serif;color:#897550;margin-bottom:auto}.portal h2{font:700 18px Arial,sans-serif;letter-spacing:.08em;margin:0 0 10px}.portal p{line-height:1.5;margin:0;color:#56665f}.body{background:#edf0e4}.mind{background:#e9e7ee}.time{background:#e9e2d2}.life{background:#e6eee9}.intro{display:grid;grid-template-columns:1fr 1fr;gap:8vw;padding:100px 8vw}.intro h2{font-size:clamp(34px,4vw,58px);font-weight:400;line-height:1.05;margin:0}.intro p{font-size:19px;line-height:1.75;margin:0}footer{padding:28px 5vw;border-top:1px solid var(--line);font:10px Arial,sans-serif;letter-spacing:.12em}@media(max-width:800px){.site-header nav{display:none;position:absolute;top:70px;left:0;right:0;padding:20px 5vw;background:var(--cream);flex-direction:column;border-bottom:1px solid var(--line)}.site-header nav.open{display:flex}.nav-toggle{display:block}.portal-grid{grid-template-columns:1fr 1fr}.portal{border-bottom:1px solid var(--line)}.intro{grid-template-columns:1fr;gap:35px}.hero{padding-top:80px}}
+
+.language-switch{display:flex;gap:.45rem;align-items:center;margin-left:1rem;font-size:.72rem;letter-spacing:.12em}.language-switch a{opacity:.55}.language-switch a.active{opacity:1}.language-entry{min-height:100vh;display:grid;place-items:center;text-align:center}.language-entry main{max-width:760px;padding:3rem}.language-choices{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}.language-choices .cta{display:inline-block}
+
+
+/* ==========================================================
+   BLINKITA PREMIUM PALO SANTO — THE SACRED WOOD SET
+   ========================================================== */
+
+.premium-palo-offer {
+  position: relative;
+  margin: 70px auto;
+  padding: 90px 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(214,174,87,.20),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #17120d 0%,
+      #241b11 48%,
+      #120f0b 100%
+    );
+  color: #f8f0df;
+  border-top: 1px solid rgba(218,183,104,.35);
+  border-bottom: 1px solid rgba(218,183,104,.35);
+}
+
+.premium-offer-inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.premium-offer-kicker {
+  font-size: .78rem;
+  letter-spacing: .24em;
+  color: #d8b96b;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.premium-offer-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid rgba(222,190,111,.65);
+  border-radius: 999px;
+  color: #f2d58b;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  margin-bottom: 24px;
+}
+
+.premium-palo-offer h2 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: .95;
+  letter-spacing: .06em;
+  color: #f4d88e;
+  text-shadow: 0 8px 35px rgba(0,0,0,.45);
+}
+
+.premium-offer-lead {
+  max-width: 680px;
+  margin: 25px auto 40px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255,248,232,.82);
+}
+
+.premium-price-box {
+  max-width: 560px;
+  margin: 0 auto 40px;
+  padding: 34px 25px;
+  border: 1px solid rgba(220,184,91,.5);
+  border-radius: 24px;
+  background: rgba(255,255,255,.045);
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.35),
+    inset 0 0 50px rgba(214,174,87,.05);
+}
+
+.premium-old-price {
+  font-size: .85rem;
+  letter-spacing: .16em;
+  color: rgba(255,255,255,.55);
+}
+
+.premium-old-price span {
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.premium-now-label {
+  margin-top: 18px;
+  font-size: .82rem;
+  letter-spacing: .28em;
+  color: #e1bd67;
+  font-weight: 800;
+}
+
+.premium-now-price {
+  margin-top: 3px;
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 1;
+  font-weight: 800;
+  color: #fff3c9;
+}
+
+.premium-price-sub {
+  margin-top: 12px;
+  font-size: .78rem;
+  letter-spacing: .14em;
+  color: #d9bd78;
+  font-weight: 700;
+}
+
+.premium-hero-line {
+  margin: 35px auto 45px;
+  max-width: 900px;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: .12em;
+  color: #f4d88e;
+}
+
+.premium-products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 18px;
+  text-align: left;
+}
+
+.premium-product {
+  padding: 30px;
+  border: 1px solid rgba(220,184,91,.20);
+  border-radius: 20px;
+  background: rgba(255,255,255,.035);
+}
+
+.premium-number {
+  color: #d8b96b;
+  font-size: .75rem;
+  letter-spacing: .2em;
+  font-weight: 800;
+}
+
+.premium-product h3 {
+  margin: 12px 0 12px;
+  font-size: 1.05rem;
+  color: #f1d58b;
+  letter-spacing: .04em;
+}
+
+.premium-product p {
+  margin: 0;
+  line-height: 1.7;
+  color: rgba(255,248,232,.72);
+}
+
+.premium-gift {
+  border-color: rgba(220,184,91,.42);
+  background: rgba(220,184,91,.07);
+}
+
+.premium-bonus {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 780px;
+  margin: 35px auto;
+  padding: 22px 25px;
+  text-align: left;
+  border-radius: 18px;
+  background: rgba(220,184,91,.08);
+  border: 1px solid rgba(220,184,91,.25);
+}
+
+.premium-bonus-icon {
+  font-size: 2rem;
+  color: #e1bd67;
+}
+
+.premium-bonus strong {
+  color: #f0d48b;
+  letter-spacing: .1em;
+}
+
+.premium-bonus p {
+  margin: 7px 0 0;
+  color: rgba(255,248,232,.72);
+  line-height: 1.6;
+}
+
+.premium-main-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 62px;
+  padding: 0 38px;
+  margin-top: 25px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e6c16d, #b88a38);
+  color: #17120d !important;
+  text-decoration: none !important;
+  font-weight: 900;
+  letter-spacing: .08em;
+  box-shadow: 0 15px 45px rgba(0,0,0,.35);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.premium-main-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 55px rgba(0,0,0,.5);
+}
+
+.premium-secure-note {
+  margin: 15px 0 0;
+  font-size: .78rem;
+  color: rgba(255,255,255,.45);
+}
+
+@media (max-width: 700px) {
+
+  .premium-palo-offer {
+    padding: 65px 17px;
+  }
+
+  .premium-products {
+    grid-template-columns: 1fr;
+  }
+
+  .premium-bonus {
+    align-items: flex-start;
+  }
+
+  .premium-main-button {
+    width: 100%;
+    padding: 0 18px;
+    font-size: .82rem;
+  }
+}
+

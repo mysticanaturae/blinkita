@@ -1,0 +1,482 @@
+﻿/* =========================================================
+   BLINKITA — LEGENDA O BABICI OCEAN
+   PREMIUM OCEAN EDITION
+   ========================================================= */
+
+.ocean-legend-page {
+  --ocean-deep: #082f3d;
+  --ocean-mid: #0d5663;
+  --ocean-light: #78c7c8;
+  --foam: #f4fbf8;
+  --sand: #e9d5b3;
+  --shell: #fffaf1;
+  --gold: #b99a61;
+  --ink: #17383c;
+
+  min-height: 100vh;
+
+  background:
+    radial-gradient(circle at 12% 18%, rgba(120,199,200,.22), transparent 28%),
+    radial-gradient(circle at 88% 24%, rgba(233,213,179,.20), transparent 30%),
+    linear-gradient(
+      180deg,
+      #eaf8f6 0%,
+      #f7fbf8 30%,
+      #f8f4ea 68%,
+      #e8f5f3 100%
+    );
+
+  color: var(--ink);
+}
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.ocean-legend-page .site-header {
+  z-index: 1000;
+}
+
+.ocean-legend-page .site-header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.ocean-legend-page #mainNav {
+  flex: 1;
+}
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+.ocean-hero {
+  position: relative;
+  min-height: 78vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 170px 24px 110px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4,45,57,.94),
+      rgba(8,76,86,.78)
+    );
+}
+
+.ocean-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255,255,255,.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(120,199,200,.20),
+      transparent 30%
+    );
+
+  pointer-events: none;
+}
+
+.ocean-hero::after {
+  content: "≈  ≈  ≈  ≈  ≈  ≈  ≈";
+
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  width: 100%;
+
+  text-align: center;
+
+  color: rgba(255,255,255,.18);
+  font-size: 28px;
+  letter-spacing: 18px;
+}
+
+.ocean-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(920px, 100%);
+
+  text-align: center;
+
+  color: white;
+}
+
+.ocean-eyebrow {
+  margin-bottom: 24px;
+
+  color: #d9c18e;
+
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+}
+
+.ocean-hero h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 7vw, 6.7rem);
+  line-height: .95;
+  font-weight: 400;
+  letter-spacing: -.035em;
+
+  text-shadow:
+    0 10px 40px rgba(0,0,0,.22);
+}
+
+.ocean-hero-subtitle {
+  max-width: 680px;
+  margin: 30px auto 0;
+
+  color: rgba(255,255,255,.82);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.75;
+}
+
+.ocean-hero-signature {
+  margin-top: 34px;
+
+  color: #d9c18e;
+
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   STORY
+   --------------------------------------------------------- */
+
+.ocean-story {
+  width: min(980px, calc(100% - 36px));
+  margin: 0 auto;
+
+  padding: 100px 0 120px;
+}
+
+.ocean-story-intro {
+  max-width: 720px;
+  margin: 0 auto 90px;
+
+  text-align: center;
+}
+
+.ocean-story-intro p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  line-height: 1.85;
+}
+
+.ocean-chapter {
+  position: relative;
+
+  margin: 42px 0;
+  padding: 52px clamp(28px, 5vw, 72px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.88),
+      rgba(244,251,248,.72)
+    );
+
+  border: 1px solid rgba(185,154,97,.20);
+  border-radius: 30px;
+
+  box-shadow:
+    0 25px 70px rgba(8,47,61,.09);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.ocean-chapter::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 44px;
+
+  width: 80px;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    var(--gold),
+    transparent
+  );
+}
+
+.ocean-chapter h2 {
+  margin: 0 0 28px;
+
+  color: var(--ocean-mid);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 3vw, 2.45rem);
+  font-weight: 400;
+  letter-spacing: -.02em;
+}
+
+.ocean-chapter p {
+  margin: 0 0 1.15em;
+
+  color: #36585b;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.02rem, 1.5vw, 1.16rem);
+  line-height: 1.95;
+}
+
+.ocean-chapter p:last-child {
+  margin-bottom: 0;
+}
+
+.ocean-chapter strong {
+  color: var(--ocean-deep);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   POETIC BREAKS
+   --------------------------------------------------------- */
+
+.ocean-divider {
+  width: 100%;
+  margin: 70px auto;
+
+  text-align: center;
+
+  color: var(--gold);
+  font-size: 1.2rem;
+  letter-spacing: .5em;
+}
+
+.ocean-quote {
+  margin: 65px auto;
+  padding: 55px 30px;
+
+  text-align: center;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #083b49,
+      #0b6570
+    );
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 30px 80px rgba(8,47,61,.18);
+}
+
+.ocean-quote p {
+  max-width: 760px;
+  margin: 0 auto;
+
+  color: white;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  line-height: 1.45;
+}
+
+.ocean-quote small {
+  display: block;
+  margin-top: 25px;
+
+  color: #d9c18e;
+
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+/* ---------------------------------------------------------
+   OCEAN MESSENGER
+   --------------------------------------------------------- */
+
+.ocean-messenger {
+  margin-top: 75px;
+  padding: 55px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(120,199,200,.18),
+      transparent 40%
+    ),
+    #fffaf1;
+
+  border: 1px solid rgba(185,154,97,.30);
+  border-radius: 30px;
+
+  box-shadow:
+    0 25px 70px rgba(8,47,61,.10);
+
+  text-align: center;
+}
+
+.ocean-messenger h2 {
+  color: var(--ocean-deep);
+}
+
+.ocean-messenger p {
+  max-width: 700px;
+  margin: 0 auto 26px;
+}
+
+/* ---------------------------------------------------------
+   CTA
+   --------------------------------------------------------- */
+
+.ocean-cta {
+  margin-top: 90px;
+  padding: 70px 30px;
+
+  text-align: center;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #063541,
+      #0b6470
+    );
+
+  border-radius: 36px;
+
+  box-shadow:
+    0 35px 90px rgba(8,47,61,.20);
+}
+
+.ocean-cta h2 {
+  margin-bottom: 20px;
+
+  color: white;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 400;
+}
+
+.ocean-cta p {
+  max-width: 680px;
+  margin: 0 auto 32px;
+
+  color: rgba(255,255,255,.82);
+
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.8;
+}
+
+.ocean-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 0 30px;
+
+  color: #17383c;
+  background: #e9d5b3;
+
+  border-radius: 999px;
+
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.ocean-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,.20);
+}
+
+/* ---------------------------------------------------------
+   FOOTER SIGNATURE
+   --------------------------------------------------------- */
+
+.ocean-signature {
+  margin-top: 70px;
+
+  text-align: center;
+
+  color: #6b8587;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.ocean-signature strong {
+  color: var(--ocean-deep);
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .ocean-hero {
+    min-height: 70vh;
+    padding: 145px 22px 90px;
+  }
+
+  .ocean-story {
+    width: min(100% - 24px, 680px);
+    padding-top: 65px;
+  }
+
+  .ocean-chapter {
+    padding: 38px 25px;
+    border-radius: 22px;
+  }
+
+  .ocean-chapter::before {
+    left: 25px;
+  }
+
+  .ocean-messenger,
+  .ocean-cta {
+    padding: 42px 24px;
+    border-radius: 24px;
+  }
+}

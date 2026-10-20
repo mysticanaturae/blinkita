@@ -1,0 +1,267 @@
+﻿/* ============================================================
+   BLINKITA · MUNAY KI
+   RESERVATION MODAL
+   ============================================================ */
+
+.munay-ki-reservation-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 24px !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+
+  transition:
+    opacity .25s ease,
+    visibility .25s ease !important;
+}
+
+.munay-ki-reservation-modal.is-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.munay-ki-modal-backdrop {
+  position: absolute !important;
+  inset: 0 !important;
+
+  background: rgba(10, 11, 10, .82) !important;
+
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.munay-ki-modal-window {
+  position: relative !important;
+  z-index: 2 !important;
+
+  width: min(620px, calc(100vw - 32px)) !important;
+  max-height: calc(100vh - 48px) !important;
+
+  overflow-y: auto !important;
+
+  padding: 48px 44px 34px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #20231e,
+      #121411
+    ) !important;
+
+  border: 1px solid rgba(200,169,107,.45) !important;
+
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.55) !important;
+
+  color: #f5f0e7 !important;
+
+  transform: translateY(18px) scale(.98) !important;
+
+  transition:
+    transform .28s ease !important;
+}
+
+.munay-ki-reservation-modal.is-open
+.munay-ki-modal-window {
+  transform: translateY(0) scale(1) !important;
+}
+
+.munay-ki-modal-close {
+  position: absolute !important;
+
+  top: 14px !important;
+  right: 16px !important;
+
+  width: 40px !important;
+  height: 40px !important;
+
+  padding: 0 !important;
+
+  border: 0 !important;
+  background: transparent !important;
+
+  color: rgba(245,240,231,.72) !important;
+
+  font-size: 32px !important;
+  line-height: 1 !important;
+
+  cursor: pointer !important;
+}
+
+.munay-ki-modal-close:hover {
+  color: #c8a96b !important;
+}
+
+.munay-ki-modal-kicker {
+  margin-bottom: 14px !important;
+
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+
+  color: #c8a96b !important;
+}
+
+.munay-ki-modal-window h2 {
+  margin: 0 !important;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif !important;
+
+  font-size: clamp(36px, 6vw, 52px) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+
+  color: #f5f0e7 !important;
+}
+
+.munay-ki-modal-line {
+  width: 70px !important;
+  height: 1px !important;
+
+  margin: 22px 0 25px !important;
+
+  background: #c8a96b !important;
+}
+
+.munay-ki-modal-label {
+  margin: 0 0 7px !important;
+
+  font-size: 10px !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+
+  color: rgba(245,240,231,.58) !important;
+}
+
+.munay-ki-modal-program {
+  margin-bottom: 22px !important;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif !important;
+
+  font-size: 31px !important;
+  line-height: 1.1 !important;
+
+  color: #f5f0e7 !important;
+}
+
+.munay-ki-modal-copy {
+  margin: 0 !important;
+
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+
+  color: rgba(245,240,231,.78) !important;
+}
+
+.munay-ki-modal-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+
+  margin-top: 30px !important;
+}
+
+.munay-ki-modal-primary,
+.munay-ki-modal-secondary {
+  min-height: 48px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 12px 20px !important;
+
+  font-family:
+    "DM Sans",
+    sans-serif !important;
+
+  font-size: 10px !important;
+  font-weight: 600 !important;
+
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+
+  text-decoration: none !important;
+
+  cursor: pointer !important;
+}
+
+.munay-ki-modal-primary {
+  background: #c8a96b !important;
+  border: 1px solid #c8a96b !important;
+
+  color: #151613 !important;
+}
+
+.munay-ki-modal-primary:hover {
+  background: #d7bc86 !important;
+  border-color: #d7bc86 !important;
+}
+
+.munay-ki-modal-secondary {
+  background: transparent !important;
+
+  border: 1px solid rgba(245,240,231,.28) !important;
+
+  color: rgba(245,240,231,.82) !important;
+}
+
+.munay-ki-modal-secondary:hover {
+  border-color: rgba(200,169,107,.65) !important;
+  color: #c8a96b !important;
+}
+
+.munay-ki-modal-footer {
+  margin-top: 28px !important;
+  padding-top: 17px !important;
+
+  border-top: 1px solid rgba(245,240,231,.10) !important;
+
+  font-size: 10px !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+
+  color: rgba(245,240,231,.40) !important;
+}
+
+body.munay-ki-reservation-open {
+  overflow: hidden !important;
+}
+
+@media (max-width: 600px) {
+
+  .munay-ki-reservation-modal {
+    padding: 14px !important;
+  }
+
+  .munay-ki-modal-window {
+    width: calc(100vw - 28px) !important;
+    padding: 42px 24px 28px !important;
+  }
+
+  .munay-ki-modal-actions {
+    flex-direction: column !important;
+  }
+
+  .munay-ki-modal-primary,
+  .munay-ki-modal-secondary {
+    width: 100% !important;
+  }
+}

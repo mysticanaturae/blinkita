@@ -1,0 +1,48 @@
+body.page-body{--cream:#f1f2e7;--gold:#8d9566}
+
+/* =========================================================
+   BLINKITA BODY · PREMIUM HERO INTRO
+========================================================= */
+
+.body-hero-copy .hero-tagline {
+  margin-top: 0.8rem;
+  margin-bottom: 3.5rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #52606a;
+}
+
+.body-intro {
+  max-width: 720px;
+}
+
+.body-intro h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.body-intro h2 em {
+  font-style: italic;
+}
+
+.body-intro .hero-lead {
+  margin-bottom: 1.25rem;
+}
+
+.body-intro p {
+  max-width: 680px;
+}
+
+@media (max-width: 800px) {
+
+  .body-hero-copy .hero-tagline {
+    margin-bottom: 2.5rem;
+  }
+
+  .body-intro h2 {
+    font-size: clamp(2.3rem, 11vw, 4rem);
+  }
+
+}
